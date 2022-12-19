@@ -70,6 +70,9 @@ This course uses the following resources:
 - [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
+Also, there are other resources for self-learning:
+- [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
+
 ## Acknowledgements
 
 The course instructors greatly thank the following open-sourced courses for inspiring the set-up of this course:
