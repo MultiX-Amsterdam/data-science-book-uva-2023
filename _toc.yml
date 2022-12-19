@@ -2,8 +2,26 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: docs/home
+parts:
+- caption: Lectures
+  chapters:
+  - file: docs/lectures/lec-1
+  - file: docs/lectures/lec-2
+- caption: Modules
+  chapters:
+  - file: docs/modules/structured-data/overview-structured-data
+    sections:
+    - file: docs/modules/structured-data/preparation-structured-data
+    - file: docs/modules/structured-data/tutorial-structured-data
+    - file: docs/modules/structured-data/assignment-structured-data
+  - file: docs/modules/text-data/overview-text-data
+    sections:
+    - file: docs/modules/text-data/preparation-text-data
+    - file: docs/modules/text-data/tutorial-text-data
+    - file: docs/modules/text-data/assignment-text-data
+  - file: docs/modules/image-data/overview-image-data
+    sections:
+    - file: docs/modules/image-data/preparation-image-data
+    - file: docs/modules/image-data/tutorial-image-data
+    - file: docs/modules/image-data/assignment-image-data

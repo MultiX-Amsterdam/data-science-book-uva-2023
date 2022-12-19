@@ -36,3 +36,6 @@ launch_buttons:
   binderhub_url: ""
   colab_url: "https://colab.research.google.com"
   jupyterhub_url: ""
+
+# Other flags
+only_build_toc_files: true

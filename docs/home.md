@@ -1,0 +1,83 @@
+# Course Overview
+
+- Course: Data Science
+- Program: The thrid year of Bachelor Informatiekunde
+- Institution: Informatics Institute, University of Amsterdam
+- Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
+- Time Table and Location: see [datanose](https://datanose.nl/)
+
+## Description
+
+:::{admonition} What is data science?
+:class: tip
+Data science is about turning rich data into **actionable insight** and making data **impactful**!
+:::
+
+This course aims to familiarize you with various data science pipelines using examples, primarily on images, text, and structured data. By the end of the course, we expect you to be able to:
+- Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization)
+- Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language
+- Understand issues around data science tasks, including searching for datasets, annotating data, writing data science papers, ensuring reproducibility, managing programming code efficiently, and paying attention to research ethics
+
+This course expects you to have the following prior knowledge:
+- Advanced level of Python programming (e.g., knowing different data types, data structures, and the Jupyter Notebook programming environment)
+- Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means)
+- Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages)
+
+It is important to keep in mind that this course does NOT aim to teach you details in programming, machine learning, statistics, or visualization. Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task. Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world. Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
+
+This course contains lectures, modules, and two exams. The lectures are designed to help you understand the pipelines. The modules are designed to have you work to have hands-on experiences. The mid-term and final exams are designed to test your knowledge in different parts of the data science pipeline. The course's evaluation is based on exams (the mid-term exam is 50%, and the final exam is also 50%). There is a resit for the final exam.
+
+## Schedule Outline
+
+:::{warning}
+This schedule is just temporary and may be changed during the development of this course.
+:::
+
+This course has 8 weeks in total. Among them, weeks 4 and 8 will be used for mid-term and final exams. Except weeks 4 and 8, each week has two lectures (hoorcollege) and a practical session (werkcollege). Week 4 has only one lecture for discussing the mid-term exam (no practical sessions). Week 8 only has the final exam (no lectures nor practical sessions). Below is the outline of weekly activities:
+
+- Week 1
+  - Lecture 1: Introduce the course and explain why data science is important
+  - Lecture 2: Explain general data science pipelines and recap techniques
+  - Practical Session: Structured Data Processing Module
+- Week 2
+  - Lecture 3 & 4: Explain the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
+  - Practical Session: Structured Data Processing Module
+- Week 3
+  - Lecture 5 & 6: Explain the pipeline of processing text data (e.g., topic modeling)
+  - Practical Session: Text Data Processing Module
+- Week 4
+  - Mid-term Exam
+  - A lecture to discuss the mid-term exam
+- Week 5
+  - Lecture 7 & 8: Explain the pipeline of processing image data (e.g., object recognition and detection)
+  - Practical Session: Text Data Processing Module
+- Week 6
+  - Lecture 9: Introduce tips about searching public datasets, ways of scraping data online, and techniques of annotating data
+  - Lecture 10: Introduce practical guidelines of managing code using the Git tool, best practices of writing good code, as well as documenting projects (e.g., using GitHub Pages and Jupyter Book)
+  - Practical Session: Image Data Processing Module
+- Week 7
+  - Lecture 11: Explain how to write a good data science paper and also make sure that the result is reproducible
+  - Lecture 12: Explain data science research ethics (e.g., privacy issues, data biases, social impact of data science)
+  - Practical Session: Image Data Processing Module
+- Week 8
+  - Final Exam
+
+## Resources
+
+This course uses the following resources:
+- [Book in Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
+- [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
+- [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+
+## Acknowledgements
+
+The course instructors greatly thank the following open-sourced courses for inspiring the set-up of this course:
+- [Machine Learning for Design, TU Delft](https://ml4design.github.io)
+- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/)
+- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/)
+
+## Table of Contents
+
+```{tableofcontents}
+```
