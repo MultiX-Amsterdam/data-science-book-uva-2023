@@ -1,7 +1,7 @@
 # Course Overview
 
 - Course: Data Science
-- Program: The thrid year of Bachelor Informatiekunde
+- Program: The third year of Bachelor Informatiekunde
 - Institution: Informatics Institute, University of Amsterdam
 - Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
 - Time Table and Location: see [datanose](https://datanose.nl/)
