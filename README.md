@@ -19,6 +19,10 @@ $ git clone https://github.com/MultiX-Amsterdam/data-science-book-uva
 $ cd data-science-book-uva
 $ jupyter-book build .
 ```
+To rebuild the entire book, use the following:
+```sh
+$ jupyter-book build --all
+```
 Once it is done, you can view the book in the [html content](_build/html) folder using a web browser. To update the book online in this GitHub repository (in the gh-pages branch), run the following:
 ```sh
 $ ghp-import -n -p -f _build/html
