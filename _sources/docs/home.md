@@ -1,11 +1,15 @@
 # Course Overview
 
 - Course: Data Science
-- Program: The third year of Bachelor Informatiekunde
+- Program: The third year of Bachelor Informatiekunde (i.e., Information Science)
 - Institution: Informatics Institute, University of Amsterdam
 - Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
 - Time Table and Location: see [datanose](https://datanose.nl/)
-- Course lectures will be given in English.
+- Announcements: see [Canvas](https://canvas.uva.nl/)
+
+:::{admonition} Teaching Matters FAQ
+Please refer to the [teaching matters document](https://docs.google.com/document/d/1-WMttZ9Kry0asHv_uxYZkCX6DnCTi_rPukhYPn9F6pI/edit?usp=sharing) if you have general questions about course administration, such as registration, course policy, attendance, etc.
+:::
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
@@ -16,10 +20,25 @@ All the course content on this website is licensed under a [Creative Commons Att
 Data science is about turning rich data into **actionable insight** and making data **impactful**!
 :::
 
-This course aims to familiarize you with various data science pipelines using examples, primarily on images, text, and structured data. By the end of the course, we expect you to be able to:
+This course aims to familiarize you with various data science pipelines using examples with different data types.
+This course is suitable for students who already have some experience in processing data and will work (or are currently working) with a large amount of data, especially focusing on obtaining insights from data through prediction or explanation techniques.
+This course is not intended to cover all topics in data science exhaustively.
+Instead, it introduces ways of working with structured (e.g., sensor measurements) and unstructured data (e.g., text and image).
+Also, this course will cover human-centered approaches in data science for social impact.
+
+It is important to keep in mind that this course does not aim to teach you details in programming, machine learning, statistics, or visualization.
+Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task.
+Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world.
+Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
+
+## Learning Goals
+
+By the end of the course, we expect you to be able to:
 - Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization)
 - Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language
-- Understand issues around data science tasks, including searching for datasets, annotating data, writing data science papers, ensuring reproducibility, managing programming code efficiently, and paying attention to research ethics
+- Understand issues around data science tasks, including searching for datasets, annotating data, ensuring reproducibility, managing programming code efficiently, and paying attention to research ethics
+
+## Prerequisites
 
 This course expects you to have the following prior knowledge:
 - Advanced level of Python programming (e.g., knowing different data types, data structures, and the Jupyter Notebook programming environment)
@@ -27,9 +46,17 @@ This course expects you to have the following prior knowledge:
 - Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages)
 - Basic level of research methods (e.g., knowing what research questions mean, being able to perform basic hypothesis testing)
 
-It is important to keep in mind that this course does NOT aim to teach you details in programming, machine learning, statistics, or visualization. Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task. Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world. Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
+## Course Structure and Grading
 
-This course contains lectures, modules, and two exams. The lectures are designed to help you understand the pipelines. The modules are designed to have you work to have hands-on experiences. The mid-term and final exams are designed to test your knowledge in different parts of the data science pipeline. The course's evaluation is based on exams (the mid-term exam is 50%, and the final exam is also 50%). There is a resit for the final exam.
+This course contains lectures (i.e., hoorcollege), modules, and two exams.
+Lectures are designed to help you understand the pipelines.
+Modules are designed to have you work to have hands-on experiences in the work sessions (i.e., werkcollege).
+Lectures will be given in English.
+Work sessions will given in either Dutch or English, depending on the TA's choice.
+
+The mid-term and final exams are designed to test your knowledge in different parts of the data science pipeline.
+The course's evaluation is based on exams (the mid-term exam is 50%, and the final exam is also 50%).
+There is a resit for the final exam.
 
 ## Schedule Outline
 
@@ -37,7 +64,12 @@ This course contains lectures, modules, and two exams. The lectures are designed
 This schedule is just temporary and may be changed during the development of this course.
 :::
 
-This course has 8 weeks in total. Among them, weeks 4 and 8 will be used for mid-term and final exams. Except weeks 4 and 8, each week has two lectures (hoorcollege) and a practical session (werkcollege). Week 4 has only one lecture for discussing the mid-term exam (no practical sessions). Week 8 only has the final exam (no lectures nor practical sessions). Below is the outline of weekly activities:
+This course has 8 weeks in total.
+Among them, weeks 4 and 8 will be used for mid-term and final exams.
+Except weeks 4 and 8, each week has two lectures (hoorcollege) and a work session (werkcollege).
+Week 4 has only one lecture for discussing the mid-term exam (no practical sessions).
+Week 8 only has the final exam (no lectures nor practical sessions).
+Below is the outline of weekly activities:
 
 - Week 1
   - Lecture 1: Introduce the course and explain why data science is important using examples
