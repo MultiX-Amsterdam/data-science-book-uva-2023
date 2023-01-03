@@ -7,7 +7,29 @@ parts:
 - caption: Lectures
   chapters:
   - file: docs/lectures/lec-1
+    title: "L1: Introduction"
   - file: docs/lectures/lec-2
+    title: "L2: Recap"
+  - file: docs/lectures/lec-3
+    title: "L3: Structured Data Processing I"
+  - file: docs/lectures/lec-4
+    title: "L4: Structured Data Processing II"
+  - file: docs/lectures/lec-5
+    title: "L5: Text Data Processing I"
+  - file: docs/lectures/lec-6
+    title: "L6: Text Data Processing II"
+  - file: docs/lectures/lec-7
+    title: "L7: Image Data Processing I"
+  - file: docs/lectures/lec-8
+    title: "L8: Image Data Processing II"
+  - file: docs/lectures/lec-9
+    title: "L9: Human-Centered Approach I"
+  - file: docs/lectures/lec-10
+    title: "L10: Human-Centered Approach II"
+  - file: docs/lectures/lec-11
+    title: "L11: Practical Tips I"
+  - file: docs/lectures/lec-12
+    title: "L12: Practical Tips II"
 - caption: Modules
   chapters:
   - file: docs/modules/structured-data/overview-structured-data

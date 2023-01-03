@@ -1,4 +1,4 @@
-# Lecture 2: Data Science Pipeline
+# Lecture 2: Recap of Pipelines and Techniques
 
 ## Preparation
 

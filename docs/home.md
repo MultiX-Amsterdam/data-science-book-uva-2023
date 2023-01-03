@@ -5,6 +5,7 @@
 - Institution: Informatics Institute, University of Amsterdam
 - Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
 - Time Table and Location: see [datanose](https://datanose.nl/)
+- Course lectures will be given in English.
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
@@ -24,6 +25,7 @@ This course expects you to have the following prior knowledge:
 - Advanced level of Python programming (e.g., knowing different data types, data structures, and the Jupyter Notebook programming environment)
 - Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means)
 - Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages)
+- Basic level of research methods (e.g., knowing what research questions mean, being able to perform basic hypothesis testing)
 
 It is important to keep in mind that this course does NOT aim to teach you details in programming, machine learning, statistics, or visualization. Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task. Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world. Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
 
@@ -38,8 +40,8 @@ This schedule is just temporary and may be changed during the development of thi
 This course has 8 weeks in total. Among them, weeks 4 and 8 will be used for mid-term and final exams. Except weeks 4 and 8, each week has two lectures (hoorcollege) and a practical session (werkcollege). Week 4 has only one lecture for discussing the mid-term exam (no practical sessions). Week 8 only has the final exam (no lectures nor practical sessions). Below is the outline of weekly activities:
 
 - Week 1
-  - Lecture 1: Introduce the course and explain why data science is important
-  - Lecture 2: Explain general data science pipelines and recap techniques
+  - Lecture 1: Introduce the course and explain why data science is important using examples
+  - Lecture 2: Recap general data science pipelines and techniques (e.g., basic statistics, basic machine learning concepts)
   - Practical Session: Structured Data Processing Module
 - Week 2
   - Lecture 3 & 4: Explain the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
@@ -54,12 +56,10 @@ This course has 8 weeks in total. Among them, weeks 4 and 8 will be used for mid
   - Lecture 7 & 8: Explain the pipeline of processing image data (e.g., object recognition and detection)
   - Practical Session: Text Data Processing Module
 - Week 6
-  - Lecture 9: Introduce tips about searching public datasets, ways of scraping data online, and techniques of annotating data
-  - Lecture 10: Introduce practical guidelines of managing code using the Git tool, best practices of writing good code, as well as documenting projects (e.g., using GitHub Pages and Jupyter Book)
+  - Lecture 9 & 10: Introduce the human-centered approach in data science (e.g., research ethics, privacy issues, data biases, social impact of data science, algorithmic fairness, explainability, reproducibility, open science)
   - Practical Session: Image Data Processing Module
 - Week 7
-  - Lecture 11: Explain how to write a good data science paper and also make sure that the result is reproducible
-  - Lecture 12: Explain data science research ethics (e.g., privacy issues, data biases, social impact of data science)
+  - Lecture 11 & 12: Provide practical tips for data science (e.g., websites for searching public datasets, ways of scraping data online, techniques of annotating data, code management using Git and GitHub, best practices of writing good code, techniques of documenting projects such as GitHub Pages and Jupyter Book)
   - Practical Session: Image Data Processing Module
 - Week 8
   - Final Exam
@@ -71,6 +71,7 @@ This course uses the following resources:
 - [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
 - [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
 
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
