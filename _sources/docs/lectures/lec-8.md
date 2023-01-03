@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Pipelines and Techniques
+# Lecture 8: Image Data Processing (Part II)
 
 ## Preparation
 

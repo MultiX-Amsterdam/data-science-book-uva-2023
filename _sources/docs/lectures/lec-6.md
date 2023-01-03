@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Pipelines and Techniques
+# Lecture 6: Text Data Processing (Part II)
 
 ## Preparation
 

@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Pipelines and Techniques
+# Lecture 4: Structured Data Processing (Part II)
 
 ## Preparation
 

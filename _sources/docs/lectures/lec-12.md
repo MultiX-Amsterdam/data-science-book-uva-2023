@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Pipelines and Techniques
+# Lecture 12: Practical Tips for Data Science (Part II)
 
 ## Preparation
 

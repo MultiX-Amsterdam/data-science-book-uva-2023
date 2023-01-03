@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Pipelines and Techniques
+# Lecture 9: Human-Centered Approach in Data Science (Part I)
 
 ## Preparation
 
