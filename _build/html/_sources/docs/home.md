@@ -8,7 +8,7 @@
 - Announcements: see [Canvas](https://canvas.uva.nl/)
 
 :::{admonition} Teaching Matters FAQ
-Please refer to the [teaching matters document](https://docs.google.com/document/d/1-WMttZ9Kry0asHv_uxYZkCX6DnCTi_rPukhYPn9F6pI/edit?usp=sharing) if you have general questions about course administration, such as registration, course policy, attendance, etc.
+Please refer to the [teaching matters document](https://docs.google.com/document/d/1-WMttZ9Kry0asHv_uxYZkCX6DnCTi_rPukhYPn9F6pI/edit?usp=sharing) if you have general questions about course administration, such as registration, course policy, attendance, virtural/physical classroom settings, etc.
 :::
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -41,10 +41,10 @@ By the end of the course, we expect you to be able to:
 ## Prerequisites
 
 This course expects you to have the following prior knowledge:
-- Advanced level of Python programming (e.g., knowing different data types, data structures, and the Jupyter Notebook programming environment)
-- Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means)
-- Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages)
-- Basic level of research methods (e.g., knowing what research questions mean, being able to perform basic hypothesis testing)
+- Advanced level of Python programming (e.g., knowing different data types and data structures, knowing how to set up the Jupyter Notebook programming environment)
+- Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means, recognizing that a "random forest" is not just a forest in some random places, understanding the differences between classification and regression)
+- Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages, understanding the differences between a bar chart and histogram)
+- Basic level of research methods (e.g., knowing what "research questions" mean, understanding basic hypothesis testing methods like t-test)
 
 ## Course Structure and Grading
 
