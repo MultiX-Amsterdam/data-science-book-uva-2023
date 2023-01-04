@@ -43,7 +43,7 @@ Refer to the [overview page](home#schedule-outline) for the course schedule.
 Lectures will be given in English, as well as all the teaching materials.
 Work sessions will given in either Dutch or English, depending on the TA's choice.
 
-Course materials contain slide decks, notebook scripts, and three modules.
+Course materials contain slide decks, Jupyter notebooks, and three modules.
 Each module contains preparation, turorials, and assignments for learning how to perform different data science tasks.
 Modules are designed to have you work to have hands-on experiences.
 
@@ -69,9 +69,9 @@ Your final grade is based only on exams (the mid-term exam is 50% weight, and th
 There is a resit for the course (100% weight).
 
 The mid-term and final exams are all based on coding questions, which are designed to test your knowledge in different parts of the data science pipeline.
-We will provide scripts during the exams with instructions.
-Then, the scripts that you handed in will be auto-graded with test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
-We will provide mock-up exam scripts and test cases for you to practice.
+We will provide Jupyter notebooks during the exams with instructions.
+Then, the notebooks that you handed in will be auto-graded with test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
+We will provide mock-up exam notebooks and test cases for you to practice.
 
 :::{warning}
 We are still working with the ICT team to figure out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
