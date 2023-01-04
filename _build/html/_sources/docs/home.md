@@ -1,14 +1,14 @@
 # Course Overview
 
-- Course: Data Science
+- Course Name: Data Science
 - Program: The third year of Bachelor Informatiekunde (i.e., Information Science)
 - Institution: Informatics Institute, University of Amsterdam
 - Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
 - Time Table and Location: see [datanose](https://datanose.nl/)
-- Announcements: see [Canvas](https://canvas.uva.nl/)
+- Announcements and Link to Live Lectures: see [Canvas](https://canvas.uva.nl/)
 
 :::{admonition} Teaching Matters FAQ
-Please refer to the [teaching matters document](https://docs.google.com/document/d/1-WMttZ9Kry0asHv_uxYZkCX6DnCTi_rPukhYPn9F6pI/edit?usp=sharing) if you have general questions about course administration, such as registration, course policy, attendance, virtural/physical classroom settings, etc.
+Please refer to the [teaching matters FAQ document](https://docs.google.com/document/d/1-WMttZ9Kry0asHv_uxYZkCX6DnCTi_rPukhYPn9F6pI/edit?usp=sharing) if you have general questions about course administration, such as course registration, attendance, virtural/physical classroom settings, academic code of conduct, communication principles, mental health support, etc.
 :::
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
