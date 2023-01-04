@@ -1,4 +1,4 @@
-# Lecture 6: Text Data Processing (Part II)
+# Lecture 6: TBA
 
 ## Preparation
 

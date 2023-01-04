@@ -1,4 +1,4 @@
-# Lecture 11: Practical Tips for Data Science (Part I)
+# Lecture 11: Human-Centered Approach in Data Science
 
 ## Preparation
 

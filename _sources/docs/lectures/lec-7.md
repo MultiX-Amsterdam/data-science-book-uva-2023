@@ -1,4 +1,4 @@
-# Lecture 7: Image Data Processing (Part I)
+# Lecture 7: Text Data Processing (Part I)
 
 ## Preparation
 

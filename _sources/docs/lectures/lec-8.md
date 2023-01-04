@@ -1,4 +1,4 @@
-# Lecture 8: Image Data Processing (Part II)
+# Lecture 8: Text Data Processing (Part II)
 
 ## Preparation
 

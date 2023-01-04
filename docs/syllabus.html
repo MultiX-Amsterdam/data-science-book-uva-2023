@@ -1,0 +1,874 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Course Syllabus &#8212; Data Science UvA</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lecture 1: Introduction" href="lectures/lec-1.html" />
+    <link rel="prev" title="Course Overview" href="home.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science UvA</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Course Syllabus
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-1.html">
+   L1: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-2.html">
+   L2: Data Science Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-3.html">
+   L3: Structured Data Processing I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-4.html">
+   L4: Structured Data Processing II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-5.html">
+   L5: Practical Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-6.html">
+   L6: TBA
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-7.html">
+   L7: Text Data Processing I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-8.html">
+   L8: Text Data Processing II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-9.html">
+   L9: Image Data Processing I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-10.html">
+   L10: Image Data Processing II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-11.html">
+   L11: Human-Centered Approach
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lectures/lec-12.html">
+   L12: TBA
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules/structured-data/overview-structured-data.html">
+   Structured Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/structured-data/preparation-structured-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/structured-data/tutorial-structured-data.html">
+     Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/structured-data/assignment-structured-data.html">
+     Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules/text-data/overview-text-data.html">
+   Text Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/text-data/preparation-text-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/text-data/tutorial-text-data.html">
+     Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/text-data/assignment-text-data.html">
+     Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules/image-data/overview-image-data.html">
+   Image Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/image-data/preparation-image-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/image-data/tutorial-image-data.html">
+     Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules/image-data/assignment-image-data.html">
+     Assignment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Others
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="others/warm-up.html">
+   Warm-up Python Coding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="others/mockup-exam-1.html">
+   Mockup Mid-term Exam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="others/mockup-exam-2.html">
+   Mockup Final Exam
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MultiX-Amsterdam/data-science-book-uva"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MultiX-Amsterdam/data-science-book-uva/issues/new?title=Issue%20on%20page%20%2Fdocs/syllabus.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/syllabus.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-structure">
+   Course Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#virtual-physical-settings">
+   Virtual/Physical Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-exams-and-assignments">
+   Grading: Exams and Assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-registration">
+   Course Registration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-attendance">
+   Course Attendance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fraud-and-plagiarism">
+   Fraud and Plagiarism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#communication-principles">
+   Communication Principles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#academic-code-of-conduct">
+   Academic Code of Conduct
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-for-students-wellness">
+   Support for Students Wellness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accommodations-for-students-with-disabilities">
+   Accommodations for Students with Disabilities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-resources">
+   Other Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Course Syllabus</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-structure">
+   Course Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#virtual-physical-settings">
+   Virtual/Physical Settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-exams-and-assignments">
+   Grading: Exams and Assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-registration">
+   Course Registration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-attendance">
+   Course Attendance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fraud-and-plagiarism">
+   Fraud and Plagiarism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#communication-principles">
+   Communication Principles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#academic-code-of-conduct">
+   Academic Code of Conduct
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-for-students-wellness">
+   Support for Students Wellness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accommodations-for-students-with-disabilities">
+   Accommodations for Students with Disabilities
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-resources">
+   Other Resources
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="course-syllabus">
+<h1>Course Syllabus<a class="headerlink" href="#course-syllabus" title="Permalink to this headline">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">What is data science?</p>
+<p>Data science is about turning rich data into <strong>actionable insight</strong> and making data <strong>impactful</strong>!</p>
+</div>
+<p>This course aims to familiarize you with various data science pipelines using examples with different data types.
+This course is suitable for students who already have some experience in processing data and will work (or are currently working) with a large amount of data, especially focusing on obtaining insights from data through prediction or explanation techniques.
+This course is not intended to cover all topics in data science exhaustively.
+Instead, it introduces ways of working with structured (e.g., sensor measurements) and unstructured data (e.g., text and image).
+Also, this course will cover human-centered approaches in data science for social impact.</p>
+<p>It is important to keep in mind that this course does not aim to teach you details in programming, machine learning, statistics, or visualization.
+Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task.
+Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world.
+Data collection is a topic that could take a very long time to explain and is out of the scope of this course.</p>
+<section id="learning-goals">
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
+<p>By the end of the course, we expect you to be able to:</p>
+<ul class="simple">
+<li><p>Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization)</p></li>
+<li><p>Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language</p></li>
+<li><p>Understand issues around data science tasks, including searching for datasets, annotating data, ensuring reproducibility, managing programming code efficiently, and paying attention to research ethics</p></li>
+</ul>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>This course expects you to have the following prior knowledge:</p>
+<ul class="simple">
+<li><p>Advanced level of Python programming (e.g., knowing different data types and data structures, knowing how to set up the Jupyter Notebook programming environment)</p></li>
+<li><p>Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means, recognizing that a “random forest” is not just a forest in some random places, understanding the differences between classification and regression)</p></li>
+<li><p>Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages, understanding the differences between a bar chart and histogram)</p></li>
+<li><p>Basic level of research methods (e.g., knowing what “research questions” mean, understanding basic hypothesis testing methods like t-test)</p></li>
+</ul>
+</section>
+<section id="course-structure">
+<h2>Course Structure<a class="headerlink" href="#course-structure" title="Permalink to this headline">#</a></h2>
+<p>This course has 8 weeks in total.
+Among them, weeks 4 and 8 will be used for mid-term and final exams.
+Except weeks 4 and 8, each week has two lectures (hoorcollege) and a work session (werkcollege).
+Week 4 has only one lecture for discussing the mid-term exam (no work sessions).
+Week 8 only has the final exam (no lectures nor work sessions).
+Refer to the <a class="reference external" href="home#schedule-outline">overview page</a> for the course schedule.</p>
+<p>Lectures will be given in English, as well as all the teaching materials.
+Work sessions will given in either Dutch or English, depending on the TA’s choice.</p>
+<p>Course materials contain slide decks, notebook scripts, and three modules.
+Each module contains preparation, turorials, and assignments for learning how to perform different data science tasks.
+Modules are designed to have you work to have hands-on experiences.</p>
+</section>
+<section id="virtual-physical-settings">
+<h2>Virtual/Physical Settings<a class="headerlink" href="#virtual-physical-settings" title="Permalink to this headline">#</a></h2>
+<p>In principle, I will give the lecture in person in the physical classroom.
+I will open a virtual classroom link to live stream the lectures (refer to Canvas for the links).
+If I cannot give the physical lecture due to expected situations, I will make an announcement on Canvas to give the lecture in the virtual classroom.</p>
+<p>It is important to notice that when I give the lecture in the physical classroom, the virtual classroom will be muted and not be actively monitored.
+It is very challenging for me to pay attention to both the physical and virtual audiences, and priority will be given to people who attend the physical classroom.</p>
+<p>I will also do my best to record the lectures (with the camera pointing to my face only) and make the recordings available on Canvas.
+However, there is no professional support for recording in my course, so there is no guarantee of the recording quality.
+For example, you may experience poor sound quality or incomplete lectures in the recorded video.</p>
+<p>In principle, the work sessions (werkcollege) are in-person only.
+If the TAs cannot attend the physical classroom due to unexpected situations, they may give the sessions virtually.</p>
+</section>
+<section id="grading-exams-and-assignments">
+<h2>Grading: Exams and Assignments<a class="headerlink" href="#grading-exams-and-assignments" title="Permalink to this headline">#</a></h2>
+<p>Your final grade is based only on exams (the mid-term exam is 50% weight, and the final exam is also 50% weight).
+There is a resit for the course (100% weight).</p>
+<p>The mid-term and final exams are all based on coding questions, which are designed to test your knowledge in different parts of the data science pipeline.
+We will provide scripts during the exams with instructions.
+Then, the scripts that you handed in will be auto-graded with test cases using the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/index.html">nbgrader package</a>.
+We will provide mock-up exam scripts and test cases for you to practice.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We are still working with the ICT team to figure out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
+But for now, you should assume that you will have no internet access during the exams.</p>
+</div>
+<p>During the mid-term and final exams, you may bring an A4-size cheat sheet with you.
+You can choose to handwrite or print the content on both sides of the cheat sheet.
+Please keep in mind that you are not allowed to bring other materials, such as books.
+You are also not allowed to bring or use any other digital devices (besides the computer for the exam).</p>
+<p>Assignments are not graded, but you should do them as they are essential in improving your data science skills.
+We expect you to do the assignments by yourself and discuss them with the TAs in working sessions.
+The questions in mid-term and final exams will have similar questions as those in the assignments.
+Doing the assignments will also help you greatly in preparing for the exams.</p>
+</section>
+<section id="course-registration">
+<h2>Course Registration<a class="headerlink" href="#course-registration" title="Permalink to this headline">#</a></h2>
+<p>For general course registration, please refer to the <a class="reference external" href="https://student.uva.nl/en/topics/course-registration">UvA document</a>.
+The Faculty of Science handles registration procedures.
+I do not handle course registration matters.
+If you want to register for the course but you are late, or if you have problems signing up for the course, please get in touch with the following email: <a class="reference external" href="mailto:vakaanmelding-fnwi&#37;&#52;&#48;uva&#46;nl">vakaanmelding-fnwi<span>&#64;</span>uva<span>&#46;</span>nl</a></p>
+</section>
+<section id="course-attendance">
+<h2>Course Attendance<a class="headerlink" href="#course-attendance" title="Permalink to this headline">#</a></h2>
+<p>I do not track the attendance of my courses and expect students to follow their own learning progress.
+You do not need to notify me in case of absence.</p>
+</section>
+<section id="fraud-and-plagiarism">
+<h2>Fraud and Plagiarism<a class="headerlink" href="#fraud-and-plagiarism" title="Permalink to this headline">#</a></h2>
+<p>This course follows the <a class="reference external" href="https://student.uva.nl/en/topics/plagiarism-and-fraud">UvA Fraud and Plagiarism Regulations</a>.
+When in doubt, please consult the “Regulations Governing Fraud and Plagiarism for UvA Students” document in <a class="reference external" href="https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Rules-and-regulations">this UvA link</a>.</p>
+</section>
+<section id="communication-principles">
+<h2>Communication Principles<a class="headerlink" href="#communication-principles" title="Permalink to this headline">#</a></h2>
+<p>Class members are expected to treat others with mutual respect and appreciation regardless of any differences.
+It is my intent that students from all diverse backgrounds and perspectives be well served by the course.</p>
+<p>The best ways to contact TAs and me outside the lectures and work sessions are via email (which will be listed on Canvas) or the Canvas discussion board.
+Please keep in mind that responses from TAs and me could be delayed due to weekends or holidays.</p>
+<p>All course announcements will be on Canvas.
+I expect students to monitor Canvas periodically for any changes in deadlines, or any other announcements.</p>
+<div class="admonition-moving-the-discussion-at-the-speed-of-trust admonition">
+<p class="admonition-title">Moving the Discussion at the Speed of Trust</p>
+<p>In group discussions and practical sessions, please follow the principles below:</p>
+<ul class="simple">
+<li><p>Practice mutual respect</p></li>
+<li><p>Be an active listener</p></li>
+<li><p>Do not make assumptions, ask questions</p></li>
+<li><p>Suspend judgment</p></li>
+<li><p>Invite and honor the diverse range of opinions and experiences</p></li>
+</ul>
+</div>
+</section>
+<section id="academic-code-of-conduct">
+<h2>Academic Code of Conduct<a class="headerlink" href="#academic-code-of-conduct" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>OK to discuss assignments with classmates</p></li>
+<li><p>OK to use existing solutions as part of your projects or assignments (but you need to clarify your contributions and cite the source properly)</p></li>
+<li><p>OK to publish your project portfolio (e.g., source code) after the course is over</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">OK</span></code> to ask someone to do assignments or projects for you</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">OK</span></code> to copy solutions or written content from classmates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">OK</span></code> to pretend that someone’s solution or idea is yours</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">OK</span></code> to post solutions for your assignment or course exams online</p></li>
+<li><p>ASK the teaching team if unsure</p></li>
+</ul>
+</section>
+<section id="support-for-students-wellness">
+<h2>Support for Students Wellness<a class="headerlink" href="#support-for-students-wellness" title="Permalink to this headline">#</a></h2>
+<p>If you experience mental health concerns or stressful events that can interfere with learning and daily activities (such as strained relationships, increased anxiety, substance use, feeling down, difficulty concentrating, and lack of motivation), UvA services are available.
+You can learn more about (confidential) mental health services available on campus in <a class="reference external" href="https://student.uva.nl/en/topics/mental-health">this UvA link</a>.</p>
+</section>
+<section id="accommodations-for-students-with-disabilities">
+<h2>Accommodations for Students with Disabilities<a class="headerlink" href="#accommodations-for-students-with-disabilities" title="Permalink to this headline">#</a></h2>
+<p>If you have a disability and require accommodations, please take a look at <a class="reference external" href="https://student.uva.nl/en/topics/studying-with-a-disability-dyslexia-or-chronic-illness">this UvA link</a> to request special facilities or additional resources.</p>
+</section>
+<section id="other-resources">
+<h2>Other Resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">#</a></h2>
+<p>This course uses the following resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/">Book in Advanced Data Analysis from an Elementary Point of View</a></p></li>
+<li><p><a class="reference external" href="https://inferentialthinking.com/">Notes of the Data 8 course in UC Berkeley</a></p></li>
+<li><p><a class="reference external" href="https://notes.dsc10.com/">Notes of the DSC 10 course in UC San Diego</a></p></li>
+<li><p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></p></li>
+<li><p><a class="reference external" href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed">Book of Human-Computer Interaction Concepts</a></p></li>
+</ul>
+<p>Also, there are other resources for self-learning:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb">Data Science Learning Resources</a></p></li>
+</ul>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
+<p>The course instructors greatly thank the following open-sourced courses for inspiring the set-up of this course:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ml4design.github.io">Machine Learning for Design, TU Delft</a></p></li>
+<li><p><a class="reference external" href="https://data-8.github.io/">Data 8: The Foundations of Data Science, UC Berkeley</a></p></li>
+<li><p><a class="reference external" href="https://dsc10.com/">DSC 10: Principles of Data Science, UC San Diego</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="home.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Course Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="lectures/lec-1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 1: Introduction</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yen-Chia Hsu<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
