@@ -72,27 +72,32 @@ Week 8 only has the final exam (no lectures nor practical sessions).
 Below is the outline of weekly activities:
 
 - Week 1
-  - Lecture 1: Introduce the course and explain why data science is important using examples
-  - Lecture 2: Recap general data science pipelines and techniques (e.g., basic statistics, basic machine learning concepts)
-  - Practical Session: Structured Data Processing Module
+  - Lecture 1: Introduce the course and recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts)
+  - Assignment 1 (work session): Warm-up of Python programming using pandas
+  - Lecture 2: Explain the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
 - Week 2
-  - Lecture 3 & 4: Explain the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
-  - Practical Session: Structured Data Processing Module
+  - Lecture 3: Tutorial for the structured data processing module
+  - Assignment 2 (work session): Structured data processing module
+  - Lecture 4: Explain the pipeline of processing text data (e.g., topic modeling)
 - Week 3
-  - Lecture 5 & 6: Explain the pipeline of processing text data (e.g., topic modeling)
-  - Practical Session: Text Data Processing Module
+  - Lecture 5: Tutorial for the text data processing module
+  - Assignment 3 (work session): Text data processing module
+  - Lecture 6: Explain the pipeline of processing image data (e.g., object recognition and detection)
 - Week 4
   - Mid-term Exam
   - A lecture to discuss the mid-term exam
 - Week 5
-  - Lecture 7 & 8: Explain the pipeline of processing image data (e.g., object recognition and detection)
-  - Practical Session: Text Data Processing Module
+  - Lecture 7: Tutorial for the image data processing module
+  - Assignment 4 (work session): Image data processing module
+  - Lecture 8: Introduce the human-centered approach in data science (e.g., research ethics, privacy issues, data biases, social impact of data science, algorithmic     fairness, explainability, reproducibility, open science)
 - Week 6
-  - Lecture 9 & 10: Introduce the human-centered approach in data science (e.g., research ethics, privacy issues, data biases, social impact of data science, algorithmic fairness, explainability, reproducibility, open science)
-  - Practical Session: Image Data Processing Module
+  - Lecture 9: Continue the topics in lecture 8
+  - Assignment 5 (work session): TBA
+  - Lecture 10: Provide practical tips for data science (e.g., websites for searching public datasets, ways of scraping data online, techniques of annotating data,     code management using Git and GitHub, best practices of writing good code, techniques of documenting projects such as GitHub Pages and Jupyter Book)
 - Week 7
-  - Lecture 11 & 12: Provide practical tips for data science (e.g., websites for searching public datasets, ways of scraping data online, techniques of annotating data, code management using Git and GitHub, best practices of writing good code, techniques of documenting projects such as GitHub Pages and Jupyter Book)
-  - Practical Session: Image Data Processing Module
+  - Lecture 11: Continue the topics in lecture 10
+  - Assignment 6 (work session): TBA
+  - Lecture 12: TBA (plan for a guest lecture)
 - Week 8
   - Final Exam
 

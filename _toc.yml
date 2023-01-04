@@ -9,7 +9,7 @@ parts:
   - file: docs/lectures/lec-1
     title: "L1: Introduction"
   - file: docs/lectures/lec-2
-    title: "L2: Recap"
+    title: "L2: Data Science Fundamentals"
   - file: docs/lectures/lec-3
     title: "L3: Structured Data Processing I"
   - file: docs/lectures/lec-4
