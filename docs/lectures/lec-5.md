@@ -1,4 +1,4 @@
-# Lecture 5: Text Data Processing (Part I)
+# Lecture 5: Practical Tips for Data Science
 
 ## Preparation
 

@@ -1,4 +1,4 @@
-# Lecture 10: Human-Centered Approach in Data Science (Part II)
+# Lecture 10: Image Data Processing (Part II)
 
 ## Preparation
 

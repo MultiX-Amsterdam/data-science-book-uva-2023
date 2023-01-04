@@ -4,6 +4,9 @@
 format: jb-book
 root: docs/home
 parts:
+- caption:
+  chapters:
+  - file: docs/syllabus
 - caption: Lectures
   chapters:
   - file: docs/lectures/lec-1
@@ -15,35 +18,53 @@ parts:
   - file: docs/lectures/lec-4
     title: "L4: Structured Data Processing II"
   - file: docs/lectures/lec-5
-    title: "L5: Text Data Processing I"
+    title: "L5: Practical Tips"
   - file: docs/lectures/lec-6
-    title: "L6: Text Data Processing II"
+    title: "L6: TBA"
   - file: docs/lectures/lec-7
-    title: "L7: Image Data Processing I"
+    title: "L7: Text Data Processing I"
   - file: docs/lectures/lec-8
-    title: "L8: Image Data Processing II"
+    title: "L8: Text Data Processing II"
   - file: docs/lectures/lec-9
-    title: "L9: Human-Centered Approach I"
+    title: "L9: Image Data Processing I"
   - file: docs/lectures/lec-10
-    title: "L10: Human-Centered Approach II"
+    title: "L10: Image Data Processing II"
   - file: docs/lectures/lec-11
-    title: "L11: Practical Tips I"
+    title: "L11: Human-Centered Approach"
   - file: docs/lectures/lec-12
-    title: "L12: Practical Tips II"
+    title: "L12: TBA"
 - caption: Modules
   chapters:
   - file: docs/modules/structured-data/overview-structured-data
+    title: "Structured Data Processing"
     sections:
     - file: docs/modules/structured-data/preparation-structured-data
+      title: "Preparation"
     - file: docs/modules/structured-data/tutorial-structured-data
+      title: "Tutorial"
     - file: docs/modules/structured-data/assignment-structured-data
+      title: "Assignment"
   - file: docs/modules/text-data/overview-text-data
     sections:
     - file: docs/modules/text-data/preparation-text-data
+      title: "Preparation"
     - file: docs/modules/text-data/tutorial-text-data
+      title: "Tutorial"
     - file: docs/modules/text-data/assignment-text-data
+      title: "Assignment"
   - file: docs/modules/image-data/overview-image-data
     sections:
     - file: docs/modules/image-data/preparation-image-data
+      title: "Preparation"
     - file: docs/modules/image-data/tutorial-image-data
+      title: "Tutorial"
     - file: docs/modules/image-data/assignment-image-data
+      title: "Assignment"
+- caption: Others
+  chapters:
+  - file: docs/others/warm-up
+    title: "Warm-up Python Coding"
+  - file: docs/others/mockup-exam-1
+    title: "Mockup Mid-term Exam"
+  - file: docs/others/mockup-exam-2
+    title: "Mockup Final Exam"

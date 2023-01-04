@@ -1,4 +1,4 @@
-# Lecture 12: Practical Tips for Data Science (Part II)
+# Lecture 12: TBA
 
 ## Preparation
 

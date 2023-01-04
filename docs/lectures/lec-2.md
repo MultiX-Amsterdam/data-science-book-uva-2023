@@ -1,4 +1,4 @@
-# Lecture 2: Recap of Data Science Fundamentals
+# Lecture 2: Data Science Fundamentals
 
 ## Preparation
 
