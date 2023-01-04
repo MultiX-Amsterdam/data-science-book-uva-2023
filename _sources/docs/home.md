@@ -31,7 +31,7 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 1
   - [Lecture 1](lectures/lec-1): Introduce the course and explain why data science is important using examples
   - [Assignment 1](others/warm-up) (work session and self-study): Python programming warm-up (e.g., pandas, numpy, scipy)
-  - Lecture 2: Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
+  - [Lecture 2](lectures/lec-2): Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
 - Week 2
   - Lecture 3: `Tutorial` for the structured data processing module (using Jupyter Notebook)
   - Assignment 2 (work session and self-study): Structured data processing module

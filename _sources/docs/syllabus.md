@@ -117,7 +117,7 @@ All course announcements will be on Canvas.
 I expect students to monitor Canvas periodically for any changes in deadlines, or any other announcements.
 
 :::{admonition} Moving the Discussion at the Speed of Trust
-In group discussions and practical sessions, please follow the principles below:
+In group discussions, lectures, and all the sessions, please follow the principles below:
 - Practice mutual respect
 - Be an active listener
 - Do not make assumptions, ask questions
