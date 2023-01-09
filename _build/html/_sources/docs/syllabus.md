@@ -103,11 +103,13 @@ You can use the online lecture live stream, the lecture recordings, and the Canv
 ## Course Registration
 
 For general course registration, please refer to the [UvA document](https://student.uva.nl/en/topics/course-registration).
-For example, if you want to change groups, please refer to the instruction in the document to submit a request to the GLASS system.
-
 The Faculty of Science handles registration procedures.
 I do not handle course registration matters.
 If you want to register for the course but you are late, or if you have problems signing up for the course, please get in touch with the following email: vakaanmelding-fnwi@uva.nl
+
+## Change Groups
+
+The course groups are automatically assigned. I understand that people can have preferences in the work sessions. If you need to change groups, please refer to the instruction in the [course registration document](https://student.uva.nl/en/topics/course-registration) to submit a request to the GLASS system.
 
 ## Course Attendance
 
