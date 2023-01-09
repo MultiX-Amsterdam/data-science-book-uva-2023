@@ -80,7 +80,7 @@ Then, the notebooks that you handed in will be auto-graded with test cases using
 We will provide mock-up exam notebooks and test cases for you to practice.
 
 :::{warning}
-We are still working on deciding and figure out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
+We are still working on deciding and figuring out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
 But for now, you should assume that you will have no internet access during the exams.
 :::
 
