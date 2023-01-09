@@ -1,5 +1,7 @@
 # Course Syllabus
 
+(Last updated: Jan 9, 2023)
+
 :::{admonition} What is data science?
 :class: tip
 Data science is about turning rich data into **actionable insight** and making data **impactful**!
@@ -15,6 +17,10 @@ It is important to keep in mind that this course does not aim to teach you detai
 Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task.
 Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world.
 Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
+
+:::{note}
+Notice that the course instructor writes the syllabus from the first-person perspective.
+:::
 
 ## Learning Goals
 
@@ -88,16 +94,24 @@ We expect you to do the assignments by yourself and discuss them with the TAs in
 The questions in mid-term and final exams will have similar questions as those in the assignments.
 Doing the assignments will also help you greatly in preparing for the exams.
 
+## Hygiene
+
+Please follow [the advice from RIVM](https://www.rivm.nl/en/coronavirus-covid-19/recommendations-companies-and-institutions) (National Institute for Public Health and the Environment) regarding coronavirus measures.
+If you have symptoms associated with COVID-19, please stay home.
+You can use the online lecture live stream, the lecture recordings, and the Canvas discussion board to participate in the course, as documented in the [virtual/physical settings](#virtual-physical-settings) and [communication principles](#communication-principles).
+
 ## Course Registration
 
 For general course registration, please refer to the [UvA document](https://student.uva.nl/en/topics/course-registration).
+For example, if you want to change groups, please refer to the instruction in the document to submit a request to the GLASS system.
+
 The Faculty of Science handles registration procedures.
 I do not handle course registration matters.
 If you want to register for the course but you are late, or if you have problems signing up for the course, please get in touch with the following email: vakaanmelding-fnwi@uva.nl
 
 ## Course Attendance
 
-I do not track the attendance of my courses and expect students to follow their own learning progress.
+I do not track the attendance of my courses (e.g., lectures, work sessions) and expect students to follow their own learning progress.
 You do not need to notify me in case of absence.
 
 ## Fraud and Plagiarism
