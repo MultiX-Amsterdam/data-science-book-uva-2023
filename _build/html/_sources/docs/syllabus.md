@@ -74,7 +74,7 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 Your final grade is based only on exams (the mid-term exam is 50% weight, and the final exam is also 50% weight).
 There is a resit for the course (100% weight).
 
-The mid-term and final exams are all based on coding questions, which are designed to test your knowledge in different parts of the data science pipeline.
+The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
 Then, the notebooks that you handed in will be auto-graded with test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
 We will provide mock-up exam notebooks and test cases for you to practice.
