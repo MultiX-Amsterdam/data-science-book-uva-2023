@@ -1,7 +1,5 @@
 # Course Syllabus
 
-(Last updated: Jan 9, 2023)
-
 :::{admonition} What is data science?
 :class: tip
 Data science is about turning rich data into **actionable insight** and making data **impactful**!
@@ -17,10 +15,6 @@ It is important to keep in mind that this course does not aim to teach you detai
 Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task.
 Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world.
 Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
-
-:::{note}
-Notice that the course instructor writes the syllabus from the first-person perspective.
-:::
 
 ## Learning Goals
 
@@ -74,13 +68,13 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 Your final grade is based only on exams (the mid-term exam is 50% weight, and the final exam is also 50% weight).
 There is a resit for the course (100% weight).
 
-The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
+The mid-term and final exams are all based on coding questions, which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
 Then, the notebooks that you handed in will be auto-graded with test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
 We will provide mock-up exam notebooks and test cases for you to practice.
 
 :::{warning}
-We are still working on deciding and figuring out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
+We are still working with the ICT team to figure out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
 But for now, you should assume that you will have no internet access during the exams.
 :::
 
@@ -89,16 +83,19 @@ You can choose to handwrite or print the content on both sides of the cheat shee
 Please keep in mind that you are not allowed to bring other materials, such as books.
 You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
 
+:::{note}
+During the exams, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
+:::
+
+:::{warning}
+Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
+Please pay attention to the question instructions.
+:::
+
 Assignments are not graded, but you should do them as they are essential in improving your data science skills.
 We expect you to do the assignments by yourself and discuss them with the TAs in working sessions.
 The questions in mid-term and final exams will have similar questions as those in the assignments.
 Doing the assignments will also help you greatly in preparing for the exams.
-
-## Hygiene
-
-Please follow [the advice from RIVM](https://www.rivm.nl/en/coronavirus-covid-19/recommendations-companies-and-institutions) (National Institute for Public Health and the Environment) regarding coronavirus measures.
-If you have symptoms associated with COVID-19, please stay home.
-You can use the online lecture live stream, the lecture recordings, and the Canvas discussion board to participate in the course, as documented in the [virtual/physical settings](#virtual-physical-settings) and [communication principles](#communication-principles).
 
 ## Course Registration
 
@@ -107,13 +104,9 @@ The Faculty of Science handles registration procedures.
 I do not handle course registration matters.
 If you want to register for the course but you are late, or if you have problems signing up for the course, please get in touch with the following email: vakaanmelding-fnwi@uva.nl
 
-## Change Groups
-
-The course groups are automatically assigned. I understand that people can have preferences in the work sessions. If you need to change groups, please refer to the instruction in the [course registration document](https://student.uva.nl/en/topics/course-registration) to submit a request to the GLASS system.
-
 ## Course Attendance
 
-I do not track the attendance of my courses (e.g., lectures, work sessions) and expect students to follow their own learning progress.
+I do not track the attendance of my courses and expect students to follow their own learning progress.
 You do not need to notify me in case of absence.
 
 ## Fraud and Plagiarism
