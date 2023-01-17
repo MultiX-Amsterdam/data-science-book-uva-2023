@@ -54,7 +54,7 @@ If you come to the class without doing the preparation part, you may not be able
   - Lecture 10 (Mar 16): Explain details and more examples in the pipeline of processing image data (e.g., object recognition and detection)
 - Week 7
   - Lecture 11 (Mar 21): Introduce the human-centered approach in data science (e.g., human-centered metrics to evaluate models, human-in-the-loop machine learning, citizen participation in data analysis, research ethics, privacy issues, data biases, social impact of data science, algorithmic fairness, explainability, reproducibility, open science)
-  - No assignment this week. Use the work session to review and practice the materials.
+  - No assignment this week. Use the work session to prepare the final exam (e.g., review and practice the course materials).
   - Lecture 12 (Mar 23): Guest lecture by [Dr. Jie Yang](https://yangjiera.github.io) (an assistant professor from TU Delft EWI) to give examples and talk about state-of-the-art research in Human-Centered AI. This lecture may be given physically or remotely.
 - Week 8
   - Final Exam
