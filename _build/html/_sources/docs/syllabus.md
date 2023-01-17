@@ -175,13 +175,14 @@ If you have a disability and require accommodations, please take a look at [this
 
 This course uses the following resources:
 - [Book in Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
-- [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
-- [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
 
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
+- [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
+- [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
+- [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 
 ## Acknowledgements
 
@@ -189,3 +190,5 @@ The course instructors greatly thank the following open-sourced courses for insp
 - [Machine Learning for Design, TU Delft](https://ml4design.github.io)
 - [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/)
 - [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/)
+- [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
+- [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
