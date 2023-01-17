@@ -57,7 +57,7 @@ Modules are designed to have you work to have hands-on experiences.
 
 In principle, I will give the lecture in person in the physical classroom.
 I will open a virtual classroom link to live stream the lectures (refer to Canvas for the links).
-If I cannot give the physical lecture due to expected situations, I will make an announcement on Canvas to give the lecture in the virtual classroom.
+If I cannot give the physical lecture due to unexpected situations, I will make an announcement on Canvas to give the lecture in the virtual classroom.
 
 It is important to notice that when I give the lecture in the physical classroom, the virtual classroom will be muted and not be actively monitored.
 It is very challenging for me to pay attention to both the physical and virtual audiences, and priority will be given to people who attend the physical classroom.
@@ -72,7 +72,7 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 ## Grading: Exams and Assignments
 
 Your final grade is based only on exams (the mid-term exam is 50% weight, and the final exam is also 50% weight).
-There is a resit for the course (100% weight).
+There is a resit for the course.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
@@ -99,7 +99,7 @@ Please pay attention to the question instructions.
 :::
 
 Assignments are not graded, but you should do them as they are essential in improving your data science skills.
-We expect you to do the assignments by yourself and discuss them with the TAs in working sessions.
+We expect you to do the assignments by yourself and discuss them with the TAs in the work sessions.
 The questions in mid-term and final exams will have similar questions as those in the assignments.
 Doing the assignments will also help you greatly in preparing for the exams.
 
@@ -119,11 +119,11 @@ If you want to register for the course but you are late, or if you have problems
 ## Change Groups
 
 The course groups are automatically assigned.
-If you need to change groups, please refer to the instruction in the [course registration document](https://student.uva.nl/en/topics/course-registration) to submit a request to the GLASS system.
+If you need to change groups, please refer to the instruction in the [course registration document](https://student.uva.nl/en/topics/course-registration) to submit a request using the GLASS system.
 
 ## Course Attendance
 
-I do not track the attendance of my courses (e.g., lectures, work sessions) and expect students to follow their own learning progress.
+I do not track the attendance of this course (e.g., lectures, work sessions) and expect students to follow their own learning progress.
 You do not need to notify me in case of absence.
 
 ## Fraud and Plagiarism
@@ -136,7 +136,7 @@ When in doubt, please consult the “Regulations Governing Fraud and Plagiarism 
 Class members are expected to treat others with mutual respect and appreciation regardless of any differences.
 It is my intent that students from all diverse backgrounds and perspectives be well served by the course.
 
-The best ways to contact TAs and me outside the lectures and work sessions are via email (which will be listed on Canvas) or the Canvas discussion board.
+The best ways to contact TAs and me outside the lectures and work sessions are via email or the Canvas discussion board.
 Please keep in mind that responses from TAs and me could be delayed due to weekends or holidays.
 
 All course announcements will be on Canvas.
