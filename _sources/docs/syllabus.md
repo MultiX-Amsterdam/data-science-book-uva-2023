@@ -73,7 +73,7 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 
 Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
 There is a resit for the course.
-According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
+According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome (which means the resit score always override the previous score).
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
