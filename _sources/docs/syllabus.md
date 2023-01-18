@@ -71,7 +71,7 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 
 ## Grading: Exams and Assignments
 
-Your final grade is based only on exams (the mid-term exam is 50% weight, and the final exam is also 50% weight).
+Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
 There is a resit for the course.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
@@ -186,7 +186,8 @@ Also, there are other resources for self-learning:
 
 ## Acknowledgements
 
-The course instructors greatly thank the following open-sourced courses for inspiring the set-up of this course:
+We greatly appreciate the help from the teaching administration and management team of the UvA Informatics Institute in supporting this course.
+We also greatly thank the following open-sourced courses for inspiring the set-up of this course:
 - [Machine Learning for Design, TU Delft](https://ml4design.github.io)
 - [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/)
 - [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/)
