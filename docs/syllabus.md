@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Jan 17, 2023)
+(Last updated: Jan 22, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -32,9 +32,9 @@ By the end of the course, we expect you to be able to:
 ## Prerequisites
 
 This course expects you to have the following prior knowledge:
-- Advanced level of Python programming (e.g., knowing different data types and data structures, knowing how to set up the Jupyter Notebook programming environment)
-- Intermediate level of machine learning (e.g., knowing what supervised and unsupervised learning means, recognizing that a "random forest" is not just a forest in some random places, understanding the differences between classification and regression)
-- Intermediate level of information visualization (e.g., knowing how to draw various plots using python packages, understanding the differences between a bar chart and histogram)
+- Intermediate level of Python programming (e.g., knowing different data types and data structures, knowing how to set up the Jupyter Notebook programming environment)
+- Basic level of machine learning (e.g., knowing what supervised and unsupervised learning means, understanding the differences between classification and regression)
+- Basic level of information visualization (e.g., knowing how to draw plots using python packages, understanding the differences between a bar chart and histogram)
 - Basic level of research methods (e.g., knowing what "research questions" mean, understanding basic hypothesis testing methods like t-test)
 
 ## Course Structure
@@ -72,8 +72,11 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 ## Grading: Exams and Assignments
 
 Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
-There is a resit for the course.
-According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome (which means the resit score always override the previous score).
+There is one resit for the course, which counts as 100% weight.
+According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
+This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
+Based on the UvA rule above, the teaching team will determine the result of an exam within 20 working days.
+After the grade is released, students have the right to inspect their own exam result within 20 working days.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
