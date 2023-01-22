@@ -187,6 +187,7 @@ Also, there are other resources for self-learning:
 - [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
 - [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
+- [Deep Learning Book](https://www.deeplearningbook.org)
 
 ## Acknowledgements
 
