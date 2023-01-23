@@ -75,9 +75,10 @@ Your final grade is based only on exams (the mid-term exam is 40% weight, and th
 There is one resit for the course, which counts as 100% weight.
 According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
 This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
-Based on the UvA rule above, the teaching team will determine the result of an exam within 20 working days.
-After the grade is released, students have the right to inspect their own exam result within 20 working days.
 According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
+
+After each exam, the teaching team will grade the exam and release the grades within 20 working days.
+After the grade is released, we will announce on Canvas how students can inspect their exam results.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
