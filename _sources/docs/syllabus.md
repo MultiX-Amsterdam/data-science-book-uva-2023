@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Jan 22, 2023)
+(Last updated: Jan 23, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -77,6 +77,7 @@ According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regul
 This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
 Based on the UvA rule above, the teaching team will determine the result of an exam within 20 working days.
 After the grade is released, students have the right to inspect their own exam result within 20 working days.
+According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
