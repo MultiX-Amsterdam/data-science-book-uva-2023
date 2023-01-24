@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Jan 23, 2023)
+(Last updated: Jan 24, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -71,23 +71,33 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 
 ## Grading: Exams and Assignments
 
+Exam instructions and materials will all be in English.
+
 Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
 There is one resit for the course, which counts as 100% weight.
 According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
 This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
-According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 
+According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 After each exam, the teaching team will grade the exam and release the grades within 20 working days.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
-Then, the notebooks that you handed in will be auto-graded with test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
-We will provide mock-up exam notebooks and test cases for you to practice.
+Then, the notebooks that you handed in will be auto-graded with hidden test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
+We will provide mock-up exam notebooks and visible test cases for you to practice.
 
 :::{warning}
-We are still working on deciding and figuring out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
-But for now, you should assume that you will have no internet access during the exams.
+Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
+Please pay attention to the question instructions.
+``Using the restricted functions will result in a 0 score for the corresponding question.``
+:::
+
+:::{warning}
+Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).
+``We do not give scores to failed test cases or syntax errors.``
+Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
+We will provide test cases in the exam Jupyter notebook for you to self-check.
 :::
 
 During the mid-term and final exams, you may bring an A4-size cheat sheet with you.
@@ -96,12 +106,8 @@ Please keep in mind that you are not allowed to bring other materials, such as b
 You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
 
 :::{note}
-During the exams, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
-:::
-
-:::{warning}
-Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
-Please pay attention to the question instructions.
+You will have no internet access during the exams.
+However, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
 :::
 
 Assignments are not graded, but you should do them as they are essential in improving your data science skills.

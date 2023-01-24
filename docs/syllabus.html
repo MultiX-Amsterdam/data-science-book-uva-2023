@@ -545,7 +545,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="course-syllabus">
 <h1>Course Syllabus<a class="headerlink" href="#course-syllabus" title="Permalink to this headline">#</a></h1>
-<p>(Last updated: Jan 23, 2023)</p>
+<p>(Last updated: Jan 24, 2023)</p>
 <div class="tip admonition">
 <p class="admonition-title">What is data science?</p>
 <p>Data science is about turning rich data into <strong>actionable insight</strong> and making data <strong>impactful</strong>!</p>
@@ -611,21 +611,30 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 </section>
 <section id="grading-exams-and-assignments">
 <h2>Grading: Exams and Assignments<a class="headerlink" href="#grading-exams-and-assignments" title="Permalink to this headline">#</a></h2>
+<p>Exam instructions and materials will all be in English.</p>
 <p>Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
 There is one resit for the course, which counts as 100% weight.
 According to the <a class="reference external" href="https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations">UvA rule</a>, the most recent grade will apply in the event of a resit regardless of the outcome.
-This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
-According to the <a class="reference external" href="https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer">OER rule</a>, you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.</p>
-<p>After each exam, the teaching team will grade the exam and release the grades within 20 working days.
+This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.</p>
+<p>According to the <a class="reference external" href="https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer">OER rule</a>, you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
+After each exam, the teaching team will grade the exam and release the grades within 20 working days.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.</p>
 <p>The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
-Then, the notebooks that you handed in will be auto-graded with test cases using the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/index.html">nbgrader package</a>.
-We will provide mock-up exam notebooks and test cases for you to practice.</p>
+Then, the notebooks that you handed in will be auto-graded with hidden test cases using the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/index.html">nbgrader package</a>.
+We will provide mock-up exam notebooks and visible test cases for you to practice.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>We are still working on deciding and figuring out if it is possible to allow students to have access to some API websites (e.g., pandas, numpy, scipy) during the exams.
-But for now, you should assume that you will have no internet access during the exams.</p>
+<p>Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
+Please pay attention to the question instructions.
+<code class="docutils literal notranslate"><span class="pre">Using</span> <span class="pre">the</span> <span class="pre">restricted</span> <span class="pre">functions</span> <span class="pre">will</span> <span class="pre">result</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">0</span> <span class="pre">score</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">corresponding</span> <span class="pre">question.</span></code></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).
+<code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">give</span> <span class="pre">scores</span> <span class="pre">to</span> <span class="pre">failed</span> <span class="pre">test</span> <span class="pre">cases</span> <span class="pre">or</span> <span class="pre">syntax</span> <span class="pre">errors.</span></code>
+Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
+We will provide test cases in the exam Jupyter notebook for you to self-check.</p>
 </div>
 <p>During the mid-term and final exams, you may bring an A4-size cheat sheet with you.
 You can choose to handwrite or print the content on both sides of the cheat sheet.
@@ -633,12 +642,8 @@ Please keep in mind that you are not allowed to bring other materials, such as b
 You are also not allowed to bring or use any other digital devices (besides the computer for the exam).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>During the exams, you can use the question mark “?” syntax to <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help">access the IPython help</a> to check the documentation of functions.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
-Please pay attention to the question instructions.</p>
+<p>You will have no internet access during the exams.
+However, you can use the question mark “?” syntax to <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help">access the IPython help</a> to check the documentation of functions.</p>
 </div>
 <p>Assignments are not graded, but you should do them as they are essential in improving your data science skills.
 We expect you to do the assignments by yourself and discuss them with the TAs in the work sessions.
