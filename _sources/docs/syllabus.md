@@ -105,6 +105,11 @@ You can choose to handwrite or print the content on both sides of the cheat shee
 Please keep in mind that you are not allowed to bring other materials, such as books.
 You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
 
+:::{warning}
+You must hand in the cheat sheet immediately after the exam.
+``It is not allowed to take the cheat sheet back with you.``
+:::
+
 :::{note}
 You will have no internet access during the exams.
 However, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
