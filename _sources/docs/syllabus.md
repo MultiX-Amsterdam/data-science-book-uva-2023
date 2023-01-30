@@ -116,8 +116,9 @@ However, you can use the question mark "?" syntax to [access the IPython help](h
 :::
 
 Assignments are not graded, but you should do them as they are essential in improving your data science skills.
+You also do not need to submit the assignments.
 We expect you to do the assignments by yourself and discuss them with the TAs in the work sessions.
-The questions in mid-term and final exams will have similar questions as those in the assignments.
+The questions in mid-term and final exams can have similar questions as those in the assignments.
 Doing the assignments will also help you greatly in preparing for the exams.
 
 ## Hygiene
