@@ -39,7 +39,7 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 3
   - Lecture 5 (Feb 21): Provide practical tips for data science (e.g., websites for searching public datasets, ways of scraping data online, techniques of annotating data,     code management using Git and GitHub, best practices of writing good code, techniques of documenting projects such as GitHub Pages and Jupyter Book)
   - Assignment 3 (work session and self-study): Practice mock-up exam
-  - Lecture 6 (Feb 23): TBA (continue lecture 5 or have a guest lecture)
+  - Lecture 6 (Feb 23): Continue other topics in lecture 5
 - Week 4
   - Mid-term Exam
   - A lecture to discuss the mid-term exam
