@@ -198,11 +198,14 @@ If you have a disability and require accommodations, please take a look at [this
 ## Other Resources
 
 This course uses the following resources:
-- [Book in Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
+- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [book](https://columbia-applied-data-science.github.io/appdatasci.pdf)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
 
 Also, there are other resources for self-learning:
+- [Mathematics for Machine Learning](https://mml-book.github.io/) and the [book](https://mml-book.github.io/book/mml-book.pdf)
+- [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [book](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
+- [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
 - [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
 - [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
@@ -211,6 +214,11 @@ Also, there are other resources for self-learning:
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
 - [Introduction to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
 - [Introduction to Numpy](https://sebastianraschka.com/blog/2020/numpy-intro.html)
+
+Below are data science (or machine learning) case studies and examples:
+- [Case Studies of Data Visualization](https://flowingdata.com/)
+- [Case Studies of Satelite Image Analysis](https://earthengine.google.com/case_studies/)
+- [Case Studies of Machine Learning and Design](https://machinelearning.design/)
 
 ## Acknowledgements
 
