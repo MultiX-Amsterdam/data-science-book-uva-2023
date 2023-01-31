@@ -37,5 +37,8 @@ launch_buttons:
   colab_url: "https://colab.research.google.com"
   jupyterhub_url: ""
 
+# Exclude files
+#exclude_patterns: [template/*]
+
 # Other flags
 only_build_toc_files: true

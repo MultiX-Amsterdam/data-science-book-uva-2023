@@ -2,12 +2,14 @@
 
 ## Preparation
 
-No preparation for the first lecture.
+- No preparation for the first lecture.
 
 ## Slides
 
-TBA
+- [Lecture 1-1: Course Introduction and Organization]()
+- [Lecture 1-2: Social Impact of Data Science]()
 
 ## Additional Materials
 
-- [Case Studies of Satelite Image Analysis](https://earthengine.google.com/case_studies/)
+- [What Is Data Science?](https://jakevdp.github.io/PythonDataScienceHandbook/00.00-preface.html)
+- [Empowering Local Communities Using Artificial Intelligence](https://doi.org/10.1016/j.patter.2022.100449)
