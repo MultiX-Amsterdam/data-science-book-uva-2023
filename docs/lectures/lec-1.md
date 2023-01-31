@@ -2,7 +2,7 @@
 
 ## Preparation
 
-TBA
+No preparation for the first lecture.
 
 ## Slides
 
@@ -10,4 +10,4 @@ TBA
 
 ## Additional Materials
 
-TBA
+- [Case Studies of Satelite Image Analysis](https://earthengine.google.com/case_studies/)

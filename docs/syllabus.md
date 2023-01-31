@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Jan 24, 2023)
+(Last updated: Jan 30, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -71,8 +71,6 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 
 ## Grading: Exams and Assignments
 
-Exam instructions and materials will all be in English.
-
 Your final grade is based only on exams (the mid-term exam is 40% weight, and the final exam is 60% weight).
 There is one resit for the course, which counts as 100% weight.
 According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
@@ -81,6 +79,10 @@ This means that if you take the resit, your resit score will override the weight
 According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 After each exam, the teaching team will grade the exam and release the grades within 20 working days.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.
+
+### Exams
+
+Exam instructions and materials will all be in English.
 
 The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
 We will provide Jupyter notebooks during the exams with instructions.
@@ -115,6 +117,10 @@ You will have no internet access during the exams.
 However, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
 :::
 
+### Assignments
+
+Assignment instructions and materials will all be in English.
+
 Assignments are not graded, but you should do them as they are essential in improving your data science skills.
 You also do not need to submit the assignments.
 We expect you to do the assignments by yourself and discuss them with the TAs in the work sessions.
@@ -125,7 +131,7 @@ Doing the assignments will also help you greatly in preparing for the exams.
 
 Please follow [the advice from RIVM](https://www.rivm.nl/en/coronavirus-covid-19/recommendations-companies-and-institutions) (National Institute for Public Health and the Environment) regarding coronavirus measures.
 If you have symptoms associated with COVID-19, please stay home.
-You can use the online lecture live stream, the lecture recordings, and the Canvas discussion board to participate in the course, as documented in the [virtual/physical settings](#virtual-physical-settings) and [communication principles](#communication-principles).
+You can use the online lecture live stream, the lecture recordings, and TicketVise on Canvas to participate in the course, as documented in the [virtual/physical settings](#virtual-physical-settings) and [communication principles](#communication-principles).
 
 ## Course Registration
 
@@ -154,7 +160,7 @@ When in doubt, please consult the “Regulations Governing Fraud and Plagiarism 
 Class members are expected to treat others with mutual respect and appreciation regardless of any differences.
 It is my intent that students from all diverse backgrounds and perspectives be well served by the course.
 
-The best ways to contact TAs and me outside the lectures and work sessions are via email or the Canvas discussion board.
+The best ways to contact TAs and me outside the lectures and work sessions are via email or TicketVise (similar to the discussion board) on Canvas.
 Please keep in mind that responses from TAs and me could be delayed due to weekends or holidays.
 
 All course announcements will be on Canvas.
@@ -202,6 +208,9 @@ Also, there are other resources for self-learning:
 - [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 - [Deep Learning Book](https://www.deeplearningbook.org)
+- [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
+- [Introduction to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
+- [Introduction to Numpy](https://sebastianraschka.com/blog/2020/numpy-intro.html)
 
 ## Acknowledgements
 
