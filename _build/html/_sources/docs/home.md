@@ -37,7 +37,7 @@ If you come to the class without doing the preparation part, you may not be able
   - Assignment 2 (work session and self-study): Structured data processing module
   - Lecture 4 (Feb 16): Explain details and more examples in the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
 - Week 3
-  - Lecture 5 (Feb 21): Introduce deep learning techniques and applications
+  - Lecture 5 (Feb 21): Overview of deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
   - Lecture 6 (Feb 23): Introduce how to work with crowdscourcing platforms in data science research, such as annotating data
 - Week 4
