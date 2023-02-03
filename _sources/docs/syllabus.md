@@ -212,8 +212,6 @@ Also, there are other resources for self-learning:
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 - [Deep Learning Book](https://www.deeplearningbook.org)
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
-- [Introduction to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
-- [Introduction to Numpy](https://sebastianraschka.com/blog/2020/numpy-intro.html)
 
 Below are data science (or machine learning) case studies and examples:
 - [Case Studies of Data Visualization](https://flowingdata.com/)

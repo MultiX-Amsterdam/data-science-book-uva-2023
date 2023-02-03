@@ -29,17 +29,17 @@ If you come to the class without doing the preparation part, you may not be able
 :::
 
 - Week 1
-  - [Lecture 1 (Feb 7)](lectures/lec-1): Introduce the course and explain why data science is important using examples
-  - [Assignment 1](others/warm-up) (work session and self-study): Python programming warm-up (e.g., pandas, numpy, scipy)
-  - [Lecture 2 (Feb 9)](lectures/lec-2): Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
+  - [Lecture 1 (Feb 7)](lectures/lec1): Introduce the course and explain why data science is important using examples
+  - [Assignment 1](assignments/hw1) (work session and self-study): Python programming warm-up (e.g., pandas, numpy, scipy)
+  - [Lecture 2 (Feb 9)](lectures/lec2): Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
 - Week 2
   - [Lecture 3 (Feb 14)](modules/structured-data/overview-structured-data): `Tutorial` for the structured data processing module (using Jupyter Notebook)
   - Assignment 2 (work session and self-study): Structured data processing module
   - Lecture 4 (Feb 16): Explain details and more examples in the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
 - Week 3
-  - Lecture 5 (Feb 21): Provide practical tips for data science (e.g., websites for searching public datasets, ways of scraping data online, techniques of annotating data,     code management using Git and GitHub, best practices of writing good code, techniques of documenting projects such as GitHub Pages and Jupyter Book)
+  - Lecture 5 (Feb 21): Introduce deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
-  - Lecture 6 (Feb 23): Continue other topics in lecture 5
+  - Lecture 6 (Feb 23): Introduce how to work with crowdscourcing platforms in data science research, such as annotating data
 - Week 4
   - Mid-term Exam
   - A lecture to discuss the mid-term exam
