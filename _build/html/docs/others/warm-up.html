@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python Coding Warm-up &#8212; Data Science UvA</title>
+    <title>Python Coding Warm-Up &#8212; Data Science UvA</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Assignment (Structured Data Processing)" href="../modules/structured-data/assignment-structured-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,12 +120,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/lec-1.html">
+  <a class="reference internal" href="../lectures/lec1.html">
    L1: Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/lec-2.html">
+  <a class="reference internal" href="../lectures/lec2.html">
    L2: Data Science Fundamentals
   </a>
  </li>
@@ -167,13 +166,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Others
+  Assignment
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Python Coding Warm-Up
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../assignments/hw1.html">
+   A1: Python Coding Warm-Up
   </a>
  </li>
 </ul>
@@ -360,23 +359,220 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-resample-data">
+   Task 1: Resample Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#task-description">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-information">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-merge-data-frames">
+   Task 2: Merge Data Frames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-filter-and-aggregate-data">
+   Task 3: Filter and Aggregate Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-transform-structured-data">
+   Task 4: Transform Structured Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-transform-text-data">
+   Task 5: Transform Text Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python Coding Warm-up</h1>
+                <h1>Python Coding Warm-Up</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-resample-data">
+   Task 1: Resample Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#task-description">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-information">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-merge-data-frames">
+   Task 2: Merge Data Frames
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-filter-and-aggregate-data">
+   Task 3: Filter and Aggregate Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-transform-structured-data">
+   Task 4: Transform Structured Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-transform-text-data">
+   Task 5: Transform Text Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Task Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Other Information
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -385,19 +581,2194 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python-coding-warm-up">
-<h1>Python Coding Warm-up<a class="headerlink" href="#python-coding-warm-up" title="Permalink to this headline">#</a></h1>
+<h1>Python Coding Warm-Up<a class="headerlink" href="#python-coding-warm-up" title="Permalink to this headline">#</a></h1>
+<p>(Last updated: Feb 3, 2023)</p>
+<p>This notebook is designed to help you warm up python programming, specifically related to coding up data science pipelines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(&quot;TBA&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="k">def</span> <span class="nf">exec_ipynb</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load other ipython notebooks and import their functions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?:&#39;</span><span class="p">,</span> <span class="n">filename_or_url</span><span class="p">)</span> <span class="k">else</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">)))</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">nb</span><span class="p">[</span><span class="s1">&#39;nbformat&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">cell</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">src</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">nb</span><span class="p">[</span><span class="s1">&#39;worksheets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">cell</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
+    <span class="n">tmpname</span> <span class="o">=</span> <span class="s1">&#39;/tmp/</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%d</span><span class="s1">.py&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename_or_url</span><span class="p">),</span>
+                                    <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H%M%S</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
+                                    <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n\n\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+    <span class="nb">open</span><span class="p">(</span><span class="n">tmpname</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">tmpname</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do not check the answer before practicing the tasks.</span>
+<span class="n">exec_ipynb</span><span class="p">(</span><span class="s2">&quot;warm-up-answer.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="task-1-resample-data">
+<h2>Task 1: Resample Data<a class="headerlink" href="#task-1-resample-data" title="Permalink to this headline">#</a></h2>
+<section id="task-description">
+<h3>Task Description<a class="headerlink" href="#task-description" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Given a data frame with timestamps and variables, resample the data by computing hourly average values from the previous hour.</p></li>
+<li><p>For example, at 9:00 time, compute the average value for all data points betwee 8:00 and 9:00 and put the average value to a cell.</p></li>
+<li><p>You should use pandas to operate the data frame (but not converting it to something else like an array).</p></li>
+</ul>
+</section>
+<section id="other-information">
+<h3>Other Information<a class="headerlink" href="#other-information" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The timestamp is represented in seconds in epoch time, which means the number of seconds that have elapsed since January 1st, 1970 (midnight UTC/GMT).</p></li>
+<li><p>This task is very common in dealing with structured data. For example, a sensor may report many readings in a high frequency, but we only want the hourly averaged value.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.resample</span></code> in a notebook cell and run the cell.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">data_task1_case1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">52.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="mf">48.3</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477904000</span><span class="p">,</span><span class="mf">44.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477906200</span><span class="p">,</span><span class="mf">31.1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477911200</span><span class="p">,</span><span class="mf">42.7</span><span class="p">]]</span>
+<span class="n">df_task1_case1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task1_case1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task1_case1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TBA
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477899000</th>
+      <td>52.6</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>48.3</td>
+    </tr>
+    <tr>
+      <th>1477904000</th>
+      <td>44.2</td>
+    </tr>
+    <tr>
+      <th>1477906200</th>
+      <td>31.1</td>
+    </tr>
+    <tr>
+      <th>1477911200</th>
+      <td>42.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example output.</span>
+<span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>52.60</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>46.25</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>31.10</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>42.70</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">resample_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 1 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">resample_df</span><span class="p">(</span><span class="n">df_task1_case1</span><span class="p">),</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                              v1
+timestamps                      
+2016-10-31 08:00:00+00:00  52.60
+2016-10-31 09:00:00+00:00  46.25
+2016-10-31 10:00:00+00:00  31.10
+2016-10-31 11:00:00+00:00  42.70
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
+<span class="n">data_task1_case2</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477891800</span><span class="p">,</span><span class="mf">51.7</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477893600</span><span class="p">,</span><span class="mf">47.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477895400</span><span class="p">,</span><span class="mf">52.7</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">52.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="mf">48.3</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477904000</span><span class="p">,</span><span class="mf">44.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477906200</span><span class="p">,</span><span class="mf">31.1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">61.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">77.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920100</span><span class="p">,</span><span class="mf">65.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">35.3</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477924100</span><span class="p">,</span><span class="mf">13.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477925300</span><span class="p">,</span><span class="mf">23.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477925800</span><span class="p">,</span><span class="mf">32.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477926300</span><span class="p">,</span><span class="mf">42.3</span><span class="p">]]</span>
+<span class="n">df_task1_case2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task1_case2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task1_case2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477891800</th>
+      <td>51.7</td>
+    </tr>
+    <tr>
+      <th>1477893600</th>
+      <td>47.2</td>
+    </tr>
+    <tr>
+      <th>1477895400</th>
+      <td>52.7</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>52.6</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>48.3</td>
+    </tr>
+    <tr>
+      <th>1477904000</th>
+      <td>44.2</td>
+    </tr>
+    <tr>
+      <th>1477906200</th>
+      <td>31.1</td>
+    </tr>
+    <tr>
+      <th>1477913400</th>
+      <td>61.2</td>
+    </tr>
+    <tr>
+      <th>1477917000</th>
+      <td>77.4</td>
+    </tr>
+    <tr>
+      <th>1477920100</th>
+      <td>65.4</td>
+    </tr>
+    <tr>
+      <th>1477920600</th>
+      <td>35.3</td>
+    </tr>
+    <tr>
+      <th>1477924100</th>
+      <td>13.6</td>
+    </tr>
+    <tr>
+      <th>1477925300</th>
+      <td>23.2</td>
+    </tr>
+    <tr>
+      <th>1477925800</th>
+      <td>32.6</td>
+    </tr>
+    <tr>
+      <th>1477926300</th>
+      <td>42.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 2 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">resample_df</span><span class="p">(</span><span class="n">df_task1_case2</span><span class="p">),</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+                                  v1
+timestamps                          
+2016-10-31 06:00:00+00:00  51.700000
+2016-10-31 07:00:00+00:00  49.950000
+2016-10-31 08:00:00+00:00  52.600000
+2016-10-31 09:00:00+00:00  46.250000
+2016-10-31 10:00:00+00:00  31.100000
+2016-10-31 11:00:00+00:00        NaN
+2016-10-31 12:00:00+00:00  61.200000
+2016-10-31 13:00:00+00:00  77.400000
+2016-10-31 14:00:00+00:00  50.350000
+2016-10-31 15:00:00+00:00  23.133333
+2016-10-31 16:00:00+00:00  42.300000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
+<span class="n">data_task1_case3</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477886800</span><span class="p">,</span><span class="mf">185.0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477887200</span><span class="p">,</span><span class="mf">223.0</span><span class="p">,</span><span class="mf">2.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477891800</span><span class="p">,</span><span class="mf">343.0</span><span class="p">,</span><span class="mf">1.56</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">359.0</span><span class="p">,</span><span class="mf">5.97</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">3.21</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477906200</span><span class="p">,</span><span class="mf">41.0</span><span class="p">,</span><span class="mf">9.05</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477906800</span><span class="p">,</span><span class="mf">26.0</span><span class="p">,</span><span class="mf">7.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477907500</span><span class="p">,</span><span class="mf">34.0</span><span class="p">,</span><span class="mf">3.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477909800</span><span class="p">,</span><span class="mf">25.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mf">0.45</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">263.0</span><span class="p">,</span><span class="mf">2.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920000</span><span class="p">,</span><span class="mf">222.0</span><span class="p">,</span><span class="mf">3.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">84.0</span><span class="p">,</span><span class="mf">1.33</span><span class="p">]]</span>
+<span class="n">df_task1_case3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task1_case3</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v2&quot;</span><span class="p">,</span><span class="s2">&quot;v3&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task1_case3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v2</th>
+      <th>v3</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477886800</th>
+      <td>185.0</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <th>1477887200</th>
+      <td>223.0</td>
+      <td>2.20</td>
+    </tr>
+    <tr>
+      <th>1477891800</th>
+      <td>343.0</td>
+      <td>1.56</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>359.0</td>
+      <td>5.97</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>5.0</td>
+      <td>3.21</td>
+    </tr>
+    <tr>
+      <th>1477906200</th>
+      <td>41.0</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>1477906800</th>
+      <td>26.0</td>
+      <td>7.20</td>
+    </tr>
+    <tr>
+      <th>1477907500</th>
+      <td>34.0</td>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <th>1477909800</th>
+      <td>25.0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <th>1477913400</th>
+      <td>9.0</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <th>1477917000</th>
+      <td>263.0</td>
+      <td>2.20</td>
+    </tr>
+    <tr>
+      <th>1477920000</th>
+      <td>222.0</td>
+      <td>3.40</td>
+    </tr>
+    <tr>
+      <th>1477920600</th>
+      <td>84.0</td>
+      <td>1.33</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 3 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">),</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 3 failed.
+
+Your output is:
+None
+
+Expected output is:
+                                   v2        v3
+timestamps                                     
+2016-10-31 05:00:00+00:00  204.000000  1.650000
+2016-10-31 06:00:00+00:00  343.000000  1.560000
+2016-10-31 07:00:00+00:00         NaN       NaN
+2016-10-31 08:00:00+00:00  359.000000  5.970000
+2016-10-31 09:00:00+00:00    5.000000  3.210000
+2016-10-31 10:00:00+00:00   33.666667  6.483333
+2016-10-31 11:00:00+00:00   25.000000  1.000000
+2016-10-31 12:00:00+00:00    9.000000  0.450000
+2016-10-31 13:00:00+00:00  263.000000  2.200000
+2016-10-31 14:00:00+00:00  153.000000  2.365000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-2-merge-data-frames">
+<h2>Task 2: Merge Data Frames<a class="headerlink" href="#task-2-merge-data-frames" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>Task Description<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Given two data frames with different timestamps and variables, merge them into a single data frame.</p></li>
+<li><p>You should use pandas to operate the data frame (but not converting it to something else like an array).</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Other Information<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>This task is common in dealing with structured data. For example, there can be sensor measurements from many stations, which are logged at different time points. So, we usually need to merge them into a single data frame.</p></li>
+<li><p>This task is in a part of the pipeline that continues Task 1.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.merge_ordered</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.merge_ordered</span></code> in a notebook cell and run the cell.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example of the first input:</span>
+<span class="n">data_task2_case1_input1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477909800</span><span class="p">,</span><span class="mf">30.9</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">61.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">77.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">35.3</span><span class="p">]]</span>
+<span class="n">df_task2_case1_input1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task2_case1_input1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v1&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task2_case1_input1</span> <span class="o">=</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task2_case1_input1</span><span class="p">)</span>
+<span class="n">df_task2_case1_input1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>30.9</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 12:00:00+00:00</th>
+      <td>61.2</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 13:00:00+00:00</th>
+      <td>77.4</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 14:00:00+00:00</th>
+      <td>35.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example of the second input:</span>
+<span class="n">data_task2_case1_input2</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477909800</span><span class="p">,</span><span class="mf">25.0</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">9.0</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">263.0</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">84.0</span><span class="p">]]</span>
+<span class="n">df_task2_case1_input2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task2_case1_input2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v2&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task2_case1_input2</span> <span class="o">=</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task2_case1_input2</span><span class="p">)</span>
+<span class="n">df_task2_case1_input2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v2</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 12:00:00+00:00</th>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 13:00:00+00:00</th>
+      <td>263.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 14:00:00+00:00</th>
+      <td>84.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example output.</span>
+<span class="n">answer_merge_df</span><span class="p">(</span><span class="n">df_task2_case1_input1</span><span class="p">,</span> <span class="n">df_task2_case1_input2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+      <th>v2</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>30.9</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 12:00:00+00:00</th>
+      <td>61.2</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 13:00:00+00:00</th>
+      <td>77.4</td>
+      <td>263.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 14:00:00+00:00</th>
+      <td>35.3</td>
+      <td>84.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge_df</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 1 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">merge_df</span><span class="p">(</span><span class="n">df_task2_case1_input1</span><span class="p">,</span> <span class="n">df_task2_case1_input2</span><span class="p">),</span> <span class="n">answer_merge_df</span><span class="p">(</span><span class="n">df_task2_case1_input1</span><span class="p">,</span> <span class="n">df_task2_case1_input2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                             v1     v2
+timestamps                            
+2016-10-31 11:00:00+00:00  30.9   25.0
+2016-10-31 12:00:00+00:00  61.2    9.0
+2016-10-31 13:00:00+00:00  77.4  263.0
+2016-10-31 14:00:00+00:00  35.3   84.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is the first input for another test case.</span>
+<span class="n">df_task2_case2_input1</span> <span class="o">=</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case2</span><span class="p">)</span>
+<span class="n">df_task2_case2_input1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>51.700000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>49.950000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>52.600000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>46.250000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>31.100000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 12:00:00+00:00</th>
+      <td>61.200000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 13:00:00+00:00</th>
+      <td>77.400000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 14:00:00+00:00</th>
+      <td>50.350000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 15:00:00+00:00</th>
+      <td>23.133333</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 16:00:00+00:00</th>
+      <td>42.300000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is the second input for another test case.</span>
+<span class="n">df_task2_case2_input2</span> <span class="o">=</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">)</span>
+<span class="n">df_task2_case2_input2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v2</th>
+      <th>v3</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 05:00:00+00:00</th>
+      <td>204.000000</td>
+      <td>1.650000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>343.000000</td>
+      <td>1.560000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>359.000000</td>
+      <td>5.970000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>5.000000</td>
+      <td>3.210000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>33.666667</td>
+      <td>6.483333</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 11:00:00+00:00</th>
+      <td>25.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 12:00:00+00:00</th>
+      <td>9.000000</td>
+      <td>0.450000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 13:00:00+00:00</th>
+      <td>263.000000</td>
+      <td>2.200000</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 14:00:00+00:00</th>
+      <td>153.000000</td>
+      <td>2.365000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 2 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">merge_df</span><span class="p">(</span><span class="n">df_task2_case2_input1</span><span class="p">,</span> <span class="n">df_task2_case2_input2</span><span class="p">),</span> <span class="n">answer_merge_df</span><span class="p">(</span><span class="n">df_task2_case2_input1</span><span class="p">,</span> <span class="n">df_task2_case2_input2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+                                  v1          v2        v3
+timestamps                                                
+2016-10-31 05:00:00+00:00        NaN  204.000000  1.650000
+2016-10-31 06:00:00+00:00  51.700000  343.000000  1.560000
+2016-10-31 07:00:00+00:00  49.950000         NaN       NaN
+2016-10-31 08:00:00+00:00  52.600000  359.000000  5.970000
+2016-10-31 09:00:00+00:00  46.250000    5.000000  3.210000
+2016-10-31 10:00:00+00:00  31.100000   33.666667  6.483333
+2016-10-31 11:00:00+00:00        NaN   25.000000  1.000000
+2016-10-31 12:00:00+00:00  61.200000    9.000000  0.450000
+2016-10-31 13:00:00+00:00  77.400000  263.000000  2.200000
+2016-10-31 14:00:00+00:00  50.350000  153.000000  2.365000
+2016-10-31 15:00:00+00:00  23.133333         NaN       NaN
+2016-10-31 16:00:00+00:00  42.300000         NaN       NaN
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-3-filter-and-aggregate-data">
+<h2>Task 3: Filter and Aggregate Data<a class="headerlink" href="#task-3-filter-and-aggregate-data" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h3>Task Description<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Given a data frame with variables, follow the steps below:</p>
+<ul>
+<li><p>First, remove the rows with zero and negative values in the “v1” column.</p></li>
+<li><p>Also, remove the rows with value “15227” in the “group” column.</p></li>
+<li><p>Next, group the data points by the “group” column.</p></li>
+<li><p>Then, for each group, resample the data based on criteria described in task 1 (hourly average).</p></li>
+<li><p>Finally, fill in the missing data with value 0.</p></li>
+</ul>
+</li>
+<li><p>Use your code for Task 1 and Task 2 to complete this task faster.</p></li>
+<li><p>You should use pandas to operate the data frame (but not converting it to something else like an array).</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Other Information<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>This task is common in dealing with structured data. For example, there can be data from different local regions which are represented by some numbers, such as zip codes. And we only want the data from a certain regions (but not all of them).</p></li>
+<li><p>This task is in a part of the pipeline that continues both Task 1 and Task 2.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.groupby</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.groupby</span></code> in a notebook cell and run the cell.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">data_task3_case1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477935134</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477935767</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15227&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477955141</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477956180</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477956293</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15218&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477973293</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">]]</span>
+<span class="n">df_task3_case1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task3_case1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task3_case1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+      <th>group</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477935134</th>
+      <td>1</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1477935767</th>
+      <td>1</td>
+      <td>15227</td>
+    </tr>
+    <tr>
+      <th>1477955141</th>
+      <td>1</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1477956180</th>
+      <td>2</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1477956293</th>
+      <td>-4</td>
+      <td>15218</td>
+    </tr>
+    <tr>
+      <th>1477973293</th>
+      <td>5</td>
+      <td>15207</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example output.</span>
+<span class="n">answer_aggregate_df</span><span class="p">(</span><span class="n">df_task3_case1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>15206</th>
+      <th>15207</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 18:00:00+00:00</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 19:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 20:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 21:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 22:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 23:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 00:00:00+00:00</th>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 01:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 02:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 03:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 04:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 05:00:00+00:00</th>
+      <td>0.0</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">aggregate_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 1 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">aggregate_df</span><span class="p">(</span><span class="n">df_task3_case1</span><span class="p">),</span> <span class="n">answer_aggregate_df</span><span class="p">(</span><span class="n">df_task3_case1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           15206  15207
+timestamps                             
+2016-10-31 18:00:00+00:00    1.0    0.0
+2016-10-31 19:00:00+00:00    0.0    0.0
+2016-10-31 20:00:00+00:00    0.0    0.0
+2016-10-31 21:00:00+00:00    0.0    0.0
+2016-10-31 22:00:00+00:00    0.0    0.0
+2016-10-31 23:00:00+00:00    0.0    0.0
+2016-11-01 00:00:00+00:00    2.0    1.0
+2016-11-01 01:00:00+00:00    0.0    0.0
+2016-11-01 02:00:00+00:00    0.0    0.0
+2016-11-01 03:00:00+00:00    0.0    0.0
+2016-11-01 04:00:00+00:00    0.0    0.0
+2016-11-01 05:00:00+00:00    0.0    5.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
+<span class="n">data_task3_case2</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477935134</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477935767</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15227&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477955141</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477956180</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477956293</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477970157</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15227&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477973293</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478001707</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478001989</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478003840</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478005371</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478005897</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478006679</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478014118</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478014136</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478014162</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478014317</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;15207&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478015537</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478015548</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1478015587</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;15206&quot;</span><span class="p">]]</span>
+<span class="n">df_task3_case2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task3_case2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v1&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task3_case2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>v1</th>
+      <th>group</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477935134</th>
+      <td>1</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1477935767</th>
+      <td>1</td>
+      <td>15227</td>
+    </tr>
+    <tr>
+      <th>1477955141</th>
+      <td>1</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1477956180</th>
+      <td>2</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1477956293</th>
+      <td>-4</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1477970157</th>
+      <td>3</td>
+      <td>15227</td>
+    </tr>
+    <tr>
+      <th>1477973293</th>
+      <td>5</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1478001707</th>
+      <td>4</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478001989</th>
+      <td>2</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478003840</th>
+      <td>3</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478005371</th>
+      <td>3</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478005897</th>
+      <td>3</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1478006679</th>
+      <td>1</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478014118</th>
+      <td>4</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478014136</th>
+      <td>-2</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478014162</th>
+      <td>4</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478014317</th>
+      <td>4</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1478015537</th>
+      <td>-1</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478015548</th>
+      <td>3</td>
+      <td>15206</td>
+    </tr>
+    <tr>
+      <th>1478015587</th>
+      <td>3</td>
+      <td>15206</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 2 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">aggregate_df</span><span class="p">(</span><span class="n">df_task3_case2</span><span class="p">),</span> <span class="n">answer_aggregate_df</span><span class="p">(</span><span class="n">df_task3_case2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           15206  15207
+timestamps                             
+2016-10-31 18:00:00+00:00    1.0    0.0
+2016-10-31 19:00:00+00:00    0.0    0.0
+2016-10-31 20:00:00+00:00    0.0    0.0
+2016-10-31 21:00:00+00:00    0.0    0.0
+2016-10-31 22:00:00+00:00    0.0    0.0
+2016-10-31 23:00:00+00:00    0.0    0.0
+2016-11-01 00:00:00+00:00    2.0    1.0
+2016-11-01 01:00:00+00:00    0.0    0.0
+2016-11-01 02:00:00+00:00    0.0    0.0
+2016-11-01 03:00:00+00:00    0.0    0.0
+2016-11-01 04:00:00+00:00    0.0    0.0
+2016-11-01 05:00:00+00:00    0.0    5.0
+2016-11-01 06:00:00+00:00    0.0    0.0
+2016-11-01 07:00:00+00:00    0.0    0.0
+2016-11-01 08:00:00+00:00    0.0    0.0
+2016-11-01 09:00:00+00:00    0.0    0.0
+2016-11-01 10:00:00+00:00    0.0    0.0
+2016-11-01 11:00:00+00:00    0.0    0.0
+2016-11-01 12:00:00+00:00    0.0    0.0
+2016-11-01 13:00:00+00:00    3.0    0.0
+2016-11-01 14:00:00+00:00    2.0    3.0
+2016-11-01 15:00:00+00:00    0.0    0.0
+2016-11-01 16:00:00+00:00    3.5    4.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-4-transform-structured-data">
+<h2>Task 4: Transform Structured Data<a class="headerlink" href="#task-4-transform-structured-data" title="Permalink to this headline">#</a></h2>
+<section id="id5">
+<h3>Task Description<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Given a data frame with timestamps and wind information, transform the wind direction to sine/cosine components and threshold the wind speed.</p></li>
+<li><p>Remove the orignal wind direction column (<code class="docutils literal notranslate"><span class="pre">wind_deg</span></code>) and add two new columns (<code class="docutils literal notranslate"><span class="pre">wind_deg_sine</span></code> and <code class="docutils literal notranslate"><span class="pre">wind_deg_cosine</span></code>) to the data frame.</p></li>
+<li><p>Remove the orignal wind speed column (<code class="docutils literal notranslate"><span class="pre">wind_mph</span></code>) and add a new column (<code class="docutils literal notranslate"><span class="pre">is_calm_wind</span></code>) to show if wind speed is lower than 5 MPH.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">is_calm_wind</span></code> value should be <code class="docutils literal notranslate"><span class="pre">True</span></code> (when <code class="docutils literal notranslate"><span class="pre">wind_mph&gt;=5</span></code>), <code class="docutils literal notranslate"><span class="pre">False</span></code> (when <code class="docutils literal notranslate"><span class="pre">wind_mph&lt;5</span></code>), or <code class="docutils literal notranslate"><span class="pre">None</span></code> (when <code class="docutils literal notranslate"><span class="pre">wind_mph</span></code> data is missing).</p></li>
+<li><p>The columns need to follow the order <code class="docutils literal notranslate"><span class="pre">[&quot;wind_deg_sine&quot;,</span> <span class="pre">&quot;wind_deg_cosine&quot;,</span> <span class="pre">&quot;is_calm_wind&quot;]</span></code>.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Other Information<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The task is commonly used when encoding cyclical features, such as wind direction (between 0 and 359), time of day (between 0 and 23), and month (between 1 and 12).</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.apply</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.apply</span></code> in a notebook cell and run the cell.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.isna</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.isna</span></code> in a notebook cell and run the cell.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">numpy.sin</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.cos</span></code> function to perform the transformation. Be careful that these functions operate on radians but not degrees.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">data_task4_case1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477891800</span><span class="p">,</span><span class="mf">343.0</span><span class="p">,</span><span class="mf">3.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477895400</span><span class="p">,</span><span class="mf">351.0</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">359.0</span><span class="p">,</span><span class="mf">6.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">5.1</span><span class="p">]]</span>
+<span class="n">df_task4_case1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task4_case1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;wind_deg&quot;</span><span class="p">,</span><span class="s2">&quot;wind_mph&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task4_case1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>wind_deg</th>
+      <th>wind_mph</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477891800</th>
+      <td>343.0</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>1477895400</th>
+      <td>351.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>359.0</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>5.0</td>
+      <td>5.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example output.</span>
+<span class="n">answer_transform_df</span><span class="p">(</span><span class="n">df_task4_case1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>wind_deg_sine</th>
+      <th>wind_deg_cosine</th>
+      <th>is_calm_wind</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477891800</th>
+      <td>-0.292372</td>
+      <td>0.956305</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1477895400</th>
+      <td>-0.156434</td>
+      <td>0.987688</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>-0.017452</td>
+      <td>0.999848</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>0.087156</td>
+      <td>0.996195</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transform_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 1 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">transform_df</span><span class="p">(</span><span class="n">df_task4_case1</span><span class="p">),</span> <span class="n">answer_transform_df</span><span class="p">(</span><span class="n">df_task4_case1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+            wind_deg_sine  wind_deg_cosine is_calm_wind
+timestamps                                             
+1477891800      -0.292372         0.956305         True
+1477895400      -0.156434         0.987688         None
+1477899000      -0.017452         0.999848        False
+1477902600       0.087156         0.996195        False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
+<span class="n">data_task4_case2</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1477891800</span><span class="p">,</span><span class="mf">343.0</span><span class="p">,</span><span class="mf">3.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477895400</span><span class="p">,</span><span class="mf">351.0</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">359.0</span><span class="p">,</span><span class="mf">6.4</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="mf">5.1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477906200</span><span class="p">,</span><span class="mf">41.0</span><span class="p">,</span><span class="mf">5.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477909800</span><span class="p">,</span><span class="mf">25.0</span><span class="p">,</span><span class="mf">4.6</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mf">7.7</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">263.0</span><span class="p">,</span><span class="mf">8.8</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">84.0</span><span class="p">,</span><span class="mf">7.9</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477924200</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477927800</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477931400</span><span class="p">,</span><span class="mf">115.0</span><span class="p">,</span><span class="mf">5.2</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477935000</span><span class="p">,</span><span class="mf">117.0</span><span class="p">,</span><span class="mf">3.8</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477938600</span><span class="p">,</span><span class="mf">97.0</span><span class="p">,</span><span class="mf">4.1</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1477942200</span><span class="p">,</span><span class="mf">141.0</span><span class="p">,</span><span class="mf">3.1</span><span class="p">]]</span>
+<span class="n">df_task4_case2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task4_case2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;wind_deg&quot;</span><span class="p">,</span><span class="s2">&quot;wind_mph&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
+<span class="n">df_task4_case2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>wind_deg</th>
+      <th>wind_mph</th>
+    </tr>
+    <tr>
+      <th>timestamps</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477891800</th>
+      <td>343.0</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>1477895400</th>
+      <td>351.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>359.0</td>
+      <td>6.4</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>NaN</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>1477906200</th>
+      <td>41.0</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <th>1477909800</th>
+      <td>25.0</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>1477913400</th>
+      <td>9.0</td>
+      <td>7.7</td>
+    </tr>
+    <tr>
+      <th>1477917000</th>
+      <td>263.0</td>
+      <td>8.8</td>
+    </tr>
+    <tr>
+      <th>1477920600</th>
+      <td>84.0</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>1477924200</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1477927800</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1477931400</th>
+      <td>115.0</td>
+      <td>5.2</td>
+    </tr>
+    <tr>
+      <th>1477935000</th>
+      <td>117.0</td>
+      <td>3.8</td>
+    </tr>
+    <tr>
+      <th>1477938600</th>
+      <td>97.0</td>
+      <td>4.1</td>
+    </tr>
+    <tr>
+      <th>1477942200</th>
+      <td>141.0</td>
+      <td>3.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 2 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">transform_df</span><span class="p">(</span><span class="n">df_task4_case2</span><span class="p">),</span> <span class="n">answer_transform_df</span><span class="p">(</span><span class="n">df_task4_case2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+            wind_deg_sine  wind_deg_cosine is_calm_wind
+timestamps                                             
+1477891800      -0.292372         0.956305         True
+1477895400      -0.156434         0.987688         None
+1477899000      -0.017452         0.999848        False
+1477902600            NaN              NaN        False
+1477906200       0.656059         0.754710        False
+1477909800       0.422618         0.906308         True
+1477913400       0.156434         0.987688        False
+1477917000      -0.992546        -0.121869        False
+1477920600       0.994522         0.104528        False
+1477924200            NaN              NaN         None
+1477927800            NaN              NaN         None
+1477931400       0.906308        -0.422618        False
+1477935000       0.891007        -0.453990         True
+1477938600       0.992546        -0.121869         True
+1477942200       0.629320        -0.777146         True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-5-transform-text-data">
+<h2>Task 5: Transform Text Data<a class="headerlink" href="#task-5-transform-text-data" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h3>Task Description<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Given a data frame with information about paper publications, extract the following information:</p>
+<ul>
+<li><p>Add a new column <code class="docutils literal notranslate"><span class="pre">CV</span></code> to indicate if the paper comes from Computer Vision venues (if <code class="docutils literal notranslate"><span class="pre">venue</span></code> column contains string “BMVC”, “WACV”, “ICCV”, or “CVPR”).</p></li>
+<li><p>Add a new column <code class="docutils literal notranslate"><span class="pre">ML</span></code> to indicate if the paper comes from Machine Learning venues (if <code class="docutils literal notranslate"><span class="pre">venue</span></code> column contains string “NeurIPS” or “ICLR”).</p></li>
+<li><p>Add a new column <code class="docutils literal notranslate"><span class="pre">MM</span></code> to indicate if the paper comes from Multimedia venues (if <code class="docutils literal notranslate"><span class="pre">venue</span></code> column contains string “MM”).</p></li>
+<li><p>Add a new column <code class="docutils literal notranslate"><span class="pre">year</span></code> to show the year of publication in the venue string. If year is unknown, put value NaN in the cell.</p></li>
+</ul>
+</li>
+<li><p>The data type for column <code class="docutils literal notranslate"><span class="pre">CV</span></code>, <code class="docutils literal notranslate"><span class="pre">ML</span></code>, and <code class="docutils literal notranslate"><span class="pre">MM</span></code> should be binary (True/False).</p></li>
+<li><p>The data type for column <code class="docutils literal notranslate"><span class="pre">year</span></code> should be integer.</p></li>
+<li><p>The order of the column needs to be <code class="docutils literal notranslate"><span class="pre">[&quot;CV&quot;,&quot;ML&quot;,&quot;MM&quot;,&quot;year&quot;]</span></code>.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Other Information<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Extracting information from strings is a common task in text processing, such as using these extracted information to classify documents.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.str.contains</span></code> funtcion. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.Series.str.contains</span></code> in a notebook cell and run the cell.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.str.extract</span></code> function. Check the documentation by typing <code class="docutils literal notranslate"><span class="pre">?pd.Series.str.extract</span></code> in a notebook cell and run the cell.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">data_task5_case1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;WACV_2023&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;WACV&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;2023NeurIPS&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Journal of Forensic Sciences 2022&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;CVPR2022&quot;</span><span class="p">]]</span>
+<span class="n">data_task5_case1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task5_case1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span><span class="s2">&quot;venue&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">)</span>
+<span class="n">data_task5_case1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>venue</th>
+    </tr>
+    <tr>
+      <th>paper_id</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>WACV_2023</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>WACV</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023NeurIPS</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Journal of Forensic Sciences 2022</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CVPR2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example output.</span>
+<span class="n">answer_transform_text_df</span><span class="p">(</span><span class="n">data_task5_case1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CV</th>
+      <th>ML</th>
+      <th>MM</th>
+      <th>year</th>
+    </tr>
+    <tr>
+      <th>paper_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>2022</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transform_text_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 1 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">transform_text_df</span><span class="p">(</span><span class="n">data_task5_case1</span><span class="p">),</span> <span class="n">answer_transform_text_df</span><span class="p">(</span><span class="n">data_task5_case1</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+             CV     ML     MM  year
+paper_id                           
+1          True  False  False  2023
+2          True  False  False   NaN
+3         False   True  False  2023
+4         False  False  False  2022
+5          True  False  False  2022
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
+<span class="n">data_task5_case2</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;WACV_2023&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;WACV&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;2023NeurIPS&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Journal of Forensic Sciences 2022&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;CVPR2022&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;Forensic Science International&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;MM2021&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;CVPR&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;ICLR-2021&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;BVMC 2021&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;WACV2021&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;NeurIPS 2021&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;BMVC&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;2020 Journal of Interactive Marketing&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;ACM MM&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="s2">&quot;ICCV2019&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;ICCV&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="s2">&quot;2019-ICCV&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;2019MM&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;WACV2018&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;2017BMVC&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;ICLR&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Journal of Interactive Marketing 2016&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;BVMC 2015&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;2014 NeurIPS&quot;</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;2013 MM&quot;</span><span class="p">]]</span>
+<span class="n">data_task5_case2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task5_case2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;paper_id&quot;</span><span class="p">,</span><span class="s2">&quot;venue&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;paper_id&quot;</span><span class="p">)</span>
+<span class="n">data_task5_case2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>venue</th>
+    </tr>
+    <tr>
+      <th>paper_id</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>WACV_2023</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>WACV</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2023NeurIPS</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Journal of Forensic Sciences 2022</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CVPR2022</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Forensic Science International</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>MM2021</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>CVPR</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ICLR-2021</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>BVMC 2021</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>WACV2021</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NeurIPS 2021</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>BMVC</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2020 Journal of Interactive Marketing</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>ACM MM</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>ICCV2019</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>ICCV</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2019-ICCV</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2019MM</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>WACV2018</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2017BMVC</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>ICLR</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Journal of Interactive Marketing 2016</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>BVMC 2015</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2014 NeurIPS</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2013 MM</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 2 is passed.</span>
+<span class="n">check_answer_df</span><span class="p">(</span><span class="n">transform_text_df</span><span class="p">(</span><span class="n">data_task5_case2</span><span class="p">),</span> <span class="n">answer_transform_text_df</span><span class="p">(</span><span class="n">data_task5_case2</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+             CV     ML     MM  year
+paper_id                           
+1          True  False  False  2023
+2          True  False  False   NaN
+3         False   True  False  2023
+4         False  False  False  2022
+5          True  False  False  2022
+6         False  False  False   NaN
+7         False  False   True  2021
+8          True  False  False   NaN
+9         False   True  False  2021
+10        False  False  False  2021
+11         True  False  False  2021
+12        False   True  False  2021
+13         True  False  False   NaN
+14        False  False  False  2020
+15        False  False   True   NaN
+16         True  False  False  2019
+17         True  False  False   NaN
+18         True  False  False  2019
+19        False  False   True  2019
+20         True  False  False  2018
+21         True  False  False  2017
+22        False   True  False   NaN
+23        False  False  False  2016
+24        False  False  False  2015
+25        False   True  False  2014
+26        False  False   True  2013
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,13 +2798,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../modules/structured-data/assignment-structured-data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment (Structured Data Processing)</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>
