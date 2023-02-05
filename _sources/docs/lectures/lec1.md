@@ -2,7 +2,7 @@
 
 ## Preparation
 
-- Read the [course syllabus](../syllabus.md)
+- Read the [course syllabus](../syllabus.md).
 
 ## Slides
 
