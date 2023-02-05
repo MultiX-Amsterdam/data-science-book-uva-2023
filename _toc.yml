@@ -60,7 +60,7 @@ parts:
         #title: "Tutorial"
         #- file: docs/modules/image-data/assignment-image-data
         #title: "Assignment"
-- caption: Assignment
+- caption: Assignments
   chapters:
   - file: docs/assignments/hw1
     title: "A1: Python Coding Warm-Up"
