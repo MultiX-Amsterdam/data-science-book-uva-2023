@@ -16,7 +16,7 @@ Also, this course will cover human-centered approaches in data science for socia
 It is important to keep in mind that this course does not aim to teach you details in programming, machine learning, statistics, or visualization.
 Instead, this course will teach you how to integrate various techniques (e.g., data wrangling, statistical analysis, data modeling, data visualization) together to perform a data science task.
 Also, notice that this course assumes someone already collected datasets for you and does not teach you how to collect data in the real world.
-Data collection is a topic that could take a very long time to explain and is out of the scope of this course.
+Data collection is a topic that could take a very long time to explain and is mostly out of the scope of this course.
 
 :::{note}
  Notice that the course instructor writes the syllabus from the first-person perspective.
@@ -212,11 +212,6 @@ Also, there are other resources for self-learning:
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 - [Deep Learning Book](https://www.deeplearningbook.org)
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
-
-Below are data science (or machine learning) case studies and examples:
-- [Case Studies of Data Visualization](https://flowingdata.com/)
-- [Case Studies of Satelite Image Analysis](https://earthengine.google.com/case_studies/)
-- [Case Studies of Machine Learning and Design](https://machinelearning.design/)
 
 ## Acknowledgements
 

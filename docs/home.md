@@ -4,10 +4,10 @@
 - Program: The third year of Bachelor Informatiekunde (i.e., Information Science)
 - Institution: Informatics Institute, University of Amsterdam
 - Instructor: Yen-Chia Hsu \<y.c.hsu@uva.nl\>
-- Refer to the [course syllabus](syllabus) for details
-- Refer to [datanose](https://datanose.nl/) for the time table and classroom location
-- Refer to [Canvas](https://canvas.uva.nl/) for announcements, the link to live lectures, and other members' emails in the teaching team
-- `Bring your laptop to the lectures that have the tutorials`
+- Refer to the [course syllabus](syllabus) for details.
+- Refer to [datanose](https://datanose.nl/) for the time table and classroom location.
+- Refer to [Canvas](https://canvas.uva.nl/) for announcements, the link to live lectures, and other members' emails in the teaching team.
+- `Bring your laptop to the lectures that have the tutorials.`
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
