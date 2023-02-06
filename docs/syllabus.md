@@ -198,19 +198,27 @@ If you have a disability and require accommodations, please take a look at [this
 ## Other Resources
 
 This course uses the following resources:
-- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [book](https://columbia-applied-data-science.github.io/appdatasci.pdf)
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
 
-Also, there are other resources for self-learning:
+Below is a list of online books:
+- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [book](https://columbia-applied-data-science.github.io/appdatasci.pdf)
 - [Mathematics for Machine Learning](https://mml-book.github.io/) and the [book](https://mml-book.github.io/book/mml-book.pdf)
 - [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [book](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
+- [Deep Learning](https://www.deeplearningbook.org)
+
+Below is a list of course notes:
+- [Notes of the Data 8 course, UC Berkeley](https://inferentialthinking.com/)
+- [Notes of the DSC 10 course, UC San Diego](https://notes.dsc10.com/)
+- [CSE446 Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
+- [CS4780 Machine Learning for Intelligent Systems, Cornell University](https://courses.cis.cornell.edu/cs4780/2018fa/page18/index.html)
+- [10-601 Introduction to Machine Learning, Carnegie Mellon University](https://www.cs.cmu.edu/~mgormley/courses/10601bd-f18/schedule.html)
+- [36-702 Statistical Machine Learning, Carnegie Mellon University](https://www.stat.cmu.edu/~ryantibs/statml/)
+
+Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
-- [Notes of the Data 8 course in UC Berkeley](https://inferentialthinking.com/)
-- [Notes of the DSC 10 course in UC San Diego](https://notes.dsc10.com/)
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
-- [Deep Learning Book](https://www.deeplearningbook.org)
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
 
 ## Acknowledgements
