@@ -17,16 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-import numpy as np
+# Below is the second input for another test case.
+df_task2_case2_input2 = answer_resample_df(df_task1_case3)
+df_task2_case2_input2
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[15], line 2[0m
+[1;32m      1[0m [38;5;66;03m# Below is the second input for another test case.[39;00m
+[0;32m----> 2[0m df_task2_case2_input2 [38;5;241m=[39m answer_resample_df([43mdf_task1_case3[49m)
+[1;32m      3[0m df_task2_case2_input2
 
-[0;31mModuleNotFoundError[0m: No module named 'pandas'
-ModuleNotFoundError: No module named 'pandas'
+[0;31mNameError[0m: name 'df_task1_case3' is not defined
+NameError: name 'df_task1_case3' is not defined
 
