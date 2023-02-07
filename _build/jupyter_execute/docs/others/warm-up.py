@@ -152,7 +152,7 @@ def answer_transform_text_df(df):
 # ### Task Description
 # 
 # - Given a data frame with timestamps and variables, resample the data by computing hourly average values from the previous hour.
-# - For example, at 9:00 time, compute the average value for all data points betwee 8:00 and 9:00 and put the average value to a cell.
+# - For example, at 9:00 time, compute the average value for all data points between 8:00 and 9:00 and put the average value to a cell.
 # - You should use pandas to operate the data frame (but not converting it to something else like an array).
 # 
 # ### Other Information
@@ -230,35 +230,6 @@ df_task1_case2
 check_answer_df(resample_df(df_task1_case2), answer_resample_df(df_task1_case2), n=2)
 
 
-# In[9]:
-
-
-# Below is another test case.
-data_task1_case3 = [
-[1477886800,185.0,1.1],
-[1477887200,223.0,2.2],
-[1477891800,343.0,1.56],
-[1477899000,359.0,5.97],
-[1477902600,5.0,3.21],
-[1477906200,41.0,9.05],
-[1477906800,26.0,7.2],
-[1477907500,34.0,3.2],
-[1477909800,25.0,1.0],
-[1477913400,9.0,0.45],
-[1477917000,263.0,2.2],
-[1477920000,222.0,3.4],
-[1477920600,84.0,1.33]]
-df_task1_case3 = pd.DataFrame(data=data_task1_case3, columns=["timestamps","v2","v3"]).set_index("timestamps")
-df_task1_case3
-
-
-# In[10]:
-
-
-# Check if test case 3 is passed.
-check_answer_df(resample_df(df_task1_case3), answer_resample_df(df_task1_case3), n=3)
-
-
 # In[ ]:
 
 
@@ -278,7 +249,7 @@ check_answer_df(resample_df(df_task1_case3), answer_resample_df(df_task1_case3),
 # - This task is in a part of the pipeline that continues Task 1.
 # - Hint: Use the `pandas.merge_ordered` function. Check the documentation by typing `?pd.merge_ordered` in a notebook cell and run the cell.
 
-# In[11]:
+# In[9]:
 
 
 # Below is an example of the first input:
@@ -292,7 +263,7 @@ df_task2_case1_input1 = answer_resample_df(df_task2_case1_input1)
 df_task2_case1_input1
 
 
-# In[12]:
+# In[10]:
 
 
 # Below is an example of the second input:
@@ -306,14 +277,14 @@ df_task2_case1_input2 = answer_resample_df(df_task2_case1_input2)
 df_task2_case1_input2
 
 
-# In[13]:
+# In[11]:
 
 
 # Below is an example output.
 answer_merge_df(df_task2_case1_input1, df_task2_case1_input2)
 
 
-# In[14]:
+# In[12]:
 
 
 def merge_df(df1, df2):
@@ -323,14 +294,14 @@ def merge_df(df1, df2):
     ###################################
 
 
-# In[15]:
+# In[13]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(merge_df(df_task2_case1_input1, df_task2_case1_input2), answer_merge_df(df_task2_case1_input1, df_task2_case1_input2), n=1)
 
 
-# In[16]:
+# In[14]:
 
 
 # Below is the first input for another test case.
@@ -338,7 +309,7 @@ df_task2_case2_input1 = answer_resample_df(df_task1_case2)
 df_task2_case2_input1
 
 
-# In[17]:
+# In[15]:
 
 
 # Below is the second input for another test case.

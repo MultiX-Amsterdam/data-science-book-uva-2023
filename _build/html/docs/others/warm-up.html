@@ -731,7 +731,7 @@ title="Print to PDF"
 <h3>Task Description<a class="headerlink" href="#task-description" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Given a data frame with timestamps and variables, resample the data by computing hourly average values from the previous hour.</p></li>
-<li><p>For example, at 9:00 time, compute the average value for all data points betwee 8:00 and 9:00 and put the average value to a cell.</p></li>
+<li><p>For example, at 9:00 time, compute the average value for all data points between 8:00 and 9:00 and put the average value to a cell.</p></li>
 <li><p>You should use pandas to operate the data frame (but not converting it to something else like an array).</p></li>
 </ul>
 </section>
@@ -1038,156 +1038,6 @@ timestamps
 2016-10-31 14:00:00+00:00  50.350000
 2016-10-31 15:00:00+00:00  23.133333
 2016-10-31 16:00:00+00:00  42.300000
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another test case.</span>
-<span class="n">data_task1_case3</span> <span class="o">=</span> <span class="p">[</span>
-<span class="p">[</span><span class="mi">1477886800</span><span class="p">,</span><span class="mf">185.0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477887200</span><span class="p">,</span><span class="mf">223.0</span><span class="p">,</span><span class="mf">2.2</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477891800</span><span class="p">,</span><span class="mf">343.0</span><span class="p">,</span><span class="mf">1.56</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477899000</span><span class="p">,</span><span class="mf">359.0</span><span class="p">,</span><span class="mf">5.97</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477902600</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">3.21</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477906200</span><span class="p">,</span><span class="mf">41.0</span><span class="p">,</span><span class="mf">9.05</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477906800</span><span class="p">,</span><span class="mf">26.0</span><span class="p">,</span><span class="mf">7.2</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477907500</span><span class="p">,</span><span class="mf">34.0</span><span class="p">,</span><span class="mf">3.2</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477909800</span><span class="p">,</span><span class="mf">25.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477913400</span><span class="p">,</span><span class="mf">9.0</span><span class="p">,</span><span class="mf">0.45</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477917000</span><span class="p">,</span><span class="mf">263.0</span><span class="p">,</span><span class="mf">2.2</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477920000</span><span class="p">,</span><span class="mf">222.0</span><span class="p">,</span><span class="mf">3.4</span><span class="p">],</span>
-<span class="p">[</span><span class="mi">1477920600</span><span class="p">,</span><span class="mf">84.0</span><span class="p">,</span><span class="mf">1.33</span><span class="p">]]</span>
-<span class="n">df_task1_case3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_task1_case3</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span><span class="s2">&quot;v2&quot;</span><span class="p">,</span><span class="s2">&quot;v3&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">)</span>
-<span class="n">df_task1_case3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>v2</th>
-      <th>v3</th>
-    </tr>
-    <tr>
-      <th>timestamps</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1477886800</th>
-      <td>185.0</td>
-      <td>1.10</td>
-    </tr>
-    <tr>
-      <th>1477887200</th>
-      <td>223.0</td>
-      <td>2.20</td>
-    </tr>
-    <tr>
-      <th>1477891800</th>
-      <td>343.0</td>
-      <td>1.56</td>
-    </tr>
-    <tr>
-      <th>1477899000</th>
-      <td>359.0</td>
-      <td>5.97</td>
-    </tr>
-    <tr>
-      <th>1477902600</th>
-      <td>5.0</td>
-      <td>3.21</td>
-    </tr>
-    <tr>
-      <th>1477906200</th>
-      <td>41.0</td>
-      <td>9.05</td>
-    </tr>
-    <tr>
-      <th>1477906800</th>
-      <td>26.0</td>
-      <td>7.20</td>
-    </tr>
-    <tr>
-      <th>1477907500</th>
-      <td>34.0</td>
-      <td>3.20</td>
-    </tr>
-    <tr>
-      <th>1477909800</th>
-      <td>25.0</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>1477913400</th>
-      <td>9.0</td>
-      <td>0.45</td>
-    </tr>
-    <tr>
-      <th>1477917000</th>
-      <td>263.0</td>
-      <td>2.20</td>
-    </tr>
-    <tr>
-      <th>1477920000</th>
-      <td>222.0</td>
-      <td>3.40</td>
-    </tr>
-    <tr>
-      <th>1477920600</th>
-      <td>84.0</td>
-      <td>1.33</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if test case 3 is passed.</span>
-<span class="n">check_answer_df</span><span class="p">(</span><span class="n">resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">),</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 3 failed.
-
-Your output is:
-None
-
-Expected output is:
-                                   v2        v3
-timestamps                                     
-2016-10-31 05:00:00+00:00  204.000000  1.650000
-2016-10-31 06:00:00+00:00  343.000000  1.560000
-2016-10-31 07:00:00+00:00         NaN       NaN
-2016-10-31 08:00:00+00:00  359.000000  5.970000
-2016-10-31 09:00:00+00:00    5.000000  3.210000
-2016-10-31 10:00:00+00:00   33.666667  6.483333
-2016-10-31 11:00:00+00:00   25.000000  1.000000
-2016-10-31 12:00:00+00:00    9.000000  0.450000
-2016-10-31 13:00:00+00:00  263.000000  2.200000
-2016-10-31 14:00:00+00:00  153.000000  2.365000
 </pre></div>
 </div>
 </div>
@@ -1519,87 +1369,17 @@ timestamps
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Below is the second input for another test case.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_task2_case2_input2</span> <span class="o">=</span> <span class="n">answer_resample_df</span><span class="p">(</span><span class="n">df_task1_case3</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_task2_case2_input2</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>v2</th>
-      <th>v3</th>
-    </tr>
-    <tr>
-      <th>timestamps</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016-10-31 05:00:00+00:00</th>
-      <td>204.000000</td>
-      <td>1.650000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 06:00:00+00:00</th>
-      <td>343.000000</td>
-      <td>1.560000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 07:00:00+00:00</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 08:00:00+00:00</th>
-      <td>359.000000</td>
-      <td>5.970000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 09:00:00+00:00</th>
-      <td>5.000000</td>
-      <td>3.210000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 10:00:00+00:00</th>
-      <td>33.666667</td>
-      <td>6.483333</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 11:00:00+00:00</th>
-      <td>25.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 12:00:00+00:00</th>
-      <td>9.000000</td>
-      <td>0.450000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 13:00:00+00:00</th>
-      <td>263.000000</td>
-      <td>2.200000</td>
-    </tr>
-    <tr>
-      <th>2016-10-31 14:00:00+00:00</th>
-      <td>153.000000</td>
-      <td>2.365000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df_task1_case3&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
