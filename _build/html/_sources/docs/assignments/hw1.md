@@ -6,11 +6,16 @@
 
 ## Usage
 
-Do the following steps to set up the assignment:
+Follow the steps below to set up the assignment:
 - Have the [JupyterLab](https://jupyter.org/install) environment ready.
 - Download the notebook file by clicking on the download icon at the top of the webpage when visiting the notebook pages.
 - Open the original notebook file and start doing the assignment.
-- Do not check the answer cell before practicing the tasks by yourself.
+
+Follow the steps below to do the assignment:
+- First, for each task, try your best to implement the solution without checking the answer.
+- In the meantime, use the hint in the task description. You can also check the functions that are mentioned in the hint online.
+- Try your best to implement the solution using the functions in the hint. If you still have no clue, check the answer, understand how it works, and implement the solution again by yourself.
+- If there are parts that you do not understand, feel free to ask questions during the work sessions or on Canvas.
 
 ## Additional Recourses
 
