@@ -207,6 +207,7 @@ Below is a list of online books:
 - [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [book](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Deep Learning](https://www.deeplearningbook.org)
+- [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
 
 Below is a list of course notes:
 - [Notes of the Data 8 course, UC Berkeley](https://inferentialthinking.com/)

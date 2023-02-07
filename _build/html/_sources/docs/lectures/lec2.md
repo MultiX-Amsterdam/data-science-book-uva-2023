@@ -20,3 +20,4 @@ TBA
 - [Case Studies of Data Visualization](https://flowingdata.com/)
 - [Case Studies of Satelite Image Analysis](https://earthengine.google.com/case_studies/)
 - [Case Studies of Machine Learning and Design](https://machinelearning.design/)
+- Section 11.8 Comparing Different Models in book: [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
