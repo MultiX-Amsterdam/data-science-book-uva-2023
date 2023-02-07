@@ -3,7 +3,7 @@
 ## Materials
 
 - [Python Coding Warm-Up Notebook](../others/warm-up)
-- [Answers for the Python Coding Warm-Up Notebook](../others/warm-up-answer)
+- [Answers for the Python Coding Warm-Up Notebook](../others/warm_up_answer)
 
 ## Usage
 

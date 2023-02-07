@@ -17,34 +17,19 @@ import numpy as np
 # In[2]:
 
 
-import json
-import re
-import os
-import datetime
-
-def exec_ipynb(filename_or_url):
-    """
-    Load other ipython notebooks and import their functions.
-    """
-    nb = (requests.get(filename_or_url).json() if re.match(r'https?:', filename_or_url) else json.load(open(filename_or_url)))
-    if(nb['nbformat'] >= 4):
-        src = [''.join(cell['source']) for cell in nb['cells'] if cell['cell_type'] == 'code']
-    else:
-        src = [''.join(cell['input']) for cell in nb['worksheets'][0]['cells'] if cell['cell_type'] == 'code']
-    tmpname = '/tmp/%s-%s-%d.py' % (os.path.basename(filename_or_url),
-                                    datetime.datetime.now().strftime('%Y%m%d%H%M%S%f'),
-                                    os.getpid())
-    src = '\n\n\n'.join(src)
-    open(tmpname, 'w').write(src)
-    code = compile(src, tmpname, 'exec')
-    exec(code, globals())
+# Do not check the answers before practicing the tasks by yourself
+from warm_up_answer import check_answer_df
+from warm_up_answer import answer_resample_df
+from warm_up_answer import answer_merge_df
+from warm_up_answer import answer_aggregate_df
+from warm_up_answer import answer_transform_df
+from warm_up_answer import answer_transform_text_df
 
 
-# In[3]:
+# In[ ]:
 
 
-# Do not check the answer before practicing the tasks.
-exec_ipynb("warm-up-answer.ipynb")
+
 
 
 # ## Task 1: Resample Data
@@ -61,7 +46,7 @@ exec_ipynb("warm-up-answer.ipynb")
 # - This task is very common in dealing with structured data. For example, a sensor may report many readings in a high frequency, but we only want the hourly averaged value.
 # - Hint: Use the `pandas.DataFrame.resample` function. Check the documentation by typing `?pd.DataFrame.resample` in a notebook cell and run the cell.
 
-# In[4]:
+# In[3]:
 
 
 # Below is an example input.
@@ -75,14 +60,14 @@ df_task1_case1 = pd.DataFrame(data=data_task1_case1, columns=["timestamps","v1"]
 df_task1_case1
 
 
-# In[5]:
+# In[4]:
 
 
 # Below is an example output.
 answer_resample_df(df_task1_case1)
 
 
-# In[6]:
+# In[5]:
 
 
 def resample_df(df):
@@ -92,14 +77,14 @@ def resample_df(df):
     ###################################
 
 
-# In[7]:
+# In[6]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(resample_df(df_task1_case1), answer_resample_df(df_task1_case1), n=1)
 
 
-# In[8]:
+# In[7]:
 
 
 # Below is another test case.
@@ -123,14 +108,14 @@ df_task1_case2 = pd.DataFrame(data=data_task1_case2, columns=["timestamps","v1"]
 df_task1_case2
 
 
-# In[9]:
+# In[8]:
 
 
 # Check if test case 2 is passed.
 check_answer_df(resample_df(df_task1_case2), answer_resample_df(df_task1_case2), n=2)
 
 
-# In[10]:
+# In[9]:
 
 
 # Below is another test case.
@@ -152,7 +137,7 @@ df_task1_case3 = pd.DataFrame(data=data_task1_case3, columns=["timestamps","v2",
 df_task1_case3
 
 
-# In[11]:
+# In[10]:
 
 
 # Check if test case 3 is passed.
@@ -178,7 +163,7 @@ check_answer_df(resample_df(df_task1_case3), answer_resample_df(df_task1_case3),
 # - This task is in a part of the pipeline that continues Task 1.
 # - Hint: Use the `pandas.merge_ordered` function. Check the documentation by typing `?pd.merge_ordered` in a notebook cell and run the cell.
 
-# In[12]:
+# In[11]:
 
 
 # Below is an example of the first input:
@@ -192,7 +177,7 @@ df_task2_case1_input1 = answer_resample_df(df_task2_case1_input1)
 df_task2_case1_input1
 
 
-# In[13]:
+# In[12]:
 
 
 # Below is an example of the second input:
@@ -206,14 +191,14 @@ df_task2_case1_input2 = answer_resample_df(df_task2_case1_input2)
 df_task2_case1_input2
 
 
-# In[14]:
+# In[13]:
 
 
 # Below is an example output.
 answer_merge_df(df_task2_case1_input1, df_task2_case1_input2)
 
 
-# In[15]:
+# In[14]:
 
 
 def merge_df(df1, df2):
@@ -223,14 +208,14 @@ def merge_df(df1, df2):
     ###################################
 
 
-# In[16]:
+# In[15]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(merge_df(df_task2_case1_input1, df_task2_case1_input2), answer_merge_df(df_task2_case1_input1, df_task2_case1_input2), n=1)
 
 
-# In[17]:
+# In[16]:
 
 
 # Below is the first input for another test case.
@@ -238,7 +223,7 @@ df_task2_case2_input1 = answer_resample_df(df_task1_case2)
 df_task2_case2_input1
 
 
-# In[18]:
+# In[17]:
 
 
 # Below is the second input for another test case.
@@ -246,7 +231,7 @@ df_task2_case2_input2 = answer_resample_df(df_task1_case3)
 df_task2_case2_input2
 
 
-# In[19]:
+# In[18]:
 
 
 # Check if test case 2 is passed.
@@ -278,7 +263,7 @@ check_answer_df(merge_df(df_task2_case2_input1, df_task2_case2_input2), answer_m
 # - This task is in a part of the pipeline that continues both Task 1 and Task 2.
 # - Hint: Use the `pandas.DataFrame.groupby` function. Check the documentation by typing `?pd.DataFrame.groupby` in a notebook cell and run the cell.
 
-# In[20]:
+# In[19]:
 
 
 # Below is an example input.
@@ -293,14 +278,14 @@ df_task3_case1 = pd.DataFrame(data=data_task3_case1, columns=["timestamps","v1",
 df_task3_case1
 
 
-# In[21]:
+# In[20]:
 
 
 # Below is an example output.
 answer_aggregate_df(df_task3_case1)
 
 
-# In[22]:
+# In[21]:
 
 
 def aggregate_df(df):
@@ -310,14 +295,14 @@ def aggregate_df(df):
     ###################################
 
 
-# In[23]:
+# In[22]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(aggregate_df(df_task3_case1), answer_aggregate_df(df_task3_case1), n=1)
 
 
-# In[24]:
+# In[23]:
 
 
 # Below is another test case.
@@ -346,7 +331,7 @@ df_task3_case2 = pd.DataFrame(data=data_task3_case2, columns=["timestamps","v1",
 df_task3_case2
 
 
-# In[25]:
+# In[24]:
 
 
 # Check if test case 2 is passed.
@@ -376,7 +361,7 @@ check_answer_df(aggregate_df(df_task3_case2), answer_aggregate_df(df_task3_case2
 # - Hint: Use the `pandas.isna` function. Check the documentation by typing `?pd.isna` in a notebook cell and run the cell.
 # - Hint: Use the `numpy.sin` and `numpy.cos` function to perform the transformation. Be careful that these functions operate on radians but not degrees.
 
-# In[26]:
+# In[25]:
 
 
 # Below is an example input.
@@ -389,14 +374,14 @@ df_task4_case1 = pd.DataFrame(data=data_task4_case1, columns=["timestamps","wind
 df_task4_case1
 
 
-# In[27]:
+# In[26]:
 
 
 # Below is an example output.
 answer_transform_df(df_task4_case1)
 
 
-# In[28]:
+# In[27]:
 
 
 def transform_df(df):
@@ -406,14 +391,14 @@ def transform_df(df):
     ###################################
 
 
-# In[29]:
+# In[28]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(transform_df(df_task4_case1), answer_transform_df(df_task4_case1), n=1)
 
 
-# In[30]:
+# In[29]:
 
 
 # Below is another test case.
@@ -437,7 +422,7 @@ df_task4_case2 = pd.DataFrame(data=data_task4_case2, columns=["timestamps","wind
 df_task4_case2
 
 
-# In[31]:
+# In[30]:
 
 
 # Check if test case 2 is passed.
@@ -469,7 +454,7 @@ check_answer_df(transform_df(df_task4_case2), answer_transform_df(df_task4_case2
 # - Hint: Use the `pandas.Series.str.contains` funtcion. Check the documentation by typing `?pd.Series.str.contains` in a notebook cell and run the cell.
 # - Hint: Use the `pandas.Series.str.extract` function. Check the documentation by typing `?pd.Series.str.extract` in a notebook cell and run the cell.
 
-# In[32]:
+# In[31]:
 
 
 # Below is an example input.
@@ -483,14 +468,14 @@ data_task5_case1 = pd.DataFrame(data=data_task5_case1, columns=["paper_id","venu
 data_task5_case1
 
 
-# In[33]:
+# In[32]:
 
 
 # Below is an example output.
 answer_transform_text_df(data_task5_case1)
 
 
-# In[34]:
+# In[33]:
 
 
 def transform_text_df(df):
@@ -500,14 +485,14 @@ def transform_text_df(df):
     ###################################
 
 
-# In[35]:
+# In[34]:
 
 
 # Check if test case 1 is passed.
 check_answer_df(transform_text_df(data_task5_case1), answer_transform_text_df(data_task5_case1), n=1)
 
 
-# In[36]:
+# In[35]:
 
 
 # Below is another test case.
@@ -542,7 +527,7 @@ data_task5_case2 = pd.DataFrame(data=data_task5_case2, columns=["paper_id","venu
 data_task5_case2
 
 
-# In[37]:
+# In[36]:
 
 
 # Check if test case 2 is passed.
