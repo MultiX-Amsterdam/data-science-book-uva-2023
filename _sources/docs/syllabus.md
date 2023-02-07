@@ -207,14 +207,17 @@ Below is a list of online books:
 - [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [book](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Deep Learning](https://www.deeplearningbook.org)
+- [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
 
-Below is a list of course notes:
-- [Notes of the Data 8 course, UC Berkeley](https://inferentialthinking.com/)
-- [Notes of the DSC 10 course, UC San Diego](https://notes.dsc10.com/)
-- [CSE446 Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
-- [CS4780 Machine Learning for Intelligent Systems, Cornell University](https://courses.cis.cornell.edu/cs4780/2018fa/page18/index.html)
-- [10-601 Introduction to Machine Learning, Carnegie Mellon University](https://www.cs.cmu.edu/~mgormley/courses/10601bd-f18/schedule.html)
-- [36-702 Statistical Machine Learning, Carnegie Mellon University](https://www.stat.cmu.edu/~ryantibs/statml/)
+Below is a list of online course notes:
+- [CSE446: Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
+- [CS4780: Machine Learning for Intelligent Systems, Cornell University](https://courses.cis.cornell.edu/cs4780/2018fa/page18/index.html)
+- [10-601: Introduction to Machine Learning, Carnegie Mellon University](https://www.cs.cmu.edu/~mgormley/courses/10601bd-f18/schedule.html)
+- [36-702: Statistical Machine Learning, Carnegie Mellon University](https://www.stat.cmu.edu/~ryantibs/statml/)
+- [STAT 462: Applied Regression Analysis, Penn State](https://online.stat.psu.edu/stat462/)
+- [STAT 500: Applied Statistics, Penn State](https://online.stat.psu.edu/stat500/)
+- [STAT 800: Applied Research Methods, Penn State](https://online.stat.psu.edu/stat800/)
+- [STAT 501: Regression Methods, Penn State](https://online.stat.psu.edu/stat501/)
 
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
@@ -225,8 +228,9 @@ Also, there are other resources for self-learning:
 
 We greatly appreciate the help from the teaching administration and management team of the UvA Informatics Institute in supporting this course.
 We also greatly thank the following open-sourced courses for inspiring the set-up of this course:
-- [Machine Learning for Design, TU Delft](https://ml4design.github.io)
-- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/)
-- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/)
 - [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
+- [IOB4-T3: Machine Learning for Design, TU Delft](https://ml4design.github.io)
+- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
+- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
+- [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
 - [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
