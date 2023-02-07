@@ -3,15 +3,14 @@
 ## Materials
 
 - [Python Coding Warm-Up Notebook](../others/warm-up)
-- [Answers for the Python Coding Warm-Up Notebook](../others/warm-up-answer)
 
 ## Usage
 
 Do the following steps to set up the assignment:
 - Have the [JupyterLab](https://jupyter.org/install) environment ready.
-- Download both the original notebook and the answer. You can download the files by clicking on the download icon at the top of the webpage when visiting the notebook pages.
-- **Put the two files together in the same directory.** This step is important since the answer notebook is used to check your code using test cases. 
+- Download the notebook file by clicking on the download icon at the top of the webpage when visiting the notebook pages.
 - Open the original notebook file and start doing the assignment.
+- Do not check the answer cell before practicing the tasks by yourself.
 
 ## Additional Recourses
 
