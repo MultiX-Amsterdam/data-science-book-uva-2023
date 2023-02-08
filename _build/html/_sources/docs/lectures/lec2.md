@@ -9,7 +9,8 @@
 
 ## Slides
 
-TBA
+- [Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-1.pdf)
+- [Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-2.pdf)
 
 ## Additional Resources
 
