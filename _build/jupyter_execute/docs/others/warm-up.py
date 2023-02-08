@@ -466,7 +466,7 @@ check_answer_df(aggregate_df(df_task3_case2), answer_aggregate_df(df_task3_case2
 # - Given a data frame with timestamps and wind information, transform the wind direction to sine/cosine components and threshold the wind speed. 
 # - Remove the orignal wind direction column (`wind_deg`) and add two new columns (`wind_deg_sine` and `wind_deg_cosine`) to the data frame.
 # - Remove the orignal wind speed column (`wind_mph`) and add a new column (`is_calm_wind`) to show if wind speed is lower than 5 MPH.
-# - The `is_calm_wind` value should be `True` (when `wind_mph>=5`), `False` (when `wind_mph<5`), or `None` (when `wind_mph` data is missing).
+# - The `is_calm_wind` value should be `False` (when `wind_mph>=5`), `True` (when `wind_mph<5`), or `None` (when `wind_mph` data is missing).
 # - The columns need to follow the order `["wind_deg_sine", "wind_deg_cosine", "is_calm_wind"]`.
 # 
 # ### Other Information
