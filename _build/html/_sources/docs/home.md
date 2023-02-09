@@ -39,7 +39,7 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 3
   - Lecture 5 (Feb 21): Overview of deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
-  - Lecture 6 (Feb 23): Introduce how to work with crowdscourcing platforms in data science research, such as annotating data
+  - Lecture 6 (Feb 23): Guest lecture by [Dr. Ting-Hao 'Kenneth' Huang](https://crowd.ist.psu.edu) (an assistant professor from Penn State IST) to introduce how to work with crowdscourcing platforms in data science research and data annotation. This lecture will be given remotely (no physical lecture).
 - Week 4
   - Mid-term Exam (Feb 28)
   - A lecture to discuss the mid-term exam
