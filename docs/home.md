@@ -41,7 +41,7 @@ If you come to the class without doing the preparation part, you may not be able
   - Assignment 3 (work session and self-study): Practice mock-up exam
   - Lecture 6 (Feb 23): Introduce how to work with crowdscourcing platforms in data science research, such as annotating data
 - Week 4
-  - Mid-term Exam
+  - Mid-term Exam (Feb 28)
   - A lecture to discuss the mid-term exam
 - Week 5
   - Lecture 7 (Mar 7): `Tutorial` for the text data processing module (using Jupyter Notebook)
@@ -57,4 +57,4 @@ If you come to the class without doing the preparation part, you may not be able
   - No assignment this week. Use the work session to prepare for the final exam (e.g., review and practice the course materials).
   - Lecture 12 (Mar 23): Guest lecture by [Dr. Jie Yang](https://yangjiera.github.io) (an assistant professor from TU Delft EWI) to give examples and talk about state-of-the-art research in Human-Centered AI. This lecture may be given physically or remotely.
 - Week 8
-  - Final Exam
+  - Final Exam (Mar 28)
