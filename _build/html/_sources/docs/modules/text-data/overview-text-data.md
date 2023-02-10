@@ -1,5 +1,7 @@
 # Text Data Processing
 
+(Last updated: Feb 10, 2023)
+
 This module is about processing text data and has the following learning goals:
 
 - Apply the methods of text processing to a big body of text

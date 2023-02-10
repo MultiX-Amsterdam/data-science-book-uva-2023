@@ -1,5 +1,7 @@
 # Image Data Processing
 
+(Last updated: Feb 10, 2023)
+
 This module is about processing image data and has the following learning goals:
 
 - Understand image processing pipelines for object recognition and detection
