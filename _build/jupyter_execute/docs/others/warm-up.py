@@ -153,7 +153,7 @@ def answer_transform_text_df(df):
 # 
 # - Given a data frame with timestamps and variables, resample the data by computing hourly average values from the previous hour.
 # - For example, at 9:00 time, compute the average value for all data points between 8:00 and 9:00 and put the average value to a cell.
-# - You should use pandas to operate the data frame (but not converting it to something else like an array).
+# - We strongly recommend using pandas to operate the data frame (instead of reimplementing the available functions).
 # 
 # ### Other Information
 # 
@@ -270,7 +270,7 @@ check_answer_df(resample_df(df_task1_case3), answer_resample_df(df_task1_case3),
 # ### Task Description
 # 
 # - Given two data frames with different timestamps and variables, merge them into a single data frame.
-# - You should use pandas to operate the data frame (but not converting it to something else like an array).
+# - We strongly recommend using pandas to operate the data frame (instead of reimplementing the available functions).
 # 
 # ### Other Information
 # 
@@ -370,7 +370,7 @@ check_answer_df(merge_df(df_task2_case2_input1, df_task2_case2_input2), answer_m
 #   - Then, for each group, resample the data based on criteria described in task 1 (hourly average).
 #   - Finally, fill in the missing data with value 0.
 # - Use your code for Task 1 and Task 2 to complete this task faster.
-# - You should use pandas to operate the data frame (but not converting it to something else like an array).
+# - We strongly recommend using pandas to operate the data frame (instead of reimplementing the available functions).
 # 
 # ### Other Information
 # 
@@ -468,6 +468,7 @@ check_answer_df(aggregate_df(df_task3_case2), answer_aggregate_df(df_task3_case2
 # - Remove the orignal wind speed column (`wind_mph`) and add a new column (`is_calm_wind`) to show if wind speed is lower than 5 MPH.
 # - The `is_calm_wind` value should be `False` (when `wind_mph>=5`), `True` (when `wind_mph<5`), or `None` (when `wind_mph` data is missing).
 # - The columns need to follow the order `["wind_deg_sine", "wind_deg_cosine", "is_calm_wind"]`.
+# - We strongly recommend using pandas to operate the data frame (instead of reimplementing the available functions).
 # 
 # ### Other Information
 # 
@@ -562,6 +563,7 @@ check_answer_df(transform_df(df_task4_case2), answer_transform_df(df_task4_case2
 # - The data type for column `CV`, `ML`, and `MM` should be binary (True/False).
 # - The data type for column `year` should be integer.
 # - The order of the column needs to be `["CV","ML","MM","year"]`.
+# - We strongly recommend using pandas to operate the data frame (instead of reimplementing the available functions).
 # 
 # ### Other Information
 # 
