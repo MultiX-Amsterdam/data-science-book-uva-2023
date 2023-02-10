@@ -2,7 +2,7 @@
 
 ## Preparation
 
-TBA
+- Do the [preparation](../modules/structured-data/preparation-structured-data) for the structured data processing module.
 
 ## Slides
 
