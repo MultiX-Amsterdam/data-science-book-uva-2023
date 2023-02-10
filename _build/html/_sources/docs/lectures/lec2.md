@@ -2,10 +2,10 @@
 
 ## Preparation
 
-- Read the [Smell Pittsburgh paper](https://dl.acm.org/doi/10.1145/3369397).
-  - This project is an example of a data science pipeline.
-  - Reading this work will help you get a basic understanding of data science pipelines.
-  - You do not need to understand all techniques in the paper. Some of the techniques can be too difficult for you. Try your best to get the big picture.
+Read the [Smell Pittsburgh paper](https://dl.acm.org/doi/10.1145/3369397).
+- This project is an example of a data science pipeline.
+- Reading this work will help you get a basic understanding of data science pipelines.
+- You do not need to understand all techniques in the paper. Some of the techniques can be too difficult for you. Try your best to get the big picture.
 
 ## Materials
 
