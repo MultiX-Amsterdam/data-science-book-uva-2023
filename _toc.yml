@@ -13,8 +13,8 @@ parts:
     title: "L1: Introduction"
   - file: docs/lectures/lec2
     title: "L2: Data Science Fundamentals"
-      #- file: docs/lectures/lec3
-      #title: "L3: Structured Data Processing I"
+  - file: docs/lectures/lec3
+    title: "L3: Structured Data Processing I"
       #- file: docs/lectures/lec4
       #title: "L4: Structured Data Processing II"
       #- file: docs/lectures/lec5

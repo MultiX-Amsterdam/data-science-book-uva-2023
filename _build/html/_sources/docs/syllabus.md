@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Jan 30, 2023)
+(Last updated: Feb 10, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -19,15 +19,16 @@ Also, notice that this course assumes someone already collected datasets for you
 Data collection is a topic that could take a very long time to explain and is mostly out of the scope of this course.
 
 :::{note}
- Notice that the course instructor writes the syllabus from the first-person perspective.
- :::
+Notice that the course instructor writes the syllabus from the first-person perspective.
+:::
 
 ## Learning Goals
 
 By the end of the course, we expect you to be able to:
-- Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization)
-- Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language
-- Understand issues around data science tasks, including searching for datasets, annotating data, ensuring reproducibility, managing programming code efficiently, and paying attention to research ethics
+- Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization).
+- Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language.
+- Critically reflect on the model performance using various metrics and obtain meaningful insights from data analysis.
+- Understand issues around data science tasks, such as algorithm bias, research ethics, reproducibility, and data annotation.
 
 ## Prerequisites
 
@@ -209,7 +210,7 @@ Below is a list of online books:
 - [Deep Learning](https://www.deeplearningbook.org)
 - [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
 
-Below is a list of online course notes:
+Below is a list of related online course notes and materials:
 - [CSE446: Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
 - [CS4780: Machine Learning for Intelligent Systems, Cornell University](https://courses.cis.cornell.edu/cs4780/2018fa/page18/index.html)
 - [10-601: Introduction to Machine Learning, Carnegie Mellon University](https://www.cs.cmu.edu/~mgormley/courses/10601bd-f18/schedule.html)
@@ -218,19 +219,20 @@ Below is a list of online course notes:
 - [STAT 500: Applied Statistics, Penn State](https://online.stat.psu.edu/stat500/)
 - [STAT 800: Applied Research Methods, Penn State](https://online.stat.psu.edu/stat800/)
 - [STAT 501: Regression Methods, Penn State](https://online.stat.psu.edu/stat501/)
+- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
+- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
+- [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
+- [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
+- [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
 
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
+- [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
 
 ## Acknowledgements
 
 We greatly appreciate the help from the teaching administration and management team of the UvA Informatics Institute in supporting this course.
-We also greatly thank the following open-sourced courses for inspiring the set-up of this course:
-- [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
-- [IOB4-T3: Machine Learning for Design, TU Delft](https://ml4design.github.io)
-- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
-- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
-- [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
-- [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
+We also greatly thank the following open-sourced course for inspiring the set-up of this course:
+- [IOB4-T3: Machine Learning for Design in TU Delft](https://ml4design.com/ml4design.2021-2022/)
