@@ -5,7 +5,7 @@ Smell Pittsburgh is a mobile application for crowdsourcing reports of bad odors,
 The data is used to train machine learning models to predict the presence of bad smell, create push notifications to inform citizens about the bad smell, and explain local air pollution patterns.
 You will need to read a paper and interact with the online visualization to explore data.
 
-## Prepatation Task 1
+## Preparation Task 1
 
 First, read the following paper to get an idea about the motivation, background, and design of the Smell Pittsburgh application.
 - Yen-Chia Hsu, Jennifer Cross, Paul Dille, Michael Tasota, Beatrice Dias, Randy Sargent, Ting-Hao (Kenneth) Huang, and Illah Nourbakhsh. 2020. Smell Pittsburgh: Engaging Community Citizen Science for Air Quality. ACM Transactions on Interactive Intelligent Systems. 10, 4, Article 32. DOI:[https://doi.org/10.1145/3369397](https://doi.org/10.1145/3369397). Preprint:[https://arxiv.org/pdf/1912.11936.pdf](https://arxiv.org/pdf/1912.11936.pdf).
@@ -21,7 +21,7 @@ When reading the paper, write down the answers to the following questions.
 - How can the data be used potentially to help local people?
 - What are the roles of data science in the Smell Pittsburgh project?
 
-## Prepatation Task 2
+## Preparation Task 2
 
 After you read the paper mentioned previously, explore the data in the following URL that visualizes smell reports and air quality data.
 Please make sure you read the paper before doing this task.
@@ -39,7 +39,7 @@ Smell events mean the occurance within a time range when many people complained 
 - Are there common patterns in air quality sensor measurements (indicated by the circle on the user interface with colors) when smell events are about to happen or are happening?
 - Can you use the patterns that you found to identify similar smell events on other days? Find at least three other days that have similar patterns.
 
-## Prepatation Task 3
+## Preparation Task 3
 
 Next, after you explore the data, go to the following web page to see the aggregated statistics to understand the distribution of users and smell reports temporally and spatially.
 - Link to the data analysis page: [https://smellpgh.org/analysis](https://smellpgh.org/analysis)
