@@ -1,5 +1,7 @@
 # Assignment 1: Python Coding Warm-Up
 
+(Last updated: Feb 10, 2023)
+
 ## Materials
 
 - [Python Coding Warm-Up Notebook](../others/warm-up)

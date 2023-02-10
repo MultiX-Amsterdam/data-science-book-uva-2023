@@ -1,5 +1,7 @@
 # Lecture 9: Image Data Processing (Part I)
 
+(Last updated: Feb 10, 2023)
+
 ## Preparation
 
 TBA
