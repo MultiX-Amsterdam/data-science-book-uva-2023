@@ -4,7 +4,7 @@
 
 TBA
 
-## Slides
+## Materials
 
 TBA
 

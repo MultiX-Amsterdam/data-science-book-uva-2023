@@ -4,10 +4,10 @@
 
 - Read the [course syllabus](../syllabus.md).
 
-## Slides
+## Materials
 
-- [Lecture 1-1: Course Introduction and Organization](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec1-1.pdf)
-- [Lecture 1-2: Social Impact of Data Science](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec1-2.pdf)
+- [Slides for Lecture 1-1: Course Introduction and Organization](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec1-1.pdf)
+- [Slides for Lecture 1-2: Social Impact of Data Science](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec1-2.pdf)
 
 ## Additional Resources
 

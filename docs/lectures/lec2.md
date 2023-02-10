@@ -7,10 +7,10 @@
   - Reading this work will help you get a basic understanding of data science pipelines.
   - You do not need to understand all techniques in the paper. Some of the techniques can be too difficult for you. Try your best to get the big picture.
 
-## Slides
+## Materials
 
-- [Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-1.pdf)
-- [Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-2.pdf)
+- [Slides for Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-1.pdf)
+- [Slides for Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-2.pdf)
 
 ## Additional Resources
 
