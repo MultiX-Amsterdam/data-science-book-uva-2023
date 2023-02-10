@@ -1,5 +1,7 @@
 # Preparation (Structured Data Processing)
 
+(Last updated: Feb 10, 2023)
+
 This part will prepare you with the background knowledge that we will use for this module.
 Smell Pittsburgh is a mobile application for crowdsourcing reports of bad odors, such as those generated from air pollution.
 The data is used to train machine learning models to predict the presence of bad smell, create push notifications to inform citizens about the bad smell, and explain local air pollution patterns.

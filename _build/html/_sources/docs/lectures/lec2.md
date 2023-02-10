@@ -1,5 +1,7 @@
 # Lecture 2: Data Science Fundamentals
 
+(Last updated: Feb 10, 2023)
+
 ## Preparation
 
 Read the [Smell Pittsburgh paper](https://dl.acm.org/doi/10.1145/3369397).

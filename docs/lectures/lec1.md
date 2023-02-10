@@ -1,5 +1,7 @@
 # Lecture 1: Introduction
 
+(Last updated: Feb 10, 2023)
+
 ## Preparation
 
 Read the [course syllabus](../syllabus.md).

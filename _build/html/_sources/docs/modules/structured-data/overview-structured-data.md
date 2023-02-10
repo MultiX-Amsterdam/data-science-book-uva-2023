@@ -1,5 +1,7 @@
 # Structured Data Processing
 
+(Last updated: Feb 10, 2023)
+
 This module is about processing structured data and has the following learning goals:
 
 - **Goal 1**: Understand how to design data science pipelines to help stakeholders make sense of structured data
