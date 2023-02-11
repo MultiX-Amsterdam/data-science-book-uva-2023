@@ -9,7 +9,7 @@ Do the [preparation](../modules/structured-data/preparation-structured-data) for
 ## Materials
 
 :::{note}
-If you have a laptop, pleae bring it to the lecture.
+If you have a laptop, please bring it to the lecture.
 This lecture will give a tutorial using a Jupyter Notebook.
 :::
 

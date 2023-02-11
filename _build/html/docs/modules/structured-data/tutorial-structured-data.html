@@ -394,8 +394,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorial-task-1">
-   Tutorial Task 1
+  <a class="reference internal nav-link" href="#packages-and-answers">
+   Packages and Answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-preprocess-smell-data">
+   Task 4: Preprocess Smell Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-preprocess-sensor-data">
+   Task 5: Preprocess Sensor Data
   </a>
  </li>
 </ul>
@@ -423,8 +433,18 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorial-task-1">
-   Tutorial Task 1
+  <a class="reference internal nav-link" href="#packages-and-answers">
+   Packages and Answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-preprocess-smell-data">
+   Task 4: Preprocess Smell Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-preprocess-sensor-data">
+   Task 5: Preprocess Sensor Data
   </a>
  </li>
 </ul>
@@ -455,11 +475,1048 @@ The scenario is in the mext section of this tutorial, and more details is in the
 <p><br />
 <img alt="../../../_images/smellpgh-ui.png" src="../../../_images/smellpgh-ui.png" /></p>
 <p><br />
-You work in a data science team to develop models that can be suitable to map the sensor data to bad smell events. Your team has been working with the Pittsburgh local citizens closely for a long time, and therefore you know the meaning of each variable in the feature set that is used to train the machine learning model. The Pittsburgh community needs your help timely to analyze the data that can help them present evidence of air pollution to the municipality and explain the patterns to the general public.</p>
+You work in a data science team to develop models to map the sensor data to bad smell events. Your team has been working with the Pittsburgh local citizens closely for a long time, and therefore you know the meaning of each variable in the feature set that is used to train the machine learning model. The Pittsburgh community needs your help timely to analyze the data that can help them present evidence of air pollution to the municipality and explain the patterns to the general public.</p>
 </section>
-<section id="tutorial-task-1">
-<h2>Tutorial Task 1<a class="headerlink" href="#tutorial-task-1" title="Permalink to this headline">#</a></h2>
-<p>We need to filter the unwanted geographical region. The geographical regions that we use is in Figure 6 in the Smell Pittsburgh paper.</p>
+<section id="packages-and-answers">
+<h2>Packages and Answers<a class="headerlink" href="#packages-and-answers" title="Permalink to this headline">#</a></h2>
+<p>We put all the packages that are needed for this tutorial below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code block below contains answers for the assignments in this tutorial. <strong>Do not check the answers in the next cell before practicing the tasks.</strong></p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_answer_df</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">df_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function checks if two output dataframes are the same.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">df_answer</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case </span><span class="si">%d</span><span class="s2"> passed.&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test case </span><span class="si">%d</span><span class="s2"> failed.&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your output is:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected output is:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_answer</span><span class="p">)</span>
+        
+
+<span class="k">def</span> <span class="nf">answer_preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 4.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Drop the columns that we do not need.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;feelings_symptoms&quot;</span><span class="p">,</span> <span class="s2">&quot;smell_description&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">])</span>
+    
+    <span class="c1"># Select only the reports within the range of 3 and 5.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
+    
+    <span class="c1"># Convert the timestamp to datetime.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Resample the timestamps by hour and sum up all the values.</span>
+    <span class="c1"># Because we want data from the past, so label need to be &quot;right&quot;.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># Fill in the missing data with value 0.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_preprocess_sensor</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 5.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Resample all the data frames.</span>
+    <span class="n">df_resample_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">df_list</span><span class="p">:</span>
+        <span class="c1"># Convert the timestamp to datetime.</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Resample the timestamps by hour and average all the values.</span>
+        <span class="n">df_resample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    
+    <span class="c1"># Merge all data frames.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df_resample_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">index_name</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_resample_list</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># We need to use outer merging since we want to preserve data from both data frames.</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_resample_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="c1"># Move the datetime column to index</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index_name</span><span class="p">)</span>
+
+    <span class="c1"># Fill in the missing data with value -1.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-4-preprocess-smell-data">
+<h2>Task 4: Preprocess Smell Data<a class="headerlink" href="#task-4-preprocess-smell-data" title="Permalink to this headline">#</a></h2>
+<p>In this task, we will preprocess the smell data. First, we need to load the raw smell data.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smell_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../assets/datasets/smellpgh-v1/smell_raw.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">)</span>
+<span class="n">smell_raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feelings_symptoms</th>
+      <th>smell_description</th>
+      <th>smell_value</th>
+      <th>zipcode</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477935134</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>15221</td>
+    </tr>
+    <tr>
+      <th>1477956180</th>
+      <td>NaN</td>
+      <td>Woodsmoke</td>
+      <td>2</td>
+      <td>15218</td>
+    </tr>
+    <tr>
+      <th>1477956293</th>
+      <td>NaN</td>
+      <td>Wood smoke</td>
+      <td>3</td>
+      <td>15218</td>
+    </tr>
+    <tr>
+      <th>1477973293</th>
+      <td>Eye irritation, nose burns, headache, woke me up</td>
+      <td>Industrial</td>
+      <td>5</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1478001989</th>
+      <td>NaN</td>
+      <td>Industrial smoke</td>
+      <td>2</td>
+      <td>15213</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1538248172</th>
+      <td>NaN</td>
+      <td>Sour sewage</td>
+      <td>3</td>
+      <td>15213</td>
+    </tr>
+    <tr>
+      <th>1538255258</th>
+      <td>Coughing</td>
+      <td>Smoke</td>
+      <td>2</td>
+      <td>15104</td>
+    </tr>
+    <tr>
+      <th>1538268796</th>
+      <td>NaN</td>
+      <td>Like a burning candle</td>
+      <td>3</td>
+      <td>15232</td>
+    </tr>
+    <tr>
+      <th>1538281653</th>
+      <td>No</td>
+      <td>Greasy air</td>
+      <td>3</td>
+      <td>15222</td>
+    </tr>
+    <tr>
+      <th>1538282980</th>
+      <td>Eye irritation</td>
+      <td>Wood smoke and gun powder very Smokey too as f...</td>
+      <td>5</td>
+      <td>15217</td>
+    </tr>
+  </tbody>
+</table>
+<p>10353 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Next, we need to resample the smell data so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">)</span>
+<span class="n">df_smell</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-11-01 00:00:00+00:00</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 01:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 02:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 03:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 04:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 01:00:00+00:00</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 02:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 03:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 04:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 05:00:00+00:00</th>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+<p>16758 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>First, remove the <code class="docutils literal notranslate"><span class="pre">feelings_symptoms</span></code>, <code class="docutils literal notranslate"><span class="pre">smell_description</span></code>, and <code class="docutils literal notranslate"><span class="pre">zipcode</span></code> columns since we do not need them. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.drop</span></code> function)</p></li>
+<li><p>We only want the reports that indicate bad smell. You need to select only the reports with rating 3, 4, or 5 in the <code class="docutils literal notranslate"><span class="pre">smell_value</span></code> column.</p></li>
+<li><p>Then, we want to know the severity of bad smell within an hour. So you need to resample the data by computing the hourly sum of smell values from the previous hour. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function)</p></li>
+<li><p>Finally, fill in the missing data with the value 0. The reason is that missing data means there are no smell reports (provided by citizens) within an hour, so we assume that there is no bad smell within this period of time. Notice that this is an assumption and also a limitation since citizens rarely report good smell.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below tests if the output of your function matches the expected output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">),</span> <span class="n">df_smell</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           smell_value
+EpochTime                             
+2016-11-01 00:00:00+00:00            3
+2016-11-01 01:00:00+00:00            0
+2016-11-01 02:00:00+00:00            0
+2016-11-01 03:00:00+00:00            0
+2016-11-01 04:00:00+00:00            0
+...                                ...
+2018-09-30 01:00:00+00:00            3
+2018-09-30 02:00:00+00:00            0
+2018-09-30 03:00:00+00:00            0
+2018-09-30 04:00:00+00:00            0
+2018-09-30 05:00:00+00:00            8
+
+[16758 rows x 1 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can plot the distribution of smell values by using the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.plot</span></code> function. From the plot below, we can observe that a lot of the time, the smell values are fairly low. This means that smell events only happen occasionally, and thus our dataset is highly imbalanced.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;&gt;100&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/tutorial-structured-data_25_0.png" src="../../../_images/tutorial-structured-data_25_0.png" />
+</div>
+</div>
+</section>
+<section id="task-5-preprocess-sensor-data">
+<h2>Task 5: Preprocess Sensor Data<a class="headerlink" href="#task-5-preprocess-sensor-data" title="Permalink to this headline">#</a></h2>
+<p>In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. You can find the list of sensors and their names (which will be in the data frame columns) from <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data">this link</a>. First, we need to load all the sensor data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;../../../assets/datasets/smellpgh-v1/esdr_raw&quot;</span>
+<span class="n">list_of_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f</span><span class="p">))]</span>
+<span class="n">sensor_raw_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">list_of_files</span><span class="p">:</span>
+    <span class="n">sensor_raw_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, the <code class="docutils literal notranslate"><span class="pre">sensor_raw_list</span></code> variable contains all the data frames with sensor values from different air quality monitoring stations. Noted that <code class="docutils literal notranslate"><span class="pre">sensor_raw_list</span></code> is an array of data frames. We can print one of them to take a look, as shown below.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor_raw_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SO2_PPM</th>
+      <th>3.feed_1.H2S_PPM</th>
+      <th>3.feed_1.SIGTHETA_DEG</th>
+      <th>3.feed_1.SONICWD_DEG</th>
+      <th>3.feed_1.SONICWS_MPH</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477891800</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>51.7</td>
+      <td>343.0</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>1477895400</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.7</td>
+      <td>351.0</td>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>1477899000</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.6</td>
+      <td>359.0</td>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>1477902600</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>48.3</td>
+      <td>5.0</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>1477906200</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31.1</td>
+      <td>41.0</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1538267400</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.2</td>
+      <td>39.0</td>
+      <td>1.7</td>
+    </tr>
+    <tr>
+      <th>1538271000</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>48.2</td>
+      <td>53.0</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>1538274600</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>30.9</td>
+      <td>62.0</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>1538278200</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>21.5</td>
+      <td>53.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1538281800</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.1</td>
+      <td>36.0</td>
+      <td>1.7</td>
+    </tr>
+  </tbody>
+</table>
+<p>16729 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Next, we need to resample and merge all the sensor data frames so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sensor</span> <span class="o">=</span> <span class="n">answer_preprocess_sensor</span><span class="p">(</span><span class="n">sensor_raw_list</span><span class="p">)</span>
+<span class="n">df_sensor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SO2_PPM</th>
+      <th>3.feed_1.H2S_PPM</th>
+      <th>3.feed_1.SIGTHETA_DEG</th>
+      <th>3.feed_1.SONICWD_DEG</th>
+      <th>3.feed_1.SONICWS_MPH</th>
+      <th>3.feed_23.CO_PPM</th>
+      <th>3.feed_23.PM10_UG_M3</th>
+      <th>3.feed_29.PM10_UG_M3</th>
+      <th>3.feed_29.PM25_UG_M3</th>
+      <th>3.feed_11067.CO_PPB..3.feed_43.CO_PPB</th>
+      <th>...</th>
+      <th>3.feed_3.SO2_PPM</th>
+      <th>3.feed_3.SONICWD_DEG</th>
+      <th>3.feed_3.SONICWS_MPH</th>
+      <th>3.feed_3.SIGTHETA_DEG</th>
+      <th>3.feed_3.PM10B_UG_M3</th>
+      <th>3.feed_5975.PM2_5</th>
+      <th>3.feed_27.NO_PPB</th>
+      <th>3.feed_27.NOY_PPB</th>
+      <th>3.feed_27.CO_PPB</th>
+      <th>3.feed_27.SO2_PPB</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>51.7</td>
+      <td>343.0</td>
+      <td>3.6</td>
+      <td>0.2</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>159.5</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>344.0</td>
+      <td>2.9</td>
+      <td>43.0</td>
+      <td>9.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>2.6</td>
+      <td>-1.0</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.7</td>
+      <td>351.0</td>
+      <td>3.5</td>
+      <td>0.2</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>-1.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>330.0</td>
+      <td>2.5</td>
+      <td>43.6</td>
+      <td>13.0</td>
+      <td>5.0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+      <td>106.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.6</td>
+      <td>359.0</td>
+      <td>3.4</td>
+      <td>0.2</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>7.0</td>
+      <td>133.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.1</td>
+      <td>40.9</td>
+      <td>7.0</td>
+      <td>9.0</td>
+      <td>0.2</td>
+      <td>2.1</td>
+      <td>105.8</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>48.3</td>
+      <td>5.0</td>
+      <td>2.1</td>
+      <td>0.2</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+      <td>236.6</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>325.0</td>
+      <td>1.9</td>
+      <td>40.0</td>
+      <td>11.0</td>
+      <td>3.0</td>
+      <td>0.1</td>
+      <td>3.1</td>
+      <td>111.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>31.1</td>
+      <td>41.0</td>
+      <td>2.2</td>
+      <td>0.2</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>269.3</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>347.0</td>
+      <td>1.4</td>
+      <td>45.1</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>0.1</td>
+      <td>2.5</td>
+      <td>127.2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 01:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.2</td>
+      <td>39.0</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>455.1</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>39.0</td>
+      <td>1.3</td>
+      <td>57.3</td>
+      <td>11.0</td>
+      <td>5.0</td>
+      <td>0.1</td>
+      <td>12.1</td>
+      <td>301.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 02:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>48.2</td>
+      <td>53.0</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>25.0</td>
+      <td>19.0</td>
+      <td>12.0</td>
+      <td>761.2</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>70.0</td>
+      <td>1.0</td>
+      <td>54.4</td>
+      <td>21.0</td>
+      <td>7.0</td>
+      <td>0.2</td>
+      <td>13.5</td>
+      <td>357.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 03:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>30.9</td>
+      <td>62.0</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>23.0</td>
+      <td>55.0</td>
+      <td>33.0</td>
+      <td>1125.4</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>75.0</td>
+      <td>0.7</td>
+      <td>59.5</td>
+      <td>33.0</td>
+      <td>8.0</td>
+      <td>0.6</td>
+      <td>13.8</td>
+      <td>373.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 04:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>21.5</td>
+      <td>53.0</td>
+      <td>2.0</td>
+      <td>0.5</td>
+      <td>23.0</td>
+      <td>63.0</td>
+      <td>39.0</td>
+      <td>1039.5</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>74.0</td>
+      <td>0.7</td>
+      <td>50.7</td>
+      <td>32.0</td>
+      <td>17.0</td>
+      <td>0.6</td>
+      <td>11.4</td>
+      <td>381.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 05:00:00+00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>52.1</td>
+      <td>36.0</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>25.0</td>
+      <td>47.0</td>
+      <td>33.0</td>
+      <td>1636.3</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>65.0</td>
+      <td>0.4</td>
+      <td>77.1</td>
+      <td>27.0</td>
+      <td>18.0</td>
+      <td>2.0</td>
+      <td>13.1</td>
+      <td>377.7</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16776 rows × 43 columns</p>
+</div></div></div>
+</div>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>Sensors can report in various frequencies. So, for each data frame, we need to resample the data by computing the hourly average of sensor measurements from the previous hour. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function)</p></li>
+<li><p>Then, merge all the data frames based on their time stamp, which is the <code class="docutils literal notranslate"><span class="pre">EpochTime</span></code> column.</p></li>
+<li><p>Finally, fill in the missing data with the value -1. The reason for not using 0 here is that we want the model to know if the sensor measurement has a value (including zero) or missing.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_sensor</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">preprocess_sensor</span><span class="p">(</span><span class="n">sensor_raw_list</span><span class="p">),</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           3.feed_1.SO2_PPM  3.feed_1.H2S_PPM  \
+EpochTime                                                       
+2016-10-31 06:00:00+00:00               0.0               0.0   
+2016-10-31 07:00:00+00:00               0.0               0.0   
+2016-10-31 08:00:00+00:00               0.0               0.0   
+2016-10-31 09:00:00+00:00               0.0               0.0   
+2016-10-31 10:00:00+00:00               0.0               0.0   
+...                                     ...               ...   
+2018-09-30 01:00:00+00:00               0.0               0.0   
+2018-09-30 02:00:00+00:00               0.0               0.0   
+2018-09-30 03:00:00+00:00               0.0               0.0   
+2018-09-30 04:00:00+00:00               0.0               0.0   
+2018-09-30 05:00:00+00:00               0.0               0.0   
+
+                           3.feed_1.SIGTHETA_DEG  3.feed_1.SONICWD_DEG  \
+EpochTime                                                                
+2016-10-31 06:00:00+00:00                   51.7                 343.0   
+2016-10-31 07:00:00+00:00                   52.7                 351.0   
+2016-10-31 08:00:00+00:00                   52.6                 359.0   
+2016-10-31 09:00:00+00:00                   48.3                   5.0   
+2016-10-31 10:00:00+00:00                   31.1                  41.0   
+...                                          ...                   ...   
+2018-09-30 01:00:00+00:00                   35.2                  39.0   
+2018-09-30 02:00:00+00:00                   48.2                  53.0   
+2018-09-30 03:00:00+00:00                   30.9                  62.0   
+2018-09-30 04:00:00+00:00                   21.5                  53.0   
+2018-09-30 05:00:00+00:00                   52.1                  36.0   
+
+                           3.feed_1.SONICWS_MPH  3.feed_23.CO_PPM  \
+EpochTime                                                           
+2016-10-31 06:00:00+00:00                   3.6               0.2   
+2016-10-31 07:00:00+00:00                   3.5               0.2   
+2016-10-31 08:00:00+00:00                   3.4               0.2   
+2016-10-31 09:00:00+00:00                   2.1               0.2   
+2016-10-31 10:00:00+00:00                   2.2               0.2   
+...                                         ...               ...   
+2018-09-30 01:00:00+00:00                   1.7               0.3   
+2018-09-30 02:00:00+00:00                   1.3               0.3   
+2018-09-30 03:00:00+00:00                   1.5               0.4   
+2018-09-30 04:00:00+00:00                   2.0               0.5   
+2018-09-30 05:00:00+00:00                   1.7               0.4   
+
+                           3.feed_23.PM10_UG_M3  3.feed_29.PM10_UG_M3  \
+EpochTime                                                               
+2016-10-31 06:00:00+00:00                   7.0                   8.0   
+2016-10-31 07:00:00+00:00                   8.0                   8.0   
+2016-10-31 08:00:00+00:00                   5.0                   7.0   
+2016-10-31 09:00:00+00:00                   3.0                   4.0   
+2016-10-31 10:00:00+00:00                   5.0                   5.0   
+...                                         ...                   ...   
+2018-09-30 01:00:00+00:00                  20.0                  15.0   
+2018-09-30 02:00:00+00:00                  25.0                  19.0   
+2018-09-30 03:00:00+00:00                  23.0                  55.0   
+2018-09-30 04:00:00+00:00                  23.0                  63.0   
+2018-09-30 05:00:00+00:00                  25.0                  47.0   
+
+                           3.feed_29.PM25_UG_M3  \
+EpochTime                                         
+2016-10-31 06:00:00+00:00                   8.0   
+2016-10-31 07:00:00+00:00                   8.0   
+2016-10-31 08:00:00+00:00                   7.0   
+2016-10-31 09:00:00+00:00                   4.0   
+2016-10-31 10:00:00+00:00                   4.0   
+...                                         ...   
+2018-09-30 01:00:00+00:00                  10.0   
+2018-09-30 02:00:00+00:00                  12.0   
+2018-09-30 03:00:00+00:00                  33.0   
+2018-09-30 04:00:00+00:00                  39.0   
+2018-09-30 05:00:00+00:00                  33.0   
+
+                           3.feed_11067.CO_PPB..3.feed_43.CO_PPB  ...  \
+EpochTime                                                         ...   
+2016-10-31 06:00:00+00:00                                  159.5  ...   
+2016-10-31 07:00:00+00:00                                   -1.0  ...   
+2016-10-31 08:00:00+00:00                                  133.0  ...   
+2016-10-31 09:00:00+00:00                                  236.6  ...   
+2016-10-31 10:00:00+00:00                                  269.3  ...   
+...                                                          ...  ...   
+2018-09-30 01:00:00+00:00                                  455.1  ...   
+2018-09-30 02:00:00+00:00                                  761.2  ...   
+2018-09-30 03:00:00+00:00                                 1125.4  ...   
+2018-09-30 04:00:00+00:00                                 1039.5  ...   
+2018-09-30 05:00:00+00:00                                 1636.3  ...   
+
+                           3.feed_3.SO2_PPM  3.feed_3.SONICWD_DEG  \
+EpochTime                                                           
+2016-10-31 06:00:00+00:00               0.0                 344.0   
+2016-10-31 07:00:00+00:00               0.0                 330.0   
+2016-10-31 08:00:00+00:00               0.0                   0.0   
+2016-10-31 09:00:00+00:00               0.0                 325.0   
+2016-10-31 10:00:00+00:00               0.0                 347.0   
+...                                     ...                   ...   
+2018-09-30 01:00:00+00:00               0.0                  39.0   
+2018-09-30 02:00:00+00:00               0.0                  70.0   
+2018-09-30 03:00:00+00:00               0.0                  75.0   
+2018-09-30 04:00:00+00:00               0.0                  74.0   
+2018-09-30 05:00:00+00:00               0.0                  65.0   
+
+                           3.feed_3.SONICWS_MPH  3.feed_3.SIGTHETA_DEG  \
+EpochTime                                                                
+2016-10-31 06:00:00+00:00                   2.9                   43.0   
+2016-10-31 07:00:00+00:00                   2.5                   43.6   
+2016-10-31 08:00:00+00:00                   3.1                   40.9   
+2016-10-31 09:00:00+00:00                   1.9                   40.0   
+2016-10-31 10:00:00+00:00                   1.4                   45.1   
+...                                         ...                    ...   
+2018-09-30 01:00:00+00:00                   1.3                   57.3   
+2018-09-30 02:00:00+00:00                   1.0                   54.4   
+2018-09-30 03:00:00+00:00                   0.7                   59.5   
+2018-09-30 04:00:00+00:00                   0.7                   50.7   
+2018-09-30 05:00:00+00:00                   0.4                   77.1   
+
+                           3.feed_3.PM10B_UG_M3  3.feed_5975.PM2_5  \
+EpochTime                                                            
+2016-10-31 06:00:00+00:00                   9.0                0.0   
+2016-10-31 07:00:00+00:00                  13.0                5.0   
+2016-10-31 08:00:00+00:00                   7.0                9.0   
+2016-10-31 09:00:00+00:00                  11.0                3.0   
+2016-10-31 10:00:00+00:00                  10.0                9.0   
+...                                         ...                ...   
+2018-09-30 01:00:00+00:00                  11.0                5.0   
+2018-09-30 02:00:00+00:00                  21.0                7.0   
+2018-09-30 03:00:00+00:00                  33.0                8.0   
+2018-09-30 04:00:00+00:00                  32.0               17.0   
+2018-09-30 05:00:00+00:00                  27.0               18.0   
+
+                           3.feed_27.NO_PPB  3.feed_27.NOY_PPB  \
+EpochTime                                                        
+2016-10-31 06:00:00+00:00               0.1                2.6   
+2016-10-31 07:00:00+00:00              -1.0               -1.0   
+2016-10-31 08:00:00+00:00               0.2                2.1   
+2016-10-31 09:00:00+00:00               0.1                3.1   
+2016-10-31 10:00:00+00:00               0.1                2.5   
+...                                     ...                ...   
+2018-09-30 01:00:00+00:00               0.1               12.1   
+2018-09-30 02:00:00+00:00               0.2               13.5   
+2018-09-30 03:00:00+00:00               0.6               13.8   
+2018-09-30 04:00:00+00:00               0.6               11.4   
+2018-09-30 05:00:00+00:00               2.0               13.1   
+
+                           3.feed_27.CO_PPB  3.feed_27.SO2_PPB  
+EpochTime                                                       
+2016-10-31 06:00:00+00:00              -1.0                0.2  
+2016-10-31 07:00:00+00:00             106.1                0.0  
+2016-10-31 08:00:00+00:00             105.8               -1.0  
+2016-10-31 09:00:00+00:00             111.7                0.0  
+2016-10-31 10:00:00+00:00             127.2                0.0  
+...                                     ...                ...  
+2018-09-30 01:00:00+00:00             301.0                0.0  
+2018-09-30 02:00:00+00:00             357.7                0.0  
+2018-09-30 03:00:00+00:00             373.6                0.0  
+2018-09-30 04:00:00+00:00             381.0                0.0  
+2018-09-30 05:00:00+00:00             377.7                0.0  
+
+[16776 rows x 43 columns]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
