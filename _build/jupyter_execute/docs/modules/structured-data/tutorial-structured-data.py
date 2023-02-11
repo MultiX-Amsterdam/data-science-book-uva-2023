@@ -216,6 +216,8 @@ def preprocess_sensor(df_list):
     ###################################
 
 
+# The code below tests if the output of your function matches the expected output.
+
 # In[12]:
 
 
