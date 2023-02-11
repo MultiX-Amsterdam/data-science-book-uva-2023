@@ -366,12 +366,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario">
+   Scenario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-task-1">
+   Tutorial Task 1
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -383,6 +412,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario">
+   Scenario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-task-1">
+   Tutorial Task 1
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -392,18 +439,28 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-structured-data-processing">
 <h1>Tutorial (Structured Data Processing)<a class="headerlink" href="#tutorial-structured-data-processing" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TBA&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is under construction and not finished yet. Do not use it.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TBA
-</pre></div>
-</div>
-</div>
-</div>
+<p>(Last updated: Feb 11, 2023)</p>
+<p>This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data (as indicated in the following figure). The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-predict.png" src="../../../_images/smellpgh-predict.png" /></p>
+<p><br />
+The scenario is in the mext section of this tutorial, and more details is in the introduction section of the <a class="reference external" href="https://doi.org/10.1145/3369397">Smell Pittsburgh paper</a>. We will use the <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1">same dataset as used in the Smell Pittsburgh paper</a> as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building.</p>
+<section id="scenario">
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
+<p>Local citizens in Pittsburgh are organizing communities to advocate for changes in air pollution regulations. Their goal is to investigate the air pollution patterns in the city to understand the potential sources related to the bad odor. The communities rely on the Smell Pittsburgh application (as indicated in the figure below) to collect smell reports from citizens that live in the Pittsburgh region. Also, there are air quality and weather monitoring stations in the Pittsburgh city region that provide sensor measurements, including common air pollutants and wind information.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-ui.png" src="../../../_images/smellpgh-ui.png" /></p>
+<p><br />
+You work in a data science team to develop models that can be suitable to map the sensor data to bad smell events. Your team has been working with the Pittsburgh local citizens closely for a long time, and therefore you know the meaning of each variable in the feature set that is used to train the machine learning model. The Pittsburgh community needs your help timely to analyze the data that can help them present evidence of air pollution to the municipality and explain the patterns to the general public.</p>
+</section>
+<section id="tutorial-task-1">
+<h2>Tutorial Task 1<a class="headerlink" href="#tutorial-task-1" title="Permalink to this headline">#</a></h2>
+<p>We need to filter the unwanted geographical region. The geographical regions that we use is in Figure 6 in the Smell Pittsburgh paper.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

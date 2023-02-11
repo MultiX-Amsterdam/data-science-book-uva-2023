@@ -11,8 +11,8 @@ Read the [Smell Pittsburgh paper](https://dl.acm.org/doi/10.1145/3369397).
 
 ## Materials
 
-- [Slides for Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-1.pdf)
-- [Slides for Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/files/lec2-2.pdf)
+- [Slides for Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec2-1.pdf)
+- [Slides for Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec2-2.pdf)
 
 ## Additional Resources
 
