@@ -394,18 +394,54 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#packages-and-answers">
-   Packages and Answers
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-preprocess-smell-data">
-   Task 4: Preprocess Smell Data
+  <a class="reference internal nav-link" href="#task-answers">
+   Task Answers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-5-preprocess-sensor-data">
-   Task 5: Preprocess Sensor Data
+  <a class="reference internal nav-link" href="#task-4-preprocess-sensor-data">
+   Task 4: Preprocess Sensor Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-4">
+     Assignment for Task 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-preprocess-smell-data">
+   Task 5: Preprocess Smell Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-5">
+     Assignment for Task 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-6-prepare-features-and-labels">
+   Task 6: Prepare Features and Labels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-6">
+     Assignment for Task 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-7-train-and-evaluate-models">
+   Task 7: Train and Evaluate Models
   </a>
  </li>
 </ul>
@@ -433,18 +469,54 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#packages-and-answers">
-   Packages and Answers
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-preprocess-smell-data">
-   Task 4: Preprocess Smell Data
+  <a class="reference internal nav-link" href="#task-answers">
+   Task Answers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-5-preprocess-sensor-data">
-   Task 5: Preprocess Sensor Data
+  <a class="reference internal nav-link" href="#task-4-preprocess-sensor-data">
+   Task 4: Preprocess Sensor Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-4">
+     Assignment for Task 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-preprocess-smell-data">
+   Task 5: Preprocess Smell Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-5">
+     Assignment for Task 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-6-prepare-features-and-labels">
+   Task 6: Prepare Features and Labels
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-6">
+     Assignment for Task 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-7-train-and-evaluate-models">
+   Task 7: Train and Evaluate Models
   </a>
  </li>
 </ul>
@@ -464,11 +536,14 @@ title="Print to PDF"
 <p>This page is under construction and not finished yet. Do not use it.</p>
 </div>
 <p>(Last updated: Feb 11, 2023)</p>
-<p>This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data (as indicated in the following figure). The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.</p>
-<p><br />
-<img alt="../../../_images/smellpgh-predict.png" src="../../../_images/smellpgh-predict.png" /></p>
-<p><br />
-The scenario is in the mext section of this tutorial, and more details is in the introduction section of the <a class="reference external" href="https://doi.org/10.1145/3369397">Smell Pittsburgh paper</a>. We will use the <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1">same dataset as used in the Smell Pittsburgh paper</a> as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building.</p>
+<p>This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.</p>
+<p>The scenario is in the next section of this tutorial, and more details are in the introduction section of the <a class="reference external" href="https://doi.org/10.1145/3369397">Smell Pittsburgh paper</a>. We will use the <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1">same dataset as used in the Smell Pittsburgh paper</a> as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building.</p>
+<p>You can use the following link to jump to the assignments:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#a4">Assignment for Task 4</a></p></li>
+<li><p><a class="reference external" href="#a5">Assignment for Task 5</a></p></li>
+<li><p><a class="reference external" href="#a6">Assignment for Task 6</a></p></li>
+</ul>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
 <p>Local citizens in Pittsburgh are organizing communities to advocate for changes in air pollution regulations. Their goal is to investigate the air pollution patterns in the city to understand the potential sources related to the bad odor. The communities rely on the Smell Pittsburgh application (as indicated in the figure below) to collect smell reports from citizens that live in the Pittsburgh region. Also, there are air quality and weather monitoring stations in the Pittsburgh city region that provide sensor measurements, including common air pollutants and wind information.</p>
@@ -477,24 +552,41 @@ The scenario is in the mext section of this tutorial, and more details is in the
 <p><br />
 You work in a data science team to develop models to map the sensor data to bad smell events. Your team has been working with the Pittsburgh local citizens closely for a long time, and therefore you know the meaning of each variable in the feature set that is used to train the machine learning model. The Pittsburgh community needs your help timely to analyze the data that can help them present evidence of air pollution to the municipality and explain the patterns to the general public.</p>
 </section>
-<section id="packages-and-answers">
-<h2>Packages and Answers<a class="headerlink" href="#packages-and-answers" title="Permalink to this headline">#</a></h2>
+<section id="import-packages">
+<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">#</a></h2>
 <p>We put all the packages that are needed for this tutorial below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pytz</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">pandas.api.indexers</span> <span class="kn">import</span> <span class="n">FixedForwardWindowIndexer</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="task-answers">
+<h2>Task Answers<a class="headerlink" href="#task-answers" title="Permalink to this headline">#</a></h2>
 <p>The code block below contains answers for the assignments in this tutorial. <strong>Do not check the answers in the next cell before practicing the tasks.</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_answer_df</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">df_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function checks if two output dataframes are the same.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_result : pandas.DataFrame</span>
+<span class="sd">        The result from the output of a function.</span>
+<span class="sd">    df_answer: pandas.DataFrame</span>
+<span class="sd">        The expected output of the function.</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The numbering of the test case.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">assert</span> <span class="n">df_answer</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span>
@@ -507,43 +599,30 @@ You work in a data science team to develop models to map the sensor data to bad 
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected output is:&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">df_answer</span><span class="p">)</span>
+
         
-
-<span class="k">def</span> <span class="nf">answer_preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This function is the answer of task 4.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># Drop the columns that we do not need.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;feelings_symptoms&quot;</span><span class="p">,</span> <span class="s2">&quot;smell_description&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">])</span>
-    
-    <span class="c1"># Select only the reports within the range of 3 and 5.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
-    
-    <span class="c1"># Convert the timestamp to datetime.</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># Resample the timestamps by hour and sum up all the values.</span>
-    <span class="c1"># Because we want data from the past, so label need to be &quot;right&quot;.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    
-    <span class="c1"># Fill in the missing data with value 0.</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span>
-
-
 <span class="k">def</span> <span class="nf">answer_preprocess_sensor</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer of task 5.</span>
+<span class="sd">    Preprocess sensor data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_list : list of pandas.DataFrame</span>
+<span class="sd">        A list of data frames that contain sensor data from multiple stations.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Resample all the data frames.</span>
     <span class="n">df_resample_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">df_list</span><span class="p">:</span>
         <span class="c1"># Convert the timestamp to datetime.</span>
         <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="c1"># Resample the timestamps by hour and average all the values.</span>
+        <span class="c1"># Resample the timestamps by hour and average all the previous values.</span>
+        <span class="c1"># Because we want data from the past, so label need to be &quot;right&quot;.</span>
         <span class="n">df_resample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
     
     <span class="c1"># Merge all data frames.</span>
@@ -558,285 +637,90 @@ You work in a data science team to develop models to map the sensor data to bad 
     <span class="c1"># Fill in the missing data with value -1.</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 4.</span>
+<span class="sd">    Preprocess smell data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The raw smell reports data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Drop the columns that we do not need.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;feelings_symptoms&quot;</span><span class="p">,</span> <span class="s2">&quot;smell_description&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">])</span>
+    
+    <span class="c1"># Select only the reports within the range of 3 and 5.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
+    
+    <span class="c1"># Convert the timestamp to datetime.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Resample the timestamps by hour and sum up all the future values.</span>
+    <span class="c1"># Because we want data from the future, so label need to be &quot;left&quot;.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># Fill in the missing data with value 0.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 6.</span>
+<span class="sd">    Sum up data in the current and future hours.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    n_hr : int</span>
+<span class="sd">         Number of hours that we want to sum up the future smell data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Fast return if n_hr is 0</span>
+    <span class="k">if</span> <span class="n">n_hr</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">df</span>
+    
+    <span class="c1"># Sum up all smell_values in future hours.</span>
+    <span class="c1"># The rolling function only works for summing up previous values.</span>
+    <span class="c1"># So we need to shift back to get the value in the future.</span>
+    <span class="c1"># Be careful that we need to add 1 to the rolling window size.</span>
+    <span class="c1"># Becasue window size 1 means only using the current data.</span>
+    <span class="c1"># Parameter &quot;closed&quot; need to be &quot;right&quot; because we want the current data.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">n_hr</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">n_hr</span><span class="p">)</span>
+    
+    <span class="c1"># Below is an alternative implementation of rolling.</span>
+    <span class="c1">#indexer = FixedForwardWindowIndexer(window_size=n_hr+1)</span>
+    <span class="c1">#df = df.rolling(indexer, min_periods=1).sum()</span>
+    
+    <span class="c1"># Delete the last n_hr rows.</span>
+    <span class="c1"># These n_hr rows have wrong data due to data shifting.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">n_hr</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="task-4-preprocess-smell-data">
-<h2>Task 4: Preprocess Smell Data<a class="headerlink" href="#task-4-preprocess-smell-data" title="Permalink to this headline">#</a></h2>
-<p>In this task, we will preprocess the smell data. First, we need to load the raw smell data.</p>
-<div class="cell tag_output_scroll docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smell_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../assets/datasets/smellpgh-v1/smell_raw.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">)</span>
-<span class="n">smell_raw</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>feelings_symptoms</th>
-      <th>smell_description</th>
-      <th>smell_value</th>
-      <th>zipcode</th>
-    </tr>
-    <tr>
-      <th>EpochTime</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1477935134</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>15221</td>
-    </tr>
-    <tr>
-      <th>1477956180</th>
-      <td>NaN</td>
-      <td>Woodsmoke</td>
-      <td>2</td>
-      <td>15218</td>
-    </tr>
-    <tr>
-      <th>1477956293</th>
-      <td>NaN</td>
-      <td>Wood smoke</td>
-      <td>3</td>
-      <td>15218</td>
-    </tr>
-    <tr>
-      <th>1477973293</th>
-      <td>Eye irritation, nose burns, headache, woke me up</td>
-      <td>Industrial</td>
-      <td>5</td>
-      <td>15207</td>
-    </tr>
-    <tr>
-      <th>1478001989</th>
-      <td>NaN</td>
-      <td>Industrial smoke</td>
-      <td>2</td>
-      <td>15213</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1538248172</th>
-      <td>NaN</td>
-      <td>Sour sewage</td>
-      <td>3</td>
-      <td>15213</td>
-    </tr>
-    <tr>
-      <th>1538255258</th>
-      <td>Coughing</td>
-      <td>Smoke</td>
-      <td>2</td>
-      <td>15104</td>
-    </tr>
-    <tr>
-      <th>1538268796</th>
-      <td>NaN</td>
-      <td>Like a burning candle</td>
-      <td>3</td>
-      <td>15232</td>
-    </tr>
-    <tr>
-      <th>1538281653</th>
-      <td>No</td>
-      <td>Greasy air</td>
-      <td>3</td>
-      <td>15222</td>
-    </tr>
-    <tr>
-      <th>1538282980</th>
-      <td>Eye irritation</td>
-      <td>Wood smoke and gun powder very Smokey too as f...</td>
-      <td>5</td>
-      <td>15217</td>
-    </tr>
-  </tbody>
-</table>
-<p>10353 rows × 4 columns</p>
-</div></div></div>
-</div>
-<p>Next, we need to resample the smell data so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">)</span>
-<span class="n">df_smell</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>smell_value</th>
-    </tr>
-    <tr>
-      <th>EpochTime</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016-11-01 00:00:00+00:00</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2016-11-01 01:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2016-11-01 02:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2016-11-01 03:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2016-11-01 04:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2018-09-30 01:00:00+00:00</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2018-09-30 02:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2018-09-30 03:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2018-09-30 04:00:00+00:00</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2018-09-30 05:00:00+00:00</th>
-      <td>8</td>
-    </tr>
-  </tbody>
-</table>
-<p>16758 rows × 1 columns</p>
-</div></div></div>
-</div>
-<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
-<ul class="simple">
-<li><p>First, remove the <code class="docutils literal notranslate"><span class="pre">feelings_symptoms</span></code>, <code class="docutils literal notranslate"><span class="pre">smell_description</span></code>, and <code class="docutils literal notranslate"><span class="pre">zipcode</span></code> columns since we do not need them. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.drop</span></code> function)</p></li>
-<li><p>We only want the reports that indicate bad smell. You need to select only the reports with rating 3, 4, or 5 in the <code class="docutils literal notranslate"><span class="pre">smell_value</span></code> column.</p></li>
-<li><p>Then, we want to know the severity of bad smell within an hour. So you need to resample the data by computing the hourly sum of smell values from the previous hour. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function)</p></li>
-<li><p>Finally, fill in the missing data with the value 0. The reason is that missing data means there are no smell reports (provided by citizens) within an hour, so we assume that there is no bad smell within this period of time. Notice that this is an assumption and also a limitation since citizens rarely report good smell.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1">###################################</span>
-    <span class="c1"># Fill in your answer here</span>
-    <span class="k">return</span> <span class="kc">None</span>
-    <span class="c1">###################################</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The code below tests if the output of your function matches the expected output.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">),</span> <span class="n">df_smell</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
-
-Your output is:
-None
-
-Expected output is:
-                           smell_value
-EpochTime                             
-2016-11-01 00:00:00+00:00            3
-2016-11-01 01:00:00+00:00            0
-2016-11-01 02:00:00+00:00            0
-2016-11-01 03:00:00+00:00            0
-2016-11-01 04:00:00+00:00            0
-...                                ...
-2018-09-30 01:00:00+00:00            3
-2018-09-30 02:00:00+00:00            0
-2018-09-30 03:00:00+00:00            0
-2018-09-30 04:00:00+00:00            0
-2018-09-30 05:00:00+00:00            8
-
-[16758 rows x 1 columns]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now, we can plot the distribution of smell values by using the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.plot</span></code> function. From the plot below, we can observe that a lot of the time, the smell values are fairly low. This means that smell events only happen occasionally, and thus our dataset is highly imbalanced.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;&gt;100&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/tutorial-structured-data_25_0.png" src="../../../_images/tutorial-structured-data_25_0.png" />
-</div>
-</div>
-</section>
-<section id="task-5-preprocess-sensor-data">
-<h2>Task 5: Preprocess Sensor Data<a class="headerlink" href="#task-5-preprocess-sensor-data" title="Permalink to this headline">#</a></h2>
+<section id="task-4-preprocess-sensor-data">
+<h2>Task 4: Preprocess Sensor Data<a class="headerlink" href="#task-4-preprocess-sensor-data" title="Permalink to this headline">#</a></h2>
 <p>In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. You can find the list of sensors and their names (which will be in the data frame columns) from <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data">this link</a>. First, we need to load all the sensor data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1328,15 +1212,41 @@ EpochTime
 <p>16776 rows × 43 columns</p>
 </div></div></div>
 </div>
+<p><a name="a4"></a></p>
+<section id="assignment-for-task-4">
+<h3>Assignment for Task 4<a class="headerlink" href="#assignment-for-task-4" title="Permalink to this headline">#</a></h3>
 <p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
 <ul class="simple">
-<li><p>Sensors can report in various frequencies. So, for each data frame, we need to resample the data by computing the hourly average of sensor measurements from the previous hour. (Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function)</p></li>
+<li><p>Sensors can report in various frequencies. So, for each data frame, we need to resample the data by computing the hourly average of sensor measurements from the “previous” hour. For example, at time 8:00, we want to know the average of sensor values between 7:00 and 8:00.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.to_datetime</span></code> function when converting timestamps to datetime objects. Type <code class="docutils literal notranslate"><span class="pre">?pd.to_datetime</span></code> in a code cell for more information.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function to resample data. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.resample</span></code> in a code cell for more information.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.merge_ordered</span></code> function when merging data frames. Type <code class="docutils literal notranslate"><span class="pre">?pd.merge_ordered</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
 <li><p>Then, merge all the data frames based on their time stamp, which is the <code class="docutils literal notranslate"><span class="pre">EpochTime</span></code> column.</p></li>
-<li><p>Finally, fill in the missing data with the value -1. The reason for not using 0 here is that we want the model to know if the sensor measurement has a value (including zero) or missing.</p></li>
+<li><p>Finally, fill in the missing data with the value -1. The reason for not using 0 is that we want the model to know if sensors give values (including zero) or no data.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.fillna</span></code> function when treating missing values. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.fillna</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_sensor</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Preprocess sensor data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_list : list of pandas.DataFrame</span>
+<span class="sd">        A list of data frames that contain sensor data from multiple stations.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">###################################</span>
     <span class="c1"># Fill in your answer here</span>
     <span class="k">return</span> <span class="kc">None</span>
@@ -1518,6 +1428,1517 @@ EpochTime
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="task-5-preprocess-smell-data">
+<h2>Task 5: Preprocess Smell Data<a class="headerlink" href="#task-5-preprocess-smell-data" title="Permalink to this headline">#</a></h2>
+<p>In this task, we will preprocess the smell data. First, we need to load the raw smell data.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">smell_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../assets/datasets/smellpgh-v1/smell_raw.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">)</span>
+<span class="n">smell_raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feelings_symptoms</th>
+      <th>smell_description</th>
+      <th>smell_value</th>
+      <th>zipcode</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1477935134</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>15221</td>
+    </tr>
+    <tr>
+      <th>1477956180</th>
+      <td>NaN</td>
+      <td>Woodsmoke</td>
+      <td>2</td>
+      <td>15218</td>
+    </tr>
+    <tr>
+      <th>1477956293</th>
+      <td>NaN</td>
+      <td>Wood smoke</td>
+      <td>3</td>
+      <td>15218</td>
+    </tr>
+    <tr>
+      <th>1477973293</th>
+      <td>Eye irritation, nose burns, headache, woke me up</td>
+      <td>Industrial</td>
+      <td>5</td>
+      <td>15207</td>
+    </tr>
+    <tr>
+      <th>1478001989</th>
+      <td>NaN</td>
+      <td>Industrial smoke</td>
+      <td>2</td>
+      <td>15213</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1538248172</th>
+      <td>NaN</td>
+      <td>Sour sewage</td>
+      <td>3</td>
+      <td>15213</td>
+    </tr>
+    <tr>
+      <th>1538255258</th>
+      <td>Coughing</td>
+      <td>Smoke</td>
+      <td>2</td>
+      <td>15104</td>
+    </tr>
+    <tr>
+      <th>1538268796</th>
+      <td>NaN</td>
+      <td>Like a burning candle</td>
+      <td>3</td>
+      <td>15232</td>
+    </tr>
+    <tr>
+      <th>1538281653</th>
+      <td>No</td>
+      <td>Greasy air</td>
+      <td>3</td>
+      <td>15222</td>
+    </tr>
+    <tr>
+      <th>1538282980</th>
+      <td>Eye irritation</td>
+      <td>Wood smoke and gun powder very Smokey too as f...</td>
+      <td>5</td>
+      <td>15217</td>
+    </tr>
+  </tbody>
+</table>
+<p>10353 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Next, we need to resample the smell data so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">)</span>
+<span class="n">df_smell</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 23:00:00+00:00</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 00:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 01:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 02:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2016-11-01 03:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 00:00:00+00:00</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 01:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 02:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 03:00:00+00:00</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2018-09-30 04:00:00+00:00</th>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+<p>16758 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p><a name="a5"></a></p>
+<section id="assignment-for-task-5">
+<h3>Assignment for Task 5<a class="headerlink" href="#assignment-for-task-5" title="Permalink to this headline">#</a></h3>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>First, remove the <code class="docutils literal notranslate"><span class="pre">feelings_symptoms</span></code>, <code class="docutils literal notranslate"><span class="pre">smell_description</span></code>, and <code class="docutils literal notranslate"><span class="pre">zipcode</span></code> columns since we do not need them.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.drop</span></code> function. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.drop</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
+<li><p>We only want the reports that indicate bad smell. You need to select only the reports with rating 3, 4, or 5 in the <code class="docutils literal notranslate"><span class="pre">smell_value</span></code> column.</p></li>
+<li><p>Then, we want to know the severity of bad smell within an hour in the future. For example, at time 8:00, we want to know the sum of smell values between 8:00 and 9:00. So you need to resample the data by computing the hourly sum of smell values from the “future” hour.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.to_datetime</span></code> function when converting timestamps to datetime objects. Type <code class="docutils literal notranslate"><span class="pre">?pd.to_datetime</span></code> in a code cell for more information.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.resample</span></code> function to resample data. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.resample</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
+<li><p>Finally, fill in the missing data with the value 0. The reason is that missing data means there are no smell reports (provided by citizens) within an hour, so we assume that there is no bad smell within this period of time. Notice that this is an assumption and also a limitation since citizens rarely report good smell.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.fillna</span></code> function when treating missing values. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.fillna</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Preprocess smell data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The raw smell reports data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below tests if the output of your function matches the expected output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">),</span> <span class="n">df_smell</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           smell_value
+EpochTime                             
+2016-10-31 23:00:00+00:00            3
+2016-11-01 00:00:00+00:00            0
+2016-11-01 01:00:00+00:00            0
+2016-11-01 02:00:00+00:00            0
+2016-11-01 03:00:00+00:00            0
+...                                ...
+2018-09-30 00:00:00+00:00            3
+2018-09-30 01:00:00+00:00            0
+2018-09-30 02:00:00+00:00            0
+2018-09-30 03:00:00+00:00            0
+2018-09-30 04:00:00+00:00            8
+
+[16758 rows x 1 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can plot the distribution of smell values by using the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.plot</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;&gt;100&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/tutorial-structured-data_40_0.png" src="../../../_images/tutorial-structured-data_40_0.png" />
+</div>
+</div>
+<p>From the plot above, we can observe that a lot of the time, the smell values are fairly low. This means that smell events only happen occasionally, and thus our dataset is highly imbalanced.</p>
+<p>We can also plot the average number of smell reports distributed by the day of week (Sunday to Saturday) and the hour of day (0 to 23), using the code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_datetime_obj_tz_aware</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find if the datetime object is timezone aware.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dt : pandas.DatetimeIndex</span>
+<span class="sd">        A datatime index object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">dt</span><span class="o">.</span><span class="n">tzinfo</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">plot_smell_by_day_and_hour</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot the average number of smell reports by the day of week and the hour of day.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the data frame to prevent editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Convert timestamps to the local time in Pittsburgh.</span>
+    <span class="k">if</span> <span class="n">is_datetime_obj_tz_aware</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;US/Eastern&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">,</span> <span class="n">ambiguous</span><span class="o">=</span><span class="s2">&quot;infer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s2">&quot;US/Eastern&quot;</span><span class="p">))</span>
+    
+    <span class="c1"># Compute the day of week and the hour of day.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofweek</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hour_of_day&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">hour</span>
+    
+    <span class="c1"># Plot the graph.</span>
+    <span class="n">y_l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sun&quot;</span><span class="p">,</span> <span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">]</span>
+    <span class="n">df_pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;smell_value&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hour_of_day&quot;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df_pivot</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">y_l</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    
+    
+<span class="n">plot_smell_by_day_and_hour</span><span class="p">(</span><span class="n">df_smell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/tutorial-structured-data_43_0.png" src="../../../_images/tutorial-structured-data_43_0.png" />
+</div>
+</div>
+<p>From the plot above, we can observe that citizens tend to report smell in the morning.</p>
+</section>
+</section>
+<section id="task-6-prepare-features-and-labels">
+<h2>Task 6: Prepare Features and Labels<a class="headerlink" href="#task-6-prepare-features-and-labels" title="Permalink to this headline">#</a></h2>
+<p>Now we have the preprocessed data in the <code class="docutils literal notranslate"><span class="pre">df_sensor</span></code> and <code class="docutils literal notranslate"><span class="pre">df_smell</span></code> variables. Our next task is to prepare features and labels for modeling, as shown in the figure below.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-predict.png" src="../../../_images/smellpgh-predict.png" /></p>
+<p><br />
+Our goal is to construct two data frames, <code class="docutils literal notranslate"><span class="pre">df_x</span></code> and <code class="docutils literal notranslate"><span class="pre">df_y</span></code>, that represent the features and labels, respectively. First, we will deal with the sensor data. We need a function to insert columns that indicate previous <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> hours of sensor to the existing data frame, where <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> should be a parameter that we can control. The code below can help us achieve this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_previous_data_to_cols</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 6 (part 1).</span>
+<span class="sd">    Insert columns to indicate the data from the previous hours.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    n_hr : int</span>
+<span class="sd">        Number of hours that we want to insert the previous sensor data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed sensor data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Add the data from the previous hours.</span>
+    <span class="n">df_all</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Shift the data frame to get previous data.</span>
+        <span class="n">df_pre</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="c1"># Edit the name to indicate it is previous data.</span>
+        <span class="c1"># The orginal data frame already has data from the previous 1 hour.</span>
+        <span class="c1"># (as indicated in the preprocessing phase of sensor data)</span>
+        <span class="c1"># So we need to add 1 here.</span>
+        <span class="n">df_pre</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_pre_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;h&quot;</span>
+        <span class="c1"># Add the data to an array for merging.</span>
+        <span class="n">df_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_pre</span><span class="p">)</span>
+
+    <span class="c1"># Rename the columns in the original data frame.</span>
+    <span class="c1"># The orginal data frame already has data from the previous 1 hour.</span>
+    <span class="c1"># (as indicated in the preprocessing phase of sensor data)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_pre_1h&quot;</span>
+
+    <span class="c1"># Merge all data.</span>
+    <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_all</span><span class="p">:</span>
+        <span class="c1"># The join function merges dataframes by index.</span>
+        <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        
+    <span class="c1"># Delete the first n_hr rows.</span>
+    <span class="c1"># These n_hr rows have no data due to data shifting.</span>
+    <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n_hr</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">df_merge</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below shows a test case, which is a part of the sensor data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">df_sensor_example_in</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="p">[[</span><span class="s2">&quot;3.feed_1.SONICWS_MPH&quot;</span><span class="p">]][</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">df_sensor_example_in</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SONICWS_MPH</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>3.4</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>2.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is the expected output of the above example input.</span>
+<span class="n">df_sensor_example_out</span> <span class="o">=</span> <span class="n">insert_previous_data_to_cols</span><span class="p">(</span><span class="n">df_sensor_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_sensor_example_out</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SONICWS_MPH_pre_1h</th>
+      <th>3.feed_1.SONICWS_MPH_pre_2h</th>
+      <th>3.feed_1.SONICWS_MPH_pre_3h</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>3.4</td>
+      <td>3.5</td>
+      <td>3.6</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>2.1</td>
+      <td>3.4</td>
+      <td>3.5</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>2.2</td>
+      <td>2.1</td>
+      <td>3.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The reason that there are 2 less rows in the expected output is because we set <code class="docutils literal notranslate"><span class="pre">n_hr=2</span></code>, which means there are missing data in the original first and second row (because there was no previous data for these rows). So in the code, we removed these rows.</p>
+<p>Then, we also need a function to convert wind direction into sine and cosine components, which is a common technique for encoding cyclical features (i.e., any that that circulates within a set of values, such as hours of the day, days of the week). Below is the code for achieving this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_wind_direction</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert wind directions to sine and cosine components.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The data frame that contains the wind direction data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed data frame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df_cp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Convert columns with wind directions.</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;SONICWD_DEG&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">df_c</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            <span class="n">df_c_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">df_c</span><span class="p">))</span>
+            <span class="n">df_c_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">df_c</span><span class="p">))</span>
+            <span class="n">df_c_cos</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_cosine&quot;</span>
+            <span class="n">df_c_sin</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_sine&quot;</span>
+            <span class="n">df_cp</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">c</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">df_cp</span><span class="p">[</span><span class="n">df_c_cos</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_c_cos</span>
+            <span class="n">df_cp</span><span class="p">[</span><span class="n">df_c_sin</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_c_sin</span>
+    <span class="k">return</span> <span class="n">df_cp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below shows a test case, which is a part of the sensor data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">df_wind_example_in</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="p">[[</span><span class="s2">&quot;3.feed_1.SONICWD_DEG&quot;</span><span class="p">]][</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">df_wind_example_in</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SONICWD_DEG</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>343.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>351.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>359.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>41.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is the expected output of the above example input.</span>
+<span class="n">df_wind_example_out</span> <span class="o">=</span> <span class="n">convert_wind_direction</span><span class="p">(</span><span class="n">df_wind_example_in</span><span class="p">)</span>
+<span class="n">df_wind_example_out</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SONICWD_DEG_cosine</th>
+      <th>3.feed_1.SONICWD_DEG_sine</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-10-31 06:00:00+00:00</th>
+      <td>0.956305</td>
+      <td>-0.292372</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 07:00:00+00:00</th>
+      <td>0.987688</td>
+      <td>-0.156434</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 08:00:00+00:00</th>
+      <td>0.999848</td>
+      <td>-0.017452</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 09:00:00+00:00</th>
+      <td>0.996195</td>
+      <td>0.087156</td>
+    </tr>
+    <tr>
+      <th>2016-10-31 10:00:00+00:00</th>
+      <td>0.754710</td>
+      <td>0.656059</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We have dealt with the sensor data. Next, we will deal with the smell data. We need a function to sum up smell values in the future hours, where <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> should be a parameter that we can control. The code below shows a test case, which is a part of the smell data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is an example input.</span>
+<span class="n">df_smell_example_in</span> <span class="o">=</span> <span class="n">df_smell</span><span class="p">[</span><span class="mi">107</span><span class="p">:</span><span class="mi">112</span><span class="p">]</span>
+<span class="n">df_smell_example_in</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-11-05 10:00:00+00:00</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 11:00:00+00:00</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 12:00:00+00:00</th>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 13:00:00+00:00</th>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 14:00:00+00:00</th>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is the expected output of the above example input.</span>
+<span class="n">df_smell_example_out1</span> <span class="o">=</span> <span class="n">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_smell_example_out1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-11-05 10:00:00+00:00</th>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 11:00:00+00:00</th>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 12:00:00+00:00</th>
+      <td>62.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 13:00:00+00:00</th>
+      <td>26.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another expected output with a different n_hr.</span>
+<span class="n">df_smell_example_out2</span> <span class="o">=</span> <span class="n">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df_smell_example_out2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-11-05 10:00:00+00:00</th>
+      <td>83.0</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 11:00:00+00:00</th>
+      <td>79.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another expected output when n_hr is 0.</span>
+<span class="n">df_smell_example_out3</span> <span class="o">=</span> <span class="n">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_smell_example_out3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value</th>
+    </tr>
+    <tr>
+      <th>EpochTime</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2016-11-05 10:00:00+00:00</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 11:00:00+00:00</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 12:00:00+00:00</th>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 13:00:00+00:00</th>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>2016-11-05 14:00:00+00:00</th>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><a name="a6"></a></p>
+<section id="assignment-for-task-6">
+<h3>Assignment for Task 6<a class="headerlink" href="#assignment-for-task-6" title="Permalink to this headline">#</a></h3>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>First, perform a <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/window.html#rolling-window-endpoints">windowing operation</a> to sum up smell values within a specified <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> time window.</p>
+<ul>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.rolling</span></code> function when summing up values within a window. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.rolling</span></code> in a code cell for more information.</p></li>
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.shift</span></code> fuction to shift the rolled data back <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> hours because we want to sum up the values in the future (the rolling function operates on the values in the past). Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.shift</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
+<li><p>Finally, Remove the last <code class="docutils literal notranslate"><span class="pre">n_hr</span></code> hours of data because they have the wrong data due to shifting. For example, the last row does not have data in the future to operate if we set <code class="docutils literal notranslate"><span class="pre">n_hr=1</span></code>.</p>
+<ul>
+<li><p>Hint: Use <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.iloc</span></code> to select the rows that you want to keep. Type <code class="docutils literal notranslate"><span class="pre">?pd.DataFrame.iloc</span></code> in a code cell for more information.</p></li>
+</ul>
+</li>
+<li><p>You need to handle the edge case when <code class="docutils literal notranslate"><span class="pre">n_hr=0</span></code>, which should output the original data frame.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_current_and_future_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sum up data in the current and future hours.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    n_hr : int</span>
+<span class="sd">         Number of hours that we want to sum up the future smell data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below tests if the output of your function matches the expected output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">df_smell_example_out1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 1 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           smell_value
+EpochTime                             
+2016-11-05 10:00:00+00:00         21.0
+2016-11-05 11:00:00+00:00         53.0
+2016-11-05 12:00:00+00:00         62.0
+2016-11-05 13:00:00+00:00         26.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">df_smell_example_out2</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 2 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           smell_value
+EpochTime                             
+2016-11-05 10:00:00+00:00         83.0
+2016-11-05 11:00:00+00:00         79.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell_example_in</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">df_smell_example_out3</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test case 3 failed.
+
+Your output is:
+None
+
+Expected output is:
+                           smell_value
+EpochTime                             
+2016-11-05 10:00:00+00:00            8
+2016-11-05 11:00:00+00:00           13
+2016-11-05 12:00:00+00:00           40
+2016-11-05 13:00:00+00:00           22
+2016-11-05 14:00:00+00:00            4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we need a function to compute the features and labels, based on the above <code class="docutils literal notranslate"><span class="pre">insert_previous_data_to_cols</span></code> and <code class="docutils literal notranslate"><span class="pre">sum_current_and_future_data</span></code> functions that you implemented. The code is below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute features and labels from the smell and sensor data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_smell : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    df_sensor : pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    b_hr_sensor : int</span>
+<span class="sd">        Number of hours that we want to insert the previous sensor data.</span>
+<span class="sd">    f_hr_smell : int</span>
+<span class="sd">        Number of hours that we want to sum up the future smell data.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The features that we want to use for modeling.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">        The labels that we want to use for modeling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frames to prevent editing the original ones.</span>
+    <span class="n">df_smell</span> <span class="o">=</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Convert all wind directions.</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">convert_wind_direction</span><span class="p">(</span><span class="n">df_sensor</span><span class="p">)</span>
+    
+    <span class="c1"># Insert previous sensor data as features.</span>
+    <span class="c1"># Noice that the df_sensor is already using the previous data.</span>
+    <span class="c1"># So b_hr_sensor=0 means using data from the previous 1 hour.</span>
+    <span class="c1"># And b_hr_sensor=n means using data from the previous n+1 hours.</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">insert_previous_data_to_cols</span><span class="p">(</span><span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="p">)</span>
+    
+    <span class="c1"># Sum up current and future smell values as label.</span>
+    <span class="c1"># Notice that the df_smell is already the data from the future 1 hour.</span>
+    <span class="c1"># (as indicated in the preprocessing phase of smell data)</span>
+    <span class="c1"># So f_hr_smell=0 means using data from the future 1 hour.</span>
+    <span class="c1"># And f_hr_smell=n means using data from the future n+1 hours.</span>
+    <span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="p">)</span>
+    
+    <span class="c1"># Add suffix to the column name of the smell data to prevent confusion.</span>
+    <span class="c1"># See the description above for the reason of adding 1 to the f_hr_smell.</span>
+    <span class="n">df_smell</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_future_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">f_hr_smell</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;h&quot;</span>
+    
+    <span class="c1"># We need to first merge these two timestamps based on the available data.</span>
+    <span class="c1"># In this way, we synchronize the time stamps in the sensor and smell data.</span>
+    <span class="c1"># This also means that the sensor and smell data have the same number of data points.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">df_sensor</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">on</span><span class="o">=</span><span class="n">df_smell</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    
+    <span class="c1"># Sanity check: there should be no missing data.</span>
+    <span class="k">assert</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error! There is missing data.&quot;</span>
+    
+    <span class="c1"># Separate features (x) and labels (y).</span>
+    <span class="n">df_x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_sensor</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">df_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_smell</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use the sensor data within the previous 2 hours to predict bad smell within the future 2 hours. To use the <code class="docutils literal notranslate"><span class="pre">compute_feature_label</span></code> function that we just build, we need to set <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=1</span></code> because originally <code class="docutils literal notranslate"><span class="pre">df_sensor</span></code> already contains data from the previous 1 hour, and <code class="docutils literal notranslate"><span class="pre">df_smell</span></code> already contains data from the future 1 hour. Note that <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=n</span></code> means that we want to insert previous <code class="docutils literal notranslate"><span class="pre">n+1</span></code> hours of sensor data , and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=m</span></code> means that we want to sum up the smell values of the future <code class="docutils literal notranslate"><span class="pre">m+1</span></code> hours. For example, suppose that the current time is 8:00, setting <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> means that we use all sensor data from 6:00 to 8:00 (as features in prediction), and setting <code class="docutils literal notranslate"><span class="pre">f_hr_smell=1</span></code> means that we sum up the smell values from 8:00 to 10:00 (as labels in prediction).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span> <span class="o">=</span> <span class="n">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The features should look</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SO2_PPM_pre_1h</th>
+      <th>3.feed_1.H2S_PPM_pre_1h</th>
+      <th>3.feed_1.SIGTHETA_DEG_pre_1h</th>
+      <th>3.feed_1.SONICWS_MPH_pre_1h</th>
+      <th>3.feed_23.CO_PPM_pre_1h</th>
+      <th>3.feed_23.PM10_UG_M3_pre_1h</th>
+      <th>3.feed_29.PM10_UG_M3_pre_1h</th>
+      <th>3.feed_29.PM25_UG_M3_pre_1h</th>
+      <th>3.feed_11067.CO_PPB..3.feed_43.CO_PPB_pre_1h</th>
+      <th>3.feed_11067.NO2_PPB..3.feed_43.NO2_PPB_pre_1h</th>
+      <th>...</th>
+      <th>3.feed_1.SONICWD_DEG_cosine_pre_2h</th>
+      <th>3.feed_1.SONICWD_DEG_sine_pre_2h</th>
+      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_cosine_pre_2h</th>
+      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_sine_pre_2h</th>
+      <th>3.feed_28.SONICWD_DEG_cosine_pre_2h</th>
+      <th>3.feed_28.SONICWD_DEG_sine_pre_2h</th>
+      <th>3.feed_26.SONICWD_DEG_cosine_pre_2h</th>
+      <th>3.feed_26.SONICWD_DEG_sine_pre_2h</th>
+      <th>3.feed_3.SONICWD_DEG_cosine_pre_2h</th>
+      <th>3.feed_3.SONICWD_DEG_sine_pre_2h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>17.4</td>
+      <td>2.6</td>
+      <td>0.2</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>6.0</td>
+      <td>207.8</td>
+      <td>6.7</td>
+      <td>...</td>
+      <td>0.258819</td>
+      <td>0.965926</td>
+      <td>0.139173</td>
+      <td>0.990268</td>
+      <td>0.573576</td>
+      <td>0.819152</td>
+      <td>0.788011</td>
+      <td>0.615661</td>
+      <td>0.325568</td>
+      <td>0.945519</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>18.5</td>
+      <td>2.4</td>
+      <td>0.2</td>
+      <td>8.0</td>
+      <td>18.0</td>
+      <td>7.0</td>
+      <td>314.6</td>
+      <td>13.3</td>
+      <td>...</td>
+      <td>0.515038</td>
+      <td>0.857167</td>
+      <td>0.069756</td>
+      <td>0.997564</td>
+      <td>0.374607</td>
+      <td>0.927184</td>
+      <td>0.629320</td>
+      <td>0.777146</td>
+      <td>0.342020</td>
+      <td>0.939693</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>51.3</td>
+      <td>1.8</td>
+      <td>0.3</td>
+      <td>14.0</td>
+      <td>15.0</td>
+      <td>8.0</td>
+      <td>307.9</td>
+      <td>15.4</td>
+      <td>...</td>
+      <td>0.766044</td>
+      <td>0.642788</td>
+      <td>0.241922</td>
+      <td>0.970296</td>
+      <td>0.484810</td>
+      <td>0.874620</td>
+      <td>0.961262</td>
+      <td>0.275637</td>
+      <td>0.325568</td>
+      <td>0.945519</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.7</td>
+      <td>1.8</td>
+      <td>0.3</td>
+      <td>11.0</td>
+      <td>12.0</td>
+      <td>8.0</td>
+      <td>178.3</td>
+      <td>10.8</td>
+      <td>...</td>
+      <td>0.999391</td>
+      <td>0.034899</td>
+      <td>0.422618</td>
+      <td>0.906308</td>
+      <td>0.939693</td>
+      <td>0.342020</td>
+      <td>0.990268</td>
+      <td>0.139173</td>
+      <td>0.422618</td>
+      <td>0.906308</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>56.2</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>13.0</td>
+      <td>9.0</td>
+      <td>5.0</td>
+      <td>190.7</td>
+      <td>7.2</td>
+      <td>...</td>
+      <td>0.190809</td>
+      <td>0.981627</td>
+      <td>0.207912</td>
+      <td>0.978148</td>
+      <td>0.719340</td>
+      <td>0.694658</td>
+      <td>0.939693</td>
+      <td>0.342020</td>
+      <td>0.422618</td>
+      <td>0.906308</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16752</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>57.0</td>
+      <td>2.0</td>
+      <td>0.1</td>
+      <td>12.0</td>
+      <td>20.0</td>
+      <td>5.0</td>
+      <td>679.4</td>
+      <td>7.9</td>
+      <td>...</td>
+      <td>0.987688</td>
+      <td>-0.156434</td>
+      <td>0.939693</td>
+      <td>0.342020</td>
+      <td>0.573576</td>
+      <td>-0.819152</td>
+      <td>0.731354</td>
+      <td>-0.681998</td>
+      <td>0.241922</td>
+      <td>-0.970296</td>
+    </tr>
+    <tr>
+      <th>16753</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>32.0</td>
+      <td>1.9</td>
+      <td>0.2</td>
+      <td>12.0</td>
+      <td>12.0</td>
+      <td>8.0</td>
+      <td>680.2</td>
+      <td>9.6</td>
+      <td>...</td>
+      <td>0.920505</td>
+      <td>0.390731</td>
+      <td>0.669131</td>
+      <td>0.743145</td>
+      <td>0.069756</td>
+      <td>-0.997564</td>
+      <td>0.798636</td>
+      <td>-0.601815</td>
+      <td>0.906308</td>
+      <td>0.422618</td>
+    </tr>
+    <tr>
+      <th>16754</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.2</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>20.0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>455.1</td>
+      <td>8.2</td>
+      <td>...</td>
+      <td>0.544639</td>
+      <td>0.838671</td>
+      <td>-0.829038</td>
+      <td>0.559193</td>
+      <td>0.500000</td>
+      <td>-0.866025</td>
+      <td>0.987688</td>
+      <td>-0.156434</td>
+      <td>0.358368</td>
+      <td>0.933580</td>
+    </tr>
+    <tr>
+      <th>16755</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>48.2</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>25.0</td>
+      <td>19.0</td>
+      <td>12.0</td>
+      <td>761.2</td>
+      <td>11.5</td>
+      <td>...</td>
+      <td>0.777146</td>
+      <td>0.629320</td>
+      <td>-0.173648</td>
+      <td>0.984808</td>
+      <td>0.224951</td>
+      <td>0.974370</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.777146</td>
+      <td>0.629320</td>
+    </tr>
+    <tr>
+      <th>16756</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>30.9</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>23.0</td>
+      <td>55.0</td>
+      <td>33.0</td>
+      <td>1125.4</td>
+      <td>13.5</td>
+      <td>...</td>
+      <td>0.601815</td>
+      <td>0.798636</td>
+      <td>-0.173648</td>
+      <td>0.984808</td>
+      <td>0.087156</td>
+      <td>-0.996195</td>
+      <td>0.970296</td>
+      <td>-0.241922</td>
+      <td>0.342020</td>
+      <td>0.939693</td>
+    </tr>
+  </tbody>
+</table>
+<p>16757 rows × 96 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value_future_2h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16752</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>16753</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>16754</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16755</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>16756</th>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16757 rows × 1 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="task-7-train-and-evaluate-models">
+<h2>Task 7: Train and Evaluate Models<a class="headerlink" href="#task-7-train-and-evaluate-models" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 

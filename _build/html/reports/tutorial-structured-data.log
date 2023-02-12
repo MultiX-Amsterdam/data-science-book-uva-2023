@@ -17,13 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-Your first task is 
+import pandas as pd
+import numpy as np
+import pytz
+import seaborn as sns
+import matplotlib.pyplot as plt
+from os.path import isfile, join
+from os import listdir
+from pandas.api.indexers import FixedForwardWindowIndexer
 ------------------
 
-[0;36m  Cell [0;32mIn[3], line 1[0;36m[0m
-[0;31m    Your first task is[0m
-[0m         ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 4[0m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mpytz[39;00m
+[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mos[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpath[39;00m [38;5;28;01mimport[39;00m isfile, join
 
-SyntaxError: invalid syntax (547493265.py, line 1)
+[0;31mModuleNotFoundError[0m: No module named 'seaborn'
+ModuleNotFoundError: No module named 'seaborn'
 
