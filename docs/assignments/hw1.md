@@ -21,7 +21,7 @@ Follow the steps below to do the assignment:
 
 ## Additional Recourses
 
-Check the [Pandas API](https://pandas.pydata.org/docs/reference/index.html) when writing the code.
+Check the [pandas API](https://pandas.pydata.org/docs/reference/index.html) when writing the code.
 If you have finished the assignment and want to practice more, below are some resources for self-study:
 - [Introduction to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
 - [Introduction to Numpy](https://sebastianraschka.com/blog/2020/numpy-intro.html)

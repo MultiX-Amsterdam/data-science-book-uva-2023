@@ -14,21 +14,21 @@ parts:
   - file: docs/lectures/lec2
     title: "L2: Data Science Fundamentals"
   - file: docs/lectures/lec3
-    title: "L3: Structured Data Processing I"
+    title: "L3: Structured Data I"
       #- file: docs/lectures/lec4
-      #title: "L4: Structured Data Processing II"
+      #title: "L4: Structured Data II"
       #- file: docs/lectures/lec5
       #title: "L5: Deep Learning Overview"
       #- file: docs/lectures/lec6
       #title: "L6: Crowdsourcing and Data Labeling"
       #- file: docs/lectures/lec7
-      #title: "L7: Text Data Processing I"
+      #title: "L7: Text Data I"
       #- file: docs/lectures/lec8
-      #title: "L8: Text Data Processing II"
+      #title: "L8: Text Data II"
       #- file: docs/lectures/lec9
-      #title: "L9: Image Data Processing I"
+      #title: "L9: Image Data I"
       #- file: docs/lectures/lec10
-      #title: "L10: Image Data Processing II"
+      #title: "L10: Image Data II"
       #- file: docs/lectures/lec11
       #title: "L11: Human-Centered Approach"
       #- file: docs/lectures/lec12
@@ -36,14 +36,12 @@ parts:
 - caption: Modules
   chapters:
   - file: docs/modules/structured-data/overview-structured-data
-    title: "Structured Data Processing"
+    title: "Structured Data"
     sections:
     - file: docs/modules/structured-data/preparation-structured-data
       title: "Preparation"
     - file: docs/modules/structured-data/tutorial-structured-data
       title: "Tutorial"
-    - file: docs/modules/structured-data/assignment-structured-data
-      title: "Assignment"
         #- file: docs/modules/text-data/overview-text-data
         #sections:
         #- file: docs/modules/text-data/preparation-text-data
@@ -64,3 +62,5 @@ parts:
   chapters:
   - file: docs/assignments/hw1
     title: "A1: Python Coding Warm-Up"
+  - file: docs/modules/structured-data/assignment-structured-data
+    title: "A2: Structured Data"
