@@ -1,0 +1,3 @@
+[submodule "docs/modules/structured-data-module"]
+	path = docs/modules/structured-data-module
+	url = https://github.com/MultiX-Amsterdam/structured-data-module
