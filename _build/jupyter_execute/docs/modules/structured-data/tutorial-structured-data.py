@@ -3,7 +3,7 @@
 
 # # Tutorial (Structured Data Processing)
 
-# (Last updated: Feb 12, 2023)
+# (Last updated: Feb 13, 2023)
 
 # This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.
 # 
@@ -933,7 +933,7 @@ fig = px.scatter_3d(df_pc_pca.sample(n=5000), x="PC1", y="PC2", z="PC3",
                     color="y", symbol="y", opacity=0.6,
                     size="size", size_max=15,
                     category_orders=dict(y=["0", "1"]),
-                    width=700, height=700)
+                    height=700)
 fig.show()
 
 
