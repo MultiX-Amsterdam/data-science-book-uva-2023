@@ -443,6 +443,38 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#task-7-train-and-evaluate-models">
    Task 7: Train and Evaluate Models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-dummy-classifier">
+     Use the Dummy Classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-decision-tree-model">
+     Use the Decision Tree Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-random-forest-model">
+     Use the Random Forest Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-feature-importance">
+     Compute Feature Importance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-7">
+     Assignment for Task 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-assignment">
+   Optional Assignment
+  </a>
  </li>
 </ul>
 
@@ -518,6 +550,38 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#task-7-train-and-evaluate-models">
    Task 7: Train and Evaluate Models
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-dummy-classifier">
+     Use the Dummy Classifier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-decision-tree-model">
+     Use the Decision Tree Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-the-random-forest-model">
+     Use the Random Forest Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-feature-importance">
+     Compute Feature Importance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-7">
+     Assignment for Task 7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-assignment">
+   Optional Assignment
+  </a>
  </li>
 </ul>
 
@@ -535,14 +599,36 @@ title="Print to PDF"
 <p class="admonition-title">Warning</p>
 <p>This page is under construction and not finished yet. Do not use it.</p>
 </div>
-<p>(Last updated: Feb 11, 2023)</p>
+<p>(Last updated: Feb 13, 2023)</p>
 <p>This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.</p>
 <p>The scenario is in the next section of this tutorial, and more details are in the introduction section of the <a class="reference external" href="https://doi.org/10.1145/3369397">Smell Pittsburgh paper</a>. We will use the <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1">same dataset as used in the Smell Pittsburgh paper</a> as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building.</p>
-<p>You can use the following link to jump to the assignments:</p>
+<p>You can use the following link to jump to the tasks and assignments:</p>
 <ul class="simple">
+<li><p><a class="reference external" href="#t4">Task 4: Preprocess Sensor Data</a></p>
+<ul>
 <li><p><a class="reference external" href="#a4">Assignment for Task 4</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#t5">Task 5: Preprocess Smell Data</a></p>
+<ul>
 <li><p><a class="reference external" href="#a5">Assignment for Task 5</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#t6">Task 6: Prepare Features and Labels</a></p>
+<ul>
 <li><p><a class="reference external" href="#a6">Assignment for Task 6</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#t7">Task 7: Train and Evaluate Models</a></p>
+<ul>
+<li><p><a class="reference external" href="#dummy-classifier">Use the Dummy Classifier</a></p></li>
+<li><p><a class="reference external" href="#decision-tree">Use the Decision Tree Model</a></p></li>
+<li><p><a class="reference external" href="#random-forest">Use the Random Forest Model</a></p></li>
+<li><p><a class="reference external" href="#feature-importance">Compute Feature Importance</a></p></li>
+<li><p><a class="reference external" href="#a7">Assignment for Task 7</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#opa">Optional Assignment</a></p></li>
 </ul>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
@@ -564,6 +650,14 @@ You work in a data science team to develop models to map the sensor data to bad 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">sklearn.dummy</span> <span class="kn">import</span> <span class="n">DummyClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">permutation_importance</span>
 <span class="kn">from</span> <span class="nn">pandas.api.indexers</span> <span class="kn">import</span> <span class="n">FixedForwardWindowIndexer</span>
 </pre></div>
 </div>
@@ -714,14 +808,42 @@ You work in a data science team to develop models to map the sensor data to bad 
     <span class="c1"># These n_hr rows have wrong data due to data shifting.</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">n_hr</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_experiment</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 7.</span>
+<span class="sd">    Perform experiments and print the results.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The data frame that contains all features.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">         The data frame that contains labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fs1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;3.feed_28.H2S_PPM_pre_1h&quot;</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">,</span> <span class="s2">&quot;hour_of_day&quot;</span><span class="p">]</span>
+    <span class="n">fs1w</span> <span class="o">=</span> <span class="n">fs1</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;3.feed_28.SONICWD_DEG_sine_pre_1h&quot;</span><span class="p">,</span> <span class="s2">&quot;3.feed_28.SONICWD_DEG_cosine_pre_1h&quot;</span><span class="p">]</span>
+    <span class="n">fs2</span> <span class="o">=</span> <span class="n">fs1</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;3.feed_28.H2S_PPM_pre_2h&quot;</span><span class="p">]</span>
+    <span class="n">fs2w</span> <span class="o">=</span> <span class="n">fs2</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;3.feed_28.SONICWD_DEG_sine_pre_2h&quot;</span><span class="p">,</span> <span class="s2">&quot;3.feed_28.SONICWD_DEG_cosine_pre_2h&quot;</span><span class="p">]</span>
+    <span class="n">feature_sets</span> <span class="o">=</span> <span class="p">[</span><span class="n">fs1</span><span class="p">,</span> <span class="n">fs1w</span><span class="p">,</span> <span class="n">fs2</span><span class="p">,</span> <span class="n">fs2w</span><span class="p">]</span>
+    <span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">DecisionTreeClassifier</span><span class="p">(),</span> <span class="n">RandomForestClassifier</span><span class="p">()]</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">fs</span> <span class="ow">in</span> <span class="n">feature_sets</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use feature set </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fs</span><span class="p">)))</span>
+            <span class="n">df_x_fs</span> <span class="o">=</span> <span class="n">df_x</span><span class="p">[</span><span class="n">fs</span><span class="p">]</span>
+            <span class="n">train_and_evaluate</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">df_x_fs</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">)</span>
+            <span class="n">compute_feature_importance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">df_x_fs</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><a name="t4"></a></p>
 </section>
 <section id="task-4-preprocess-sensor-data">
 <h2>Task 4: Preprocess Sensor Data<a class="headerlink" href="#task-4-preprocess-sensor-data" title="Permalink to this headline">#</a></h2>
-<p>In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. You can find the list of sensors and their names (which will be in the data frame columns) from <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data">this link</a>. First, we need to load all the sensor data.</p>
+<p>In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. First, we need to load all the sensor data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;../../../assets/datasets/smellpgh-v1/esdr_raw&quot;</span>
@@ -868,6 +990,7 @@ You work in a data science team to develop models to map the sensor data to bad 
 <p>16729 rows × 5 columns</p>
 </div></div></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">EpochTime</span></code> index is the timestamp in epoch time, which means the number of seconds that have elapsed since January 1st, 1970 (midnight UTC/GMT). Other columns mean the sensor data from an air quality monitoring station.</p>
 <p>Next, we need to resample and merge all the sensor data frames so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -1212,6 +1335,9 @@ You work in a data science team to develop models to map the sensor data to bad 
 <p>16776 rows × 43 columns</p>
 </div></div></div>
 </div>
+<p>In the expected output above, the <code class="docutils literal notranslate"><span class="pre">EpochTime</span></code> index is converted from timestamps into <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex">pandas datetime</a> objects, which has the format <code class="docutils literal notranslate"><span class="pre">year-month-day</span> <span class="pre">hour:minute:second+timezone</span></code>. The <code class="docutils literal notranslate"><span class="pre">+00:00</span></code> string means the GMT/UTC timezone. Other columns mean the average value of the sensor data in the previous hour. For example, <code class="docutils literal notranslate"><span class="pre">2016-10-31</span> <span class="pre">06:00:00+00:00</span></code> means October 31 in 2016 at 6AM UTC time, and the cell with column <code class="docutils literal notranslate"><span class="pre">3.feed_1.SO2_PPM</span></code> means the averaged SO2 (sulfur dioxide) values from 5:00 to 6:00.</p>
+<p>The column name suffix <code class="docutils literal notranslate"><span class="pre">SO2_PPM</span></code> means sulfur dioxide in unit PPM (parts per million). The prefix <code class="docutils literal notranslate"><span class="pre">3.feed_1.</span></code> in the column name means a specific sensor (feed ID 1). You can ignore the <code class="docutils literal notranslate"><span class="pre">3.</span></code> at the begining of the column name. You can find the list of sensors, their names with feed ID (which will be in the data frame columns), and also the meaning of all the suffixes from <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data">this link</a>.</p>
+<p>Some column names look like <code class="docutils literal notranslate"><span class="pre">3.feed_11067.SIGTHETA_DEG..3.feed_43.SIGTHETA_DEG</span></code>. This means that the column has data from two sensor stations (feed ID 11067 and 43). The reason is that some sensor stations are replaced by the new ones over time. So in this case, we merge sensor readings from both feed ID 11067 and 43.</p>
 <p><a name="a4"></a></p>
 <section id="assignment-for-task-4">
 <h3>Assignment for Task 4<a class="headerlink" href="#assignment-for-task-4" title="Permalink to this headline">#</a></h3>
@@ -1428,6 +1554,7 @@ EpochTime
 </div>
 </div>
 </div>
+<p><a name="t5"></a></p>
 </section>
 </section>
 <section id="task-5-preprocess-smell-data">
@@ -1555,6 +1682,7 @@ EpochTime
 <p>10353 rows × 4 columns</p>
 </div></div></div>
 </div>
+<p>The meaning of <code class="docutils literal notranslate"><span class="pre">EpochTime</span></code> is explained in the previous task. Other columns mean the self-reported symptoms, descriptions of smell, severity ratings (the <code class="docutils literal notranslate"><span class="pre">smell_value</span></code> column), and the zipcode where the report is submitted in Pittsburgh, Pennsylvania. For example, the second row means that the smell report was submitted from the 15218 zipcode with wood smoke description and severity rating 2. For more description about the smell, please check the <a class="reference external" href="https://smellpgh.org/how_it_works">Smell Pittsburgh website</a>.</p>
 <p>Next, we need to resample the smell data so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1639,6 +1767,7 @@ EpochTime
 <p>16758 rows × 1 columns</p>
 </div></div></div>
 </div>
+<p>In the latest row, the timestamp is <code class="docutils literal notranslate"><span class="pre">2018-09-30</span> <span class="pre">04:00:00+00:00</span></code>, which means this row contains the data from 3:00 to 4:00 on September 30 in 2018. This row has <code class="docutils literal notranslate"><span class="pre">smell_value</span></code> 8, which means the sum of smell report ratings in the above mentioned time range. Notice that the expected output ignores all smell ratings from 1 to 2. This is becasue we only want the ratings that indicate bad smell, which will be further explained below.</p>
 <p><a name="a5"></a></p>
 <section id="assignment-for-task-5">
 <h3>Assignment for Task 5<a class="headerlink" href="#assignment-for-task-5" title="Permalink to this headline">#</a></h3>
@@ -1727,7 +1856,7 @@ EpochTime
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/tutorial-structured-data_40_0.png" src="../../../_images/tutorial-structured-data_40_0.png" />
+<img alt="../../../_images/tutorial-structured-data_45_0.png" src="../../../_images/tutorial-structured-data_45_0.png" />
 </div>
 </div>
 <p>From the plot above, we can observe that a lot of the time, the smell values are fairly low. This means that smell events only happen occasionally, and thus our dataset is highly imbalanced.</p>
@@ -1780,10 +1909,11 @@ EpochTime
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/tutorial-structured-data_43_0.png" src="../../../_images/tutorial-structured-data_43_0.png" />
+<img alt="../../../_images/tutorial-structured-data_48_0.png" src="../../../_images/tutorial-structured-data_48_0.png" />
 </div>
 </div>
 <p>From the plot above, we can observe that citizens tend to report smell in the morning.</p>
+<p><a name="t6"></a></p>
 </section>
 </section>
 <section id="task-6-prepare-features-and-labels">
@@ -1969,7 +2099,13 @@ Our goal is to construct two data frames, <code class="docutils literal notransl
 </div></div></div>
 </div>
 <p>The reason that there are 2 less rows in the expected output is because we set <code class="docutils literal notranslate"><span class="pre">n_hr=2</span></code>, which means there are missing data in the original first and second row (because there was no previous data for these rows). So in the code, we removed these rows.</p>
-<p>Then, we also need a function to convert wind direction into sine and cosine components, which is a common technique for encoding cyclical features (i.e., any that that circulates within a set of values, such as hours of the day, days of the week). Below is the code for achieving this.</p>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">insert_previous_data_to_cols</span></code> function added suffixes to the column names to indicate the number of hours that the sensor measurements came from previously. Pay attention to the meaning of time range here.</p>
+<ul class="simple">
+<li><p>For example, in the first row, the <code class="docutils literal notranslate"><span class="pre">3.feed_1.SONICWS_MPH_pre_1h</span></code> column has value <code class="docutils literal notranslate"><span class="pre">3.4</span></code>, which means the average reading of wind speed (in unit MPH) between the current time stamp (which is <code class="docutils literal notranslate"><span class="pre">8:00</span></code>) and the previous 1 hour (which is <code class="docutils literal notranslate"><span class="pre">7:00</span></code>).</p></li>
+<li><p>In the second column of the first row, the <code class="docutils literal notranslate"><span class="pre">3.feed_1.SONICWS_MPH_pre_2h</span></code> has value <code class="docutils literal notranslate"><span class="pre">3.5</span></code>, which means the average reading of wind speed between the previous 1 hour (which is <code class="docutils literal notranslate"><span class="pre">7:00</span></code>) and 2 hours (which is <code class="docutils literal notranslate"><span class="pre">6:00</span></code>).</p></li>
+<li><p>It is important to note here that suffix <code class="docutils literal notranslate"><span class="pre">pre_2h</span></code> does <strong>not</strong> mean the average rating within 2 hours between the current time stamp and the time that is 2 hours ago.</p></li>
+</ul>
+<p>Then, we also need a function to convert wind direction into sine and cosine components, which is a common technique for encoding cyclical features (i.e., any that that circulates within a set of values, such as hours of the day, days of the week). There are several reasons to do this instead of using the original wind direction degrees (that range from 0 to 360). First, by applying sine and cosine to the degrees, we can transform the original data to a continuous variable. The original data is not continuous since there are no values below 0 or above 360, and there is no information to tell that 0 degrees and 360 degrees are the same. Second, the decomposed sine and cosine components allow us to inspect the effect of wind on the north-south and east-west directions separately, which may help us explain the importance of wind directions. Below is the code for achieving this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_wind_direction</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -2293,6 +2429,7 @@ Our goal is to construct two data frames, <code class="docutils literal notransl
 </table>
 </div></div></div>
 </div>
+<p>In the output above, notice that row <code class="docutils literal notranslate"><span class="pre">2016-11-05</span> <span class="pre">10:00:00+00:00</span></code> has smell value <code class="docutils literal notranslate"><span class="pre">83</span></code>, and the setting is <code class="docutils literal notranslate"><span class="pre">n_hr=3</span></code>, which means the sum of smell values within <code class="docutils literal notranslate"><span class="pre">n_hr+1</span></code> hours (i.e., from <code class="docutils literal notranslate"><span class="pre">10:00</span></code> to <code class="docutils literal notranslate"><span class="pre">14:00</span></code>) is 83. Pay attention to this setup since it can be confusing. The reason of <code class="docutils literal notranslate"><span class="pre">n_hr+1</span></code> (but not <code class="docutils literal notranslate"><span class="pre">n_hr</span></code>) is because the input data already indicates the sum of smell values within the future 1 hour.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Below is another expected output when n_hr is 0.</span>
@@ -2525,20 +2662,35 @@ EpochTime
     <span class="c1"># Separate features (x) and labels (y).</span>
     <span class="n">df_x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_sensor</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
     <span class="n">df_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_smell</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    
+    <span class="c1"># Add the hour of day and the day of week.</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;day_of_week&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;hour_of_day&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We will use the sensor data within the previous 2 hours to predict bad smell within the future 2 hours. To use the <code class="docutils literal notranslate"><span class="pre">compute_feature_label</span></code> function that we just build, we need to set <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=1</span></code> because originally <code class="docutils literal notranslate"><span class="pre">df_sensor</span></code> already contains data from the previous 1 hour, and <code class="docutils literal notranslate"><span class="pre">df_smell</span></code> already contains data from the future 1 hour. Note that <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=n</span></code> means that we want to insert previous <code class="docutils literal notranslate"><span class="pre">n+1</span></code> hours of sensor data , and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=m</span></code> means that we want to sum up the smell values of the future <code class="docutils literal notranslate"><span class="pre">m+1</span></code> hours. For example, suppose that the current time is 8:00, setting <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> means that we use all sensor data from 6:00 to 8:00 (as features in prediction), and setting <code class="docutils literal notranslate"><span class="pre">f_hr_smell=1</span></code> means that we sum up the smell values from 8:00 to 10:00 (as labels in prediction).</p>
+<p>We will use the sensor data within the previous 2 hours to predict bad smell within the future 8 hours. To use the <code class="docutils literal notranslate"><span class="pre">compute_feature_label</span></code> function that we just build, we need to set <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=7</span></code> because originally <code class="docutils literal notranslate"><span class="pre">df_sensor</span></code> already contains data from the previous 1 hour, and <code class="docutils literal notranslate"><span class="pre">df_smell</span></code> already contains data from the future 1 hour.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=n</span></code> means that we want to insert previous <code class="docutils literal notranslate"><span class="pre">n+1</span></code> hours of sensor data , and <code class="docutils literal notranslate"><span class="pre">f_hr_smell=m</span></code> means that we want to sum up the smell values of the future <code class="docutils literal notranslate"><span class="pre">m+1</span></code> hours. For example, suppose that the current time is 8:00, setting <code class="docutils literal notranslate"><span class="pre">b_hr_sensor=1</span></code> means that we use all sensor data from 6:00 to 8:00 (as features <code class="docutils literal notranslate"><span class="pre">df_x</span></code> in prediction), and setting <code class="docutils literal notranslate"><span class="pre">f_hr_smell=7</span></code> means that we sum up the smell values from 8:00 to 16:00 (as labels <code class="docutils literal notranslate"><span class="pre">df_y</span></code> in prediction).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span> <span class="o">=</span> <span class="n">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span> <span class="o">=</span> <span class="n">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xr/ddxdh8x16q53_r8yf2zj9m600000gn/T/ipykernel_34726/954733244.py:60: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_x.loc[:,&quot;day_of_week&quot;] = df[&quot;EpochTime&quot;].dt.dayofweek.copy(deep=True)
 </pre></div>
 </div>
 </div>
 </div>
-<p>The features should look</p>
+<p>Below is the data frame of features (i.e., the predictor variable).</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span>
@@ -2575,16 +2727,16 @@ EpochTime
       <th>3.feed_11067.CO_PPB..3.feed_43.CO_PPB_pre_1h</th>
       <th>3.feed_11067.NO2_PPB..3.feed_43.NO2_PPB_pre_1h</th>
       <th>...</th>
-      <th>3.feed_1.SONICWD_DEG_cosine_pre_2h</th>
-      <th>3.feed_1.SONICWD_DEG_sine_pre_2h</th>
-      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_cosine_pre_2h</th>
-      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_sine_pre_2h</th>
-      <th>3.feed_28.SONICWD_DEG_cosine_pre_2h</th>
-      <th>3.feed_28.SONICWD_DEG_sine_pre_2h</th>
-      <th>3.feed_26.SONICWD_DEG_cosine_pre_2h</th>
-      <th>3.feed_26.SONICWD_DEG_sine_pre_2h</th>
-      <th>3.feed_3.SONICWD_DEG_cosine_pre_2h</th>
-      <th>3.feed_3.SONICWD_DEG_sine_pre_2h</th>
+      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_11067.SONICWD_DEG..3.feed_43.SONICWD_DEG_sine_pre_3h</th>
+      <th>3.feed_28.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_28.SONICWD_DEG_sine_pre_3h</th>
+      <th>3.feed_26.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_26.SONICWD_DEG_sine_pre_3h</th>
+      <th>3.feed_3.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_3.SONICWD_DEG_sine_pre_3h</th>
+      <th>day_of_week</th>
+      <th>hour_of_day</th>
     </tr>
   </thead>
   <tbody>
@@ -2601,16 +2753,16 @@ EpochTime
       <td>207.8</td>
       <td>6.7</td>
       <td>...</td>
-      <td>0.258819</td>
-      <td>0.965926</td>
-      <td>0.139173</td>
-      <td>0.990268</td>
-      <td>0.573576</td>
-      <td>0.819152</td>
-      <td>0.788011</td>
-      <td>0.615661</td>
-      <td>0.325568</td>
-      <td>0.945519</td>
+      <td>-0.994522</td>
+      <td>-0.104528</td>
+      <td>0.017452</td>
+      <td>0.999848</td>
+      <td>-0.173648</td>
+      <td>0.984808</td>
+      <td>-0.374607</td>
+      <td>0.927184</td>
+      <td>0</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2625,16 +2777,16 @@ EpochTime
       <td>314.6</td>
       <td>13.3</td>
       <td>...</td>
-      <td>0.515038</td>
-      <td>0.857167</td>
-      <td>0.069756</td>
-      <td>0.997564</td>
-      <td>0.374607</td>
-      <td>0.927184</td>
-      <td>0.629320</td>
-      <td>0.777146</td>
-      <td>0.342020</td>
-      <td>0.939693</td>
+      <td>0.139173</td>
+      <td>0.990268</td>
+      <td>0.573576</td>
+      <td>0.819152</td>
+      <td>0.788011</td>
+      <td>0.615661</td>
+      <td>0.325568</td>
+      <td>0.945519</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2649,16 +2801,16 @@ EpochTime
       <td>307.9</td>
       <td>15.4</td>
       <td>...</td>
-      <td>0.766044</td>
-      <td>0.642788</td>
-      <td>0.241922</td>
-      <td>0.970296</td>
-      <td>0.484810</td>
-      <td>0.874620</td>
-      <td>0.961262</td>
-      <td>0.275637</td>
-      <td>0.325568</td>
-      <td>0.945519</td>
+      <td>0.069756</td>
+      <td>0.997564</td>
+      <td>0.374607</td>
+      <td>0.927184</td>
+      <td>0.629320</td>
+      <td>0.777146</td>
+      <td>0.342020</td>
+      <td>0.939693</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2673,16 +2825,16 @@ EpochTime
       <td>178.3</td>
       <td>10.8</td>
       <td>...</td>
-      <td>0.999391</td>
-      <td>0.034899</td>
-      <td>0.422618</td>
-      <td>0.906308</td>
-      <td>0.939693</td>
-      <td>0.342020</td>
-      <td>0.990268</td>
-      <td>0.139173</td>
-      <td>0.422618</td>
-      <td>0.906308</td>
+      <td>0.241922</td>
+      <td>0.970296</td>
+      <td>0.484810</td>
+      <td>0.874620</td>
+      <td>0.961262</td>
+      <td>0.275637</td>
+      <td>0.325568</td>
+      <td>0.945519</td>
+      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2697,16 +2849,16 @@ EpochTime
       <td>190.7</td>
       <td>7.2</td>
       <td>...</td>
-      <td>0.190809</td>
-      <td>0.981627</td>
-      <td>0.207912</td>
-      <td>0.978148</td>
-      <td>0.719340</td>
-      <td>0.694658</td>
-      <td>0.939693</td>
-      <td>0.342020</td>
       <td>0.422618</td>
       <td>0.906308</td>
+      <td>0.939693</td>
+      <td>0.342020</td>
+      <td>0.990268</td>
+      <td>0.139173</td>
+      <td>0.422618</td>
+      <td>0.906308</td>
+      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>...</th>
@@ -2733,130 +2885,131 @@ EpochTime
       <td>...</td>
     </tr>
     <tr>
-      <th>16752</th>
+      <th>16746</th>
       <td>0.0</td>
       <td>0.0</td>
-      <td>57.0</td>
-      <td>2.0</td>
+      <td>36.9</td>
+      <td>3.7</td>
       <td>0.1</td>
-      <td>12.0</td>
-      <td>20.0</td>
-      <td>5.0</td>
-      <td>679.4</td>
-      <td>7.9</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+      <td>666.8</td>
+      <td>5.7</td>
       <td>...</td>
-      <td>0.987688</td>
-      <td>-0.156434</td>
       <td>0.939693</td>
       <td>0.342020</td>
-      <td>0.573576</td>
-      <td>-0.819152</td>
-      <td>0.731354</td>
-      <td>-0.681998</td>
-      <td>0.241922</td>
-      <td>-0.970296</td>
-    </tr>
-    <tr>
-      <th>16753</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>32.0</td>
-      <td>1.9</td>
-      <td>0.2</td>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>8.0</td>
-      <td>680.2</td>
-      <td>9.6</td>
-      <td>...</td>
-      <td>0.920505</td>
-      <td>0.390731</td>
-      <td>0.669131</td>
-      <td>0.743145</td>
+      <td>0.997564</td>
       <td>0.069756</td>
-      <td>-0.997564</td>
-      <td>0.798636</td>
-      <td>-0.601815</td>
-      <td>0.906308</td>
-      <td>0.422618</td>
+      <td>0.913545</td>
+      <td>-0.406737</td>
+      <td>0.788011</td>
+      <td>-0.615661</td>
+      <td>5</td>
+      <td>17</td>
     </tr>
     <tr>
-      <th>16754</th>
+      <th>16747</th>
       <td>0.0</td>
       <td>0.0</td>
-      <td>35.2</td>
-      <td>1.7</td>
-      <td>0.3</td>
-      <td>20.0</td>
-      <td>15.0</td>
+      <td>42.4</td>
+      <td>4.0</td>
+      <td>0.1</td>
+      <td>8.0</td>
       <td>10.0</td>
-      <td>455.1</td>
-      <td>8.2</td>
+      <td>3.0</td>
+      <td>715.6</td>
+      <td>8.5</td>
       <td>...</td>
-      <td>0.544639</td>
-      <td>0.838671</td>
-      <td>-0.829038</td>
-      <td>0.559193</td>
-      <td>0.500000</td>
-      <td>-0.866025</td>
       <td>0.987688</td>
       <td>-0.156434</td>
-      <td>0.358368</td>
-      <td>0.933580</td>
+      <td>0.987688</td>
+      <td>-0.156434</td>
+      <td>0.898794</td>
+      <td>-0.438371</td>
+      <td>0.866025</td>
+      <td>-0.500000</td>
+      <td>5</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>16755</th>
+      <th>16748</th>
       <td>0.0</td>
       <td>0.0</td>
-      <td>48.2</td>
-      <td>1.3</td>
-      <td>0.3</td>
-      <td>25.0</td>
-      <td>19.0</td>
+      <td>42.4</td>
+      <td>3.4</td>
+      <td>0.1</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>4.0</td>
+      <td>538.7</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.882948</td>
+      <td>-0.469472</td>
+      <td>0.848048</td>
+      <td>-0.529919</td>
+      <td>0.544639</td>
+      <td>-0.838671</td>
+      <td>0.515038</td>
+      <td>-0.857167</td>
+      <td>5</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>16749</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>40.2</td>
+      <td>3.8</td>
+      <td>0.1</td>
+      <td>10.0</td>
       <td>12.0</td>
-      <td>761.2</td>
-      <td>11.5</td>
+      <td>4.0</td>
+      <td>787.1</td>
+      <td>7.6</td>
       <td>...</td>
-      <td>0.777146</td>
-      <td>0.629320</td>
-      <td>-0.173648</td>
-      <td>0.984808</td>
-      <td>0.224951</td>
-      <td>0.974370</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.777146</td>
-      <td>0.629320</td>
+      <td>0.891007</td>
+      <td>-0.453990</td>
+      <td>0.788011</td>
+      <td>-0.615661</td>
+      <td>0.275637</td>
+      <td>-0.961262</td>
+      <td>0.453990</td>
+      <td>-0.891007</td>
+      <td>5</td>
+      <td>20</td>
     </tr>
     <tr>
-      <th>16756</th>
+      <th>16750</th>
       <td>0.0</td>
       <td>0.0</td>
-      <td>30.9</td>
-      <td>1.5</td>
-      <td>0.4</td>
-      <td>23.0</td>
-      <td>55.0</td>
-      <td>33.0</td>
-      <td>1125.4</td>
-      <td>13.5</td>
+      <td>32.4</td>
+      <td>4.2</td>
+      <td>0.1</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>6.0</td>
+      <td>765.9</td>
+      <td>8.4</td>
       <td>...</td>
-      <td>0.601815</td>
-      <td>0.798636</td>
-      <td>-0.173648</td>
-      <td>0.984808</td>
-      <td>0.087156</td>
-      <td>-0.996195</td>
-      <td>0.970296</td>
-      <td>-0.241922</td>
-      <td>0.342020</td>
-      <td>0.939693</td>
+      <td>-0.469472</td>
+      <td>-0.882948</td>
+      <td>0.224951</td>
+      <td>-0.974370</td>
+      <td>-0.390731</td>
+      <td>-0.920505</td>
+      <td>-0.121869</td>
+      <td>-0.992546</td>
+      <td>5</td>
+      <td>21</td>
     </tr>
   </tbody>
 </table>
-<p>16757 rows × 96 columns</p>
+<p>16751 rows × 146 columns</p>
 </div></div></div>
 </div>
+<p>Below is the data frame of labels (i.e., the response variable).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_y</span>
@@ -2882,25 +3035,25 @@ EpochTime
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>smell_value_future_2h</th>
+      <th>smell_value_future_8h</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.0</td>
+      <td>8.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
+      <td>5.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.0</td>
+      <td>5.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.0</td>
+      <td>5.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2911,34 +3064,1192 @@ EpochTime
       <td>...</td>
     </tr>
     <tr>
-      <th>16752</th>
+      <th>16746</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16747</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16748</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16749</th>
       <td>3.0</td>
     </tr>
     <tr>
-      <th>16753</th>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>16754</th>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>16755</th>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>16756</th>
-      <td>8.0</td>
+      <th>16750</th>
+      <td>11.0</td>
     </tr>
   </tbody>
 </table>
-<p>16757 rows × 1 columns</p>
+<p>16751 rows × 1 columns</p>
 </div></div></div>
 </div>
+<p><a name="t7"></a></p>
 </section>
 </section>
 <section id="task-7-train-and-evaluate-models">
 <h2>Task 7: Train and Evaluate Models<a class="headerlink" href="#task-7-train-and-evaluate-models" title="Permalink to this headline">#</a></h2>
+<p>We have processed raw data and prepared the <code class="docutils literal notranslate"><span class="pre">compute_feature_label</span></code> function to convert smell and sensor data into features <code class="docutils literal notranslate"><span class="pre">df_x</span></code> and labels <code class="docutils literal notranslate"><span class="pre">df_y</span></code>. In this task, you will work on training a basic and a more advanced model to predict bad smell events (i.e., the situation that the smell value is high) using the sensor data from air quality monitoring stations.</p>
+<p>First, let us threshold the features to make them binary for our classification task. We will use value 40 as the threshold to indicate a smell event. The threshold 40 was used in the Smell Pittsburgh research paper. It is equivalent to the situation that 10 people reported smell with rating 4 within 8 hours.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_y_40</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_y</span><span class="o">&gt;=</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df_y_40</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value_future_8h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16746</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16747</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16748</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16749</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16750</th>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16751 rows × 1 columns</p>
+</div></div></div>
+</div>
+<p>The descriptive statistics below tell us that the dataset is imbalanced, which means that the numbers of data points in the positive and negative label groups have a big difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">%d</span><span class="s2"> rows with smell events.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">df_y_40</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This means </span><span class="si">%.2f</span><span class="s2"> proportion of the data has smell events.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">df_y_40</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df_y_40</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 1439 rows with smell events.
+This means 0.09 proportion of the data has smell events.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let us pick a subset of the sensor data instead of using all of them. Our intuition is that the smell may come from chemical compounds near major pollution sources. From the knowledge of local people, there is a large pollution source, which is the Clairton Mill Works that belongs to the United States Steel Corporation. This pollution source is located at the south part of Pittsburgh. This factory produces petroleum coke, which is a fuel to refine steel. And during the coke refining process, it generates pollutants.</p>
+<p>One of the pollutant is H2S (hydrogen sulfide), which smells like rotten eggs. We think that H2S near the pollution source may be a good feature. So we first select the column with H2S measurements from a monitoring station near this pollution source.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x_subset</span> <span class="o">=</span> <span class="n">df_x</span><span class="p">[[</span><span class="s2">&quot;3.feed_28.H2S_PPM_pre_1h&quot;</span><span class="p">,</span> <span class="s2">&quot;day_of_week&quot;</span><span class="p">,</span> <span class="s2">&quot;hour_of_day&quot;</span><span class="p">]]</span>
+<span class="n">df_x_subset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_28.H2S_PPM_pre_1h</th>
+      <th>day_of_week</th>
+      <th>hour_of_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16746</th>
+      <td>0.0</td>
+      <td>5</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>16747</th>
+      <td>0.0</td>
+      <td>5</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>16748</th>
+      <td>0.0</td>
+      <td>5</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>16749</th>
+      <td>0.0</td>
+      <td>5</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>16750</th>
+      <td>0.0</td>
+      <td>5</td>
+      <td>21</td>
+    </tr>
+  </tbody>
+</table>
+<p>16751 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>Next, we will train and evaluate a model (F) that maps features (i.e., the sensor readings) to labels (i.e., the smell events). We have the functions ready in the following code cell to help us train and evaluate models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scorer</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A customized scoring function to evaluate a classifier.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : a sklearn model object</span>
+<span class="sd">        The classifier model.</span>
+<span class="sd">    X : pandas.DataFrame</span>
+<span class="sd">        The feature matrix.</span>
+<span class="sd">    y : pandas.Series</span>
+<span class="sd">        The label vector.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict of int or float</span>
+<span class="sd">        A dictionary of evaluation metrics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">precision_recall_fscore_support</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;tn&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;fp&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;fn&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;tp&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;recall&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;f1&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="n">a</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">train_and_evaluate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : a sklearn model object</span>
+<span class="sd">        The classifier model.</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The dataframe with features.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">        The dataframe with labels.</span>
+<span class="sd">    train_size : int</span>
+<span class="sd">        Number of samples for training.</span>
+<span class="sd">    test_size : int</span>
+<span class="sd">        Number of samples for testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use model&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perform cross-validation, please wait...&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create time series splits for cross-validation.</span>
+    <span class="n">splits</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dataset_size</span> <span class="o">=</span> <span class="n">df_x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">dataset_size</span><span class="p">,</span> <span class="n">test_size</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">train_size</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">test_size</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">&gt;=</span> <span class="n">dataset_size</span><span class="p">):</span> <span class="k">break</span>
+        <span class="n">train_index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">test_index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="n">splits</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">list</span><span class="p">(</span><span class="n">train_index</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">test_index</span><span class="p">)))</span>
+    
+    <span class="c1"># Perform cross-validation.</span>
+    <span class="n">cv_res</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cv</span><span class="o">=</span><span class="n">splits</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scorer</span><span class="p">)</span>
+    
+    <span class="c1"># Print evaluation metrics.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average f1-score:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_f1&quot;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average precision:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_precision&quot;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average recall:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_recall&quot;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average accuracy:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_accuracy&quot;</span><span class="p">]),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of true positives:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_tp&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of false positives:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_fp&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of true negatives:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_tn&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;number of false negatives:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cv_res</span><span class="p">[</span><span class="s2">&quot;test_fn&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">train_and_evaluate</span></code> function prints the averaged f1-score, averaged precision, averaged recall, and averaged accuracy across all the folds. These metrics are always in the range of zero and one, with zero being the worst and one being the best. We also printed the confusion matrix that contains true positives, false positives, true negatives, and false negatives. To understand the evaluation metrics, let us first take a look at the confusion matrix, explained below:</p>
+<ul class="simple">
+<li><p>True Positives</p>
+<ul>
+<li><p>There is a smell event in the real world, and the model correctly predicts that there is a smell event.</p></li>
+</ul>
+</li>
+<li><p>False Positives</p>
+<ul>
+<li><p>There is no smell event in the real world, but the model falsely predicts that there is a smell event.</p></li>
+</ul>
+</li>
+<li><p>True Negatives</p>
+<ul>
+<li><p>There is no smell event in the real world, and the model correctly predicts that there is no smell event.</p></li>
+</ul>
+</li>
+<li><p>False Negatives</p>
+<ul>
+<li><p>There is a smell event in the real world, but the model falsely predicts that there is no smell event.</p></li>
+</ul>
+</li>
+</ul>
+<p>The accuracy metric is defined in the equation below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span><span class="n">true</span> <span class="n">positives</span> <span class="o">+</span> <span class="n">true</span> <span class="n">negatives</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span> <span class="n">number</span> <span class="n">of</span> <span class="n">data</span> <span class="n">points</span>
+</pre></div>
+</div>
+<p>Accuracy is the number of correct predictions divided by the total number of data points. It is a good metric if the data distribution is not skewed (i.e., the number of data records that have a bad smell and do not have a bad smell is roughly equal). But if the data is skewed, which is the case in our dataset, we will need another set of evaluation metrics: f1-score, precision, and recall. We will use an example later to explain why accuracy is an unfair metric for our dataset.</p>
+<p>The precision metric is defined in the equation below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">precision</span> <span class="o">=</span> <span class="n">true</span> <span class="n">positives</span> <span class="o">/</span> <span class="p">(</span><span class="n">true</span> <span class="n">positives</span> <span class="o">+</span> <span class="n">false</span> <span class="n">positives</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In other words, precision means how precise the prediction is. High precision means that if the model predicts “yes” for smell events, it is highly likely that the prediction is correct. We want high precision because we want the model to be as precise as possible when it says there will be smell events.</p>
+<p>Next, the recall metric is defined in the equation below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">recall</span> <span class="o">=</span> <span class="n">true</span> <span class="n">positives</span> <span class="o">/</span> <span class="p">(</span><span class="n">true</span> <span class="n">positives</span> <span class="o">+</span> <span class="n">false</span> <span class="n">negatives</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In other words, recall means the ability of the model to catch events. High recall means that the model has a low chance to miss the events that happen in the real world. We want high recall because we want the model to catch all smell events without missing them.</p>
+<p>Typically, there is a tradeoff between precision and recall, and one may need to choose to go for a high precision but low recall model, or we go for a high recall but low precision model. The tradeoff depends on the context. For example, in medical applications, one may not want to miss the events (e.g., cancer) since the events are connected to patients’ quality of life. In our application of predicting smell events, we may not want the model to make false predictions when saying “yes” to smell events. The reason is that people may lose trust in the prediction model when we make real-world interventions incorrectly, such as sending push notifications to inform the users about the bad smell events.</p>
+<p>The f1-score metric is a combination of recall and precision, as indicated below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span><span class="o">-</span><span class="n">score</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">precision</span> <span class="o">*</span> <span class="n">recall</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">precision</span> <span class="o">+</span> <span class="n">recall</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a name="dummy-classifier"></a></p>
+<section id="use-the-dummy-classifier">
+<h3>Use the Dummy Classifier<a class="headerlink" href="#use-the-dummy-classifier" title="Permalink to this headline">#</a></h3>
+<p>Now that we have explained the evaluation metrics. Let us first use a dummy classifier that always predicts no smell events. In other words, the dummy classifier never predicts “yes” about the presence of smell events. Later we will guide you through using more advanced machine learning models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dummy_model</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">train_and_evaluate</span><span class="p">(</span><span class="n">dummy_model</span><span class="p">,</span> <span class="n">df_x_subset</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use model DummyClassifier(constant=0, strategy=&#39;constant&#39;)
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.0
+average precision: 0.0
+average recall: 0.0
+average accuracy: 0.92
+number of true positives: 0
+number of false positives: 0
+number of true negatives: 14921
+number of false negatives: 1375
+================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>The printed message above shows the evaluation result of the dummy classifier. We see that the accuracy is 0.92, which is very high. But the f1-score, precision, and recall are zero since there are no true positives. This is because the Smell Pittsburgh dataset has a skewed distribution of smell events, which means that there are a lot of “no” (i.e., label <code class="docutils literal notranslate"><span class="pre">0</span></code>) but only a small part of “yes” (i.e., label <code class="docutils literal notranslate"><span class="pre">1</span></code>). This skewed data distribution corresponds to what happened in Pittsburgh. Most of the time, the odors in the city area are OK and not too bad. Occasionally, there can be very bad pollution odors, where many people complain.</p>
+<p>By the definition of accuracy, the dummy classifier (which always says “no”) has a very high accuracy of 0.92. This is because only 9% of the data indicate bad smell events. So, you can see that accuracy is not a fair evaluation metric for the Smell Pittsburgh dataset. And instead, we need to go for the f1-score, precision, and recall metrics.</p>
+<p>This step uses cross-validation to evaluate the machine learning model, where the data is divided into several parts, and some parts are used for training. Other parts are used for testing. Typically people use K-fold cross-validation, which means that the entire dataset is split into K parts. One part is used for testing (i.e., the testing set), and the other parts are used for training (i.e., the training set). This procedure is repeated K times so that every fold has the chance of being tested. The result is averaged to indicate the performance of the model, for example, averaged accuracy. We can then compare the results for different machine learning pipelines.</p>
+<p>However, the script uses a different cross-validation approach, where we only use the previous folds to train the model to test future folds. For example, if we want to test the third fold, we will only use a part of the data from the first and second fold to train the model. The reason is that the Smell Pittsburgh dataset is primarily time-series data, which means the dataset has timestamps for every data record. In other words, things that happened in the past may affect the future. So, in fact, it does not make sense to use the data in the future to train a model to predict what happened in the past. Our time-series cross-validation approach is shown in the following figure.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-cross-validation.png" src="../../../_images/smellpgh-cross-validation.png" /></p>
+<p><br />
+For the <code class="docutils literal notranslate"><span class="pre">train_and_evaluate</span></code> function, <code class="docutils literal notranslate"><span class="pre">test_size</span></code> is the number of samples for testing, and <code class="docutils literal notranslate"><span class="pre">train_size</span></code> is the number of samples for training. We need to set these numbers for time-series cross-validation. For example, setting <code class="docutils literal notranslate"><span class="pre">test_size</span></code> to 168 means using 168 samples for testing, which also means 168 hours (or 7 days) of data. Setting <code class="docutils literal notranslate"><span class="pre">train_size</span></code> to 336 means using 336 samples for testing, which also means 336 hours (or 14 days) of data. So, this means we are using previous 14 days of sensor data to train the model, and then use the model to predict the smell events in the next 7 days. In this setting, every Sunday we can re-train the model with the updated data, so that we have the updated model to predict smell events every week.</p>
+<p><a name="decision-tree"></a></p>
+</section>
+<section id="use-the-decision-tree-model">
+<h3>Use the Decision Tree Model<a class="headerlink" href="#use-the-decision-tree-model" title="Permalink to this headline">#</a></h3>
+<p>Now, instead of using the dummy classifier, we are going to use a different model. Let us use the Decision Tree model and compare its performance with the dummy classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">train_and_evaluate</span><span class="p">(</span><span class="n">dt_model</span><span class="p">,</span> <span class="n">df_x_subset</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use model DecisionTreeClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.14
+average precision: 0.19
+average recall: 0.14
+average accuracy: 0.88
+number of true positives: 290
+number of false positives: 916
+number of true negatives: 14005
+number of false negatives: 1085
+================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the printed message above, notice that the Decision Tree model produces non-zero true positives and false positives (compared to the dummy classifier). Also, notice that f1-score, precision, and recall are no longer zero.</p>
+<p>Decision Tree is a type of machine learning model. You can think of it as how a medical doctor diagnoses patients. For example, to determine if the patients need treatments, the medical doctor may ask the patients to describe symptoms. Depending on the symptoms, the doctor decides which treatment should be applied for the patient.</p>
+<p>One can think of the smell prediction model as an air quality expert who is diagnosing the pollution patterns based on air quality and weather data. The treatment is to send a push notification to citizens to inform them of the presence of bad smell to help people plan daily activities. This decision-making process can be seen as a tree structure as shown in the following figure, where the first node is the most important factor to decide the treatment.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-decision-tree.png" src="../../../_images/smellpgh-decision-tree.png" /></p>
+<p><br />
+The above figure is just a toy example to show what a decision tree is. In our case, we put the features (X) into the decision tree to train it. Then, the tree will decide which feature to use and what is the threshold to split the data based on the features. This procedure is repeated several times (represented by the depth of the tree). Finally, the model will make a prediction (y) at the final node of the tree.</p>
+<p>You can find the visualization of a decision tree (trained using the real data) in Figure 8 in the <a class="reference external" href="https://doi.org/10.1145/3369397">Smell Pittsburgh paper</a>. More information about the Decision Tree can be found in the following URL and paper:</p>
+<ul class="simple">
+<li><p>More information about Decision Tree: <a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html">https://scikit-learn.org/stable/modules/tree.html</a></p></li>
+<li><p>Quinlan, J. R. (1986). Induction of decision trees. Machine learning, 1(1), 81-106.</p></li>
+</ul>
+<p><a name="random-forest"></a></p>
+</section>
+<section id="use-the-random-forest-model">
+<h3>Use the Random Forest Model<a class="headerlink" href="#use-the-random-forest-model" title="Permalink to this headline">#</a></h3>
+<p>Now that you have tried the Decision Tree model. Let us use a more advanced model, Random Forest, for smell event prediction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">train_and_evaluate</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="n">df_x_subset</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use model RandomForestClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.11
+average precision: 0.18
+average recall: 0.1
+average accuracy: 0.89
+number of true positives: 216
+number of false positives: 688
+number of true negatives: 14233
+number of false negatives: 1159
+================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the performance of the model does not look much better than the Decision Tree model. And in fact, both models currently have poor performance. This can have several meanings, as indicated in the following list. You will explore these questions more in the assignment for this task.</p>
+<ul class="simple">
+<li><p>Firstly, do we really believe that we are using a good set of features? Is it sufficient to only use the H2S (hydrogen sulfide) feature? Is it sufficient to only include the data from the previous hour (i.e., the <code class="docutils literal notranslate"><span class="pre">&quot;3.feed_28.H2S_PPM_pre_1h&quot;</span></code> column)?</p></li>
+<li><p>Secondly, the machine learning pipeline uses 14 days of data in the past (i.e., <code class="docutils literal notranslate"><span class="pre">train_size=336</span></code>) to predict smell events in the future 7 days (i.e., <code class="docutils literal notranslate"><span class="pre">test_size=168</span></code>). Do we believe that 14 days are sufficient for training a good model?</p></li>
+<li><p>Finally, the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">decision tree</a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">random forest</a> models has many hyper-parameters (e.g., maximum depth of tree). Currently, the model uses the default hyper-parameters. Do we believe that the default setting is good?</p></li>
+</ul>
+<p>Now let us take a look at the Random Forest model, which is a type of ensemble model. You can think about the ensemble model as a committee that makes decisions collaboratively, such as using majority voting. For example, to determine the treatment of a patient, we can ask the committee of medical doctors for a collaborative decision. The committee has several members who correspond to various machine learning models. The Random Forest model is a committee that is formed with many decision trees. Each tree is trained using different sets of data, as shown in the following figure.</p>
+<p><br />
+<img alt="../../../_images/smellpgh-random-forest.png" src="../../../_images/smellpgh-random-forest.png" /></p>
+<p><br />
+In other words, we first trained many decision trees, and each of them has access to only a part of the data (but not all of the data) that are randomly selected. So, each decision tree sees different sets of features. Then, we ask the committee members (i.e., the decision trees) to make predictions, and the final result is the one that receives the highest votes.</p>
+<p>The intuition for having a committee (instead of only a single tree) is that we believe a diverse set of models can make better decisions collaboratively. There is mathematical proof about this intuition, but the proof is outside the scope of this course. More information about the Random Forest model can be found in the following URL and paper:</p>
+<ul class="simple">
+<li><p>More information about Random Forest: <a class="reference external" href="https://scikit-learn.org/stable/modules/ensemble.html">https://scikit-learn.org/stable/modules/ensemble.html</a></p></li>
+<li><p>Breiman, L. (2001). Random forests. Machine learning, 45(1), 5-32.</p></li>
+</ul>
+<p><a name="feature-importance"></a></p>
+</section>
+<section id="compute-feature-importance">
+<h3>Compute Feature Importance<a class="headerlink" href="#compute-feature-importance" title="Permalink to this headline">#</a></h3>
+<p>After training the model and evaluate its performance, we now have a better understanding about how to predict smell events. However, what if we want to know which are the important features? For example, which pollutants are the major source of the bad smell? Which pollution source is likely related to the bad smell? Under what situation will the pollutants travel to the Pittsburgh city area? This information can be important to help the municipality evaluate air pollution policies. This information can also help local communities to advocate for policy changes.</p>
+<p>It turns out that we can permute the data in a specific column to know the importance. If a column (corresponding to a feature) is important, permuting the data specifically for the column will make the model performacne decrease. A higher decrease of a metric (e.g., f1-score) means that the feature is more important. It also means the feature is important for the model to make decisions. So, we can compute the “decrease” of a metric and use it as feature importance. We have provided the function in the following coding block to do this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_feature_importance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute feature importance of a model.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : a sklearn model object</span>
+<span class="sd">        The classifier model.</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The dataframe with features.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">        The dataframe with labels.</span>
+<span class="sd">    scoring : str</span>
+<span class="sd">        A scoring function as documented below.</span>
+<span class="sd">        https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer feature importance using&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+    <span class="n">feat_names</span> <span class="o">=</span> <span class="n">df_x</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">feat_ims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">)</span>
+    <span class="n">sorted_ims_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">feat_ims</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">feat_names</span> <span class="o">=</span> <span class="n">feat_names</span><span class="p">[</span><span class="n">sorted_ims_idx</span><span class="p">]</span>
+    <span class="n">feat_ims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">feat_ims</span><span class="p">[</span><span class="n">sorted_ims_idx</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;feature_importance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">feat_ims</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;feature_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">feat_names</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=====================================================================&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=====================================================================&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compute_feature_importance</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="n">df_x_subset</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computer feature importance using RandomForestClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance              feature_name
+0             0.46863  3.feed_28.H2S_PPM_pre_1h
+1             0.34671               hour_of_day
+2             0.24590               day_of_week
+=====================================================================
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above code prints feature importance, which indicates the influence of each feature on the model prediction result. Here we use the Random Forest model. For example, in the printed message, the <code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_1h</span></code> feature has the highest importance. The values in the feature importance here represent the decrease of f1-score (because we use <code class="docutils literal notranslate"><span class="pre">scoring=&quot;f1&quot;</span></code>) if we randomly permute the data related to the feature.</p>
+<p>For example, if we randomly permute the H2S measurement in the <code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_1h</span></code> column for all the data records (but keep other features the same), the f1-score of the Random Forest model will drop about 0.47. The intuition is that if a feature is more important, the model performance will decrease more when the feature is randomly permuted (i.e., when the data that is associated with the feature are messed up). More information can be found in the following URL:</p>
+<ul class="simple">
+<li><p>More information about feature importance: <a class="reference external" href="https://scikit-learn.org/stable/modules/permutation_importance.html">https://scikit-learn.org/stable/modules/permutation_importance.html</a></p></li>
+</ul>
+<p>Notice that to use this technique, the model needs to fit the data reasonably well. Also depending on the number of features you are using, the step of computing the feature importance can take a lot of time.</p>
+<p><a name="a7"></a></p>
+</section>
+<section id="assignment-for-task-7">
+<h3>Assignment for Task 7<a class="headerlink" href="#assignment-for-task-7" title="Permalink to this headline">#</a></h3>
+<p>In the assignment for this task, you need to tweak parameters in the code to conduct a pilot experiment to understand if wind direction is a good feature for predicting the presence of bad smell. Also, you need to inspect if including more data is helpful. Specifically, you need to fill in the cells that have the question mark in the following table.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Feature set</p></th>
+<th class="head"><p>H</p></th>
+<th class="head"><p>Accuracy</p></th>
+<th class="head"><p>Precision</p></th>
+<th class="head"><p>Recall</p></th>
+<th class="head"><p>F1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DT</p></td>
+<td><p>H2S</p></td>
+<td><p>1</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>DT</p></td>
+<td><p>H2S + Wind</p></td>
+<td><p>1</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>DT</p></td>
+<td><p>H2S</p></td>
+<td><p>2</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>DT</p></td>
+<td><p>H2S + Wind</p></td>
+<td><p>2</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>RF</p></td>
+<td><p>H2S</p></td>
+<td><p>1</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF</p></td>
+<td><p>H2S + Wind</p></td>
+<td><p>1</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-even"><td><p>RF</p></td>
+<td><p>H2S</p></td>
+<td><p>2</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF</p></td>
+<td><p>H2S + Wind</p></td>
+<td><p>2</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
+<p>Abbreviations “DT” means Decision Tree, “RF” means Random Forest, “F1” means F1-score, “H” means the look-back hours. The <code class="docutils literal notranslate"><span class="pre">df_x_subset</span></code> variable corresponds to the feature set of “H2S” with “1 look-back hours”, which has the follwing features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day_of_week</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hour_of_day</span></code></p></li>
+</ul>
+<p>To add wind information to the features, you need to create a new variable <code class="docutils literal notranslate"><span class="pre">df_x_subset_wind</span></code> corresponding to the feature set of “H2S + Wind” with “1 look-back hours”, which has the following features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_sine_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_cosine_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day_of_week</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hour_of_day</span></code></p></li>
+</ul>
+<p>To add both wind information and more look-back hours to the features, you need to create a new variable <code class="docutils literal notranslate"><span class="pre">df_x_subset_wind_2</span></code> corresponding to the feature set of “H2S + Wind” with “2 look-back hours”, which has the following features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_sine_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_cosine_pre_1h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.H2S_PPM_pre_2h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_sine_pre_2h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3.feed_28.SONICWD_DEG_cosine_pre_2h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day_of_week</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hour_of_day</span></code></p></li>
+</ul>
+<p>You have learned how to use different models and feature sets. For this assignment, use the knowledge that you learned to conduct experiments and fill out the table provided before. After you conduct the experiments, answer the following questions:</p>
+<ul class="simple">
+<li><p>Is including sensor data in the past a good idea to help improve model performance?</p></li>
+<li><p>Is the wind direction from the air quality monitoring station (i.e., feed 28) that near the pollution source a good feature to predict bad smell?</p></li>
+<li><p>Remember to also check the feature importance when answering the above questions.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform experiments and print the results.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The data frame that contains all features.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">         The data frame that contains labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;None&quot;</span><span class="p">)</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">experiment</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>You need to write the function above that can do similar things as the following from the answer.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer_experiment</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;]
+Use model DecisionTreeClassifier()
+Perform cross-validation, please wait...
+================================================
+average f1-score: 0.15
+average precision: 0.2
+average recall: 0.15
+average accuracy: 0.88
+number of true positives: 303
+number of false positives: 937
+number of true negatives: 13984
+number of false negatives: 1072
+================================================
+Computer feature importance using DecisionTreeClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance              feature_name
+0             0.44835  3.feed_28.H2S_PPM_pre_1h
+1             0.31771               hour_of_day
+2             0.23740               day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;, &#39;3.feed_28.SONICWD_DEG_sine_pre_1h&#39;, &#39;3.feed_28.SONICWD_DEG_cosine_pre_1h&#39;]
+Use model DecisionTreeClassifier()
+Perform cross-validation, please wait...
+================================================
+average f1-score: 0.16
+average precision: 0.21
+average recall: 0.17
+average accuracy: 0.87
+number of true positives: 359
+number of false positives: 1162
+number of true negatives: 13759
+number of false negatives: 1016
+================================================
+Computer feature importance using DecisionTreeClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance                         feature_name
+0             0.66980             3.feed_28.H2S_PPM_pre_1h
+1             0.63560                          hour_of_day
+2             0.62474    3.feed_28.SONICWD_DEG_sine_pre_1h
+3             0.60188  3.feed_28.SONICWD_DEG_cosine_pre_1h
+4             0.46176                          day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;, &#39;3.feed_28.H2S_PPM_pre_2h&#39;]
+Use model DecisionTreeClassifier()
+Perform cross-validation, please wait...
+================================================
+average f1-score: 0.15
+average precision: 0.2
+average recall: 0.16
+average accuracy: 0.88
+number of true positives: 309
+number of false positives: 949
+number of true negatives: 13972
+number of false negatives: 1066
+================================================
+Computer feature importance using DecisionTreeClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance              feature_name
+0             0.60179  3.feed_28.H2S_PPM_pre_1h
+1             0.51536               hour_of_day
+2             0.51353  3.feed_28.H2S_PPM_pre_2h
+3             0.38429               day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;, &#39;3.feed_28.H2S_PPM_pre_2h&#39;, &#39;3.feed_28.SONICWD_DEG_sine_pre_2h&#39;, &#39;3.feed_28.SONICWD_DEG_cosine_pre_2h&#39;]
+Use model DecisionTreeClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.17
+average precision: 0.2
+average recall: 0.18
+average accuracy: 0.87
+number of true positives: 356
+number of false positives: 1128
+number of true negatives: 13793
+number of false negatives: 1019
+================================================
+Computer feature importance using DecisionTreeClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance                         feature_name
+0             0.61615    3.feed_28.SONICWD_DEG_sine_pre_2h
+1             0.59914             3.feed_28.H2S_PPM_pre_1h
+2             0.59261                          hour_of_day
+3             0.51171             3.feed_28.H2S_PPM_pre_2h
+4             0.50723  3.feed_28.SONICWD_DEG_cosine_pre_2h
+5             0.44172                          day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;]
+Use model RandomForestClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.11
+average precision: 0.17
+average recall: 0.1
+average accuracy: 0.89
+number of true positives: 212
+number of false positives: 711
+number of true negatives: 14210
+number of false negatives: 1163
+================================================
+Computer feature importance using RandomForestClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance              feature_name
+0             0.46938  3.feed_28.H2S_PPM_pre_1h
+1             0.34835               hour_of_day
+2             0.25282               day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;, &#39;3.feed_28.SONICWD_DEG_sine_pre_1h&#39;, &#39;3.feed_28.SONICWD_DEG_cosine_pre_1h&#39;]
+Use model RandomForestClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.14
+average precision: 0.24
+average recall: 0.12
+average accuracy: 0.91
+number of true positives: 259
+number of false positives: 401
+number of true negatives: 14520
+number of false negatives: 1116
+================================================
+Computer feature importance using RandomForestClassifier()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=====================================================================
+   feature_importance                         feature_name
+0             0.66306             3.feed_28.H2S_PPM_pre_1h
+1             0.60979                          hour_of_day
+2             0.55472    3.feed_28.SONICWD_DEG_sine_pre_1h
+3             0.47647  3.feed_28.SONICWD_DEG_cosine_pre_1h
+4             0.42322                          day_of_week
+=====================================================================
+
+Use feature set [&#39;3.feed_28.H2S_PPM_pre_1h&#39;, &#39;day_of_week&#39;, &#39;hour_of_day&#39;, &#39;3.feed_28.H2S_PPM_pre_2h&#39;]
+Use model RandomForestClassifier()
+Perform cross-validation, please wait...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================
+average f1-score: 0.13
+average precision: 0.2
+average recall: 0.12
+average accuracy: 0.89
+number of true positives: 253
+number of false positives: 730
+number of true negatives: 14191
+number of false negatives: 1122
+================================================
+Computer feature importance using RandomForestClassifier()
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">answer_experiment</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y_40</span><span class="p">)</span>
+
+<span class="nn">Cell In[2], line 165,</span> in <span class="ni">answer_experiment</span><span class="nt">(df_x, df_y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> <span class="n">df_x_fs</span> <span class="o">=</span> <span class="n">df_x</span><span class="p">[</span><span class="n">fs</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span> <span class="n">train_and_evaluate</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">df_x_fs</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mi">336</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mi">168</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">165</span> <span class="n">compute_feature_importance</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">df_x_fs</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;f1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[39], line 21,</span> in <span class="ni">compute_feature_importance</span><span class="nt">(model, df_x, df_y, scoring)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer feature importance using&quot;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="n">result</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">feat_names</span> <span class="o">=</span> <span class="n">df_x</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">feat_ims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">importances_mean</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/inspection/_permutation_importance.py:258,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>     <span class="n">scorer</span> <span class="o">=</span> <span class="n">_MultimetricScorer</span><span class="p">(</span><span class="n">scorers</span><span class="o">=</span><span class="n">scorers_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">258</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>         <span class="n">col_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="n">random_seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="n">n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>         <span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="n">max_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="p">)</span>
+<span class="nn">    270     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="p">}</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/utils/parallel.py:63,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">63</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:1085,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1076</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1077</span>     <span class="c1"># Only set self._iterating to True if at least a batch</span>
+<span class="g g-Whitespace">   </span><span class="mi">1078</span>     <span class="c1"># was dispatched. In particular this covers the edge</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1082</span>     <span class="c1"># was very quick and its callback already dispatched all the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span>     <span class="c1"># remaining jobs.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">-&gt; </span><span class="mi">1085</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1086</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_iterator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1088</span>     <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:901,</span> in <span class="ni">Parallel.dispatch_one_batch</span><span class="nt">(self, iterator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">901</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span>     <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:819,</span> in <span class="ni">Parallel._dispatch</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>     <span class="n">job_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">819</span>     <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="c1"># A job can complete so quickly than its callback is</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="c1"># called before we get here, causing self._jobs to</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="c1"># grow. To ensure correct results ordering, .insert is</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>     <span class="c1"># used (rather than .append) in the following line</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">job_idx</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/_parallel_backends.py:208,</span> in <span class="ni">SequentialBackend.apply_async</span><span class="nt">(self, func, callback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">def</span> <span class="nf">apply_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="sd">&quot;&quot;&quot;Schedule a func to be run&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">208</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">ImmediateResult</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">if</span> <span class="n">callback</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/_parallel_backends.py:597,</span> in <span class="ni">ImmediateResult.__init__</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span>     <span class="c1"># Don&#39;t delay the application, to avoid keeping the input</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span>     <span class="c1"># arguments in memory</span>
+<span class="ne">--&gt; </span><span class="mi">597</span>     <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">batch</span><span class="p">()</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:288,</span> in <span class="ni">BatchedCalls.__call__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="c1"># change the default number of processes to -1</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">288</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:288,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="c1"># change the default number of processes to -1</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">288</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/utils/parallel.py:123,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/inspection/_permutation_importance.py:63,</span> in <span class="ni">_calculate_permutation_scores</span><span class="nt">(estimator, X, y, sample_weight, col_idx, random_state, n_repeats, scorer, max_samples)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">X_permuted</span><span class="p">[:,</span> <span class="n">col_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_permuted</span><span class="p">[</span><span class="n">shuffling_idx</span><span class="p">,</span> <span class="n">col_idx</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">63</span>     <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X_permuted</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">scores</span> <span class="o">=</span> <span class="n">_aggregate_score_dicts</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/inspection/_permutation_importance.py:18,</span> in <span class="ni">_weights_scorer</span><span class="nt">(scorer, estimator, X, y, sample_weight)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">return</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="k">return</span> <span class="n">scorer</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/metrics/_scorer.py:234,</span> in <span class="ni">_BaseScorer.__call__</span><span class="nt">(self, estimator, X, y_true, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="sd">&quot;&quot;&quot;Evaluate predicted target values for X relative to y_true.</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span><span class="sd">         Score function applied to prediction of estimator on X.</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">234</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_score</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>         <span class="n">partial</span><span class="p">(</span><span class="n">_cached_call</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>         <span class="n">y_true</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>         <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/metrics/_scorer.py:276,</span> in <span class="ni">_PredictScorer._score</span><span class="nt">(self, method_caller, estimator, X, y_true, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="k">def</span> <span class="nf">_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_caller</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="sd">&quot;&quot;&quot;Evaluate predicted target values for X relative to y_true.</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span><span class="sd">         Score function applied to prediction of estimator on X.</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">276</span>     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">method_caller</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;predict&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sign</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_score_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>             <span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/metrics/_scorer.py:73,</span> in <span class="ni">_cached_call</span><span class="nt">(cache, estimator, method, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="sd">&quot;&quot;&quot;Call estimator with method and args and kwargs.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="k">if</span> <span class="n">cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">method</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">method</span><span class="p">]</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/ensemble/_forest.py:820,</span> in <span class="ni">ForestClassifier.predict</span><span class="nt">(self, X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span> <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">801</span><span class="sd">     Predict class for X.</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span><span class="sd">         The predicted classes.</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">820</span>     <span class="n">proba</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_outputs_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes_</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">proba</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/ensemble/_forest.py:873,</span> in <span class="ni">ForestClassifier.predict_proba</span><span class="nt">(self, X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="n">all_proba</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">j</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="nn">    870     for j</span> in <span class="ni">np.atleast_1d</span><span class="nt">(self.n_classes_)</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span> <span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">873</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span> <span class="n">require</span><span class="o">=</span><span class="s2">&quot;sharedmem&quot;</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_accumulate_prediction</span><span class="p">)(</span><span class="n">e</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">all_proba</span><span class="p">,</span> <span class="n">lock</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span> <span class="k">for</span> <span class="n">proba</span> <span class="ow">in</span> <span class="n">all_proba</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>     <span class="n">proba</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/utils/parallel.py:63,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">63</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:1088,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1086</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_iterating</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_iterator</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1088</span> <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_one_batch</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1089</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">1091</span> <span class="k">if</span> <span class="n">pre_dispatch</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span> <span class="ow">or</span> <span class="n">n_jobs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1092</span>     <span class="c1"># The iterable was consumed all at once by the above for loop.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="c1"># No need to wait for async callbacks to trigger to</span>
+<span class="g g-Whitespace">   </span><span class="mi">1094</span>     <span class="c1"># consumption.</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:901,</span> in <span class="ni">Parallel.dispatch_one_batch</span><span class="nt">(self, iterator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">901</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span>     <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:819,</span> in <span class="ni">Parallel._dispatch</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>     <span class="n">job_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">819</span>     <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>     <span class="c1"># A job can complete so quickly than its callback is</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="c1"># called before we get here, causing self._jobs to</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span>     <span class="c1"># grow. To ensure correct results ordering, .insert is</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span>     <span class="c1"># used (rather than .append) in the following line</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">job_idx</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/_parallel_backends.py:208,</span> in <span class="ni">SequentialBackend.apply_async</span><span class="nt">(self, func, callback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">def</span> <span class="nf">apply_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="sd">&quot;&quot;&quot;Schedule a func to be run&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">208</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">ImmediateResult</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">if</span> <span class="n">callback</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">callback</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/_parallel_backends.py:597,</span> in <span class="ni">ImmediateResult.__init__</span><span class="nt">(self, batch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">594</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span>     <span class="c1"># Don&#39;t delay the application, to avoid keeping the input</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span>     <span class="c1"># arguments in memory</span>
+<span class="ne">--&gt; </span><span class="mi">597</span>     <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">batch</span><span class="p">()</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:288,</span> in <span class="ni">BatchedCalls.__call__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="c1"># change the default number of processes to -1</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">288</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/joblib/parallel.py:288,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="c1"># Set the default nested backend to self._backend but do not set the</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>     <span class="c1"># change the default number of processes to -1</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="k">with</span> <span class="n">parallel_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_jobs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">288</span>         <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>                 <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">]</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/utils/parallel.py:123,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/ensemble/_forest.py:650,</span> in <span class="ni">_accumulate_prediction</span><span class="nt">(predict, X, out, lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">def</span> <span class="nf">_accumulate_prediction</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">lock</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span><span class="sd">     This is a utility function for joblib&#39;s Parallel.</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span><span class="sd">     It can&#39;t go locally in ForestClassifier or ForestRegressor, because joblib</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span><span class="sd">     complains that it cannot pickle it when placed there.</span>
+<span class="g g-Whitespace">    </span><span class="mi">649</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">650</span>     <span class="n">prediction</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">check_input</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">652</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File /opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sklearn/tree/_classes.py:923,</span> in <span class="ni">DecisionTreeClassifier.predict_proba</span><span class="nt">(self, X, check_input)</span>
+<span class="g g-Whitespace">    </span><span class="mi">921</span> <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">922</span> <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_X_predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">check_input</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">923</span> <span class="n">proba</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">925</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_outputs_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">926</span>     <span class="n">proba</span> <span class="o">=</span> <span class="n">proba</span><span class="p">[:,</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_classes_</span><span class="p">]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p><a name="opa"></a></p>
+</section>
+</section>
+<section id="optional-assignment">
+<h2>Optional Assignment<a class="headerlink" href="#optional-assignment" title="Permalink to this headline">#</a></h2>
+<p>The assignment above provided a table for a predefined experiment. In this optional assignment, you need to design your own experiment to answer the following question raised by the local Pittsburgh community:</p>
+<ul class="simple">
+<li><p>What are the possible pollution sources that are related to the bad odor in the Pittsburgh region?</p></li>
+</ul>
+<p>To answer this question, you need to not only select proper variables but also fit the data to the model reasonably well. Consider the following aspects when designing the experiment:</p>
+<ul class="simple">
+<li><p>What are the models that you want to use?</p>
+<ul>
+<li><p>Hint: Use the knowledge that you learned in this module to choose a set of models that you want to investigate. Notice that this is a classification task, and a list of available models can be found at the link below:</p></li>
+<li><p>Link to models: <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html">https://scikit-learn.org/stable/supervised_learning.html</a></p></li>
+</ul>
+</li>
+<li><p>What are the features that you are interested in exploring?</p>
+<ul>
+<li><p>Hint: Use the knowledge that you learned in this module to select different feature sets and check how these sets affect model performance. A list of available variables is mentioned in the tutorial.</p></li>
+<li><p>Hint: Use the knowledge that you learned in this module to compute feature importance and inspect which are the important features.</p></li>
+</ul>
+</li>
+<li><p>How much data does the model need to predict bad odor reasonably well?</p>
+<ul>
+<li><p>Hint: Change the <code class="docutils literal notranslate"><span class="pre">train_size</span></code> parameter to increase or decrease the amount of data records for training the machine learning model.</p></li>
+</ul>
+</li>
+<li><p>How often do you need to retrain the model using updated data?</p>
+<ul>
+<li><p>Hint: Change the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> parameter to indicate how often you want to retrain the model with updated data.</p></li>
+</ul>
+</li>
+</ul>
+<p>When designing the experiment, please consider the computation time carefully. Keep in mind that if you have a very large set of features, training the machine learning model can take a very long time, and explaining the result can also be hard. Instead of including all the available features in the experiment, it may be better to separate the features into several groups, and then train the machine learning model on different groups with different sets of features.</p>
 </section>
 </section>
 

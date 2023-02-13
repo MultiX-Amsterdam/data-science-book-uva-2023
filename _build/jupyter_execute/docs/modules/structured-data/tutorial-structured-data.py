@@ -7,17 +7,27 @@
 # This page is under construction and not finished yet. Do not use it.
 # :::
 
-# (Last updated: Feb 11, 2023)
+# (Last updated: Feb 13, 2023)
 
 # This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.
 # 
 # 
 # The scenario is in the next section of this tutorial, and more details are in the introduction section of the [Smell Pittsburgh paper](https://doi.org/10.1145/3369397). We will use the [same dataset as used in the Smell Pittsburgh paper](https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1) as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building.
 # 
-# You can use the following link to jump to the assignments:
-# - [Assignment for Task 4](#a4)
-# - [Assignment for Task 5](#a5)
-# - [Assignment for Task 6](#a6)
+# You can use the following link to jump to the tasks and assignments:
+# - [Task 4: Preprocess Sensor Data](#t4)
+#   - [Assignment for Task 4](#a4)
+# - [Task 5: Preprocess Smell Data](#t5)
+#   - [Assignment for Task 5](#a5)
+# - [Task 6: Prepare Features and Labels](#t6)
+#   - [Assignment for Task 6](#a6)
+# - [Task 7: Train and Evaluate Models](#t7)
+#   - [Use the Dummy Classifier](#dummy-classifier)
+#   - [Use the Decision Tree Model](#decision-tree)
+#   - [Use the Random Forest Model](#random-forest)
+#   - [Compute Feature Importance](#feature-importance)
+#   - [Assignment for Task 7](#a7)
+# - [Optional Assignment](#opa)
 
 # ## Scenario
 
@@ -43,6 +53,14 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from os.path import isfile, join
 from os import listdir
+from sklearn.dummy import DummyClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_validate
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import accuracy_score
+from sklearn.inspection import permutation_importance
 from pandas.api.indexers import FixedForwardWindowIndexer
 
 
@@ -194,9 +212,38 @@ def answer_sum_current_and_future_data(df, n_hr=0):
     return df
 
 
+def answer_experiment(df_x, df_y):
+    """
+    This function is the answer of task 7.
+    Perform experiments and print the results.
+    
+    Parameters
+    ----------
+    df_x : pandas.DataFrame
+        The data frame that contains all features.
+    df_y : pandas.DataFrame
+         The data frame that contains labels.
+    """
+    fs1 = ["3.feed_28.H2S_PPM_pre_1h", "day_of_week", "hour_of_day"]
+    fs1w = fs1 + ["3.feed_28.SONICWD_DEG_sine_pre_1h", "3.feed_28.SONICWD_DEG_cosine_pre_1h"]
+    fs2 = fs1 + ["3.feed_28.H2S_PPM_pre_2h"]
+    fs2w = fs2 + ["3.feed_28.SONICWD_DEG_sine_pre_2h", "3.feed_28.SONICWD_DEG_cosine_pre_2h"]
+    feature_sets = [fs1, fs1w, fs2, fs2w]
+    models = [DecisionTreeClassifier(), RandomForestClassifier()]
+    for m in models:
+        for fs in feature_sets:
+            print("Use feature set %s" % (str(fs)))
+            df_x_fs = df_x[fs]
+            train_and_evaluate(m, df_x_fs, df_y, train_size=336, test_size=168)
+            compute_feature_importance(m, df_x_fs, df_y, scoring="f1")
+            print("")
+
+
+# <a name="t4"></a>
+
 # ## Task 4: Preprocess Sensor Data
 
-# In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. You can find the list of sensors and their names (which will be in the data frame columns) from [this link](https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data). First, we need to load all the sensor data.
+# In this task, we will process the sensor data from various air quality monitoring stations in Pittsburgh. First, we need to load all the sensor data.
 
 # In[3]:
 
@@ -216,6 +263,8 @@ for f in list_of_files:
 sensor_raw_list[0]
 
 
+# The `EpochTime` index is the timestamp in epoch time, which means the number of seconds that have elapsed since January 1st, 1970 (midnight UTC/GMT). Other columns mean the sensor data from an air quality monitoring station.
+
 # Next, we need to resample and merge all the sensor data frames so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:
 
 # In[5]:
@@ -224,6 +273,12 @@ sensor_raw_list[0]
 df_sensor = answer_preprocess_sensor(sensor_raw_list)
 df_sensor
 
+
+# In the expected output above, the `EpochTime` index is converted from timestamps into [pandas datetime](https://pandas.pydata.org/docs/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex) objects, which has the format `year-month-day hour:minute:second+timezone`. The `+00:00` string means the GMT/UTC timezone. Other columns mean the average value of the sensor data in the previous hour. For example, `2016-10-31 06:00:00+00:00` means October 31 in 2016 at 6AM UTC time, and the cell with column `3.feed_1.SO2_PPM` means the averaged SO2 (sulfur dioxide) values from 5:00 to 6:00.
+# 
+# The column name suffix `SO2_PPM` means sulfur dioxide in unit PPM (parts per million). The prefix `3.feed_1.` in the column name means a specific sensor (feed ID 1). You can ignore the `3.` at the begining of the column name. You can find the list of sensors, their names with feed ID (which will be in the data frame columns), and also the meaning of all the suffixes from [this link](https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data).
+# 
+# Some column names look like `3.feed_11067.SIGTHETA_DEG..3.feed_43.SIGTHETA_DEG`. This means that the column has data from two sensor stations (feed ID 11067 and 43). The reason is that some sensor stations are replaced by the new ones over time. So in this case, we merge sensor readings from both feed ID 11067 and 43. 
 
 # <a name="a4"></a>
 
@@ -269,11 +324,7 @@ def preprocess_sensor(df_list):
 check_answer_df(preprocess_sensor(sensor_raw_list), df_sensor, n=1)
 
 
-# In[ ]:
-
-
-
-
+# <a name="t5"></a>
 
 # ## Task 5: Preprocess Smell Data
 
@@ -286,6 +337,8 @@ smell_raw = pd.read_csv("../../../assets/datasets/smellpgh-v1/smell_raw.csv").se
 smell_raw
 
 
+# The meaning of `EpochTime` is explained in the previous task. Other columns mean the self-reported symptoms, descriptions of smell, severity ratings (the `smell_value` column), and the zipcode where the report is submitted in Pittsburgh, Pennsylvania. For example, the second row means that the smell report was submitted from the 15218 zipcode with wood smoke description and severity rating 2. For more description about the smell, please check the [Smell Pittsburgh website](https://smellpgh.org/how_it_works).
+
 # Next, we need to resample the smell data so that they can be used for modeling. Our goal is to have a dataframe that looks like the following:
 
 # In[9]:
@@ -294,6 +347,8 @@ smell_raw
 df_smell = answer_preprocess_smell(smell_raw)
 df_smell
 
+
+# In the latest row, the timestamp is `2018-09-30 04:00:00+00:00`, which means this row contains the data from 3:00 to 4:00 on September 30 in 2018. This row has `smell_value` 8, which means the sum of smell report ratings in the above mentioned time range. Notice that the expected output ignores all smell ratings from 1 to 2. This is becasue we only want the ratings that indicate bad smell, which will be further explained below.
 
 # <a name="a5"></a>
 
@@ -401,11 +456,7 @@ plot_smell_by_day_and_hour(df_smell)
 
 # From the plot above, we can observe that citizens tend to report smell in the morning.
 
-# In[ ]:
-
-
-
-
+# <a name="t6"></a>
 
 # ## Task 6: Prepare Features and Labels
 
@@ -490,7 +541,12 @@ df_sensor_example_out
 
 # The reason that there are 2 less rows in the expected output is because we set `n_hr=2`, which means there are missing data in the original first and second row (because there was no previous data for these rows). So in the code, we removed these rows.
 
-# Then, we also need a function to convert wind direction into sine and cosine components, which is a common technique for encoding cyclical features (i.e., any that that circulates within a set of values, such as hours of the day, days of the week). Below is the code for achieving this.
+# Notice that the `insert_previous_data_to_cols` function added suffixes to the column names to indicate the number of hours that the sensor measurements came from previously. Pay attention to the meaning of time range here.
+# - For example, in the first row, the `3.feed_1.SONICWS_MPH_pre_1h` column has value `3.4`, which means the average reading of wind speed (in unit MPH) between the current time stamp (which is `8:00`) and the previous 1 hour (which is `7:00`).
+# - In the second column of the first row, the `3.feed_1.SONICWS_MPH_pre_2h` has value `3.5`, which means the average reading of wind speed between the previous 1 hour (which is `7:00`) and 2 hours (which is `6:00`).
+# - It is important to note here that suffix `pre_2h` does **not** mean the average rating within 2 hours between the current time stamp and the time that is 2 hours ago.
+
+# Then, we also need a function to convert wind direction into sine and cosine components, which is a common technique for encoding cyclical features (i.e., any that that circulates within a set of values, such as hours of the day, days of the week). There are several reasons to do this instead of using the original wind direction degrees (that range from 0 to 360). First, by applying sine and cosine to the degrees, we can transform the original data to a continuous variable. The original data is not continuous since there are no values below 0 or above 360, and there is no information to tell that 0 degrees and 360 degrees are the same. Second, the decomposed sine and cosine components allow us to inspect the effect of wind on the north-south and east-west directions separately, which may help us explain the importance of wind directions. Below is the code for achieving this.
 
 # In[17]:
 
@@ -569,6 +625,8 @@ df_smell_example_out1
 df_smell_example_out2 = answer_sum_current_and_future_data(df_smell_example_in, n_hr=3)
 df_smell_example_out2
 
+
+# In the output above, notice that row `2016-11-05 10:00:00+00:00` has smell value `83`, and the setting is `n_hr=3`, which means the sum of smell values within `n_hr+1` hours (i.e., from `10:00` to `14:00`) is 83. Pay attention to this setup since it can be confusing. The reason of `n_hr+1` (but not `n_hr`) is because the input data already indicates the sum of smell values within the future 1 hour.
 
 # In[23]:
 
@@ -697,18 +755,24 @@ def compute_feature_label(df_smell, df_sensor, b_hr_sensor=0, f_hr_smell=0):
     # Separate features (x) and labels (y).
     df_x = df[df_sensor.columns]
     df_y = df[df_smell.columns]
+    
+    # Add the hour of day and the day of week.
+    df_x.loc[:,"day_of_week"] = df["EpochTime"].dt.dayofweek.copy(deep=True)
+    df_x.loc[:,"hour_of_day"] = df["EpochTime"].dt.hour.copy(deep=True)
     return df_x, df_y
 
 
-# We will use the sensor data within the previous 2 hours to predict bad smell within the future 2 hours. To use the `compute_feature_label` function that we just build, we need to set `b_hr_sensor=1` and `f_hr_smell=1` because originally `df_sensor` already contains data from the previous 1 hour, and `df_smell` already contains data from the future 1 hour. Note that `b_hr_sensor=n` means that we want to insert previous `n+1` hours of sensor data , and `f_hr_smell=m` means that we want to sum up the smell values of the future `m+1` hours. For example, suppose that the current time is 8:00, setting `b_hr_sensor=1` means that we use all sensor data from 6:00 to 8:00 (as features in prediction), and setting `f_hr_smell=1` means that we sum up the smell values from 8:00 to 10:00 (as labels in prediction).
+# We will use the sensor data within the previous 2 hours to predict bad smell within the future 8 hours. To use the `compute_feature_label` function that we just build, we need to set `b_hr_sensor=1` and `f_hr_smell=7` because originally `df_sensor` already contains data from the previous 1 hour, and `df_smell` already contains data from the future 1 hour.
+# 
+# Note that `b_hr_sensor=n` means that we want to insert previous `n+1` hours of sensor data , and `f_hr_smell=m` means that we want to sum up the smell values of the future `m+1` hours. For example, suppose that the current time is 8:00, setting `b_hr_sensor=1` means that we use all sensor data from 6:00 to 8:00 (as features `df_x` in prediction), and setting `f_hr_smell=7` means that we sum up the smell values from 8:00 to 16:00 (as labels `df_y` in prediction).
 
 # In[29]:
 
 
-df_x, df_y = compute_feature_label(df_smell, df_sensor, b_hr_sensor=1, f_hr_smell=1)
+df_x, df_y = compute_feature_label(df_smell, df_sensor, b_hr_sensor=2, f_hr_smell=7)
 
 
-# The features should look
+# Below is the data frame of features (i.e., the predictor variable).
 
 # In[30]:
 
@@ -716,16 +780,409 @@ df_x, df_y = compute_feature_label(df_smell, df_sensor, b_hr_sensor=1, f_hr_smel
 df_x
 
 
+# Below is the data frame of labels (i.e., the response variable).
+
 # In[31]:
 
 
 df_y
 
 
+# <a name="t7"></a>
+
+# ## Task 7: Train and Evaluate Models
+
+# We have processed raw data and prepared the `compute_feature_label` function to convert smell and sensor data into features `df_x` and labels `df_y`. In this task, you will work on training a basic and a more advanced model to predict bad smell events (i.e., the situation that the smell value is high) using the sensor data from air quality monitoring stations.
+
+# First, let us threshold the features to make them binary for our classification task. We will use value 40 as the threshold to indicate a smell event. The threshold 40 was used in the Smell Pittsburgh research paper. It is equivalent to the situation that 10 people reported smell with rating 4 within 8 hours.
+
+# In[32]:
+
+
+df_y_40 = (df_y>=40).astype(int)
+df_y_40
+
+
+# The descriptive statistics below tell us that the dataset is imbalanced, which means that the numbers of data points in the positive and negative label groups have a big difference.
+
+# In[33]:
+
+
+print("There are %d rows with smell events." % (df_y_40.sum()))
+print("This means %.2f proportion of the data has smell events." % (df_y_40.sum()/len(df_y_40)))
+
+
+# Next, let us pick a subset of the sensor data instead of using all of them. Our intuition is that the smell may come from chemical compounds near major pollution sources. From the knowledge of local people, there is a large pollution source, which is the Clairton Mill Works that belongs to the United States Steel Corporation. This pollution source is located at the south part of Pittsburgh. This factory produces petroleum coke, which is a fuel to refine steel. And during the coke refining process, it generates pollutants.
+# 
+# One of the pollutant is H2S (hydrogen sulfide), which smells like rotten eggs. We think that H2S near the pollution source may be a good feature. So we first select the column with H2S measurements from a monitoring station near this pollution source.
+
+# In[34]:
+
+
+df_x_subset = df_x[["3.feed_28.H2S_PPM_pre_1h", "day_of_week", "hour_of_day"]]
+df_x_subset
+
+
+# Next, we will train and evaluate a model (F) that maps features (i.e., the sensor readings) to labels (i.e., the smell events). We have the functions ready in the following code cell to help us train and evaluate models.
+
+# In[35]:
+
+
+def scorer(model, X, y):
+    """
+    A customized scoring function to evaluate a classifier.
+    
+    Parameters
+    ----------
+    model : a sklearn model object
+        The classifier model.
+    X : pandas.DataFrame
+        The feature matrix.
+    y : pandas.Series
+        The label vector.
+    
+    Returns
+    -------
+    dict of int or float
+        A dictionary of evaluation metrics.
+    """
+    y_pred = model.predict(X)
+    c = confusion_matrix(y, y_pred, labels=[0,1])
+    p = precision_recall_fscore_support(y, y_pred, average="binary", zero_division=0)
+    a = accuracy_score(y, y_pred)
+    return {"tn": c[0,0], "fp": c[0,1], "fn": c[1,0], "tp": c[1,1],
+            "precision": p[0], "recall": p[1], "f1": p[2], "accuracy": a}
+
+
+def train_and_evaluate(model, df_x, df_y, train_size=336, test_size=168):
+    """
+    Parameters
+    ----------
+    model : a sklearn model object
+        The classifier model.
+    df_x : pandas.DataFrame
+        The dataframe with features.
+    df_y : pandas.DataFrame
+        The dataframe with labels.
+    train_size : int
+        Number of samples for training.
+    test_size : int
+        Number of samples for testing.
+    """
+    print("Use model", model)
+    print("Perform cross-validation, please wait...")
+    
+    # Create time series splits for cross-validation.
+    splits = []
+    dataset_size = df_x.shape[0]
+    for i in range(train_size, dataset_size, test_size):
+        start = i - train_size
+        end = i + test_size
+        if (end >= dataset_size): break
+        train_index = range(start, i)
+        test_index = range(i, end)
+        splits.append((list(train_index), list(test_index)))
+    
+    # Perform cross-validation.
+    cv_res = cross_validate(model, df_x, df_y.squeeze(), cv=splits, scoring=scorer)
+    
+    # Print evaluation metrics.
+    print("================================================")
+    print("average f1-score:", round(np.mean(cv_res["test_f1"]), 2))
+    print("average precision:", round(np.mean(cv_res["test_precision"]), 2))
+    print("average recall:", round(np.mean(cv_res["test_recall"]), 2))
+    print("average accuracy:", round(np.mean(cv_res["test_accuracy"]), 2))
+    print("number of true positives:", np.sum(cv_res["test_tp"]))
+    print("number of false positives:", np.sum(cv_res["test_fp"]))
+    print("number of true negatives:", np.sum(cv_res["test_tn"]))
+    print("number of false negatives:", np.sum(cv_res["test_fn"]))
+    print("================================================")
+
+
+# The `train_and_evaluate` function prints the averaged f1-score, averaged precision, averaged recall, and averaged accuracy across all the folds. These metrics are always in the range of zero and one, with zero being the worst and one being the best. We also printed the confusion matrix that contains true positives, false positives, true negatives, and false negatives. To understand the evaluation metrics, let us first take a look at the confusion matrix, explained below:
+# - True Positives
+#   - There is a smell event in the real world, and the model correctly predicts that there is a smell event.
+# - False Positives
+#   - There is no smell event in the real world, but the model falsely predicts that there is a smell event.
+# - True Negatives
+#   - There is no smell event in the real world, and the model correctly predicts that there is no smell event.
+# - False Negatives
+#   - There is a smell event in the real world, but the model falsely predicts that there is no smell event.
+# 
+# The accuracy metric is defined in the equation below:
+# ```
+# accuracy = (true positives + true negatives) / total number of data points
+# ```
+# 
+# Accuracy is the number of correct predictions divided by the total number of data points. It is a good metric if the data distribution is not skewed (i.e., the number of data records that have a bad smell and do not have a bad smell is roughly equal). But if the data is skewed, which is the case in our dataset, we will need another set of evaluation metrics: f1-score, precision, and recall. We will use an example later to explain why accuracy is an unfair metric for our dataset.
+# 
+# The precision metric is defined in the equation below:
+# ```
+# precision = true positives / (true positives + false positives)
+# ```
+# 
+# In other words, precision means how precise the prediction is. High precision means that if the model predicts “yes” for smell events, it is highly likely that the prediction is correct. We want high precision because we want the model to be as precise as possible when it says there will be smell events.
+# 
+# Next, the recall metric is defined in the equation below:
+# ```
+# recall = true positives / (true positives + false negatives)
+# ```
+# 
+# In other words, recall means the ability of the model to catch events. High recall means that the model has a low chance to miss the events that happen in the real world. We want high recall because we want the model to catch all smell events without missing them.
+# 
+# Typically, there is a tradeoff between precision and recall, and one may need to choose to go for a high precision but low recall model, or we go for a high recall but low precision model. The tradeoff depends on the context. For example, in medical applications, one may not want to miss the events (e.g., cancer) since the events are connected to patients' quality of life. In our application of predicting smell events, we may not want the model to make false predictions when saying "yes" to smell events. The reason is that people may lose trust in the prediction model when we make real-world interventions incorrectly, such as sending push notifications to inform the users about the bad smell events.
+# 
+# The f1-score metric is a combination of recall and precision, as indicated below:
+# ```
+# f1-score = 2 * (precision * recall) / (precision + recall)
+# ```
+
+# <a name="dummy-classifier"></a>
+
+# ### Use the Dummy Classifier
+
+# Now that we have explained the evaluation metrics. Let us first use a dummy classifier that always predicts no smell events. In other words, the dummy classifier never predicts "yes" about the presence of smell events. Later we will guide you through using more advanced machine learning models. 
+
+# In[36]:
+
+
+dummy_model = DummyClassifier(strategy="constant", constant=0)
+train_and_evaluate(dummy_model, df_x_subset, df_y_40, train_size=336, test_size=168)
+
+
+# The printed message above shows the evaluation result of the dummy classifier. We see that the accuracy is 0.92, which is very high. But the f1-score, precision, and recall are zero since there are no true positives. This is because the Smell Pittsburgh dataset has a skewed distribution of smell events, which means that there are a lot of "no" (i.e., label `0`) but only a small part of "yes" (i.e., label `1`). This skewed data distribution corresponds to what happened in Pittsburgh. Most of the time, the odors in the city area are OK and not too bad. Occasionally, there can be very bad pollution odors, where many people complain.
+# 
+# By the definition of accuracy, the dummy classifier (which always says "no") has a very high accuracy of 0.92. This is because only 9% of the data indicate bad smell events. So, you can see that accuracy is not a fair evaluation metric for the Smell Pittsburgh dataset. And instead, we need to go for the f1-score, precision, and recall metrics.
+# 
+# This step uses cross-validation to evaluate the machine learning model, where the data is divided into several parts, and some parts are used for training. Other parts are used for testing. Typically people use K-fold cross-validation, which means that the entire dataset is split into K parts. One part is used for testing (i.e., the testing set), and the other parts are used for training (i.e., the training set). This procedure is repeated K times so that every fold has the chance of being tested. The result is averaged to indicate the performance of the model, for example, averaged accuracy. We can then compare the results for different machine learning pipelines.
+# 
+# However, the script uses a different cross-validation approach, where we only use the previous folds to train the model to test future folds. For example, if we want to test the third fold, we will only use a part of the data from the first and second fold to train the model. The reason is that the Smell Pittsburgh dataset is primarily time-series data, which means the dataset has timestamps for every data record. In other words, things that happened in the past may affect the future. So, in fact, it does not make sense to use the data in the future to train a model to predict what happened in the past. Our time-series cross-validation approach is shown in the following figure.
+
+# \
+# <img src="../../../assets/images/smellpgh-cross-validation.png" style="max-width: 700px;">
+
+# \
+# For the `train_and_evaluate` function, `test_size` is the number of samples for testing, and `train_size` is the number of samples for training. We need to set these numbers for time-series cross-validation. For example, setting `test_size` to 168 means using 168 samples for testing, which also means 168 hours (or 7 days) of data. Setting `train_size` to 336 means using 336 samples for testing, which also means 336 hours (or 14 days) of data. So, this means we are using previous 14 days of sensor data to train the model, and then use the model to predict the smell events in the next 7 days. In this setting, every Sunday we can re-train the model with the updated data, so that we have the updated model to predict smell events every week.
+
+# <a name="decision-tree"></a>
+
+# ### Use the Decision Tree Model
+
+# Now, instead of using the dummy classifier, we are going to use a different model. Let us use the Decision Tree model and compare its performance with the dummy classifier.
+
+# In[37]:
+
+
+dt_model = DecisionTreeClassifier()
+train_and_evaluate(dt_model, df_x_subset, df_y_40, train_size=336, test_size=168)
+
+
+# From the printed message above, notice that the Decision Tree model produces non-zero true positives and false positives (compared to the dummy classifier). Also, notice that f1-score, precision, and recall are no longer zero.
+# 
+# Decision Tree is a type of machine learning model. You can think of it as how a medical doctor diagnoses patients. For example, to determine if the patients need treatments, the medical doctor may ask the patients to describe symptoms. Depending on the symptoms, the doctor decides which treatment should be applied for the patient.
+# 
+# One can think of the smell prediction model as an air quality expert who is diagnosing the pollution patterns based on air quality and weather data. The treatment is to send a push notification to citizens to inform them of the presence of bad smell to help people plan daily activities. This decision-making process can be seen as a tree structure as shown in the following figure, where the first node is the most important factor to decide the treatment.
+
+# \
+# <img src="../../../assets/images/smellpgh-decision-tree.png" style="max-width: 400px;">
+
+# \
+# The above figure is just a toy example to show what a decision tree is. In our case, we put the features (X) into the decision tree to train it. Then, the tree will decide which feature to use and what is the threshold to split the data based on the features. This procedure is repeated several times (represented by the depth of the tree). Finally, the model will make a prediction (y) at the final node of the tree.
+# 
+# You can find the visualization of a decision tree (trained using the real data) in Figure 8 in the [Smell Pittsburgh paper](https://doi.org/10.1145/3369397). More information about the Decision Tree can be found in the following URL and paper:
+# - More information about Decision Tree: https://scikit-learn.org/stable/modules/tree.html
+# - Quinlan, J. R. (1986). Induction of decision trees. Machine learning, 1(1), 81-106.
+
+# <a name="random-forest"></a>
+
+# ### Use the Random Forest Model
+
+# Now that you have tried the Decision Tree model. Let us use a more advanced model, Random Forest, for smell event prediction.
+
+# In[38]:
+
+
+rf_model = RandomForestClassifier()
+train_and_evaluate(rf_model, df_x_subset, df_y_40, train_size=336, test_size=168)
+
+
+# Notice that the performance of the model does not look much better than the Decision Tree model. And in fact, both models currently have poor performance. This can have several meanings, as indicated in the following list. You will explore these questions more in the assignment for this task.
+# - Firstly, do we really believe that we are using a good set of features? Is it sufficient to only use the H2S (hydrogen sulfide) feature? Is it sufficient to only include the data from the previous hour (i.e., the `"3.feed_28.H2S_PPM_pre_1h"` column)?
+# - Secondly, the machine learning pipeline uses 14 days of data in the past (i.e., `train_size=336`) to predict smell events in the future 7 days (i.e., `test_size=168`). Do we believe that 14 days are sufficient for training a good model?
+# - Finally, the [decision tree](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) and [random forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) models has many hyper-parameters (e.g., maximum depth of tree). Currently, the model uses the default hyper-parameters. Do we believe that the default setting is good?
+# 
+# Now let us take a look at the Random Forest model, which is a type of ensemble model. You can think about the ensemble model as a committee that makes decisions collaboratively, such as using majority voting. For example, to determine the treatment of a patient, we can ask the committee of medical doctors for a collaborative decision. The committee has several members who correspond to various machine learning models. The Random Forest model is a committee that is formed with many decision trees. Each tree is trained using different sets of data, as shown in the following figure.
+
+# \
+# <img src="../../../assets/images/smellpgh-random-forest.png" style="max-width: 700px;">
+
+# \
+# In other words, we first trained many decision trees, and each of them has access to only a part of the data (but not all of the data) that are randomly selected. So, each decision tree sees different sets of features. Then, we ask the committee members (i.e., the decision trees) to make predictions, and the final result is the one that receives the highest votes.
+# 
+# The intuition for having a committee (instead of only a single tree) is that we believe a diverse set of models can make better decisions collaboratively. There is mathematical proof about this intuition, but the proof is outside the scope of this course. More information about the Random Forest model can be found in the following URL and paper:
+# - More information about Random Forest: https://scikit-learn.org/stable/modules/ensemble.html
+# - Breiman, L. (2001). Random forests. Machine learning, 45(1), 5-32.
+
+# <a name="feature-importance"></a>
+
+# ### Compute Feature Importance
+
+# After training the model and evaluate its performance, we now have a better understanding about how to predict smell events. However, what if we want to know which are the important features? For example, which pollutants are the major source of the bad smell? Which pollution source is likely related to the bad smell? Under what situation will the pollutants travel to the Pittsburgh city area? This information can be important to help the municipality evaluate air pollution policies. This information can also help local communities to advocate for policy changes.
+# 
+# It turns out that we can permute the data in a specific column to know the importance. If a column (corresponding to a feature) is important, permuting the data specifically for the column will make the model performacne decrease. A higher decrease of a metric (e.g., f1-score) means that the feature is more important. It also means the feature is important for the model to make decisions. So, we can compute the "decrease" of a metric and use it as feature importance. We have provided the function in the following coding block to do this.
+
+# In[39]:
+
+
+def compute_feature_importance(model, df_x, df_y, scoring="f1"):
+    """
+    Compute feature importance of a model.
+    
+    Parameters
+    ----------
+    model : a sklearn model object
+        The classifier model.
+    df_x : pandas.DataFrame
+        The dataframe with features.
+    df_y : pandas.DataFrame
+        The dataframe with labels.
+    scoring : str
+        A scoring function as documented below.
+        https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter
+    """
+    if model is None:
+        model = RandomForestClassifier()
+    print("Computer feature importance using", model)
+    model.fit(df_x, df_y.squeeze())
+    result = permutation_importance(model, df_x, df_y, n_repeats=10, random_state=0, scoring=scoring)
+    feat_names = df_x.columns.copy()
+    feat_ims = np.array(result.importances_mean)
+    sorted_ims_idx = np.argsort(feat_ims)[::-1]
+    feat_names = feat_names[sorted_ims_idx]
+    feat_ims = np.round(feat_ims[sorted_ims_idx], 5)
+    df = pd.DataFrame()
+    df["feature_importance"] = feat_ims
+    df["feature_name"] = feat_names
+    print("=====================================================================")
+    print(df)
+    print("=====================================================================")
+
+
+# In[40]:
+
+
+compute_feature_importance(rf_model, df_x_subset, df_y_40, scoring="f1")
+
+
+# The above code prints feature importance, which indicates the influence of each feature on the model prediction result. Here we use the Random Forest model. For example, in the printed message, the `3.feed_28.H2S_PPM_pre_1h` feature has the highest importance. The values in the feature importance here represent the decrease of f1-score (because we use `scoring="f1"`) if we randomly permute the data related to the feature.
+# 
+# For example, if we randomly permute the H2S measurement in the `3.feed_28.H2S_PPM_pre_1h` column for all the data records (but keep other features the same), the f1-score of the Random Forest model will drop about 0.47. The intuition is that if a feature is more important, the model performance will decrease more when the feature is randomly permuted (i.e., when the data that is associated with the feature are messed up). More information can be found in the following URL:
+# - More information about feature importance: https://scikit-learn.org/stable/modules/permutation_importance.html
+# 
+# Notice that to use this technique, the model needs to fit the data reasonably well. Also depending on the number of features you are using, the step of computing the feature importance can take a lot of time.
+
+# <a name="a7"></a>
+
+# ### Assignment for Task 7
+
+# In the assignment for this task, you need to tweak parameters in the code to conduct a pilot experiment to understand if wind direction is a good feature for predicting the presence of bad smell. Also, you need to inspect if including more data is helpful. Specifically, you need to fill in the cells that have the question mark in the following table.
+
+# | Model | Feature set| H | Accuracy | Precision | Recall | F1 |
+# |----|------------|---|----------|-----------|--------|----------|
+# | DT | H2S        | 1 | ?        | ?         | ?      | ?        |
+# | DT | H2S + Wind | 1 | ?        | ?         | ?      | ?        |
+# | DT | H2S        | 2 | ?        | ?         | ?      | ?        |
+# | DT | H2S + Wind | 2 | ?        | ?         | ?      | ?        |
+# | RF | H2S        | 1 | ?        | ?         | ?      | ?        |
+# | RF | H2S + Wind | 1 | ?        | ?         | ?      | ?        |
+# | RF | H2S        | 2 | ?        | ?         | ?      | ?        |
+# | RF | H2S + Wind | 2 | ?        | ?         | ?      | ?        |
+
+# Abbreviations "DT" means Decision Tree, "RF" means Random Forest, "F1" means F1-score, "H" means the look-back hours. The `df_x_subset` variable corresponds to the feature set of "H2S" with "1 look-back hours", which has the follwing features:
+# - `3.feed_28.H2S_PPM_pre_1h`
+# - `day_of_week`
+# - `hour_of_day`
+# 
+# To add wind information to the features, you need to create a new variable `df_x_subset_wind` corresponding to the feature set of "H2S + Wind" with "1 look-back hours", which has the following features:
+# - `3.feed_28.H2S_PPM_pre_1h`
+# - `3.feed_28.SONICWD_DEG_sine_pre_1h`
+# - `3.feed_28.SONICWD_DEG_cosine_pre_1h`
+# - `day_of_week`
+# - `hour_of_day`
+# 
+# To add both wind information and more look-back hours to the features, you need to create a new variable `df_x_subset_wind_2` corresponding to the feature set of "H2S + Wind" with "2 look-back hours", which has the following features:
+# - `3.feed_28.H2S_PPM_pre_1h`
+# - `3.feed_28.SONICWD_DEG_sine_pre_1h`
+# - `3.feed_28.SONICWD_DEG_cosine_pre_1h`
+# - `3.feed_28.H2S_PPM_pre_2h`
+# - `3.feed_28.SONICWD_DEG_sine_pre_2h`
+# - `3.feed_28.SONICWD_DEG_cosine_pre_2h`
+# - `day_of_week`
+# - `hour_of_day`
+
+# You have learned how to use different models and feature sets. For this assignment, use the knowledge that you learned to conduct experiments and fill out the table provided before. After you conduct the experiments, answer the following questions:
+# - Is including sensor data in the past a good idea to help improve model performance?
+# - Is the wind direction from the air quality monitoring station (i.e., feed 28) that near the pollution source a good feature to predict bad smell?
+# - Remember to also check the feature importance when answering the above questions.
+
+# In[41]:
+
+
+def experiment(df_x, df_y):
+    """
+    Perform experiments and print the results.
+    
+    Parameters
+    ----------
+    df_x : pandas.DataFrame
+        The data frame that contains all features.
+    df_y : pandas.DataFrame
+         The data frame that contains labels.
+    """
+    ###################################
+    # Fill in your answer here
+    print("None")
+    ###################################
+
+
+# In[42]:
+
+
+experiment(df_x, df_y_40)
+
+
+# You need to write the function above that can do similar things as the following from the answer.
+
+# In[43]:
+
+
+answer_experiment(df_x, df_y_40)
+
+
+# <a name="opa"></a>
+
+# ## Optional Assignment
+
+# The assignment above provided a table for a predefined experiment. In this optional assignment, you need to design your own experiment to answer the following question raised by the local Pittsburgh community:
+# - What are the possible pollution sources that are related to the bad odor in the Pittsburgh region?
+# 
+# To answer this question, you need to not only select proper variables but also fit the data to the model reasonably well. Consider the following aspects when designing the experiment:
+# 
+# - What are the models that you want to use?
+#   - Hint: Use the knowledge that you learned in this module to choose a set of models that you want to investigate. Notice that this is a classification task, and a list of available models can be found at the link below:
+#   - Link to models: [https://scikit-learn.org/stable/supervised_learning.html](https://scikit-learn.org/stable/supervised_learning.html)
+# - What are the features that you are interested in exploring?
+#   - Hint: Use the knowledge that you learned in this module to select different feature sets and check how these sets affect model performance. A list of available variables is mentioned in the tutorial.
+#   - Hint: Use the knowledge that you learned in this module to compute feature importance and inspect which are the important features.
+# - How much data does the model need to predict bad odor reasonably well?
+#   - Hint: Change the `train_size` parameter to increase or decrease the amount of data records for training the machine learning model.
+# - How often do you need to retrain the model using updated data?
+#   - Hint: Change the `test_size` parameter to indicate how often you want to retrain the model with updated data.
+# 
+# When designing the experiment, please consider the computation time carefully. Keep in mind that if you have a very large set of features, training the machine learning model can take a very long time, and explaining the result can also be hard. Instead of including all the available features in the experiment, it may be better to separate the features into several groups, and then train the machine learning model on different groups with different sets of features.
+
 # In[ ]:
 
 
 
 
-
-# ## Task 7: Train and Evaluate Models
