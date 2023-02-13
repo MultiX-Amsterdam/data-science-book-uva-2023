@@ -5,7 +5,7 @@
 
 # (Last updated: Feb 13, 2023)
 
-# This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh using air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.
+# This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh based on air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.
 # 
 # 
 # The scenario is in the next section of this tutorial, and more details are in the introduction section of the [Smell Pittsburgh paper](https://doi.org/10.1145/3369397). We will use the [same dataset as used in the Smell Pittsburgh paper](https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v1) as an example of structured data. During this tutorial, we will explain what the variables in the dataset mean and also guide you through model building. Below is the pipeline of this tutorial.
@@ -473,14 +473,13 @@ plot_smell_by_day_and_hour(df_smell)
 # <img src="images/smellpgh-predict.png" style="max-width: 700px;">
 
 # \
-# Our goal is to construct two data frames, `df_x` and `df_y`, that represent the features and labels, respectively. First, we will deal with the sensor data. We need a function to insert columns that indicate previous `n_hr` hours of sensor to the existing data frame, where `n_hr` should be a parameter that we can control. The code below can help us achieve this.
+# Our goal is to construct two data frames, `df_x` and `df_y`, that represent the features and labels, respectively. First, we will deal with the sensor data. We need a function to insert columns (that indicate previous `n_hr` hours of sensor) to the existing data frame, where `n_hr` should be a parameter that we can control. The code below can help us achieve this.
 
 # In[14]:
 
 
 def insert_previous_data_to_cols(df, n_hr=0):
     """
-    This function is the answer of task 6 (part 1).
     Insert columns to indicate the data from the previous hours.
     
     Parameters
@@ -557,9 +556,7 @@ print(df_sensor_example_out)
 # 
 # $$
 # x_{sin} = \sin{\Big(\frac{2 \cdot \pi \cdot x}{\max{(x)}}\Big)}
-# $$
-# 
-# $$
+# \\
 # x_{cos} = \cos{\Big(\frac{2 \cdot \pi \cdot x}{\max{(x)}}\Big)}
 # $$
 # 
@@ -791,9 +788,9 @@ def compute_feature_label(df_smell, df_sensor, b_hr_sensor=0, f_hr_smell=0):
     return df_x, df_y
 
 
-# We will use the sensor data within the previous 2 hours to predict bad smell within the future 8 hours. To use the `compute_feature_label` function that we just build, we need to set `b_hr_sensor=1` and `f_hr_smell=7` because originally `df_sensor` already contains data from the previous 1 hour, and `df_smell` already contains data from the future 1 hour.
+# We will use the sensor data within the previous 3 hours to predict bad smell within the future 8 hours. To use the `compute_feature_label` function that we just build, we need to set `b_hr_sensor=2` and `f_hr_smell=7` because originally `df_sensor` already contains data from the previous 1 hour, and `df_smell` already contains data from the future 1 hour.
 # 
-# Note that `b_hr_sensor=n` means that we want to insert previous `n+1` hours of sensor data , and `f_hr_smell=m` means that we want to sum up the smell values of the future `m+1` hours. For example, suppose that the current time is 8:00, setting `b_hr_sensor=1` means that we use all sensor data from 6:00 to 8:00 (as features `df_x` in prediction), and setting `f_hr_smell=7` means that we sum up the smell values from 8:00 to 16:00 (as labels `df_y` in prediction).
+# Note that `b_hr_sensor=n` means that we want to insert previous `n+1` hours of sensor data , and `f_hr_smell=m` means that we want to sum up the smell values of the future `m+1` hours. For example, suppose that the current time is 8:00, setting `b_hr_sensor=2` means that we use all sensor data from 5:00 to 8:00 (as features `df_x` in prediction), and setting `f_hr_smell=7` means that we sum up the smell values from 8:00 to 16:00 (as labels `df_y` in prediction).
 
 # In[29]:
 
@@ -821,7 +818,7 @@ print(df_y)
 
 # ## Task 7: Train and Evaluate Models
 
-# We have processed raw data and prepared the `compute_feature_label` function to convert smell and sensor data into features `df_x` and labels `df_y`. In this task, you will work on training a basic and a more advanced model to predict bad smell events (i.e., the situation that the smell value is high) using the sensor data from air quality monitoring stations.
+# We have processed raw data and prepared the `compute_feature_label` function to convert smell and sensor data into features `df_x` and labels `df_y`. In this task, you will work on training basic and advanced models to predict bad smell events (i.e., the situation that the smell value is high) using the sensor data from air quality monitoring stations.
 
 # First, let us threshold the features to make them binary for our classification task. We will use value 40 as the threshold to indicate a smell event. The threshold 40 was used in the Smell Pittsburgh research paper. It is equivalent to the situation that 10 people reported smell with rating 4 within 8 hours.
 
@@ -939,7 +936,7 @@ fig.show()
 
 # Next, let us pick a subset of the sensor data instead of using all of them. Our intuition is that the smell may come from chemical compounds near major pollution sources. From the knowledge of local people, there is a large pollution source, which is the Clairton Mill Works that belongs to the United States Steel Corporation. This pollution source is located at the south part of Pittsburgh. This factory produces petroleum coke, which is a fuel to refine steel. And during the coke refining process, it generates pollutants.
 # 
-# One of the pollutant is H2S (hydrogen sulfide), which smells like rotten eggs. We think that H2S near the pollution source may be a good feature. So we first select the column with H2S measurements from a monitoring station near this pollution source.
+# One of the pollutant is H2S (hydrogen sulfide), which smells like rotten eggs. We think that H2S near the pollution source may be a good feature. So we first select the column with H2S measurements from a monitoring station near this pollution source. We also think that the day of week and the hour of day may be good features, as the air pollution may have a certain patterns in time.
 
 # In[39]:
 
