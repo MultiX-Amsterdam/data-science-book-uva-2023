@@ -4,7 +4,7 @@
 
 ## Preparation
 
-Do the [preparation](../modules/structured-data/preparation-structured-data) for the structured data processing module.
+Do the [preparation](../modules/structured-data-module/preparation-structured-data) for the structured data processing module.
 
 ## Materials
 
@@ -13,7 +13,11 @@ If you have a laptop, please bring it to the lecture.
 This lecture will give a tutorial using a Jupyter Notebook.
 :::
 
-- [Structured Data Processing Tutorial Notebook](../modules/structured-data/tutorial-structured-data)
+Below is the link to the online notebook:
+- [Structured Data Processing Tutorial Online Notebook](../modules/structured-data-module/tutorial-structured-data)
+
+To make the notebook work on your local machine, go to the GitHub link below and clone the entire repository. Or you could also download a zip file from [this link](https://github.com/MultiX-Amsterdam/structured-data-module/archive/refs/heads/main.zip).
+- [GitHub Repository for the Structured Data Processing Module](https://github.com/MultiX-Amsterdam/structured-data-module)
 
 ## Additional Resources
 

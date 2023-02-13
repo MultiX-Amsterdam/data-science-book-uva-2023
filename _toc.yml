@@ -35,32 +35,32 @@ parts:
       #title: "L12: TBA"
 - caption: Modules
   chapters:
-  - file: docs/modules/structured-data/overview-structured-data
+  - file: docs/modules/structured-data-module/overview-structured-data
     title: "Structured Data"
     sections:
-    - file: docs/modules/structured-data/preparation-structured-data
+    - file: docs/modules/structured-data-module/preparation-structured-data
       title: "Preparation"
-    - file: docs/modules/structured-data/tutorial-structured-data
+    - file: docs/modules/structured-data-module/tutorial-structured-data
       title: "Tutorial"
-        #- file: docs/modules/text-data/overview-text-data
+        #- file: docs/modules/text-data-module/overview-text-data
         #sections:
-        #- file: docs/modules/text-data/preparation-text-data
+        #- file: docs/modules/text-data-module/preparation-text-data
         #title: "Preparation"
-        #- file: docs/modules/text-data/tutorial-text-data
+        #- file: docs/modules/text-data-module/tutorial-text-data
         #title: "Tutorial"
-        #- file: docs/modules/text-data/assignment-text-data
+        #- file: docs/modules/text-data-module/assignment-text-data
         #title: "Assignment"
-        #- file: docs/modules/image-data/overview-image-data
+        #- file: docs/modules/image-data-module/overview-image-data
         #sections:
-        #- file: docs/modules/image-data/preparation-image-data
+        #- file: docs/modules/image-data-module/preparation-image-data
         #title: "Preparation"
-        #- file: docs/modules/image-data/tutorial-image-data
+        #- file: docs/modules/image-data-module/tutorial-image-data
         #title: "Tutorial"
-        #- file: docs/modules/image-data/assignment-image-data
+        #- file: docs/modules/image-data-module/assignment-image-data
         #title: "Assignment"
 - caption: Assignments
   chapters:
   - file: docs/assignments/hw1
     title: "A1: Python Coding Warm-Up"
-  - file: docs/modules/structured-data/assignment-structured-data
+  - file: docs/modules/structured-data-module/assignment-structured-data
     title: "A2: Structured Data"

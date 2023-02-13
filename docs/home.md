@@ -34,7 +34,7 @@ If you come to the class without doing the preparation part, you may not be able
   - [Lecture 2 (Feb 9)](lectures/lec2): Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
 - Week 2
   - [Lecture 3 (Feb 14)](lectures/lec3): `Tutorial` for the structured data processing module (using Jupyter Notebook)
-  - [Assignment 2](modules/structured-data/assignment-structured-data) (work session and self-study): Structured data processing module
+  - [Assignment 2](modules/structured-data-module/assignment-structured-data) (work session and self-study): Structured data processing module
   - Lecture 4 (Feb 16): Explain details and more examples in the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
 - Week 3
   - Lecture 5 (Feb 21): Overview of deep learning techniques and applications
