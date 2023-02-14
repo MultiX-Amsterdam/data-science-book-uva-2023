@@ -838,14 +838,14 @@ print("There are %d rows with smell events." % (df_y_40.sum()))
 print("This means %.2f proportion of the data has smell events." % (df_y_40.sum()/len(df_y_40)))
 
 
-# We can also plot the result from the Principle Component Analysis to check if there are patterns in the data. The following code block outputs the result.
+# We can also plot the result from the Principal Component Analysis to check if there are patterns in the data. The following code block outputs the result.
 
 # In[34]:
 
 
 def get_pca_result(x, y, n=3):
     """
-    Get the result of Principle Component Analysis.
+    Get the result of Principal Component Analysis.
     
     Parameters
     ----------
@@ -854,7 +854,7 @@ def get_pca_result(x, y, n=3):
     y : pandas.DataFrame
         The labels.
     n : int
-        Number of principle components.
+        Number of principal components.
     
     Returns
     -------
@@ -896,7 +896,7 @@ print(df_pc_pca)
 print(df_r_pca)
 
 
-# Now let us plot the ratios of explained variances (i.e., the eigenvalues). The intuition is that if the explained variance ratio is larger, the corresponding principle component is more important and can represent more information.
+# Now let us plot the ratios of explained variances (i.e., the eigenvalues). The intuition is that if the explained variance ratio is larger, the corresponding principal component is more important and can represent more information.
 
 # In[36]:
 
