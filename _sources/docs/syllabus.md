@@ -209,6 +209,7 @@ Below is a list of online books:
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Deep Learning](https://www.deeplearningbook.org)
 - [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
+- [A Course in Machine Learning](http://ciml.info/)
 
 Below is a list of related online course notes and materials:
 - [CSE446: Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
