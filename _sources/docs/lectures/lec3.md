@@ -1,17 +1,19 @@
 # Lecture 3: Structured Data Processing (Part I)
 
-(Last updated: Feb 10, 2023)
+(Last updated: Feb 14, 2023)
+
+This lecture gives a tutorial about the [Smell Pittsburgh project](https://smellpgh.org/) using a Jupyter Notebook. The learning goals can be found on [this link](../modules/structured-data-module/overview-structured-data).
+
+:::{note}
+If you have a laptop, please bring it to the lecture.
+This lecture will give a tutorial using a Jupyter Notebook.
+:::
 
 ## Preparation
 
 Do the [preparation](../modules/structured-data-module/preparation-structured-data) for the structured data processing module.
 
 ## Materials
-
-:::{note}
-If you have a laptop, please bring it to the lecture.
-This lecture will give a tutorial using a Jupyter Notebook.
-:::
 
 Below is the link to the online notebook:
 - [Structured Data Processing Tutorial Online Notebook](../modules/structured-data-module/tutorial-structured-data)
