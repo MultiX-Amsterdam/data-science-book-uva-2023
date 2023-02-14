@@ -1,12 +1,16 @@
 # Structured Data Processing
 
-(Last updated: Feb 10, 2023)
+(Last updated: Feb 14, 2023)
 
 This module is about processing structured data and has the following learning goals:
 
-- **Goal 1**: Understand how to design data science pipelines to help stakeholders make sense of structured data
-- **Goal 2**: Conduct experiments to critically reflect and understand how features and evaluation metrics affect the performance of models
-- **Goal 3**: Obtain insights from processing structured data to inform decision-making
+- **Goal 1**: Connect steps in the structured data processing pipeline to a real-world case.
+- **Goal 2**: Preprocess structured data and prepare features/labels for modeling using pandas.
+- **Goal 3**: Understand how Principal Component Analysis can help explore data.
+- **Goal 4**: Understand how cross-validation works for time-series data.
+- **Goal 5**: Have a general understanding of Decision Tree and Random Forest.
+- **Goal 6**: Understand the concept of permutation feature importance.
+- **Goal 7**: Experiment with different feature sets and reflect on the choice of features.
 
 ## Table of Contents
 
