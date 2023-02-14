@@ -196,20 +196,24 @@ You can learn more about (confidential) mental health services available on camp
 
 If you have a disability and require accommodations, please take a look at [this UvA link](https://student.uva.nl/en/topics/studying-with-a-disability-dyslexia-or-chronic-illness) to request special facilities or additional resources.
 
-## Other Resources
+## Resources
 
-This course uses the following resources:
+Below is a list of books (in PDF form):
+- [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) and the [PDF file](https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf)
+- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [PDF file](https://columbia-applied-data-science.github.io/appdatasci.pdf)
+- [Mathematics for Machine Learning](https://mml-book.github.io/) and the [PDF file](https://mml-book.github.io/book/mml-book.pdf)
+- [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [PDF file](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
+- [Computer Age Statistical Inference: Algorithms, Evidence and Data Science](https://hastie.su.domains/CASI/) and the [PDF file](https://hastie.su.domains/CASI_files/PDF/casi.pdf)
+
+Below is a list of web books (in HTML form):
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
-
-Below is a list of online books:
-- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [book](https://columbia-applied-data-science.github.io/appdatasci.pdf)
-- [Mathematics for Machine Learning](https://mml-book.github.io/) and the [book](https://mml-book.github.io/book/mml-book.pdf)
-- [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [book](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Deep Learning](https://www.deeplearningbook.org)
 - [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
 - [A Course in Machine Learning](http://ciml.info/)
+- [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
+- [R for Data Science](https://r4ds.had.co.nz/index.html)
 
 Below is a list of related online course notes and materials:
 - [CSE446: Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
@@ -225,10 +229,10 @@ Below is a list of related online course notes and materials:
 - [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
 - [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
 - [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
+- [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
-- [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
 - [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
 - [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
 
