@@ -15,8 +15,8 @@ parts:
     title: "L2: Data Science Fundamentals"
   - file: docs/lectures/lec3
     title: "L3: Structured Data I"
-      #- file: docs/lectures/lec4
-      #title: "L4: Structured Data II"
+  - file: docs/lectures/lec4
+    title: "L4: Structured Data II"
       #- file: docs/lectures/lec5
       #title: "L5: Deep Learning Overview"
       #- file: docs/lectures/lec6

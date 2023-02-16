@@ -24,7 +24,7 @@ We strongly recommand you to bring your laptop during the lectures with tutorial
 
 :::{admonition} Preparation for Lectures
 In the link for each lecture, there is a preparation section.
-You **have to** prepare them before going to the lectures or tutorials.
+We **strongly recommend** you to prepare them before going to the lectures or tutorials.
 If you come to the class without doing the preparation part, you may not be able to understand the contents of lectures or tutorials.
 :::
 
