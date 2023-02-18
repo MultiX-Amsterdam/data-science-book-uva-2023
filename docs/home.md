@@ -34,9 +34,9 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 2
   - [Lecture 3 (Feb 14)](lectures/lec3): `Tutorial` for the structured data processing module (using Jupyter Notebook)
   - [Assignment 2](modules/structured-data-module/assignment-structured-data) (work session and self-study): Structured data processing module
-  - Lecture 4 (Feb 16): Explain details and more examples in the pipeline of processing structured data (e.g., sensor measurements, citizen reported smell ratings)
+  - [Lecture 4 (Feb 16)](lectures/lec4): Introduce the idea of using Decision Tree and Random Forest for structured data processing
 - Week 3
-  - Lecture 5 (Feb 21): Overview of deep learning techniques and applications
+  - [Lecture 5 (Feb 21)](lectures/lec5): Overview of deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
   - Lecture 6 (Feb 23): Overview of crowdscourcing and data annotation
 - Week 4
