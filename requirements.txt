@@ -3,3 +3,6 @@ matplotlib
 numpy
 ipython3
 pandas
+plotly
+scikit-learn
+sphinxext-rediraffe

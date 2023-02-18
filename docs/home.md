@@ -7,7 +7,6 @@
 - Refer to the [course syllabus](syllabus) for details.
 - Refer to [datanose](https://datanose.nl/) for the time table and classroom location.
 - Refer to [Canvas](https://canvas.uva.nl/) for announcements, the link to live lectures, and other members' emails in the teaching team.
-- `Bring your laptop to the lectures that have the tutorials.`
 
 All the course content on this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
@@ -39,7 +38,7 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 3
   - Lecture 5 (Feb 21): Overview of deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
-  - Lecture 6 (Feb 23): Guest lecture by [Dr. Ting-Hao 'Kenneth' Huang](https://crowd.ist.psu.edu) (an assistant professor from Penn State IST) to introduce how to work with crowdscourcing platforms in data science research and data annotation. This lecture will be given remotely (no physical lecture).
+  - Lecture 6 (Feb 23): Overview of crowdscourcing and data annotation
 - Week 4
   - Mid-term Exam (Feb 28)
   - A lecture to discuss the mid-term exam

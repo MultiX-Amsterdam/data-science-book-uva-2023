@@ -7,6 +7,7 @@ parts:
 - caption:
   chapters:
   - file: docs/syllabus
+  - file: docs/resources
 - caption: Lectures
   chapters:
   - file: docs/lectures/lec1
@@ -17,8 +18,8 @@ parts:
     title: "L3: Structured Data I"
   - file: docs/lectures/lec4
     title: "L4: Structured Data II"
-      #- file: docs/lectures/lec5
-      #title: "L5: Deep Learning Overview"
+  - file: docs/lectures/lec5
+    title: "L5: Deep Learning Overview"
       #- file: docs/lectures/lec6
       #title: "L6: Crowdsourcing and Data Labeling"
       #- file: docs/lectures/lec7
