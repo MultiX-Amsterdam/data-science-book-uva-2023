@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Feb 10, 2023)
+(Last updated: Feb 18, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -198,43 +198,7 @@ If you have a disability and require accommodations, please take a look at [this
 
 ## Resources
 
-Below is a list of books (in PDF form):
-- [The Elements of Statistical Learning](https://hastie.su.domains/ElemStatLearn/) and the [PDF file](https://hastie.su.domains/ElemStatLearn/printings/ESLII_print12_toc.pdf)
-- [Columbia University Applied Data Science](https://columbia-applied-data-science.github.io/) and the [PDF file](https://columbia-applied-data-science.github.io/appdatasci.pdf)
-- [Mathematics for Machine Learning](https://mml-book.github.io/) and the [PDF file](https://mml-book.github.io/book/mml-book.pdf)
-- [Advanced Data Analysis from an Elementary Point of View](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) and the [PDF file](https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf)
-- [Computer Age Statistical Inference: Algorithms, Evidence and Data Science](https://hastie.su.domains/CASI/) and the [PDF file](https://hastie.su.domains/CASI_files/PDF/casi.pdf)
-
-Below is a list of web books (in HTML form):
-- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
-- [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
-- [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
-- [Deep Learning](https://www.deeplearningbook.org)
-- [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
-- [A Course in Machine Learning](http://ciml.info/)
-- [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
-- [R for Data Science](https://r4ds.had.co.nz/index.html)
-
-Below is a list of related online course notes and materials:
-- [CSE446: Machine Learning, University of Washington](https://courses.cs.washington.edu/courses/cse446/19au/lectures.html)
-- [CS4780: Machine Learning for Intelligent Systems, Cornell University](https://courses.cis.cornell.edu/cs4780/2018fa/page18/index.html)
-- [10-601: Introduction to Machine Learning, Carnegie Mellon University](https://www.cs.cmu.edu/~mgormley/courses/10601bd-f18/schedule.html)
-- [36-702: Statistical Machine Learning, Carnegie Mellon University](https://www.stat.cmu.edu/~ryantibs/statml/)
-- [STAT 462: Applied Regression Analysis, Penn State](https://online.stat.psu.edu/stat462/)
-- [STAT 500: Applied Statistics, Penn State](https://online.stat.psu.edu/stat500/)
-- [STAT 800: Applied Research Methods, Penn State](https://online.stat.psu.edu/stat800/)
-- [STAT 501: Regression Methods, Penn State](https://online.stat.psu.edu/stat501/)
-- [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
-- [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
-- [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
-- [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
-- [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
-- [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/index.html)
-
-Also, there are other resources for self-learning:
-- [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
-- [Machine Learning with scikit-learn](https://inria.github.io/scikit-learn-mooc/index.html)
-- [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+We curated a [list of resources](resources) that inspired the development of this course. The course instructor greatly appreciates them.
 
 ## Acknowledgements
 

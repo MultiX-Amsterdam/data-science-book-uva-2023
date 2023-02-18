@@ -4,11 +4,6 @@
 
 This lecture gives a tutorial about the [Smell Pittsburgh project](https://smellpgh.org/) using a Jupyter Notebook. The learning goals can be found on [this link](../modules/structured-data-module/overview-structured-data).
 
-:::{note}
-If you have a laptop, please bring it to the lecture.
-This lecture will give a tutorial using a Jupyter Notebook.
-:::
-
 ## Preparation
 
 Do the [preparation](../modules/structured-data-module/preparation-structured-data) for the structured data processing module.
@@ -32,6 +27,6 @@ Below are websites related to this tutorial:
 - [The numpy API](https://numpy.org/doc/stable/reference/index.html)
 
 Below are papers related to this tutorial:
-- Quinlan, J. R. (1986). Induction of decision trees. Machine learning, 1(1), 81-106.
-- Breiman, L. (2001). Random forests. Machine learning, 45(1), 5-32.
+- [Quinlan, J. R. (1986). Induction of decision trees. Machine learning.](https://link.springer.com/content/pdf/10.1007/BF00116251.pdf)
+- [Breiman, L. (2001). Random forests. Machine learning.](https://link.springer.com/content/pdf/10.1023/A:1010933404324.pdf)
 
