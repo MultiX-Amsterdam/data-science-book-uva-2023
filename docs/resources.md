@@ -12,6 +12,8 @@ Below is a list of books (in PDF form):
 - [Computer Age Statistical Inference: Algorithms, Evidence and Data Science](https://hastie.su.domains/CASI/) and the [PDF file](https://hastie.su.domains/CASI_files/PDF/casi.pdf)
 - [Machine Learning](http://www.cs.cmu.edu/afs/cs.cmu.edu/user/mitchell/ftp/mlbook.html) and the [PDF file](http://www.cs.cmu.edu/~tom/files/MachineLearningTomMitchell.pdf)
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) and the [PDF file](https://www.ise.ncsu.edu/fuzzy-neural/wp-content/uploads/sites/9/2022/08/neuralnetworksanddeeplearning.pdf)
+- [Convex Optimization](https://stanford.edu/~boyd/cvxbook/) and the [PDF file](https://stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
+- [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) and the [PDF file](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 
 Below is a list of web books (in HTML form):
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
@@ -34,6 +36,7 @@ Below is a list of related online academic course notes and materials:
 - [STAT 500: Applied Statistics, Penn State](https://online.stat.psu.edu/stat500/)
 - [STAT 800: Applied Research Methods, Penn State](https://online.stat.psu.edu/stat800/)
 - [STAT 501: Regression Methods, Penn State](https://online.stat.psu.edu/stat501/)
+- [STAT 508: Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/)
 - [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
 - [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
 - [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
@@ -44,12 +47,16 @@ Below is a list of related online academic course notes and materials:
 - [ECE 595: Machine Learning, Purdue University](https://engineering.purdue.edu/ChanGroup/ECE595/index.html)
 - [Machine Learning with scikit-learn, Inria](https://inria.github.io/scikit-learn-mooc/index.html)
 - [Introduction to Research Data Science, The Alan Turing Institute](https://alan-turing-institute.github.io/rds-course/)
-- [CS231n: Convolutional Neural Networks for Visual Recognition](https://cs231n.github.io/)
+- [CS231n: Convolutional Neural Networks for Visual Recognition, Stanford University](https://cs231n.github.io/)
+- [6.S191: Introduction to Deep Learning, Massachusetts Institute of Technology](http://introtodeeplearning.com/2022/index.html)
 
 Below is a list of related online industry courses:
 - [Introduction to Machine Learning, Google LLC](https://developers.google.com/machine-learning/crash-course/ml-intro)
 - [Intro to Deep Learning, Kaggle](https://www.kaggle.com/learn/intro-to-deep-learning)
 
+Below is a list of online learning videos:
+- Statistics and machine learning: [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
+- Animated math: [3Blue1Brown](https://www.3blue1brown.com/) and their [YouTube channel](https://www.youtube.com/@3blue1brown)
+
 Also, there are other resources for self-learning:
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
-- [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
