@@ -25,6 +25,7 @@ Below is a list of web books (in HTML form):
 - [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
 - [R for Data Science](https://r4ds.had.co.nz/index.html)
 - [Machine Learning and Deep Learning Fundamentals](https://kenndanielso.github.io/mlrefined/index.html)
+- [Dive into Deep Learning](https://d2l.ai/)
 
 Below is a list of related online academic course notes and materials:
 - [IOB4-T3: Machine Learning for Design in TU Delft](https://ml4design.com/ml4design.2021-2022/)
