@@ -1,6 +1,6 @@
 # Lecture 2: Data Science Fundamentals
 
-(Last updated: Feb 10, 2023)
+(Last updated: Feb 20, 2023)
 
 ## Preparation
 
@@ -10,6 +10,10 @@ Read the [Smell Pittsburgh paper](https://dl.acm.org/doi/10.1145/3369397).
 - You do not need to understand all techniques in the paper. Some of the techniques can be too difficult for you. Try your best to get the big picture.
 
 ## Materials
+
+:::{note}
+The slides were updated to correct some errors. So the new ones are different from the ones that were used in the lecture.
+:::
 
 - [Slides for Lecture 2-1: Data Science Fundamentals (Pipeline)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec2-1.pdf)
 - [Slides for Lecture 2-2: Data Science Fundamentals (Modeling)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec2-2.pdf)
