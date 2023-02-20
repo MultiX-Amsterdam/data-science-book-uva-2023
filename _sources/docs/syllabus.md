@@ -85,10 +85,10 @@ After the grade is released, we will announce on Canvas how students can inspect
 
 Exam instructions and materials will all be in English.
 
-The mid-term and final exams are based on coding questions (and may also contain multiple-choice questions), which are designed to test your knowledge in different parts of the data science pipeline.
-We will provide Jupyter notebooks during the exams with instructions.
+The mid-term and final exams are based on coding questions and multiple-choice questions, which are designed to test your knowledge in different parts of the data science pipeline.
+If the exam has coding questions, we will provide Jupyter notebooks during the exam with instructions.
 Then, the notebooks that you handed in will be auto-graded with hidden test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
-We will provide mock-up exam notebooks and visible test cases for you to practice.
+We will provide a mock-up exam for you to practice.
 
 :::{warning}
 Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
