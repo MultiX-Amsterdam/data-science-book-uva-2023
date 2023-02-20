@@ -13,7 +13,7 @@ There is no preparation material for this lecture.
 ## Additional Resources
 
 Below is a well-known paper that gives a nice overview of deep learning:
-- [LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. nature.](https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf)
+- [LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature.](https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf)
 
 Below is a collection of projects by OpenAI (which creates ChatGPT):
 - [OpenAI Research Projects in Deep Learning](https://openai.com/research/)
