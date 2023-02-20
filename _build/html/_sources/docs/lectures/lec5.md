@@ -8,7 +8,7 @@ There is no preparation material for this lecture.
 
 ## Materials
 
-[Slides for Lecture 5: Deep Learning Overview](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec5-1.pdf)
+- [Slides for Lecture 5: Deep Learning Overview](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec5-1.pdf)
 
 ## Additional Resources
 
