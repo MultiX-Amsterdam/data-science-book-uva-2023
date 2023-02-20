@@ -49,6 +49,10 @@ Below is a list of related online academic course notes and materials:
 - [Introduction to Research Data Science, The Alan Turing Institute](https://alan-turing-institute.github.io/rds-course/)
 - [CS231n: Convolutional Neural Networks for Visual Recognition, Stanford University](https://cs231n.github.io/)
 - [6.S191: Introduction to Deep Learning, Massachusetts Institute of Technology](http://introtodeeplearning.com/2022/index.html)
+- [Cheatsheet for AI, machine learning, and deep learning courses, Stanford University](https://stanford.edu/~shervine/teaching/)
+- [Cheatsheet for data science tools, Massachusetts Institute of Technology](https://www.mit.edu/~amidi/teaching/data-science-tools/)
+- [CSC2541 Machine Learning: Neural Net Training Dynamics, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2022/)
+- [CSC 311: Introduction to Machine Learning, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc311_f21/)
 
 Below is a list of related online industry courses:
 - [Introduction to Machine Learning, Google LLC](https://developers.google.com/machine-learning/crash-course/ml-intro)
@@ -59,4 +63,5 @@ Below is a list of online learning videos:
 - Animated math: [3Blue1Brown](https://www.3blue1brown.com/) and their [YouTube channel](https://www.youtube.com/@3blue1brown)
 
 Also, there are other resources for self-learning:
+- [Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
