@@ -49,6 +49,8 @@ Below is a list of related online academic course notes and materials:
 - [Introduction to Research Data Science, The Alan Turing Institute](https://alan-turing-institute.github.io/rds-course/)
 - [CS231n: Convolutional Neural Networks for Visual Recognition, Stanford University](https://cs231n.github.io/)
 - [6.S191: Introduction to Deep Learning, Massachusetts Institute of Technology](http://introtodeeplearning.com/2022/index.html)
+- [Cheatsheet for AI, machine learning, and deep learning courses, Stanford University](https://stanford.edu/~shervine/teaching/)
+- [Cheatsheet for data science tools, Massachusetts Institute of Technology](https://www.mit.edu/~amidi/teaching/data-science-tools/)
 
 Below is a list of related online industry courses:
 - [Introduction to Machine Learning, Google LLC](https://developers.google.com/machine-learning/crash-course/ml-intro)
