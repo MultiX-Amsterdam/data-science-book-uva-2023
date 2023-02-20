@@ -1,6 +1,6 @@
 # Lecture 5: Deep Learning Overview
 
-(Last updated: Feb 17, 2023)
+(Last updated: Feb 20, 2023)
 
 ## Preparation
 
