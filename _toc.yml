@@ -65,3 +65,5 @@ parts:
     title: "A1: Python Coding Warm-Up"
   - file: docs/modules/structured-data-module/assignment-structured-data
     title: "A2: Structured Data"
+  - file: docs/assignments/hw3
+    title: "A3: Mock Exam"
