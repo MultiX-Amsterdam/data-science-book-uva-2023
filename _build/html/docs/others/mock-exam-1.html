@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -449,7 +451,12 @@ title="Print to PDF"
 <li><p>Logistic regression</p></li>
 <li><p>Deep Neural Network</p></li>
 </ol>
-<p><strong>Q5:</strong> Suppose we flipped a coin 12 times, and we got 10 heads and 2 tails. What is the entropy of the result in this coin-flipping experiment?</p>
+<p><strong>Q5:</strong> Suppose we flipped a coin 12 times, and we got 10 heads and 2 tails. What is the entropy of the result in this coin-flipping experiment? The formula of entropy H is given below:</p>
+<div class="math notranslate nohighlight">
+\[
+H = p_{1} * log_{2}(1/p_{1}) + p_{2} * log_{2}(1/p_{2})
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_{1}\)</span> is the probability of seeing a head, and <span class="math notranslate nohighlight">\(p_{2}\)</span> is the probability of seeing a tail.</p>
 <ol class="simple">
 <li><p>0.17</p></li>
 <li><p>0.20</p></li>

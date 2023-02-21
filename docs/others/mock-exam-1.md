@@ -28,7 +28,13 @@ Notice that this mock exam only contains a part of the real exam. In the real ex
 3. Logistic regression
 4. Deep Neural Network
 
-**Q5:** Suppose we flipped a coin 12 times, and we got 10 heads and 2 tails. What is the entropy of the result in this coin-flipping experiment?
+**Q5:** Suppose we flipped a coin 12 times, and we got 10 heads and 2 tails. What is the entropy of the result in this coin-flipping experiment? The formula of entropy H is given below:
+
+$$
+H = p_{1} * log_{2}(1/p_{1}) + p_{2} * log_{2}(1/p_{2})
+$$
+
+where $p_{1}$ is the probability of seeing a head, and $p_{2}$ is the probability of seeing a tail.
 1. 0.17
 2. 0.20
 3. 0.65
