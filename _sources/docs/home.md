@@ -38,7 +38,7 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 3
   - [Lecture 5 (Feb 21)](lectures/lec5): Overview of deep learning techniques and applications
   - Assignment 3 (work session and self-study): Practice mock-up exam
-  - Lecture 6 (Feb 23): Overview of crowdscourcing and data annotation
+  - [Lecture 6 (Feb 23)](lectures/lec6): Overview of crowdscourcing
 - Week 4
   - Mid-term Exam (Feb 28)
   - A lecture to discuss the mid-term exam
