@@ -20,8 +20,8 @@ parts:
     title: "L4: Structured Data II"
   - file: docs/lectures/lec5
     title: "L5: Deep Learning Overview"
-      #- file: docs/lectures/lec6
-      #title: "L6: Crowdsourcing and Data Labeling"
+  - file: docs/lectures/lec6
+    title: "L6: Crowdsourcing"
       #- file: docs/lectures/lec7
       #title: "L7: Text Data I"
       #- file: docs/lectures/lec8
