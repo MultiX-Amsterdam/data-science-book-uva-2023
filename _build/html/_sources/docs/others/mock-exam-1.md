@@ -16,7 +16,7 @@ Notice that this mock exam only contains a part of the real exam. In the real ex
 3. We cannot deal with overfitting by simply removing outliers.
 4. Errors of the model that we trained can be decomposed into bias, variance, and noise. Overfitting usually happens when we train a model with high variance.
 
-**Q3:** Which of the following statements about the Decision Tree model is **TRUE**?
+**Q3:** Which of the following statements about the Decision Tree model is **TRUE**? Notice that we refer to the general Decision Tree, not a specific implementation.
 1. Decision Tree can be trained well using entropy as the node-splitting strategy.
 2. When splitting nodes, Decision Tree cannot use the same feature multiple times.
 3. Decision Tree cannot be used for the regression task.
