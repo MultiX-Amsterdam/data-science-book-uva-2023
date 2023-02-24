@@ -37,7 +37,7 @@ If you come to the class without doing the preparation part, you may not be able
   - [Lecture 4 (Feb 16)](lectures/lec4): Introduce the idea of using Decision Tree and Random Forest for structured data processing
 - Week 3
   - [Lecture 5 (Feb 21)](lectures/lec5): Overview of deep learning techniques and applications
-  - Assignment 3 (work session and self-study): Practice mock-up exam
+  - [Assignment 3](assignments/hw3) (work session and self-study): Practice mock-up exam
   - [Lecture 6 (Feb 23)](lectures/lec6): Overview of crowdscourcing
 - Week 4
   - Mid-term Exam (Feb 28)
