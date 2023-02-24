@@ -77,46 +77,71 @@ There is one resit for the course, which counts as 100% weight.
 According to the [UvA rule](https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations), the most recent grade will apply in the event of a resit regardless of the outcome.
 This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.
 
-According to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
+The base grade for the exam is 1, and there is no minimum grade requirement for each exam.
+However, according to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 After each exam, the teaching team will grade the exam and release the grades within 20 working days.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.
 
 ### Exams
 
 Exam instructions and materials will all be in English.
+We tried to write questions in Dutch, but we found that the Dutch version of the questions are ambiguous, as the course materials are in English.
+Providing materials in English allows us to match the exam questions clearly with course materials.
 
-The mid-term and final exams are based on coding questions and multiple-choice questions, which are designed to test your knowledge in different parts of the data science pipeline.
-If the exam has coding questions, we will provide Jupyter notebooks during the exam with instructions.
-Then, the notebooks that you handed in will be auto-graded with hidden test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
+The exam may have multiple-choice, passive-coding, and active-coding questions.
+The multiple-choice questions will be used to test your general knowledge of data science.
+The passive-coding questions are in the form of multiple-choice questions to test your coding knowledge.
+For example, we may put some code in the question description and ask you to select the option that best explains what the code is doing (or the expected output of the code).
+The active coding question is similar to the coding assignments.
 We will provide a mock-up exam for you to practice.
 
-:::{warning}
+#### Multiple-Choice Questions
+
+The formal exam will be conducted using the [ANS sytem](https://ans.app/).
+If the exam has multiple-choice questions,we will use guess correction for your score on the multiple-choice questions.
+Details about how the ANS system uses guess correction is in [this online document](https://support.ans.app/hc/en-us/articles/360014340098-Guess-correction).
+
+#### Coding Questions
+
+If the exam has coding questions, we will provide a Jupyter notebook with instructions.
+Then, the notebooks that you handed in will be auto-graded with hidden test cases using the [nbgrader package](https://nbgrader.readthedocs.io/en/stable/index.html).
+
 Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
 Please pay attention to the question instructions.
-``Using the restricted functions will result in a 0 score for the corresponding question.``
-:::
 
 :::{warning}
+Using the restricted functions will result in a 0 score for the corresponding question.
+:::
+
 Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).
+
+:::{warning}
 ``We do not give scores to failed test cases or syntax errors.``
+:::
+
 Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
 We will provide test cases in the exam Jupyter notebook for you to self-check.
-:::
-
-During the mid-term and final exams, you may bring an A4-size cheat sheet with you.
-You can choose to handwrite or print the content on both sides of the cheat sheet.
-Please keep in mind that you are not allowed to bring other materials, such as books.
-You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
-
-:::{warning}
-You must hand in the cheat sheet immediately after the exam.
-``It is not allowed to take the cheat sheet back with you.``
-:::
 
 :::{note}
 You will have no internet access during the exams.
 However, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
 :::
+
+#### Cheat Sheet
+
+During the exam, you may bring an A4-size cheat sheet with you.
+You can choose to handwrite or print the content on both sides of the cheat sheet.
+Please keep in mind that you are not allowed to bring other materials, such as books.
+You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
+After the exam, you can take the cheat sheet back with you.
+
+#### Important Notice During the Exam Day
+
+- There are scrap papers at the exam location, and we will provide them to you if you need them.
+- Please make sure to bring your ID. We will check your ID at the exam location.
+- Please remember to sign the attendance list after someone has checked your ID.
+- You are allowed to enter the exam room up to 30 minutes past the exam starting time. Anyone who arrives later cannot participate in the exam.
+- You are not allowed to leave the exam room during the first 30 minutes and last 15 minutes of the normal exam schedule. The purpose of the rule is to prevent fraud (during the first 30 minutes) and disturbance (during the last 15 minutes). 
 
 ### Assignments
 

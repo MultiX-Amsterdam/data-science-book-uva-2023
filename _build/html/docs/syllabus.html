@@ -414,6 +414,28 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#exams">
      Exams
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-choice-questions">
+       Multiple-Choice Questions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coding-questions">
+       Coding Questions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cheat-sheet">
+       Cheat Sheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#important-notice-during-the-exam-day">
+       Important Notice During the Exam Day
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assignments">
@@ -525,6 +547,28 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#exams">
      Exams
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-choice-questions">
+       Multiple-Choice Questions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#coding-questions">
+       Coding Questions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cheat-sheet">
+       Cheat Sheet
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#important-notice-during-the-exam-day">
+       Important Notice During the Exam Day
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#assignments">
@@ -671,43 +715,68 @@ If the TAs cannot attend the physical classroom due to unexpected situations, th
 There is one resit for the course, which counts as 100% weight.
 According to the <a class="reference external" href="https://www.uva.nl/en/about-the-uva/policy-and-regulations/rules-and-regulations/teaching/teaching.html#Model-regulations">UvA rule</a>, the most recent grade will apply in the event of a resit regardless of the outcome.
 This means that if you take the resit, your resit score will override the weighted sum of your mid-term and final exam grades.</p>
-<p>According to the <a class="reference external" href="https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer">OER rule</a>, you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
+<p>The base grade for the exam is 1, and there is no minimum grade requirement for each exam.
+However, according to the <a class="reference external" href="https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer">OER rule</a>, you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
 After each exam, the teaching team will grade the exam and release the grades within 20 working days.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.</p>
 <section id="exams">
 <h3>Exams<a class="headerlink" href="#exams" title="Permalink to this headline">#</a></h3>
-<p>Exam instructions and materials will all be in English.</p>
-<p>The mid-term and final exams are based on coding questions and multiple-choice questions, which are designed to test your knowledge in different parts of the data science pipeline.
-If the exam has coding questions, we will provide Jupyter notebooks during the exam with instructions.
-Then, the notebooks that you handed in will be auto-graded with hidden test cases using the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/index.html">nbgrader package</a>.
+<p>Exam instructions and materials will all be in English.
+We tried to write questions in Dutch, but we found that the Dutch version of the questions are ambiguous, as the course materials are in English.
+Providing materials in English allows us to match the exam questions clearly with course materials.</p>
+<p>The exam may have multiple-choice, passive-coding, and active-coding questions.
+The multiple-choice questions will be used to test your general knowledge of data science.
+The passive-coding questions are in the form of multiple-choice questions to test your coding knowledge.
+For example, we may put some code in the question description and ask you to select the option that best explains what the code is doing (or the expected output of the code).
+The active coding question is similar to the coding assignments.
 We will provide a mock-up exam for you to practice.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<section id="multiple-choice-questions">
+<h4>Multiple-Choice Questions<a class="headerlink" href="#multiple-choice-questions" title="Permalink to this headline">#</a></h4>
+<p>The formal exam will be conducted using the <a class="reference external" href="https://ans.app/">ANS sytem</a>.
+If the exam has multiple-choice questions,we will use guess correction for your score on the multiple-choice questions.
+Details about how the ANS system uses guess correction is in <a class="reference external" href="https://support.ans.app/hc/en-us/articles/360014340098-Guess-correction">this online document</a>.</p>
+</section>
+<section id="coding-questions">
+<h4>Coding Questions<a class="headerlink" href="#coding-questions" title="Permalink to this headline">#</a></h4>
+<p>If the exam has coding questions, we will provide a Jupyter notebook with instructions.
+Then, the notebooks that you handed in will be auto-graded with hidden test cases using the <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/index.html">nbgrader package</a>.</p>
 <p>Coding questions in the exams may have restrictions on functions (i.e., the ones that you are not allowed to use).
-Please pay attention to the question instructions.
-<code class="docutils literal notranslate"><span class="pre">Using</span> <span class="pre">the</span> <span class="pre">restricted</span> <span class="pre">functions</span> <span class="pre">will</span> <span class="pre">result</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">0</span> <span class="pre">score</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">corresponding</span> <span class="pre">question.</span></code></p>
-</div>
+Please pay attention to the question instructions.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).
-<code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">give</span> <span class="pre">scores</span> <span class="pre">to</span> <span class="pre">failed</span> <span class="pre">test</span> <span class="pre">cases</span> <span class="pre">or</span> <span class="pre">syntax</span> <span class="pre">errors.</span></code>
-Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
+<p>Using the restricted functions will result in a 0 score for the corresponding question.</p>
+</div>
+<p>Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">do</span> <span class="pre">not</span> <span class="pre">give</span> <span class="pre">scores</span> <span class="pre">to</span> <span class="pre">failed</span> <span class="pre">test</span> <span class="pre">cases</span> <span class="pre">or</span> <span class="pre">syntax</span> <span class="pre">errors.</span></code></p>
+</div>
+<p>Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
 We will provide test cases in the exam Jupyter notebook for you to self-check.</p>
-</div>
-<p>During the mid-term and final exams, you may bring an A4-size cheat sheet with you.
-You can choose to handwrite or print the content on both sides of the cheat sheet.
-Please keep in mind that you are not allowed to bring other materials, such as books.
-You are also not allowed to bring or use any other digital devices (besides the computer for the exam).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You must hand in the cheat sheet immediately after the exam.
-<code class="docutils literal notranslate"><span class="pre">It</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">allowed</span> <span class="pre">to</span> <span class="pre">take</span> <span class="pre">the</span> <span class="pre">cheat</span> <span class="pre">sheet</span> <span class="pre">back</span> <span class="pre">with</span> <span class="pre">you.</span></code></p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will have no internet access during the exams.
 However, you can use the question mark “?” syntax to <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help">access the IPython help</a> to check the documentation of functions.</p>
 </div>
+</section>
+<section id="cheat-sheet">
+<h4>Cheat Sheet<a class="headerlink" href="#cheat-sheet" title="Permalink to this headline">#</a></h4>
+<p>During the exam, you may bring an A4-size cheat sheet with you.
+You can choose to handwrite or print the content on both sides of the cheat sheet.
+Please keep in mind that you are not allowed to bring other materials, such as books.
+You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
+After the exam, you can take the cheat sheet back with you.</p>
+</section>
+<section id="important-notice-during-the-exam-day">
+<h4>Important Notice During the Exam Day<a class="headerlink" href="#important-notice-during-the-exam-day" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>There are scrap papers at the exam location, and we will provide them to you if you need them.</p></li>
+<li><p>Please make sure to bring your ID. We will check your ID at the exam location.</p></li>
+<li><p>Please remember to sign the attendance list after someone has checked your ID.</p></li>
+<li><p>You are allowed to enter the exam room up to 30 minutes past the exam starting time. Anyone who arrives later cannot participate in the exam.</p></li>
+<li><p>You are not allowed to leave the exam room during the first 30 minutes and last 15 minutes of the normal exam schedule. The purpose of the rule is to prevent fraud (during the first 30 minutes) and disturbance (during the last 15 minutes).</p></li>
+</ul>
+</section>
 </section>
 <section id="assignments">
 <h3>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">#</a></h3>
