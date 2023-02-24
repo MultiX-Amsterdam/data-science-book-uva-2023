@@ -116,7 +116,7 @@ Using the restricted functions will result in a 0 score for the corresponding qu
 Your score for each coding question is based on the number of passed hidden test cases (excluding the one that we will provide).
 
 :::{warning}
-``We do not give scores to failed test cases or syntax errors.``
+We do not give scores to failed test cases or syntax errors.
 :::
 
 Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
