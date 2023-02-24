@@ -98,7 +98,7 @@ We will provide a mock-up exam for you to practice.
 #### Multiple-Choice Questions
 
 The formal exam will be conducted using the [ANS sytem](https://ans.app/).
-If the exam has multiple-choice questions,we will use guess correction for your score on the multiple-choice questions.
+If the exam has multiple-choice questions, we will use guess correction for your score on the multiple-choice questions.
 Details about how the ANS system uses guess correction is in [this online document](https://support.ans.app/hc/en-us/articles/360014340098-Guess-correction).
 
 #### Coding Questions
