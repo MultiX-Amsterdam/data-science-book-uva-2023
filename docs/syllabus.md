@@ -1,6 +1,6 @@
 # Course Syllabus
 
-(Last updated: Feb 18, 2023)
+(Last updated: Feb 27, 2023)
 
 :::{admonition} What is data science?
 :class: tip
@@ -94,6 +94,10 @@ The passive-coding questions are in the form of multiple-choice questions to tes
 For example, we may put some code in the question description and ask you to select the option that best explains what the code is doing (or the expected output of the code).
 The active coding question is similar to the coding assignments.
 We will provide a mock-up exam for you to practice.
+
+:::{warning}
+You have to do the exams on-site. It is not allowed to do exams at home.
+:::
 
 #### Multiple-Choice Questions
 
