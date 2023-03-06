@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Assignment 1: Python Coding Warm-Up" href="../../assignments/hw1.html" />
-    <link rel="prev" title="Structured Data Processing" href="overview-text-data.html" />
+    <link rel="next" title="Tutorial (Text Data Processing)" href="tutorial-text-data.html" />
+    <link rel="prev" title="Text Data Processing" href="overview-text-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -211,6 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
      Preparation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial-text-data.html">
+     Tutorial
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -233,6 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../assignments/hw3.html">
    A3: Mock Exam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment-text-data.html">
+   A4: Text Data
   </a>
  </li>
 </ul>
@@ -488,8 +500,12 @@ We will use NLTK (Natural Language Toolkit) and spaCy for NLP and PyTorch for ML
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Download the spaCy model we will use by using this command in your terminal:</p>
+<p>Download the spaCy model we will use by using the following command in your terminal:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m spacy download en_core_web_sm
+</pre></div>
+</div>
+<p>Install the gensim package by using the following command in your terminal:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install gensim
 </pre></div>
 </div>
 <p>Finally, install PyTorch using the selector on <a class="reference external" href="https://pytorch.org/get-started/locally/">their website</a>.
@@ -549,13 +565,13 @@ Browse around the website and answer the following questions:</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Structured Data Processing</p>
+            <p class="prev-next-title">Text Data Processing</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../assignments/hw1.html" title="next page">
+    <a class='right-next' id="next-link" href="tutorial-text-data.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 1: Python Coding Warm-Up</p>
+        <p class="prev-next-title">Tutorial (Text Data Processing)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Structured Data Processing &#8212; Data Science UvA</title>
+    <title>Text Data Processing &#8212; Data Science UvA</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Preparation (Text Data Processing)" href="preparation-text-data.html" />
@@ -211,6 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
      Preparation
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial-text-data.html">
+     Tutorial
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -233,6 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../assignments/hw3.html">
    A3: Mock Exam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment-text-data.html">
+   A4: Text Data
   </a>
  </li>
 </ul>
@@ -426,7 +438,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Structured Data Processing</h1>
+                <h1>Text Data Processing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -451,12 +463,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="structured-data-processing">
-<h1>Structured Data Processing<a class="headerlink" href="#structured-data-processing" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="text-data-processing">
+<h1>Text Data Processing<a class="headerlink" href="#text-data-processing" title="Permalink to this headline">#</a></h1>
 <p>(Last updated: Mar 6, 2023)<a class="footnote-reference brackets" href="#credit" id="id1">1</a></p>
 <p>This module is about processing text data and has the following learning goals:</p>
 <ul class="simple">
-<li><p><strong>Goal 1</strong>: Apply the methods of text processing to a big body of text.</p></li>
+<li><p><strong>Goal 1</strong>: Apply the methods of text processing to large amounts of text data.</p></li>
 <li><p><strong>Goal 2</strong>: Preprocess text data, including tokenization, part-of-speech tagging, stemming/lemmatization, and stopword removal.</p></li>
 <li><p><strong>Goal 3</strong>: Extract features from text data, including topic modeling and word embeddings.</p></li>
 <li><p><strong>Goal 4</strong>: Reflect on how to select and tune the text processing pipeline for topic classification.</p></li>
@@ -466,6 +478,7 @@ title="Print to PDF"
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="preparation-text-data.html">Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-text-data.html">Tutorial</a></li>
 </ul>
 </div>
 <hr class="footnotes docutils" />

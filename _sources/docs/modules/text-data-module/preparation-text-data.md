@@ -31,9 +31,14 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 ```
 
-Download the spaCy model we will use by using this command in your terminal:
+Download the spaCy model we will use by using the following command in your terminal:
 ```sh
 python -m spacy download en_core_web_sm
+```
+
+Install the gensim package by using the following command in your terminal:
+```sh
+pip install gensim
 ```
 
 Finally, install PyTorch using the selector on [their website](https://pytorch.org/get-started/locally/).
