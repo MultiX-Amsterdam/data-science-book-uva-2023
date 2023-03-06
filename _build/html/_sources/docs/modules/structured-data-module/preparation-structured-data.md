@@ -1,6 +1,6 @@
 # Preparation (Structured Data Processing)
 
-(Last updated: Feb 10, 2023)
+(Last updated: Feb 10, 2023)[^credit]
 
 This part will prepare you with the background knowledge that we will use for this module.
 Smell Pittsburgh is a mobile application for crowdsourcing reports of bad odors, such as those generated from air pollution.
@@ -50,3 +50,5 @@ When checking the analysis on the above-mentioned web page, answer the following
 - Are there any characteristics about the distribution of smell reports over time and geographical regions?
 - What are the common descriptions of bad odors that people reported?
 - What are the possible predictors (e.g., chemical compounds, weather data) of bad smell in the Pittsburgh region?
+
+[^credit]: Credit: this teaching material is created by [Yen-Chia Hsu](https://github.com/yenchiah).

@@ -3,7 +3,9 @@
 
 # # Tutorial (Structured Data Processing)
 
-# (Last updated: Feb 16, 2023)
+# (Last updated: Feb 16, 2023)[^credit]
+# 
+# [^credit]: Credit: this teaching material is created by [Yen-Chia Hsu](https://github.com/yenchiah).
 
 # This tutorial will familiarize you with the data science pipeline of processing structured data, using a real-world example of building models to predict and explain the presence of bad smell events in Pittsburgh based on air quality and weather data. The models are used to send push notifications about bad smell events to inform citizens, as well as to explain local pollution patterns to inform stakeholders.
 # 

@@ -43,16 +43,18 @@ parts:
       title: "Preparation"
     - file: docs/modules/structured-data-module/tutorial-structured-data
       title: "Tutorial"
-        #- file: docs/modules/text-data-module/overview-text-data
-        #sections:
-        #- file: docs/modules/text-data-module/preparation-text-data
-        #title: "Preparation"
+  - file: docs/modules/text-data-module/overview-text-data
+    title: "Text Data"
+    sections:
+    - file: docs/modules/text-data-module/preparation-text-data
+      title: "Preparation"
         #- file: docs/modules/text-data-module/tutorial-text-data
         #title: "Tutorial"
         #- file: docs/modules/text-data-module/assignment-text-data
         #title: "Assignment"
         #- file: docs/modules/image-data-module/overview-image-data
         #sections:
+        #title: "Image Data"
         #- file: docs/modules/image-data-module/preparation-image-data
         #title: "Preparation"
         #- file: docs/modules/image-data-module/tutorial-image-data

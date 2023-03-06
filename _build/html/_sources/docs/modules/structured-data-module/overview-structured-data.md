@@ -1,6 +1,6 @@
 # Structured Data Processing
 
-(Last updated: Feb 14, 2023)
+(Last updated: Feb 14, 2023)[^credit]
 
 This module is about processing structured data and has the following learning goals:
 
@@ -16,3 +16,5 @@ This module is about processing structured data and has the following learning g
 
 ```{tableofcontents}
 ```
+
+[^credit]: Credit: this teaching material is created by [Yen-Chia Hsu](https://github.com/yenchiah).
