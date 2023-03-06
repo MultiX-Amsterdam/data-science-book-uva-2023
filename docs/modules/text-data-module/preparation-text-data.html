@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Assignment 1: Python Coding Warm-Up" href="../../assignments/hw1.html" />
+    <link rel="prev" title="Structured Data Processing" href="overview-text-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -161,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../structured-data-module/overview-structured-data.html">
    Structured Data
@@ -180,6 +182,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../structured-data-module/tutorial-structured-data.html">
      Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview-text-data.html">
+   Text Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Preparation
     </a>
    </li>
   </ul>
@@ -361,12 +380,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-check-your-installations">
+   Task 1: Check your installations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-explore-webvectors">
+   Task 2: Explore WebVectors
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -378,6 +426,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-check-your-installations">
+   Task 1: Check your installations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-explore-webvectors">
+   Task 2: Explore WebVectors
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -387,8 +453,59 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="preparation-text-data-processing">
 <h1>Preparation (Text Data Processing)<a class="headerlink" href="#preparation-text-data-processing" title="Permalink to this headline">#</a></h1>
-<p>(Last updated: Feb 10, 2023)</p>
-<p>TBA</p>
+<p>(Last updated: Mar 6, 2023)<a class="footnote-reference brackets" href="#credit" id="id1">1</a></p>
+<p>This part will prepare you with the background knowledge that we will use for this module.
+You will install some useful Python packages for Natural Language Processing (NLP) and Machine Learning (ML).
+You will explore some small applications to get a grasp of word embeddings.</p>
+<section id="task-1-check-your-installations">
+<h2>Task 1: Check your installations<a class="headerlink" href="#task-1-check-your-installations" title="Permalink to this headline">#</a></h2>
+<p>In this module, we will use some Python packages that require extra downloads.
+We will use NLTK (Natural Language Toolkit) and spaCy for NLP and PyTorch for ML.</p>
+<p>First, for NLTK and spaCy, install both through the package manager of your choice using one of the following commands in your terminal:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>conda install nltk spacy
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install nltk spacy
+</pre></div>
+</div>
+<p>You might already have one of these installed.</p>
+<p>Then, download the additional data for NLTK. Open a Python interpreter or notebook and run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;averaged_perceptron_tagger&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;omw-1.4&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Download the spaCy model we will use by using this command in your terminal:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m spacy download en_core_web_sm
+</pre></div>
+</div>
+<p>Finally, install PyTorch using the selector on <a class="reference external" href="https://pytorch.org/get-started/locally/">their website</a>.
+Use the stable version, choose your current operating system, package manager (<code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>), and programming language (Python).
+If you have an NVIDIA GPU and are considering some more (heavy) ML work for other projects or your thesis, it might be worth taking some hours to look into using CUDA as a computing platform.
+However, for this module, just using the CPU suffices.</p>
+</section>
+<section id="task-2-explore-webvectors">
+<h2>Task 2: Explore WebVectors<a class="headerlink" href="#task-2-explore-webvectors" title="Permalink to this headline">#</a></h2>
+<p>In the field of Natural Language Processing (NLP), word embeddings are a way to represent a word as a vector of real numbers.
+This representation is useful for analyzing text.
+The vector is designed to encode the meaning of the word so that words that have similar meanings are closer together in the vector space.</p>
+<p>The Nordic Language Processing Laboratory made the website <a class="reference external" href="http://vectors.nlpl.eu/explore/embeddings/en/">WebVectors</a> for people to get familiar with the concept of word vectors by offering some nice interactive examples of how word vectors can be used.
+Browse around the website and answer the following questions:</p>
+<ul class="simple">
+<li><p>Using the <strong>Similar Words</strong> page: What are some semantic associates for the proper noun “Amsterdam” in the English Wikipedia model? Do other models yield different results?</p></li>
+<li><p>Using the <strong>Calculator</strong> page: If “scientist” is related to “science”, “artist” is related to what? Were you able to find some other nice combinations that did or did not work?</p></li>
+<li><p>Take a look at the <strong>Models</strong> page: Which types of preprocessing were used before training the models?</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="credit"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Credit: this teaching material is created by <a class="reference external" href="https://github.com/robertvanstraten">Robert van Straten</a> under the supervision of <a class="reference external" href="https://github.com/yenchiah">Yen-Chia Hsu</a>.</p>
+</dd>
+</dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -418,6 +535,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview-text-data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Structured Data Processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../assignments/hw1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 1: Python Coding Warm-Up</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

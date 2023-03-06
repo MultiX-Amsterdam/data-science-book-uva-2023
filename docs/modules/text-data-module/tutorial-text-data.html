@@ -184,6 +184,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="overview-text-data.html">
+   Text Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="preparation-text-data.html">
+     Preparation
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -390,12 +407,124 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario">
+   Scenario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-answers">
+   Task Answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-preprocess-text-data">
+   Task 3: Preprocess Text Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenization">
+     Tokenization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-of-speech-tagging">
+     Part-of-speech tagging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stemming-lemmatization">
+     Stemming / lemmatization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stopword-removal">
+     Stopword removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-3">
+     Assignment for Task 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-another-option-spacy">
+   Task 4: Another option: spaCy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-4">
+     Assignment for Task 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-unsupervised-learning-topic-modelling">
+   Task 5: Unsupervised Learning - Topic Modelling
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation">
+     Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-5">
+     Assignment for Task 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-6-word-embeddings">
+   Task 6: Word embeddings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-6">
+     Assignment for Task 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-7-supervised-learning-topic-classification">
+   Task 7: Supervised Learning - Topic Classification
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -407,6 +536,107 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scenario">
+   Scenario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-answers">
+   Task Answers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-preprocess-text-data">
+   Task 3: Preprocess Text Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenization">
+     Tokenization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-of-speech-tagging">
+     Part-of-speech tagging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stemming-lemmatization">
+     Stemming / lemmatization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stopword-removal">
+     Stopword removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-3">
+     Assignment for Task 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-another-option-spacy">
+   Task 4: Another option: spaCy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-4">
+     Assignment for Task 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-unsupervised-learning-topic-modelling">
+   Task 5: Unsupervised Learning - Topic Modelling
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation">
+     Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-5">
+     Assignment for Task 5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-6-word-embeddings">
+   Task 6: Word embeddings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assignment-for-task-6">
+     Assignment for Task 6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-7-supervised-learning-topic-classification">
+   Task 7: Supervised Learning - Topic Classification
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -416,18 +646,2002 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-text-data-processing">
 <h1>Tutorial (Text Data Processing)<a class="headerlink" href="#tutorial-text-data-processing" title="Permalink to this headline">#</a></h1>
+<p>(Last updated: Mar 6, 2023)</p>
+<p>This tutorial will familiarize you with the data science pipeline of processing text data. We will go through the various steps involved in the Natural Language Processing (NLP) pipeline for topic modelling and topic classification, including tokenization, lemmatization, and obtaining word embeddings. We will also build a neural network using PyTorch for multi-class topic classification using the dataset.
+The AG’s News Topic Classification Dataset contains news articles from four different categories, making it a nice source of text data for NLP tasks. We will guide you through the process of understanding the dataset, implementing various NLP techniques, and building a model for classification.</p>
+<p>You can use the following links to jump to the tasks and assignments:</p>
+<p>[table of contents]</p>
+<section id="scenario">
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv">AG’s News Topic Classification Dataset</a> is a collection of over 1 million news articles from more than 2000 news sources. The dataset was created by selecting the 4 largest classes from the original corpus, resulting in 120,000 training samples and 7,600 testing samples. The dataset is provided by the academic community for research purposes in data mining, information retrieval, and other non-commercial activities. We will use it to demonstrate various NLP techniques on real data, and in the end make 2 models with this data. The files train.csv and test.csv contain all the training and testing samples as comma-separated values with 3 columns: class index, title, and description. Download train.csv and test.csv for the following tasks.</p>
+</section>
+<section id="import-packages">
+<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">#</a></h2>
+<p>We put all the packages that are needed for this tutorial below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TBA&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">Word2Vec</span>
+
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span><span class="p">,</span> <span class="n">wordnet</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span><span class="p">,</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">adjusted_mutual_info_score</span><span class="p">,</span> <span class="n">adjusted_rand_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">xml.sax</span> <span class="kn">import</span> <span class="n">saxutils</span> <span class="k">as</span> <span class="n">su</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TBA
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">nltk</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;nltk&#39;
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="task-answers">
+<h2>Task Answers<a class="headerlink" href="#task-answers" title="Permalink to this headline">#</a></h2>
+<p>The code block below contains answers for the assignments in this tutorial. <strong>Do not check the answers in the next cell before practicing the tasks.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_answer_df</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">df_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function checks if two output dataframes are the same.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_result : pandas.DataFrame</span>
+<span class="sd">        The result from the output of a function.</span>
+<span class="sd">    df_answer: pandas.DataFrame</span>
+<span class="sd">        The expected output of the function.</span>
+<span class="sd">    n : int</span>
+<span class="sd">        The numbering of the test case.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">df_answer</span><span class="o">.</span><span class="n">isinstance</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="nb">any</span><span class="p">([</span><span class="n">answer</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span> <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">df_answer</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">df_answer</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> passed.&quot;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test case </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> failed.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your output is:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_result</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected output is&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">df_answer</span><span class="o">.</span><span class="n">isinstance</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; one of&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df_answer</span><span class="p">)</span>
+        
+<span class="k">def</span> <span class="nf">answer_tokenize_and_lemmatize</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tokenize and lemmatize the text in the dataset.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the text column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with the added tokens column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Apply the tokenizer to create the tokens column.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">)</span>
+    
+    <span class="c1"># Apply the lemmatizer on every word in the tokens list.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">wordnet_pos</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span> <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">tokens</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_most_used_words</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">token_col</span><span class="o">=</span><span class="s1">&#39;tokens&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a dataframe with the 5 most used words per class, and their count.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the class and tokens columns.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with 5 rows per class, and an added &#39;count&#39; column.</span>
+<span class="sd">        The dataframe is sorted in ascending order on the class and in descending order on the count.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Filter out non-words</span>
+    <span class="n">df</span><span class="p">[</span><span class="n">token_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">token_col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()])</span>
+    
+    <span class="c1"># Explode the tokens so that every token gets its own row.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="n">token_col</span><span class="p">)</span>
+    
+    <span class="c1"># Option 1: groupby on class and token, get the size of how many rows per item, </span>
+    <span class="c1"># add that as a column.</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">token_col</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Option 2: make a pivot table based on the class and token based on how many</span>
+    <span class="c1"># rows per combination there are , add counts as a column.</span>
+    <span class="c1"># counts = counts.pivot_table(index=[&#39;class&#39;, &#39;tokens&#39;], aggfunc=&#39;size&#39;).reset_index(name=&#39;count&#39;)</span>
+    
+    <span class="c1"># Sort the values on the class and count, get only the first 5 rows per class.</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">counts</span>
+
+<span class="k">def</span> <span class="nf">answer_remove_stopwords</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove stopwords from the tokens.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the tokens column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with stopwords removed from the tokens column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Using a set for quicker lookups.</span>
+    <span class="n">stopwords_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords_list</span><span class="p">)</span>
+    
+    <span class="c1"># Filter stopwords from tokens.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stopwords_set</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="task-3-preprocess-text-data">
+<h2>Task 3: Preprocess Text Data<a class="headerlink" href="#task-3-preprocess-text-data" title="Permalink to this headline">#</a></h2>
+<p>In this task, we will preprocess the text data from the AG News Dataset. First, we need to load the files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;train.csv&#39;</span><span class="p">)</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;test.csv&#39;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class Index</th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>Wall St. Bears Claw Back Into the Black (Reuters)</td>
+      <td>Reuters - Short-sellers, Wall Street's dwindli...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>Carlyle Looks Toward Commercial Aerospace (Reu...</td>
+      <td>Reuters - Private investment firm Carlyle Grou...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Oil and Economy Cloud Stocks' Outlook (Reuters)</td>
+      <td>Reuters - Soaring crude prices plus worries\ab...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Iraq Halts Oil Exports from Main Southern Pipe...</td>
+      <td>Reuters - Authorities have halted oil export\f...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>Oil prices soar to all-time record, posing new...</td>
+      <td>AFP - Tearaway world oil prices, toppling reco...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>119995</th>
+      <td>1</td>
+      <td>Pakistan's Musharraf Says Won't Quit as Army C...</td>
+      <td>KARACHI (Reuters) - Pakistani President Perve...</td>
+    </tr>
+    <tr>
+      <th>119996</th>
+      <td>2</td>
+      <td>Renteria signing a top-shelf deal</td>
+      <td>Red Sox general manager Theo Epstein acknowled...</td>
+    </tr>
+    <tr>
+      <th>119997</th>
+      <td>2</td>
+      <td>Saban not going to Dolphins yet</td>
+      <td>The Miami Dolphins will put their courtship of...</td>
+    </tr>
+    <tr>
+      <th>119998</th>
+      <td>2</td>
+      <td>Today's NFL games</td>
+      <td>PITTSBURGH at NY GIANTS Time: 1:30 p.m. Line: ...</td>
+    </tr>
+    <tr>
+      <th>119999</th>
+      <td>2</td>
+      <td>Nets get Carter from Raptors</td>
+      <td>INDIANAPOLIS -- All-Star Vince Carter was trad...</td>
+    </tr>
+  </tbody>
+</table>
+<p>120000 rows × 3 columns</p>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class Index</th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>Fears for T N pension after talks</td>
+      <td>Unions representing workers at Turner   Newall...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>The Race is On: Second Private Team Sets Launc...</td>
+      <td>SPACE.com - TORONTO, Canada -- A second\team o...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>Ky. Company Wins Grant to Study Peptides (AP)</td>
+      <td>AP - A company founded by a chemistry research...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Prediction Unit Helps Forecast Wildfires (AP)</td>
+      <td>AP - It's barely dawn when Mike Fitzpatrick st...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Calif. Aims to Limit Farm-Related Smog (AP)</td>
+      <td>AP - Southern California's smog-fighting agenc...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7595</th>
+      <td>1</td>
+      <td>Around the world</td>
+      <td>Ukrainian presidential candidate Viktor Yushch...</td>
+    </tr>
+    <tr>
+      <th>7596</th>
+      <td>2</td>
+      <td>Void is filled with Clement</td>
+      <td>With the supply of attractive pitching options...</td>
+    </tr>
+    <tr>
+      <th>7597</th>
+      <td>2</td>
+      <td>Martinez leaves bitter</td>
+      <td>Like Roger Clemens did almost exactly eight ye...</td>
+    </tr>
+    <tr>
+      <th>7598</th>
+      <td>3</td>
+      <td>5 of arthritis patients in Singapore take Bext...</td>
+      <td>SINGAPORE : Doctors in the United States have ...</td>
+    </tr>
+    <tr>
+      <th>7599</th>
+      <td>3</td>
+      <td>EBay gets into rentals</td>
+      <td>EBay plans to buy the apartment and home renta...</td>
+    </tr>
+  </tbody>
+</table>
+<p>7600 rows × 3 columns</p>
+</div></div></div>
+</div>
+<p>As you can see, all the classes are distributed evenly in the train and test data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;Class Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(),</span> <span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;Class Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    30000
+4    30000
+2    30000
+1    30000
+Name: Class Index, dtype: int64
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3    1900
+4    1900
+2    1900
+1    1900
+Name: Class Index, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make the data more understandable, we will make the classes more understandable by adding a <code class="docutils literal notranslate"><span class="pre">class</span></code> column from the original <code class="docutils literal notranslate"><span class="pre">Class</span> <span class="pre">Index</span></code> column, containing the category of the news article. To process both the title and news text together, we will combine the <code class="docutils literal notranslate"><span class="pre">Title</span></code> and <code class="docutils literal notranslate"><span class="pre">Description</span></code> columns into one <code class="docutils literal notranslate"><span class="pre">text</span></code> column. We will just deal with the train data until the point where we need the test data again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reformat_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reformat the Class Index column to a Class column and combine</span>
+<span class="sd">    the Title and Description columns into a Text column.</span>
+<span class="sd">    Select only the class_idx, class and text columns afterwards.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The original dataframe.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The reformatted dataframe.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Make the class column using a dictionary.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class Index&quot;</span><span class="p">:</span> <span class="s2">&quot;class_idx&quot;</span><span class="p">})</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Sports&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Business&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;Sci/Tech&#39;</span><span class="p">}</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;class_idx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">classes</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+    
+    <span class="c1"># Use string concatonation for the Text column and unesacpe html characters.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Description&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">su</span><span class="o">.</span><span class="n">unescape</span><span class="p">)</span>
+    
+    <span class="c1"># Select only the Class and Text columns.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;class_idx&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">reformat_data</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class_idx</th>
+      <th>class</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>Business</td>
+      <td>Wall St. Bears Claw Back Into the Black (Reute...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>Business</td>
+      <td>Carlyle Looks Toward Commercial Aerospace (Reu...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Business</td>
+      <td>Oil and Economy Cloud Stocks' Outlook (Reuters...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Business</td>
+      <td>Iraq Halts Oil Exports from Main Southern Pipe...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>Business</td>
+      <td>Oil prices soar to all-time record, posing new...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>119995</th>
+      <td>1</td>
+      <td>World</td>
+      <td>Pakistan's Musharraf Says Won't Quit as Army C...</td>
+    </tr>
+    <tr>
+      <th>119996</th>
+      <td>2</td>
+      <td>Sports</td>
+      <td>Renteria signing a top-shelf deal Red Sox gene...</td>
+    </tr>
+    <tr>
+      <th>119997</th>
+      <td>2</td>
+      <td>Sports</td>
+      <td>Saban not going to Dolphins yet The Miami Dolp...</td>
+    </tr>
+    <tr>
+      <th>119998</th>
+      <td>2</td>
+      <td>Sports</td>
+      <td>Today's NFL games PITTSBURGH at NY GIANTS Time...</td>
+    </tr>
+    <tr>
+      <th>119999</th>
+      <td>2</td>
+      <td>Sports</td>
+      <td>Nets get Carter from Raptors INDIANAPOLIS -- A...</td>
+    </tr>
+  </tbody>
+</table>
+<p>120000 rows × 3 columns</p>
+</div></div></div>
+</div>
+<section id="tokenization">
+<h3>Tokenization<a class="headerlink" href="#tokenization" title="Permalink to this headline">#</a></h3>
+<p>Tokenization is the process of breaking down a text into individual tokens, which are usually words but can also be phrases or sentences. It helps language models to understand and analyze text data by breaking it down into smaller, more manageable pieces. While it may seem like a trivial task, tokenization can be applied in multiple ways and thus be a complex and challenging task influencing NLP applications.</p>
+<p>For example, in languages like English, it is generally straightforward to identify words by using spaces as delimiters. However, there are exceptions, such as contractions like “can’t” and hyphenated words like “self-driving”. And in Dutch, where multiple nouns can be combined into one bigger noun without any delimiter this can be hard. How would you tokenize “hippopotomonstrosesquippedaliofobie”? In other languages, such as Chinese and Japanese, there are no spaces between words, so identifying word boundaries is much more difficult.</p>
+<p>To illustrate the use of tokenization, let’s consider the following example, which tokenizes a sample text using the <code class="docutils literal notranslate"><span class="pre">word_tokenize</span></code> function from the NLTK package. That function uses a pre-trained tokenization model for English.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample text.</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;The quick brown fox jumped over the lazy dog. The cats couldn&#39;t wait to sleep all day.&quot;</span>
+
+<span class="c1"># Tokenize the text.</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># Print the text and the tokens.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original text:&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tokenized text:&quot;</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original text: The quick brown fox jumped over the lazy dog. The cats couldn&#39;t wait to sleep all day.
+Tokenized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;, &#39;jumped&#39;, &#39;over&#39;, &#39;the&#39;, &#39;lazy&#39;, &#39;dog&#39;, &#39;.&#39;, &#39;The&#39;, &#39;cats&#39;, &#39;could&#39;, &quot;n&#39;t&quot;, &#39;wait&#39;, &#39;to&#39;, &#39;sleep&#39;, &#39;all&#39;, &#39;day&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-of-speech-tagging">
+<h3>Part-of-speech tagging<a class="headerlink" href="#part-of-speech-tagging" title="Permalink to this headline">#</a></h3>
+<p>Part-of-speech (POS) tagging is the process of assigning each word in a text corpus with a specific part-of-speech tag based on its context and definition. The tags typically include nouns, verbs, adjectives, adverbs, pronouns, preposition, conjunction, interjection, and more. POS tagging can help other NLP tasks disambiguate a token in some way due to the added context.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos_tags</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pos_tags</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;The&#39;, &#39;DT&#39;), (&#39;quick&#39;, &#39;JJ&#39;), (&#39;brown&#39;, &#39;NN&#39;), (&#39;fox&#39;, &#39;NN&#39;), (&#39;jumped&#39;, &#39;VBD&#39;), (&#39;over&#39;, &#39;IN&#39;), (&#39;the&#39;, &#39;DT&#39;), (&#39;lazy&#39;, &#39;JJ&#39;), (&#39;dog&#39;, &#39;NN&#39;), (&#39;.&#39;, &#39;.&#39;), (&#39;The&#39;, &#39;DT&#39;), (&#39;cats&#39;, &#39;NNS&#39;), (&#39;could&#39;, &#39;MD&#39;), (&quot;n&#39;t&quot;, &#39;RB&#39;), (&#39;wait&#39;, &#39;VB&#39;), (&#39;to&#39;, &#39;TO&#39;), (&#39;sleep&#39;, &#39;VB&#39;), (&#39;all&#39;, &#39;DT&#39;), (&#39;day&#39;, &#39;NN&#39;), (&#39;.&#39;, &#39;.&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stemming-lemmatization">
+<h3>Stemming / lemmatization<a class="headerlink" href="#stemming-lemmatization" title="Permalink to this headline">#</a></h3>
+<p>Stemming and lemmatization are two common techniques used in NLP to preprocess and normalize text data. Both techniques involve transforming words into their root form, but they differ in their approach and the level of normalization they provide.</p>
+<p>Stemming is a technique that involves reducing words to their base or stem form by removing any affixes or suffixes. For example, the stem of the word “lazily” would be “lazi”. Stemming is a simple and fast technique that can be useful. However, it can also produce inaccurate or incorrect results since it does not consider the context or part of speech of the word.</p>
+<p>Lemmatization, on the other hand, is a more sophisticated technique that involves identifying the base or dictionary form of a word, also known as the lemma. Unlike stemming, lemmatization can consider the context and part of speech of the word, which can make it more accurate and reliable. With lemmatization, the lemma of the word “lazily” would be “lazy”. Lemmatization can be slower and more complex than stemming but provides a higher level of normalization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the stemmer and lemmatizer.</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">wordnet_pos</span><span class="p">(</span><span class="n">nltk_pos</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to map POS tags to wordnet tags for lemmatizer</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nltk_pos</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">VERB</span>
+    <span class="k">elif</span> <span class="n">nltk_pos</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">ADJ</span>
+    <span class="k">elif</span> <span class="n">nltk_pos</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">ADV</span>
+    <span class="k">return</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">NOUN</span>
+
+<span class="c1"># Perform stemming and lemmatization seperately on the tokens.</span>
+<span class="n">stemmed_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">token</span><span class="p">)</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span>
+<span class="n">lemmatized_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">wordnet_pos</span><span class="p">(</span><span class="n">tag</span><span class="p">))</span> <span class="k">for</span> <span class="n">token</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">tokens</span><span class="p">)]</span>
+
+<span class="c1"># Print the results.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stemmed text:&quot;</span><span class="p">,</span> <span class="n">stemmed_tokens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lemmatized text:&quot;</span><span class="p">,</span> <span class="n">lemmatized_tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stemmed text: [&#39;the&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;, &#39;jump&#39;, &#39;over&#39;, &#39;the&#39;, &#39;lazi&#39;, &#39;dog&#39;, &#39;.&#39;, &#39;the&#39;, &#39;cat&#39;, &#39;could&#39;, &quot;n&#39;t&quot;, &#39;wait&#39;, &#39;to&#39;, &#39;sleep&#39;, &#39;all&#39;, &#39;day&#39;, &#39;.&#39;]
+Lemmatized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;, &#39;jump&#39;, &#39;over&#39;, &#39;the&#39;, &#39;lazy&#39;, &#39;dog&#39;, &#39;.&#39;, &#39;The&#39;, &#39;cat&#39;, &#39;could&#39;, &quot;n&#39;t&quot;, &#39;wait&#39;, &#39;to&#39;, &#39;sleep&#39;, &#39;all&#39;, &#39;day&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="stopword-removal">
+<h3>Stopword removal<a class="headerlink" href="#stopword-removal" title="Permalink to this headline">#</a></h3>
+<p>Stopword removal is a common technique used in NLP to preprocess and clean text data by removing words that are considered to be of little or no value in terms of conveying meaning or information. These words are called “stopwords” and they include common words such as “the”, “a”, “an”, “and”, “or”, “but”, and so on.</p>
+<p>The purpose of stopword removal in NLP is to improve the accuracy and efficiency of text analysis and processing by reducing the noise and complexity of the data. Stopwords are often used to form grammatical structures in a sentence, but they do not carry much meaning or relevance to the main topic or theme of the text. So by removing these words, we can reduce the dimensionality of the text data, improve the performance of machine learning models, and speed up the processing of text data. NLTK has a predefined list of stopwords for English.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># English stopwords in NLTK.</span>
+<span class="n">stopwords_list</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stopwords_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;, &#39;our&#39;, &#39;ours&#39;, &#39;ourselves&#39;, &#39;you&#39;, &quot;you&#39;re&quot;, &quot;you&#39;ve&quot;, &quot;you&#39;ll&quot;, &quot;you&#39;d&quot;, &#39;your&#39;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;, &#39;he&#39;, &#39;him&#39;, &#39;his&#39;, &#39;himself&#39;, &#39;she&#39;, &quot;she&#39;s&quot;, &#39;her&#39;, &#39;hers&#39;, &#39;herself&#39;, &#39;it&#39;, &quot;it&#39;s&quot;, &#39;its&#39;, &#39;itself&#39;, &#39;they&#39;, &#39;them&#39;, &#39;their&#39;, &#39;theirs&#39;, &#39;themselves&#39;, &#39;what&#39;, &#39;which&#39;, &#39;who&#39;, &#39;whom&#39;, &#39;this&#39;, &#39;that&#39;, &quot;that&#39;ll&quot;, &#39;these&#39;, &#39;those&#39;, &#39;am&#39;, &#39;is&#39;, &#39;are&#39;, &#39;was&#39;, &#39;were&#39;, &#39;be&#39;, &#39;been&#39;, &#39;being&#39;, &#39;have&#39;, &#39;has&#39;, &#39;had&#39;, &#39;having&#39;, &#39;do&#39;, &#39;does&#39;, &#39;did&#39;, &#39;doing&#39;, &#39;a&#39;, &#39;an&#39;, &#39;the&#39;, &#39;and&#39;, &#39;but&#39;, &#39;if&#39;, &#39;or&#39;, &#39;because&#39;, &#39;as&#39;, &#39;until&#39;, &#39;while&#39;, &#39;of&#39;, &#39;at&#39;, &#39;by&#39;, &#39;for&#39;, &#39;with&#39;, &#39;about&#39;, &#39;against&#39;, &#39;between&#39;, &#39;into&#39;, &#39;through&#39;, &#39;during&#39;, &#39;before&#39;, &#39;after&#39;, &#39;above&#39;, &#39;below&#39;, &#39;to&#39;, &#39;from&#39;, &#39;up&#39;, &#39;down&#39;, &#39;in&#39;, &#39;out&#39;, &#39;on&#39;, &#39;off&#39;, &#39;over&#39;, &#39;under&#39;, &#39;again&#39;, &#39;further&#39;, &#39;then&#39;, &#39;once&#39;, &#39;here&#39;, &#39;there&#39;, &#39;when&#39;, &#39;where&#39;, &#39;why&#39;, &#39;how&#39;, &#39;all&#39;, &#39;any&#39;, &#39;both&#39;, &#39;each&#39;, &#39;few&#39;, &#39;more&#39;, &#39;most&#39;, &#39;other&#39;, &#39;some&#39;, &#39;such&#39;, &#39;no&#39;, &#39;nor&#39;, &#39;not&#39;, &#39;only&#39;, &#39;own&#39;, &#39;same&#39;, &#39;so&#39;, &#39;than&#39;, &#39;too&#39;, &#39;very&#39;, &#39;s&#39;, &#39;t&#39;, &#39;can&#39;, &#39;will&#39;, &#39;just&#39;, &#39;don&#39;, &quot;don&#39;t&quot;, &#39;should&#39;, &quot;should&#39;ve&quot;, &#39;now&#39;, &#39;d&#39;, &#39;ll&#39;, &#39;m&#39;, &#39;o&#39;, &#39;re&#39;, &#39;ve&#39;, &#39;y&#39;, &#39;ain&#39;, &#39;aren&#39;, &quot;aren&#39;t&quot;, &#39;couldn&#39;, &quot;couldn&#39;t&quot;, &#39;didn&#39;, &quot;didn&#39;t&quot;, &#39;doesn&#39;, &quot;doesn&#39;t&quot;, &#39;hadn&#39;, &quot;hadn&#39;t&quot;, &#39;hasn&#39;, &quot;hasn&#39;t&quot;, &#39;haven&#39;, &quot;haven&#39;t&quot;, &#39;isn&#39;, &quot;isn&#39;t&quot;, &#39;ma&#39;, &#39;mightn&#39;, &quot;mightn&#39;t&quot;, &#39;mustn&#39;, &quot;mustn&#39;t&quot;, &#39;needn&#39;, &quot;needn&#39;t&quot;, &#39;shan&#39;, &quot;shan&#39;t&quot;, &#39;shouldn&#39;, &quot;shouldn&#39;t&quot;, &#39;wasn&#39;, &quot;wasn&#39;t&quot;, &#39;weren&#39;, &quot;weren&#39;t&quot;, &#39;won&#39;, &quot;won&#39;t&quot;, &#39;wouldn&#39;, &quot;wouldn&#39;t&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assignment-for-task-3">
+<h3>Assignment for Task 3<a class="headerlink" href="#assignment-for-task-3" title="Permalink to this headline">#</a></h3>
+<p><strong>Your task (which is your assignment) is to write functions to do the following:</strong></p>
+<ul>
+<li><p>Since we want to use our text to make a model later on, we need to preprocess it. Add a <code class="docutils literal notranslate"><span class="pre">tokens</span></code> column to the <code class="docutils literal notranslate"><span class="pre">train_df</span></code> dataframe with the text tokenized, then lemmatize those tokens. You must use the POS tags when lemmatizing.</p>
+<ul class="simple">
+<li><p>Hint: Use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.apply</span></code> function with the imported <code class="docutils literal notranslate"><span class="pre">nltk.tokenize.word_tokenize</span></code> function. This might take a moment. Recall that you can use the <code class="docutils literal notranslate"><span class="pre">pd.Series.apply?</span></code> syntax in a code cell for more information.</p></li>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">nltk.stem.WordNetLemmatizer.lemmatize</span></code> function to lemmatize a token.</p></li>
+</ul>
+<p>Our goal is to have a dataframe that looks like the following:</p>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">answer_tokenize_and_lemmatize</span><span class="p">(</span><span class="n">train_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_14476</span>\<span class="mf">4266785058.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">answer_tokenize_and_lemmatize</span><span class="p">(</span><span class="n">train_df</span><span class="p">))</span>
+
+<span class="nn">~\AppData\Local\Temp\ipykernel_14476\3763560189.py</span> in <span class="ni">answer_tokenize_and_lemmatize</span><span class="nt">(df)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> 
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="c1"># Apply the lemmatizer on every word in the tokens list.</span>
+<span class="nn">---&gt; 53     df[&#39;tokens&#39;] = df[&#39;tokens&#39;].apply(lambda tokens: [lemmatizer.lemmatize(token, wordnet_pos(tag)) for token, tag</span> in <span class="ni">nltk.pos_tag</span><span class="nt">(tokens)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>     <span class="k">return</span> <span class="n">df</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\pandas\core\series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4769</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4770</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4771</span><span class="sd">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4772</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4773</span><span class="sd">     def _reduce(</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span><span class="sd">         # self.f is Callable</span>
+<span class="ne">-&gt; </span><span class="mi">1105</span><span class="sd">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1106</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span><span class="sd">     def agg(self):</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1154</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1155</span><span class="sd">                 values = obj.astype(object)._values</span>
+<span class="ne">-&gt; </span><span class="mi">1156</span><span class="sd">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1157</span><span class="sd">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1158</span><span class="sd">                     f,</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\pandas\_libs\lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">~\AppData\Local\Temp\ipykernel_14476\3763560189.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(tokens)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd">     # Apply the lemmatizer on every word in the tokens list.</span>
+<span class="nn">---&gt; 53     df[&#39;tokens&#39;] = df[&#39;tokens&#39;].apply(lambda tokens: [lemmatizer.lemmatize(token, wordnet_pos(tag)) for token, tag</span> in <span class="ni">nltk.pos_tag</span><span class="nt">(tokens)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span><span class="sd">     return df</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="sd"> </span>
+
+<span class="nn">~\AppData\Local\Temp\ipykernel_14476\3763560189.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd">     # Apply the lemmatizer on every word in the tokens list.</span>
+<span class="nn">---&gt; 53     df[&#39;tokens&#39;] = df[&#39;tokens&#39;].apply(lambda tokens: [lemmatizer.lemmatize(token, wordnet_pos(tag)) for token, tag</span> in <span class="ni">nltk.pos_tag</span><span class="nt">(tokens)])</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span><span class="sd">     return df</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="sd"> </span>
+
+<span class="nn">~\anaconda3\lib\site-packages\nltk\stem\wordnet.py</span> in <span class="ni">lemmatize</span><span class="nt">(self, word, pos)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd">         :return: The lemma of `word`, for the given `pos`.</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>         <span class="n">lemmas</span> <span class="o">=</span> <span class="n">wn</span><span class="o">.</span><span class="n">_morphy</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">lemmas</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span> <span class="k">if</span> <span class="n">lemmas</span> <span class="k">else</span> <span class="n">word</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\nltk\corpus\reader\wordnet.py</span> in <span class="ni">_morphy</span><span class="nt">(self, form, pos, check_exceptions)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2034</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2035</span>         <span class="c1"># 1. Apply rules once to the input to get y1, y2, y3, etc.</span>
+<span class="ne">-&gt; </span><span class="mi">2036</span>         <span class="n">forms</span> <span class="o">=</span> <span class="n">apply_rules</span><span class="p">([</span><span class="n">form</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">2037</span> 
+<span class="nn">   2038         # 2. Return all that are</span> in <span class="ni">the database </span><span class="nt">(and check the original too)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\nltk\corpus\reader\wordnet.py</span> in <span class="ni">apply_rules</span><span class="nt">(forms)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2011</span>         <span class="k">def</span> <span class="nf">apply_rules</span><span class="p">(</span><span class="n">forms</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2012</span>             <span class="k">return</span> <span class="p">[</span>
+<span class="g g-Whitespace">   </span><span class="mi">2013</span>                 <span class="n">form</span><span class="p">[:</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">old</span><span class="p">)]</span> <span class="o">+</span> <span class="n">new</span>
+<span class="g g-Whitespace">   </span><span class="mi">2014</span>                 <span class="k">for</span> <span class="n">form</span> <span class="ow">in</span> <span class="n">forms</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\nltk\corpus\reader\wordnet.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2013</span>                 <span class="n">form</span><span class="p">[:</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">old</span><span class="p">)]</span> <span class="o">+</span> <span class="n">new</span>
+<span class="g g-Whitespace">   </span><span class="mi">2014</span>                 <span class="k">for</span> <span class="n">form</span> <span class="ow">in</span> <span class="n">forms</span>
+<span class="ne">-&gt; </span><span class="mi">2015</span>                 <span class="k">for</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="ow">in</span> <span class="n">substitutions</span>
+<span class="g g-Whitespace">   </span><span class="mi">2016</span>                 <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">old</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2017</span>             <span class="p">]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>To see what the most used words per class are, create a new, seperate dataframe with the 5 most used words per class. Sort the resulting dataframe ascending on the <code class="docutils literal notranslate"><span class="pre">class</span></code> and descending on the <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p>
+<ul class="simple">
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.apply</span></code> and <code class="docutils literal notranslate"><span class="pre">str.isalpha()</span></code> functions to filter out non-alphabetical tokens.</p></li>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.explode</span></code> to create one row per class and token.</p></li>
+<li><p>Hint: use <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.groupby</span></code> with <code class="docutils literal notranslate"><span class="pre">.size()</span></code> afterwards or <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.pivot_table</span></code> with <code class="docutils literal notranslate"><span class="pre">size</span></code> as the <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code> to obtain the occurences per class.</p></li>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.reset_index</span></code> function to obtain a dataframe with <code class="docutils literal notranslate"><span class="pre">[class,</span> <span class="pre">tokens,</span> <span class="pre">count]</span></code> as the columns.</p></li>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.sort_values</span></code> function for sorting a dataframe.</p></li>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.groupby</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.head</span></code> functions to get the first 5 rows per class.</p></li>
+</ul>
+<p>Our goal is to have a dataframe that looks like the following:</p>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">answer_most_used_words</span><span class="p">(</span><span class="n">train_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class</th>
+      <th>tokens</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9750</th>
+      <td>Business</td>
+      <td>said</td>
+      <td>722</td>
+    </tr>
+    <tr>
+      <th>3862</th>
+      <td>Business</td>
+      <td>Reuters</td>
+      <td>680</td>
+    </tr>
+    <tr>
+      <th>4795</th>
+      <td>Business</td>
+      <td>US</td>
+      <td>561</td>
+    </tr>
+    <tr>
+      <th>9102</th>
+      <td>Business</td>
+      <td>price</td>
+      <td>496</td>
+    </tr>
+    <tr>
+      <th>6192</th>
+      <td>Business</td>
+      <td>company</td>
+      <td>482</td>
+    </tr>
+    <tr>
+      <th>20194</th>
+      <td>Sci/Tech</td>
+      <td>ha</td>
+      <td>614</td>
+    </tr>
+    <tr>
+      <th>21450</th>
+      <td>Sci/Tech</td>
+      <td>new</td>
+      <td>534</td>
+    </tr>
+    <tr>
+      <th>14559</th>
+      <td>Sci/Tech</td>
+      <td>Microsoft</td>
+      <td>480</td>
+    </tr>
+    <tr>
+      <th>11203</th>
+      <td>Sci/Tech</td>
+      <td>AP</td>
+      <td>383</td>
+    </tr>
+    <tr>
+      <th>18491</th>
+      <td>Sci/Tech</td>
+      <td>company</td>
+      <td>376</td>
+    </tr>
+    <tr>
+      <th>24642</th>
+      <td>Sports</td>
+      <td>AP</td>
+      <td>588</td>
+    </tr>
+    <tr>
+      <th>37034</th>
+      <td>Sports</td>
+      <td>wa</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>33616</th>
+      <td>Sports</td>
+      <td>ha</td>
+      <td>444</td>
+    </tr>
+    <tr>
+      <th>33467</th>
+      <td>Sports</td>
+      <td>game</td>
+      <td>401</td>
+    </tr>
+    <tr>
+      <th>33288</th>
+      <td>Sports</td>
+      <td>first</td>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th>47884</th>
+      <td>World</td>
+      <td>said</td>
+      <td>771</td>
+    </tr>
+    <tr>
+      <th>37285</th>
+      <td>World</td>
+      <td>AP</td>
+      <td>569</td>
+    </tr>
+    <tr>
+      <th>41386</th>
+      <td>World</td>
+      <td>Reuters</td>
+      <td>543</td>
+    </tr>
+    <tr>
+      <th>39657</th>
+      <td>World</td>
+      <td>Iraq</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>45385</th>
+      <td>World</td>
+      <td>ha</td>
+      <td>458</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul>
+<li><p>Remove the stopwords from the <code class="docutils literal notranslate"><span class="pre">tokens</span></code> column in the <code class="docutils literal notranslate"><span class="pre">train_df</span></code> dataframe. Do the most used tokens say something about the class now?</p>
+<ul class="simple">
+<li><p>Hint: once again, you can use the <code class="docutils literal notranslate"><span class="pre">pandas.Series.apply</span></code> function.</p></li>
+</ul>
+<p>The top 5 words per class should look like this after removing stopwords:</p>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">answer_most_used_words</span><span class="p">(</span><span class="n">answer_remove_stopwords</span><span class="p">(</span><span class="n">train_df</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class</th>
+      <th>tokens</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9750</th>
+      <td>Business</td>
+      <td>said</td>
+      <td>722</td>
+    </tr>
+    <tr>
+      <th>3862</th>
+      <td>Business</td>
+      <td>Reuters</td>
+      <td>680</td>
+    </tr>
+    <tr>
+      <th>4795</th>
+      <td>Business</td>
+      <td>US</td>
+      <td>561</td>
+    </tr>
+    <tr>
+      <th>9102</th>
+      <td>Business</td>
+      <td>price</td>
+      <td>496</td>
+    </tr>
+    <tr>
+      <th>6192</th>
+      <td>Business</td>
+      <td>company</td>
+      <td>482</td>
+    </tr>
+    <tr>
+      <th>20194</th>
+      <td>Sci/Tech</td>
+      <td>ha</td>
+      <td>614</td>
+    </tr>
+    <tr>
+      <th>21450</th>
+      <td>Sci/Tech</td>
+      <td>new</td>
+      <td>534</td>
+    </tr>
+    <tr>
+      <th>14559</th>
+      <td>Sci/Tech</td>
+      <td>Microsoft</td>
+      <td>480</td>
+    </tr>
+    <tr>
+      <th>11203</th>
+      <td>Sci/Tech</td>
+      <td>AP</td>
+      <td>383</td>
+    </tr>
+    <tr>
+      <th>18491</th>
+      <td>Sci/Tech</td>
+      <td>company</td>
+      <td>376</td>
+    </tr>
+    <tr>
+      <th>24642</th>
+      <td>Sports</td>
+      <td>AP</td>
+      <td>588</td>
+    </tr>
+    <tr>
+      <th>37034</th>
+      <td>Sports</td>
+      <td>wa</td>
+      <td>517</td>
+    </tr>
+    <tr>
+      <th>33616</th>
+      <td>Sports</td>
+      <td>ha</td>
+      <td>444</td>
+    </tr>
+    <tr>
+      <th>33467</th>
+      <td>Sports</td>
+      <td>game</td>
+      <td>401</td>
+    </tr>
+    <tr>
+      <th>33288</th>
+      <td>Sports</td>
+      <td>first</td>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th>47884</th>
+      <td>World</td>
+      <td>said</td>
+      <td>771</td>
+    </tr>
+    <tr>
+      <th>37285</th>
+      <td>World</td>
+      <td>AP</td>
+      <td>569</td>
+    </tr>
+    <tr>
+      <th>41386</th>
+      <td>World</td>
+      <td>Reuters</td>
+      <td>543</td>
+    </tr>
+    <tr>
+      <th>39657</th>
+      <td>World</td>
+      <td>Iraq</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>45385</th>
+      <td>World</td>
+      <td>ha</td>
+      <td>458</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize_and_lemmatize</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tokenize and lemmatize the text in the dataset.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the text column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with the added tokens column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+
+
+<span class="k">def</span> <span class="nf">most_used_words</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">token_col</span><span class="o">=</span><span class="s1">&#39;tokens&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a dataframe with the 5 most used words per class, and their count.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the class and tokens columns.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with 5 rows per class, and an added &#39;count&#39; column.</span>
+<span class="sd">        The dataframe is sorted in ascending order on the class and in descending order on the count.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+
+<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove stopwords from the tokens.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the tokens column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with stopwords removed from the tokens column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">###################################</span>
+    <span class="c1"># Fill in your answer here</span>
+    <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1">###################################</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code below tests if the all your functions matches the expected output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_answer_df</span><span class="p">(</span><span class="n">most_used_words</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)),</span> <span class="n">tokenize_and_lemmatize</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-4-another-option-spacy">
+<h2>Task 4: Another option: spaCy<a class="headerlink" href="#task-4-another-option-spacy" title="Permalink to this headline">#</a></h2>
+<p>spaCy is another library used to perform various NLP tasks like tokenization, part-of-speech tagging, named entity recognition, dependency parsing, and much more. It provides pre-trained models for different languages and domains, which can be used as-is but also can be fine-tuned on a specific task or domain.</p>
+<p>In an object-oriented way, spaCy can be thought of as a collection of classes and objects that work together to perform NLP tasks. Some of the important functions and classes in spaCy include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nlp</span></code>: The core function that provides the main functionality of spaCy. It is used to process text and create a <code class="docutils literal notranslate"><span class="pre">Doc</span></code> object.</p></li>
+<li><p><a class="reference external" href="https://spacy.io/api/doc"><code class="docutils literal notranslate"><span class="pre">Doc</span></code></a>: A container for accessing linguistic annotations like tokens, part-of-speech tags, named entities, and dependency parse information. It is created by the <code class="docutils literal notranslate"><span class="pre">nlp</span></code> function and represents a processed document.</p></li>
+<li><p><a class="reference external" href="https://spacy.io/api/token"><code class="docutils literal notranslate"><span class="pre">Token</span></code></a>: An object representing a single token in a <code class="docutils literal notranslate"><span class="pre">Doc</span></code> object. It contains information like the token text, part-of-speech tag, lemma, embedding, and much more.</p></li>
+</ul>
+<p>When a text is processed by spaCy, it is first passed to the nlp function, which uses the loaded model to tokenize the text and applies various linguistic annotations like part-of-speech tagging, named entity recognition, and dependency parsing in the background. The resulting annotations are stored in a Doc object, which can be accessed and manipulated using various methods and attributes. For example, the Doc object can be iterated over to access each Token object in the document.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the small English model in spaCy.</span>
+<span class="c1"># Disable Named Entity Recognition in the model pipeline since we&#39;re not using it.</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ner&#39;</span><span class="p">])</span>
+
+<span class="c1"># Process the text using spaCy.</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># This becomes a spaCy Doc object, which prints nicely as the original string.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+
+<span class="c1"># We can iterate over the tokens in the Doc, since it has already been tokenized underneath.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;spacy.tokens.doc.Doc&#39;&gt; The quick brown fox jumped over the lazy dog. The cats couldn&#39;t wait to sleep all day.
+&lt;class &#39;spacy.tokens.token.Token&#39;&gt;
+The
+quick
+brown
+fox
+jumped
+over
+the
+lazy
+dog
+.
+The
+cats
+could
+n&#39;t
+wait
+to
+sleep
+all
+day
+.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since a lot of processing has already been done, we can also directly access multiple attributes of the <code class="docutils literal notranslate"><span class="pre">Token</span></code> objects. For example, we can directly access the lemma of the token with <code class="docutils literal notranslate"><span class="pre">Token.lemma_</span></code> and check if a token is a stop word with <code class="docutils literal notranslate"><span class="pre">Token.is_stop</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lemma_</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lemma_</span><span class="p">),</span> <span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_stop</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_stop</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the &lt;class &#39;str&#39;&gt; True &lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the code to add a column with a <code class="docutils literal notranslate"><span class="pre">Doc</span></code> representation of the <code class="docutils literal notranslate"><span class="pre">text</span></code> column to the dataframe. Executing this cell takes several minutes, so we added a progress bar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_spacy</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a column with the spaCy Doc objects.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the text column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with the added doc column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;doc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]),</span> <span class="n">total</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">add_spacy</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "882babb762214293b55a5d61423600f5", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<section id="assignment-for-task-4">
+<h3>Assignment for Task 4<a class="headerlink" href="#assignment-for-task-4" title="Permalink to this headline">#</a></h3>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">spacy_tokens</span></code> column containing the to the <code class="docutils literal notranslate"><span class="pre">train_df</span></code> dataframe containing a list of lemmatized tokens (strings).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="k">def</span> <span class="nf">spacy_tokens</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a column with a list of lemmatized tokens, without stopwords.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The dataframe containing at least the doc column.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The dataframe with the spacy_tokens column.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;spacy_tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;doc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">tokens</span><span class="p">:</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">lemma_</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">token</span><span class="o">.</span><span class="n">is_stop</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">spacy_tokens</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the answer version of the <code class="docutils literal notranslate"><span class="pre">most_used_words</span></code> function to again display the top 5 words per class in the dataset. Do you see some differences between the lemmatized tokens obtained from NLTK and spaCy?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">most_used_words</span><span class="p">(</span><span class="n">train_df</span><span class="p">,</span> <span class="s1">&#39;spacy_tokens&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class</th>
+      <th>spacy_tokens</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24993</th>
+      <td>Business</td>
+      <td>say</td>
+      <td>8927</td>
+    </tr>
+    <tr>
+      <th>11332</th>
+      <td>Business</td>
+      <td>Reuters</td>
+      <td>6884</td>
+    </tr>
+    <tr>
+      <th>22767</th>
+      <td>Business</td>
+      <td>oil</td>
+      <td>5402</td>
+    </tr>
+    <tr>
+      <th>17116</th>
+      <td>Business</td>
+      <td>company</td>
+      <td>5107</td>
+    </tr>
+    <tr>
+      <th>23738</th>
+      <td>Business</td>
+      <td>price</td>
+      <td>4951</td>
+    </tr>
+    <tr>
+      <th>55197</th>
+      <td>Sci/Tech</td>
+      <td>new</td>
+      <td>5549</td>
+    </tr>
+    <tr>
+      <th>37881</th>
+      <td>Sci/Tech</td>
+      <td>Microsoft</td>
+      <td>5073</td>
+    </tr>
+    <tr>
+      <th>58287</th>
+      <td>Sci/Tech</td>
+      <td>say</td>
+      <td>5023</td>
+    </tr>
+    <tr>
+      <th>48306</th>
+      <td>Sci/Tech</td>
+      <td>company</td>
+      <td>3847</td>
+    </tr>
+    <tr>
+      <th>28108</th>
+      <td>Sci/Tech</td>
+      <td>AP</td>
+      <td>3692</td>
+    </tr>
+    <tr>
+      <th>62330</th>
+      <td>Sports</td>
+      <td>AP</td>
+      <td>6262</td>
+    </tr>
+    <tr>
+      <th>94441</th>
+      <td>Sports</td>
+      <td>win</td>
+      <td>5995</td>
+    </tr>
+    <tr>
+      <th>85502</th>
+      <td>Sports</td>
+      <td>game</td>
+      <td>4459</td>
+    </tr>
+    <tr>
+      <th>92931</th>
+      <td>Sports</td>
+      <td>team</td>
+      <td>3738</td>
+    </tr>
+    <tr>
+      <th>91406</th>
+      <td>Sports</td>
+      <td>season</td>
+      <td>3685</td>
+    </tr>
+    <tr>
+      <th>121965</th>
+      <td>World</td>
+      <td>say</td>
+      <td>10174</td>
+    </tr>
+    <tr>
+      <th>94793</th>
+      <td>World</td>
+      <td>AP</td>
+      <td>5786</td>
+    </tr>
+    <tr>
+      <th>101859</th>
+      <td>World</td>
+      <td>Iraq</td>
+      <td>5783</td>
+    </tr>
+    <tr>
+      <th>107059</th>
+      <td>World</td>
+      <td>Reuters</td>
+      <td>5413</td>
+    </tr>
+    <tr>
+      <th>117879</th>
+      <td>World</td>
+      <td>kill</td>
+      <td>4967</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="task-5-unsupervised-learning-topic-modelling">
+<h2>Task 5: Unsupervised Learning - Topic Modelling<a class="headerlink" href="#task-5-unsupervised-learning-topic-modelling" title="Permalink to this headline">#</a></h2>
+<p>Topic modeling is a technique used in NLP that aims to identify the underlying topics or themes in a collection of texts. One way to perform topic modelling is using the probabilistic model Latent Dirichlet Allocation (LDA).</p>
+<p>LDA assumes that each document in a collection is a mixture of different topics, and each topic is a probability distribution over a set of words. The model then infers the underlying topic distribution for each document in the collection and the word distribution for each topic. LDA is trained using an iterative algorithm that maximizes the likelihood of observing the given documents.</p>
+<p>To use LDA, we need to represent the documents as a bag of words, where the order of the words is ignored and only the frequency of each word in the document is considered. This bag-of-words representation allows us to represent each document as a vector of word frequencies, which can be used as input to the LDA algorithm. The Topic Modelling might take a moment on our dataset size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the number of topics to extract with LDA</span>
+<span class="n">num_topics</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># Convert preprocessed text to bag-of-words representation using CountVectorizer.</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+
+<span class="c1"># fit_transform requires a string or multiple extra arguments and functions, so turn tokens into string.</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;spacy_tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># Fit LDA to the feature matrix.</span>
+<span class="n">lda</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">num_topics</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lda</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Extract the topic proportions for each document.</span>
+<span class="n">doc_topic_proportions</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iteration: 1 of max_iter: 10
+iteration: 2 of max_iter: 10
+iteration: 3 of max_iter: 10
+iteration: 4 of max_iter: 10
+iteration: 5 of max_iter: 10
+iteration: 6 of max_iter: 10
+iteration: 7 of max_iter: 10
+iteration: 8 of max_iter: 10
+iteration: 9 of max_iter: 10
+iteration: 10 of max_iter: 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using this function, we can look at the most important words per topic. Do you see any similarities with the most occuring words per class after stopword removal?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">n_top_wordlist</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">ntopwords</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a column with a list of lemmatized tokens, without stopwords.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">topic_idx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">topic_idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">features</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">ntopwords</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="c1"># Get the words from the CountVectorizer.</span>
+<span class="n">tf_feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">n_top_wordlist</span><span class="p">(</span><span class="n">lda</span><span class="p">,</span> <span class="n">tf_feature_names</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: [&#39;say&#39;, &#39;reuters&#39;, &#39;39&#39;, &#39;new&#39;, &#39;company&#39;],
+ 1: [&#39;39&#39;, &#39;ap&#39;, &#39;win&#39;, &#39;game&#39;, &#39;year&#39;],
+ 2: [&#39;say&#39;, &#39;39&#39;, &#39;reuters&#39;, &#39;oil&#39;, &#39;iraq&#39;],
+ 3: [&#39;39&#39;, &#39;new&#39;, &#39;microsoft&#39;, &#39;software&#39;, &#39;company&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="evaluation">
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h3>
+<p>Adjusted Mutual Information (AMI) and Adjusted Rand Index (ARI) are two metrics used to evaluate the performance of clustering algorithms.</p>
+<p>AMI is a measure that takes into account the possibility of two random clusters appearing to be similar. It is calculated as the difference between the Mutual Information (MI) of two clusterings and the expected MI, divided by the average entropy of the two clusterings minus the expected MI. AMI ranges between 0 and 1, where 0 indicates no agreement between the two clusterings and 1 indicates identical clusterings.</p>
+<p>The Rand Index (RI) is a measure that counts the number of pairs of samples that are assigned to the same or different clusters in both the predicted and true clusterings. The raw RI score is then adjusted for chance into the ARI score using a scheme similar to that of AMI. For ARI a score of 0 indicates random labeling and 1 indicates perfect agreement. The ARI is bounded below by -0.5 for very large differences in labeling.</p>
+</section>
+<section id="assignment-for-task-5">
+<h3>Assignment for Task 5<a class="headerlink" href="#assignment-for-task-5" title="Permalink to this headline">#</a></h3>
+<p><strong>Your task (which is your assignment) is to write a function to do the following:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">doc_topic_proportions</span></code> contains the proportions of how much that document belongs to every topic. For every document, get the topic in which it has the largest proportion. Afterwards, look at the AMI and ARI scores. Can you improve the scores by modeling more topics or using a different set of tokens?</p>
+<ul>
+<li><p>Hint: use the <code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> function.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">largest_proportion</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For every row, get the column number where it has the largest value.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : numpy.array</span>
+<span class="sd">        The array with the amount of topics as the amount of columns</span>
+<span class="sd">        and the amount of documents as the number of rows.</span>
+<span class="sd">        Every row should sum up to 1.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The 1-dimensional array containing the label of the topic</span>
+<span class="sd">        the document has the largest proportion in.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_most</span> <span class="o">=</span> <span class="n">largest_proportion</span><span class="p">(</span><span class="n">doc_topic_proportions</span><span class="p">)</span>
+
+<span class="n">ami_score</span> <span class="o">=</span> <span class="n">adjusted_mutual_info_score</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="n">topic_most</span><span class="p">)</span>
+<span class="n">ari_score</span> <span class="o">=</span> <span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="n">topic_most</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adjusted mutual information score: </span><span class="si">{</span><span class="n">ami_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adjusted rand score: </span><span class="si">{</span><span class="n">ari_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adjusted mutual information score: 0.53
+Adjusted rand score: 0.55
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-6-word-embeddings">
+<h2>Task 6: Word embeddings<a class="headerlink" href="#task-6-word-embeddings" title="Permalink to this headline">#</a></h2>
+<p>Word embeddings represent words as vectors in a high-dimensional space. The key idea behind word embeddings is that words with similar meanings tend to appear in similar contexts, and therefore their vector representations should be close together in this high-dimensional space. Word embeddings have been widely used in various NLP tasks such as sentiment analysis, machine translation, and information retrieval.</p>
+<p>There are several techniques to generate word embeddings, but one of the most popular methods is the Word2Vec algorithm, which is based on a neural network architecture. Word2Vec learns embeddings by predicting the probability of a word given its context (continuous bag of words or skip-gram model). The output of the network is a set of word vectors that can be used as embeddings. Another popular algorithm for generating word embeddings is GloVe (Global Vectors), which is based on matrix factorization techniques.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Load preprocessed text data</span>
+<span class="c1"># data = pd.read_csv(&#39;preprocessed_text.csv&#39;)</span>
+
+<span class="c1"># # Define the preprocessing functions</span>
+<span class="c1"># stop_words = set(stopwords.words(&#39;english&#39;))</span>
+<span class="c1"># lemmatizer = WordNetLemmatizer()</span>
+
+<span class="c1"># def preprocess_text(text):</span>
+<span class="c1">#     tokens = word_tokenize(text)</span>
+<span class="c1">#     tokens = [token for token in tokens if token not in stop_words]</span>
+<span class="c1">#     tokens = [lemmatizer.lemmatize(token) for token in tokens]</span>
+<span class="c1">#     return tokens</span>
+
+<span class="c1"># # Apply the preprocessing function to the text data</span>
+<span class="c1"># data[&#39;tokens&#39;] = data[&#39;preprocessed_text&#39;].apply(preprocess_text)</span>
+
+<span class="c1"># # Train a Word2Vec model on the preprocessed text data</span>
+<span class="c1"># model = Word2Vec(data[&#39;tokens&#39;], size=100, window=5, min_count=1, workers=4)</span>
+
+<span class="c1"># # Get the word embedding for a specific word</span>
+<span class="c1"># embedding = model.wv[&#39;word&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import spacy</span>
+
+<span class="c1"># # Load the pre-trained spaCy model</span>
+<span class="c1"># nlp = spacy.load(&#39;en_core_web_sm&#39;)</span>
+
+<span class="c1"># # Load preprocessed text data</span>
+<span class="c1"># # data = pd.read_csv(&#39;preprocessed_text.csv&#39;)</span>
+
+<span class="c1"># # # Define the preprocessing function</span>
+<span class="c1"># # def preprocess_text(text):</span>
+<span class="c1"># #     doc = nlp(text)</span>
+<span class="c1"># #     tokens = [token.lemma_ for token in doc if not token.is_stop and not token.is_punct and token.is_alpha]</span>
+<span class="c1"># #     return tokens</span>
+
+<span class="c1"># # # Apply the preprocessing function to the text data</span>
+<span class="c1"># # data[&#39;tokens&#39;] = data[&#39;preprocessed_text&#39;].apply(preprocess_text)</span>
+
+<span class="c1"># # Get the word embedding for a specific word</span>
+<span class="c1"># embedding = nlp(&#39;.&#39;).vector</span>
+<span class="c1"># embedding</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="assignment-for-task-6">
+<h3>Assignment for Task 6<a class="headerlink" href="#assignment-for-task-6" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Sample down the dataset to only use 10% of the original rows.</p>
+<ul>
+<li><p>Hint: use <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.sample</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">tensor</span></code> column to the dataframe, which is an array containing all the word embedding vectors as columns.</p></li>
+<li><p>Pad all arrays in the <code class="docutils literal notranslate"><span class="pre">tensor</span></code> column to the same number of columns.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Not final yet </span>
+
+<span class="c1"># # Assuming the original dataset is stored in a pandas dataframe called &quot;df&quot;</span>
+<span class="c1"># # and the word embedding vectors are stored as columns called &quot;emb1&quot;, &quot;emb2&quot;, ...</span>
+
+<span class="c1"># # Sample down to 10% of the original rows</span>
+<span class="c1"># df = df.sample(frac=0.1, random_state=42)</span>
+
+<span class="c1"># # Define a function to convert a row of embeddings to a padded numpy array</span>
+<span class="c1"># def pad_emb(row, max_len):</span>
+<span class="c1">#     return np.pad(row.values, (0, max_len - len(row)), mode=&#39;constant&#39;)</span>
+
+<span class="c1"># # Add a &quot;tensor&quot; column to the dataframe, containing the padded embeddings as arrays</span>
+<span class="c1"># max_len = max(len(row) - 1 for row in df.itertuples())  # Find the maximum number of embeddings</span>
+<span class="c1"># df[&#39;tensor&#39;] = df.apply(lambda row: pad_emb(row[1:-1], max_len), axis=1)</span>
+
+<span class="c1"># # Convert the &quot;tensor&quot; column to a 3D numpy array, with shape (num_rows, max_len, num_cols)</span>
+<span class="c1"># num_cols = len(df.iloc[0][&#39;tensor&#39;])</span>
+<span class="c1"># tensor = np.stack(df[&#39;tensor&#39;].to_numpy(), axis=0).reshape(-1, max_len, num_cols)</span>
+
+<span class="c1"># # Example usage: access the first padded tensor in the dataframe</span>
+<span class="c1"># print(df.iloc[0][&#39;tensor&#39;])  # prints an array of shape (max_len,)</span>
+<span class="c1"># print(tensor[0])  # prints the same array, but reshaped to (max_len, num_cols)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="task-7-supervised-learning-topic-classification">
+<h2>Task 7: Supervised Learning - Topic Classification<a class="headerlink" href="#task-7-supervised-learning-topic-classification" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Using the word embeddings features, train a small neural net</p></li>
+<li><p>Don’t give the full torch code, only one layer to let them do something with torch</p></li>
+<li><p>Evaluate using confusion matrix against true features</p></li>
+<li><p>Let students be able to tune parameters + n_layers to see if they get better results</p></li>
+</ul>
+<p>Sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html">https://pytorch.org/tutorials/beginner/hyperparameter_tuning_tutorial.html</a></p></li>
+<li><p><a class="reference external" href="https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html">https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_df</span> <span class="o">=</span> <span class="n">spacy_tokens</span><span class="p">(</span><span class="n">add_spacy</span><span class="p">(</span><span class="n">reformat_data</span><span class="p">(</span><span class="n">test_df</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "3beeb352410e4c9180d0088035dfed72", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_used_words</span><span class="p">(</span><span class="n">test_df</span><span class="p">,</span> <span class="s1">&#39;spacy_tokens&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>class</th>
+      <th>spacy_tokens</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6709</th>
+      <td>Business</td>
+      <td>say</td>
+      <td>576</td>
+    </tr>
+    <tr>
+      <th>2580</th>
+      <td>Business</td>
+      <td>Reuters</td>
+      <td>389</td>
+    </tr>
+    <tr>
+      <th>4142</th>
+      <td>Business</td>
+      <td>company</td>
+      <td>320</td>
+    </tr>
+    <tr>
+      <th>5935</th>
+      <td>Business</td>
+      <td>oil</td>
+      <td>303</td>
+    </tr>
+    <tr>
+      <th>6260</th>
+      <td>Business</td>
+      <td>price</td>
+      <td>293</td>
+    </tr>
+    <tr>
+      <th>9806</th>
+      <td>Sci/Tech</td>
+      <td>Microsoft</td>
+      <td>361</td>
+    </tr>
+    <tr>
+      <th>14526</th>
+      <td>Sci/Tech</td>
+      <td>new</td>
+      <td>341</td>
+    </tr>
+    <tr>
+      <th>15529</th>
+      <td>Sci/Tech</td>
+      <td>say</td>
+      <td>337</td>
+    </tr>
+    <tr>
+      <th>12345</th>
+      <td>Sci/Tech</td>
+      <td>company</td>
+      <td>270</td>
+    </tr>
+    <tr>
+      <th>16756</th>
+      <td>Sci/Tech</td>
+      <td>year</td>
+      <td>231</td>
+    </tr>
+    <tr>
+      <th>25574</th>
+      <td>Sports</td>
+      <td>win</td>
+      <td>421</td>
+    </tr>
+    <tr>
+      <th>16790</th>
+      <td>Sports</td>
+      <td>AP</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <th>22798</th>
+      <td>Sports</td>
+      <td>game</td>
+      <td>275</td>
+    </tr>
+    <tr>
+      <th>24615</th>
+      <td>Sports</td>
+      <td>season</td>
+      <td>252</td>
+    </tr>
+    <tr>
+      <th>25624</th>
+      <td>Sports</td>
+      <td>year</td>
+      <td>244</td>
+    </tr>
+    <tr>
+      <th>32923</th>
+      <td>World</td>
+      <td>say</td>
+      <td>621</td>
+    </tr>
+    <tr>
+      <th>25659</th>
+      <td>World</td>
+      <td>AP</td>
+      <td>399</td>
+    </tr>
+    <tr>
+      <th>27251</th>
+      <td>World</td>
+      <td>Iraq</td>
+      <td>354</td>
+    </tr>
+    <tr>
+      <th>28438</th>
+      <td>World</td>
+      <td>Reuters</td>
+      <td>340</td>
+    </tr>
+    <tr>
+      <th>31586</th>
+      <td>World</td>
+      <td>kill</td>
+      <td>310</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>    
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import torch</span>
+<span class="c1"># import torch.nn as nn</span>
+<span class="c1"># import torch.optim as optim</span>
+<span class="c1"># from torch.utils.data import Dataset, DataLoader</span>
+<span class="c1"># from sklearn.metrics import confusion_matrix</span>
+<span class="c1"># import seaborn as sns</span>
+<span class="c1"># import pandas as pd</span>
+<span class="c1"># import numpy as np</span>
+<span class="c1"># from torch.nn.utils.rnn import pad_sequence</span>
+
+
+<span class="c1"># # Define the neural network model</span>
+<span class="c1"># class Net(nn.Module):</span>
+<span class="c1">#     def __init__(self, input_size, hidden_size, output_size):</span>
+<span class="c1">#         super(Net, self).__init__()</span>
+<span class="c1">#         self.fc1 = nn.Linear(input_size, hidden_size)</span>
+<span class="c1">#         self.fc2 = nn.Linear(hidden_size, output_size)</span>
+
+<span class="c1">#     def forward(self, x):</span>
+<span class="c1">#         x = nn.functional.relu(self.fc1(x))</span>
+<span class="c1">#         x = self.fc2(x)</span>
+<span class="c1">#         return x</span>
+
+<span class="c1"># # Define the dataset</span>
+<span class="c1"># class MyDataset(Dataset):</span>
+<span class="c1">#     def __init__(self, data):</span>
+<span class="c1">#         self.data = data</span>
+
+<span class="c1">#     def __getitem__(self, index):</span>
+<span class="c1">#         x = self.data.iloc[index][&#39;tensor&#39;]</span>
+<span class="c1">#         y = self.data.iloc[index][&#39;class_idx&#39;]</span>
+<span class="c1">#         return x, y</span>
+
+<span class="c1">#     def __len__(self):</span>
+<span class="c1">#         return len(self.data) </span>
+
+<span class="c1"># # Combine train and test sets</span>
+<span class="c1"># combined_df = pd.concat([train_df, test_df], axis=0)</span>
+
+<span class="c1"># # Get the maximum sequence length</span>
+<span class="c1"># max_seq_length = combined_df[&#39;tensor&#39;].apply(lambda x: x.shape[1])</span>
+
+<span class="c1"># # Pad the sequences to the maximum length</span>
+<span class="c1"># train_padded = pad_sequence(train_df[&#39;tensor&#39;], batch_first=True, padding_value=0, total_length=max_seq_length)</span>
+<span class="c1"># test_padded = pad_sequence(test_df[&#39;tensor&#39;], batch_first=True, padding_value=0, total_length=max_seq_length)</span>
+
+<span class="c1"># # Convert labels to tensors</span>
+<span class="c1"># train_y = torch.tensor(train_df[&#39;class_idx&#39;].values)</span>
+<span class="c1"># test_y = torch.tensor(test_df[&#39;class_idx&#39;].values)</span>
+
+<span class="c1"># # Define hyperparameters</span>
+<span class="c1"># learning_rate = 0.01</span>
+<span class="c1"># epochs = 10</span>
+<span class="c1"># hidden_size = 12</span>
+<span class="c1"># output_size = 4</span>
+
+<span class="c1"># # Initialize the model, loss function, and optimizer</span>
+<span class="c1"># net = Net(max_input_size, hidden_size, output_size)</span>
+<span class="c1"># criterion = nn.CrossEntropyLoss()</span>
+<span class="c1"># optimizer = optim.SGD(net.parameters(), lr=learning_rate)</span>
+
+<span class="c1"># # Create dataloaders for the train and test datasets</span>
+<span class="c1"># train_dataset = MyDataset(train_df)</span>
+<span class="c1"># test_dataset = MyDataset(test_df)</span>
+<span class="c1"># train_loader = DataLoader(train_dataset, batch_size=20, shuffle=True)</span>
+<span class="c1"># test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)</span>
+
+<span class="c1"># # Train the model</span>
+<span class="c1"># for epoch in range(epochs):</span>
+<span class="c1">#     running_loss = 0.0</span>
+<span class="c1">#     for i, data in enumerate(train_loader, 0):</span>
+<span class="c1">#         inputs, labels = data</span>
+<span class="c1">#         inputs = torch.tensor(inputs.tolist(), dtype=torch.float32)</span>
+<span class="c1">#         labels = torch.tensor(labels.tolist(), dtype=torch.long)</span>
+
+<span class="c1">#         optimizer.zero_grad()</span>
+
+<span class="c1">#         outputs = net(inputs)</span>
+
+<span class="c1">#         loss = criterion(outputs, labels)</span>
+<span class="c1">#         loss.backward()</span>
+<span class="c1">#         optimizer.step()</span>
+
+<span class="c1">#         running_loss += loss.item()</span>
+
+<span class="c1">#     print(f&quot;Epoch {epoch+1} loss: {running_loss/len(train_loader)}&quot;)</span>
+
+<span class="c1"># # Evaluate the model on the train and test sets</span>
+<span class="c1"># with torch.no_grad():</span>
+<span class="c1">#     train_pred = model(train_padded)</span>
+<span class="c1">#     test_pred = model(test_padded)</span>
+
+<span class="c1">#     # Get the predicted class for each set</span>
+<span class="c1">#     train_pred_class = train_pred.argmax(dim=1)</span>
+<span class="c1">#     test_pred_class = test_pred.argmax(dim=1)</span>
+
+<span class="c1">#     # Calculate accuracy and print confusion matrix for train set</span>
+<span class="c1">#     train_accuracy = accuracy_score(train_y, train_pred_class)</span>
+<span class="c1">#     train_confusion_matrix = confusion_matrix(train_y, train_pred_class)</span>
+<span class="c1">#     print(&quot;Train accuracy:&quot;, train_accuracy)</span>
+<span class="c1">#     print(&quot;Train confusion matrix:\n&quot;, train_confusion_matrix)</span>
+
+<span class="c1">#     # Calculate accuracy and print confusion matrix for test set</span>
+<span class="c1">#     test_accuracy = accuracy_score(test_y, test_pred_class)</span>
+<span class="c1">#     test_confusion_matrix = confusion_matrix(test_y, test_pred_class)</span>
+<span class="c1">#     print(&quot;Test accuracy:&quot;, test_accuracy)</span>
+<span class="c1">#     print(&quot;Test confusion matrix:\n&quot;, test_confusion_matrix)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_14476</span>\<span class="mf">3631065917.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span> 
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="c1"># Pad the sequences to the maximum length</span>
+<span class="ne">---&gt; </span><span class="mi">44</span> <span class="n">train_padded</span> <span class="o">=</span> <span class="n">pad_sequence</span><span class="p">(</span><span class="n">train_df</span><span class="p">[</span><span class="s1">&#39;tensor&#39;</span><span class="p">],</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">total_length</span><span class="o">=</span><span class="n">max_seq_length</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="n">test_padded</span> <span class="o">=</span> <span class="n">pad_sequence</span><span class="p">(</span><span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;tensor&#39;</span><span class="p">],</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">total_length</span><span class="o">=</span><span class="n">max_seq_length</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> 
+
+<span class="ne">TypeError</span>: pad_sequence() got an unexpected keyword argument &#39;total_length&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

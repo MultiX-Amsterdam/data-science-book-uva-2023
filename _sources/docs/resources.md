@@ -14,18 +14,22 @@ Below is a list of books (in PDF form):
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) and the [PDF file](https://www.ise.ncsu.edu/fuzzy-neural/wp-content/uploads/sites/9/2022/08/neuralnetworksanddeeplearning.pdf)
 - [Convex Optimization](https://stanford.edu/~boyd/cvxbook/) and the [PDF file](https://stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
 - [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) and the [PDF file](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
+- [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5) and the [PDF file](https://link.springer.com/content/pdf/10.1007/978-3-319-46162-5.pdf?pdf=button)
+- [Reinforcement Learning: An Introduction](http://www.incompleteideas.net/book/the-book.html) and the [PDF file](http://www.incompleteideas.net/book/RLbook2020.pdf)
+- [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) and the [PDF file](https://web.stanford.edu/~jurafsky/slp3/ed3book_jan72023.pdf)
 
 Below is a list of web books (in HTML form):
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 - [Book of Human-Computer Interaction Concepts](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed)
 - [Think Bayes](https://allendowney.github.io/ThinkBayes2/)
 - [Deep Learning](https://www.deeplearningbook.org)
-- [Introduction to Statistics and Data Analysis](https://link.springer.com/book/10.1007/978-3-319-46162-5)
 - [A Course in Machine Learning](http://ciml.info/)
 - [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
 - [R for Data Science](https://r4ds.had.co.nz/index.html)
 - [Machine Learning and Deep Learning Fundamentals](https://kenndanielso.github.io/mlrefined/index.html)
 - [Dive into Deep Learning](https://d2l.ai/)
+- [Intro and Overview Machine Learning Lecture](https://hannibunny.github.io/mlbook/intro.html)
+- [Introduction to Cultural Analytics & Python](https://melaniewalsh.github.io/Intro-Cultural-Analytics/)
 
 Below is a list of related online academic course notes and materials:
 - [IOB4-T3: Machine Learning for Design in TU Delft](https://ml4design.com/ml4design.2021-2022/)
@@ -54,6 +58,8 @@ Below is a list of related online academic course notes and materials:
 - [Cheatsheet for data science tools, Massachusetts Institute of Technology](https://www.mit.edu/~amidi/teaching/data-science-tools/)
 - [CSC2541 Machine Learning: Neural Net Training Dynamics, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2022/)
 - [CSC 311: Introduction to Machine Learning, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc311_f21/)
+- [CS224N: Natural Language Processing with Deep Learning, Stanford University](https://web.stanford.edu/class/cs224n/index.html)
+- [COMP 5360: Introduction to Data Science, University of Utah](https://datasciencecourse.net/2022/) and [its GitHub](https://github.com/datascience-course)
 
 Below is a list of related online industry courses:
 - [Introduction to Machine Learning, Google LLC](https://developers.google.com/machine-learning/crash-course/ml-intro)
@@ -62,7 +68,10 @@ Below is a list of related online industry courses:
 Below is a list of online learning videos:
 - Statistics and machine learning: [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
 - Animated math: [3Blue1Brown](https://www.3blue1brown.com/) and their [YouTube channel](https://www.youtube.com/@3blue1brown)
+- [Mike X Cohen's YouTube channel](https://www.youtube.com/@mikexcohen1/featured) that teaches math and statistics
 
 Also, there are other resources for self-learning:
 - [Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
+- [Andrej Karpathy blog](http://karpathy.github.io/)
+- [Christopher Olah blog](http://colah.github.io/)
