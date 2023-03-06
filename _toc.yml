@@ -48,10 +48,8 @@ parts:
     sections:
     - file: docs/modules/text-data-module/preparation-text-data
       title: "Preparation"
-        #- file: docs/modules/text-data-module/tutorial-text-data
-        #title: "Tutorial"
-        #- file: docs/modules/text-data-module/assignment-text-data
-        #title: "Assignment"
+    - file: docs/modules/text-data-module/tutorial-text-data
+      title: "Tutorial"
         #- file: docs/modules/image-data-module/overview-image-data
         #sections:
         #title: "Image Data"
@@ -59,8 +57,6 @@ parts:
         #title: "Preparation"
         #- file: docs/modules/image-data-module/tutorial-image-data
         #title: "Tutorial"
-        #- file: docs/modules/image-data-module/assignment-image-data
-        #title: "Assignment"
 - caption: Assignments
   chapters:
   - file: docs/assignments/hw1
@@ -69,3 +65,6 @@ parts:
     title: "A2: Structured Data"
   - file: docs/assignments/hw3
     title: "A3: Mock Exam"
+  - file: docs/modules/text-data-module/assignment-text-data
+    title: "A4: Text Data"
+
