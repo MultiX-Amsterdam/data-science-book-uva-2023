@@ -22,10 +22,10 @@ parts:
     title: "L5: Deep Learning Overview"
   - file: docs/lectures/lec6
     title: "L6: Crowdsourcing"
-      #- file: docs/lectures/lec7
-      #title: "L7: Text Data I"
-      #- file: docs/lectures/lec8
-      #title: "L8: Text Data II"
+  - file: docs/lectures/lec7
+    title: "L7: Text Data I"
+  - file: docs/lectures/lec8
+    title: "L8: Text Data II"
       #- file: docs/lectures/lec9
       #title: "L9: Image Data I"
       #- file: docs/lectures/lec10
