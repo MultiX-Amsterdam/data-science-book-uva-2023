@@ -26,6 +26,7 @@ Below is a list of web books (in HTML form):
 - [R for Data Science](https://r4ds.had.co.nz/index.html)
 - [Machine Learning and Deep Learning Fundamentals](https://kenndanielso.github.io/mlrefined/index.html)
 - [Dive into Deep Learning](https://d2l.ai/)
+- [Intro and Overview Machine Learning Lecture](https://hannibunny.github.io/mlbook/intro.html)
 
 Below is a list of related online academic course notes and materials:
 - [IOB4-T3: Machine Learning for Design in TU Delft](https://ml4design.com/ml4design.2021-2022/)
@@ -54,6 +55,7 @@ Below is a list of related online academic course notes and materials:
 - [Cheatsheet for data science tools, Massachusetts Institute of Technology](https://www.mit.edu/~amidi/teaching/data-science-tools/)
 - [CSC2541 Machine Learning: Neural Net Training Dynamics, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2022/)
 - [CSC 311: Introduction to Machine Learning, University of Toronto](https://www.cs.toronto.edu/~rgrosse/courses/csc311_f21/)
+- [CS224N: Natural Language Processing with Deep Learning, Stanford University](https://web.stanford.edu/class/cs224n/index.html)
 
 Below is a list of related online industry courses:
 - [Introduction to Machine Learning, Google LLC](https://developers.google.com/machine-learning/crash-course/ml-intro)
@@ -62,7 +64,10 @@ Below is a list of related online industry courses:
 Below is a list of online learning videos:
 - Statistics and machine learning: [StatQuest](https://statquest.org/video-index/) and their [YouTube channel](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw)
 - Animated math: [3Blue1Brown](https://www.3blue1brown.com/) and their [YouTube channel](https://www.youtube.com/@3blue1brown)
+- [Mike X Cohen's YouTube channel](https://www.youtube.com/@mikexcohen1/featured) that teaches math and statistics
 
 Also, there are other resources for self-learning:
 - [Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
+- [Andrej Karpathy blog](http://karpathy.github.io/)
+- [Christopher Olah blog](http://colah.github.io/)
