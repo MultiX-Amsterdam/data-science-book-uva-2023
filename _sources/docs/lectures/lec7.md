@@ -14,7 +14,7 @@ Below is the link to the online notebook:
 - [Text Data Processing Tutorial Online Notebook](../modules/text-data-module/tutorial-text-data)
 
 To make the notebook work on your local machine, go to the GitHub link below and clone the entire repository. Or you could also download a zip file from [this link](https://github.com/MultiX-Amsterdam/text-data-module/archive/refs/heads/main.zip).
-- [GitHub Repository for the Structured Data Processing Module](https://github.com/MultiX-Amsterdam/text-data-module)
+- [GitHub Repository for the Text Data Processing Module](https://github.com/MultiX-Amsterdam/text-data-module)
 
 ## Additional Resources
 
