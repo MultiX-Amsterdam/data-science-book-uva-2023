@@ -771,10 +771,10 @@ display(n_top_wordlist(lda, tf_feature_names))
 # ### Assignment for Task 5
 
 # **Your task (which is your assignment) is to write a function to do the following:**
-# - The `doc_topic_proportions` contains the proportions of how much that document belongs to every topic. For every document, get the topic in which it has the largest proportion. Afterwards, look at the AMI and ARI scores. Can you improve the scores by modeling more topics, using a different set of tokens or by using more epochs?
+# - The `doc_topic_proportions` contains the proportions of how much that document belongs to every topic. For every document, get the topic in which it has the largest proportion. Afterwards, look at the AMI and ARI scores. Can you improve the scores by modeling more topics, using a different set of tokens, or using more epochs?
 #     - Hint: use the `numpy.argmax` function.
 #     
-#     Our goal is to get an array which looks like the following:
+#     Our goal is to get an array that looks like the following:
 
 # In[24]:
 
@@ -847,7 +847,7 @@ print(dict(zip(unique, counts)))
 # 
 # There are several techniques to generate word embeddings, but one of the most popular methods is the Word2Vec algorithm, which is based on a neural network architecture. Word2Vec learns embeddings by predicting the probability of a word given its context (continuous bag of words or skip-gram model). The output of the network is a set of word vectors that can be used as embeddings.
 # 
-# We can train a Word2Vec model ourselves, but keep in mind that later on it's not nice if we don't have embeddings for certain words in the test set. So let's first apply the familiar preprocessing steps to the test set:
+# We can train a Word2Vec model ourselves, but keep in mind that later on, it's not nice if we don't have embeddings for certain words in the test set. So let's first apply the familiar preprocessing steps to the test set:
 
 # In[29]:
 
@@ -876,7 +876,7 @@ tokens_both = pd.concat([df_train['tokens'], df_test['tokens']])
 w2v_model = Word2Vec(tokens_both.values, vector_size=96, min_count=1)
 
 
-# To obtain the embeddings, we can use the `Word2Vec.wv[word]` syntax. To get multiple vectors nicely next to eachother in a 2D matrix, we can call `numpy.vstack`.
+# To obtain the embeddings, we can use the `Word2Vec.wv[word]` syntax. To get multiple vectors nicely next to each other in a 2D matrix, we can call `numpy.vstack`.
 
 # In[31]:
 
@@ -884,7 +884,7 @@ w2v_model = Word2Vec(tokens_both.values, vector_size=96, min_count=1)
 print(np.vstack([w2v_model.wv[word] for word in ["rain", "cat", "dog"]]))
 
 
-# The spaCy model we used has a `Tok2Vec` algorithm in its pipeline, so we can directly access the the 2D matrix of all word vectors on a document with the `Doc.tensor` attribute.
+# The spaCy model we used has a `Tok2Vec` algorithm in its pipeline, so we can directly access the 2D matrix of all word vectors on a document with the `Doc.tensor` attribute.
 
 # In[32]:
 
@@ -898,14 +898,14 @@ print(doc.tensor)
 
 # **Your task (which is your assignment) is to write a function to do the following:**
 # 
-# - First, sample 10% from both datasets, we're not going to be using all the data for the neural network.
+# - First, sample 10% of the data from both datasets, we're not going to be using all the data for the neural network.
 #     - Hint: use the `pandas.DataFrame.sample` function to sample a fraction of the data. Specify a `random_state` value to always get the same rows from the dataframe.
-# - Add a `tensor` column to both the test and train dataframes, the column should hold one array per row, containing all the word embedding vectors as columns. You can chose whether to use vectors from our new model or the ones from spaCy.
+# - Add a `tensor` column to both the test and train dataframes, the column should hold one array per row, containing all the word embedding vectors as columns. You can choose whether to use vectors from our new model or the ones from spaCy.
 # - Determine the largest amount of columns in the `tensor` column, between both datasets.
 #     - Hint: use the `numpy.ndarray.shape` attribute to see the dimensions of an array. 
 #     - Hint: use the `pd.Series.max` function to determine the largest item in a series.
-# - Pad all arrays in the `tensor` column to be equal in size to the biggest tensor, by adding columns of zeroes in the end. This way all inputs for a neural network have the same size.
-#     - Hint: use the `numpy.pad` function to pad an aray.
+# - Pad all arrays in the `tensor` column to be equal in size to the biggest tensor, by adding columns of zeroes at the end. This way all inputs for a neural network have the same size.
+#     - Hint: use the `numpy.pad` function to pad an array.
 #     
 #     After the function, our `df_train` could look like the following:
 
@@ -972,7 +972,7 @@ except:
 # 
 # Our neural network will take the embedding representation of the document as input and predict the corresponding topic using a softmax output layer. We will evaluate the performance of our model using various metrics such as accuracy, precision, recall, and F1-score.
 # 
-# The following code demonstrates how to implement a neural network for topic classification in PyTorch. First let's do some more preperations for our inputs, turning them into PyTorch tensors.
+# The following code demonstrates how to implement a neural network for topic classification in PyTorch. First let's do some more preparations for our inputs, turning them into PyTorch tensors.
 
 # In[36]:
 
@@ -1066,7 +1066,7 @@ for epoch in range(num_epochs):
 # - Use the code below to evaluate the neural network. 
 # - Generate a confusion matrix with `sklearn.metrics.confusion_matrix` (it's already imported so you can call `confusion_matrix`). 
 # - Plot the confusion matrix using `seaborn.heatmap` (`seaborn` is usually imported as `sns`). Set the `annot` argument to `True` and the `xticklabels` and `yticklabels` to the `labels` list.
-# - Also take the time to evaluate for the train set. Is there a notable difference in accuracy, recall and the F1 score between the train and test sets?
+# - Also, take the time to evaluate the train set. Is there a notable difference in accuracy, recall, and the F1 score between the train and test sets?
 
 # In[39]:
 
@@ -1077,8 +1077,8 @@ model.eval()
 # Sample from the model.
 with torch.no_grad():
     test_outputs = model(input_test)
-    # Use argmax to get the topic with highest probability.
-    test_pred = np.argmax(test_outputs.detach(), axis=1)
+    # Re-use our previous function to get the label with biggest probability.
+    test_pred = answer_largest_proportion(test_outputs.detach())
 
 # Set model back to training mode.
 model.train()
@@ -1094,9 +1094,7 @@ labels = ['World', 'Sports', 'Business','Sci/Tech']
 
 # ## Optional Assignment / Takeaways
 
-# If you're not over all this text data yet, there's always more to do. You can still experiment with the number of epochs, learning rate, vector size, optimizer, neural network layers, regularization and so much more. 
-# Even during the preprocessing, we could have done some things differently, like making everything lowercase and removing punctuation. 
-# Be aware that every choice you make along the way trickles down into your pipeline and can have some effect on your results.
+# If you do not feel done with text data yet, there's always more to do. You can still experiment with the number of epochs, learning rate, vector size, optimizer, neural network layers, regularization and so much more. Even during the preprocessing, we could have done some things differently, like making everything lowercase and removing punctuation. Be aware that every choice you make along the way trickles down into your pipeline and can have some effect on your results.
 
 # In[ ]:
 

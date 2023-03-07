@@ -44,7 +44,7 @@ If you come to the class without doing the preparation part, you may not be able
   - A lecture to discuss the mid-term exam
 - Week 5
   - [Lecture 7 (Mar 7)](lectures/lec7): `Tutorial` for the text data processing module (using Jupyter Notebook)
-  - Assignment 4: Text data processing module
+  - [Assignment 4](modules/text-data-module/assignment-text-data): Text data processing module
   - [Lecture 8 (Mar 9)](lectures/lec8): Explain details and more examples in the pipeline of processing text data (e.g., topic modeling)
 - Week 6
   
