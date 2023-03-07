@@ -3,18 +3,19 @@
 
 # # Tutorial (Text Data Processing)
 
-# (Last updated: Mar 6, 2023)[^credit]
+# (Last updated: Mar 7, 2023)[^credit]
 # 
 # [^credit]: Credit: this teaching material is created by [Robert van Straten](https://github.com/robertvanstraten) under the supervision of [Yen-Chia Hsu](https://github.com/yenchiah).
 
 # This tutorial will familiarize you with the data science pipeline of processing text data. We will go through the various steps involved in the Natural Language Processing (NLP) pipeline for topic modelling and topic classification, including tokenization, lemmatization, and obtaining word embeddings. We will also build a neural network using PyTorch for multi-class topic classification using the dataset.
+# 
 # The AG's News Topic Classification Dataset contains news articles from four different categories, making it a nice source of text data for NLP tasks. We will guide you through the process of understanding the dataset, implementing various NLP techniques, and building a model for classification.
 
-# You can use the fullowing links to jump to the tasks and assignments:
+# You can use the following links to jump to the tasks and assignments:
 # *   [Task 3: Preprocess Text Data](#t3)
 #     *   [Tokenization](#t3-1)
 #     *   [Part-of-speech tagging](#t3-2)
-#     *   [Stemming / lemmatization](#t3-3)
+#     *   [Stemming / Lemmatization](#t3-3)
 #     *   [Stopword removal](#t3-4)
 #     *   [Assignment for Task 3](#a3)
 # *   [Task 4: Another option: spaCy](#t4)
@@ -30,7 +31,7 @@
 
 # ## Scenario
 
-# The [AG's News Topic Classification Dataset](https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv) is a collection of over 1 million news articles from more than 2000 news sources. The dataset was created by selecting the 4 largest classes from the original corpus, resulting in 120,000 training samples and 7,600 testing samples. The dataset is provided by the academic community for research purposes in data mining, information retrieval, and other non-commercial activities. We will use it to demonstrate various NLP techniques on real data, and in the end make 2 models with this data. The files train.csv and test.csv contain all the training and testing samples as comma-separated values with 3 columns: class index, title, and description. Download train.csv and test.csv for the following tasks. 
+# The [AG's News Topic Classification Dataset](https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv) is a collection of over 1 million news articles from more than 2000 news sources. The dataset was created by selecting the 4 largest classes from the original corpus, resulting in 120,000 training samples and 7,600 testing samples. The dataset is provided by the academic community for research purposes in data mining, information retrieval, and other non-commercial activities. We will use it to demonstrate various NLP techniques on real data, and in the end, make 2 models with this data. The files train.csv and test.csv contain all the training and testing samples as comma-separated values with 3 columns: class index, title, and description. Download train.csv and test.csv for the following tasks. 
 
 # ## Import Packages
 
@@ -65,6 +66,9 @@ from tqdm.notebook import tqdm
 
 from xml.sax import saxutils as su
 
+# Add tqdm functions to pandas.
+tqdm.pandas()
+
 
 # ## Task Answers
 
@@ -76,7 +80,7 @@ from xml.sax import saxutils as su
 def check_answer_df(df_result, df_answer, n=1):
     """
     This function checks if two output dataframes are the same.
-    
+
     Parameters
     ----------
     df_result : pandas.DataFrame
@@ -89,17 +93,18 @@ def check_answer_df(df_result, df_answer, n=1):
     try:
         assert df_answer.equals(df_result)
         print(f"Test case {n} passed.")
-    except:
+    except Exception:
         print(f"Test case {n} failed.")
         print("Your output is:")
         display(df_result)
         print("Expected output is:")
         display(df_answer)
-        
+
+
 def check_answer_np(arr_result, arr_answer, n=1):
     """
     This function checks if two output dataframes are the same.
-    
+
     Parameters
     ----------
     df_result : pandas.DataFrame
@@ -112,22 +117,23 @@ def check_answer_np(arr_result, arr_answer, n=1):
     try:
         assert np.array_equal(arr_result, arr_answer)
         print(f"Test case {n} passed.")
-    except:
+    except Exception:
         print(f"Test case {n} failed.")
         print("Your output is:")
         print(arr_result)
         print("Expected output is:")
         print(arr_answer)
-        
+
+
 def answer_tokenize_and_lemmatize(df):
     """
     Tokenize and lemmatize the text in the dataset.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the text column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -135,27 +141,25 @@ def answer_tokenize_and_lemmatize(df):
     """
     # Copy the dataframe to avoid editing the original one.
     df = df.copy(deep=True)
-    
-    # Add progress bar because lemmatizer can take a while.
-    tqdm.pandas()
 
     # Apply the tokenizer to create the tokens column.
     df['tokens'] = df['text'].progress_apply(word_tokenize)
-    
+
     # Apply the lemmatizer on every word in the tokens list.
-    df['tokens'] = df['tokens'].progress_apply(lambda tokens: [lemmatizer.lemmatize(token, wordnet_pos(tag)) for token, tag in nltk.pos_tag(tokens)])
+    df['tokens'] = df['tokens'].progress_apply(lambda tokens: [lemmatizer.lemmatize(token, wordnet_pos(tag))
+                                                               for token, tag in nltk.pos_tag(tokens)])
     return df
 
 
 def answer_most_used_words(df, token_col='tokens'):
     """
     Generate a dataframe with the 5 most used words per class, and their count.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the class and tokens columns.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -164,35 +168,36 @@ def answer_most_used_words(df, token_col='tokens'):
     """
     # Copy the dataframe to avoid editing the original one.
     df = df.copy(deep=True)
-    
+
     # Filter out non-words
     df[token_col] = df[token_col].apply(lambda tokens: [token for token in tokens if token.isalpha()])
-    
+
     # Explode the tokens so that every token gets its own row.
     df = df.explode(token_col)
-    
-    # Option 1: groupby on class and token, get the size of how many rows per item, 
+
+    # Option 1: groupby on class and token, get the size of how many rows per item,
     # add that as a column.
     counts = df.groupby(['class', token_col]).size().reset_index(name='count')
-    
+
     # Option 2: make a pivot table based on the class and token based on how many
-    # rows per combination there are , add counts as a column.
+    # rows per combination there are, add counts as a column.
     # counts = counts.pivot_table(index=['class', 'tokens'], aggfunc='size').reset_index(name='count')
-    
+
     # Sort the values on the class and count, get only the first 5 rows per class.
     counts = counts.sort_values(['class', 'count'], ascending=[True, False]).groupby('class').head()
 
     return counts
 
+
 def answer_remove_stopwords(df):
     """
     Remove stopwords from the tokens.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the tokens column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -200,24 +205,26 @@ def answer_remove_stopwords(df):
     """
     # Copy the dataframe to avoid editing the original one.
     df = df.copy(deep=True)
-    
+
     # Using a set for quicker lookups.
     stopwords_set = set(stopwords_list)
-    
+
     # Filter stopwords from tokens.
-    df['tokens'] = df['tokens'].apply(lambda tokens: [token for token in tokens if token.lower() not in stopwords_set])
-    
+    df['tokens'] = df['tokens'].apply(lambda tokens: [token for token in tokens
+                                                      if token.lower() not in stopwords_set])
+
     return df
+
 
 def answer_spacy_tokens(df):
     """
     Add a column with a list of lemmatized tokens, without stopwords.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the doc column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -225,22 +232,24 @@ def answer_spacy_tokens(df):
     """
     # Copy the dataframe to avoid editing the original one.
     df = df.copy(deep=True)
-    
-    df['spacy_tokens'] = df['doc'].apply(lambda tokens: [token.lemma_ for token in tokens if not token.is_stop])
-    
+
+    df['spacy_tokens'] = df['doc'].apply(lambda tokens: [token.lemma_ for token in tokens
+                                                         if not token.is_stop])
+
     return df
+
 
 def answer_largest_proportion(arr):
     """
     For every row, get the column number where it has the largest value.
-    
+
     Parameters
     ----------
     arr : numpy.array
         The array with the amount of topics as the amount of columns
         and the amount of documents as the number of rows.
         Every row should sum up to 1.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -249,17 +258,18 @@ def answer_largest_proportion(arr):
     """
     return np.argmax(arr, axis=1)
 
+
 def answer_add_padded_tensors(df1, df2):
     """
     Add a tensor column to the dataframes, with every tensor having the same dimensions.
-    
+
     Parameters
     ----------
     df_train : pandas.DataFrame
         The first dataframe containing at least the tokens or doc columns.
     df_test : pandas.DataFrame
         The second dataframe containing at least the tokens or doc columns.
-         
+
     Returns
     -------
     tuple[pandas.DataFrame]
@@ -268,27 +278,29 @@ def answer_add_padded_tensors(df1, df2):
     # Copy the dataframes to avoid editing the originals.
     df1 = df1.copy(deep=True)
     df2 = df2.copy(deep=True)
-    
+
     df1 = df1.sample(frac=0.1, random_state=42)
     df2 = df2.sample(frac=0.1, random_state=42)
-    
+
     # Add tensors (option 1: our own model)
     for df in [df1, df2]:
-        df['tensor'] = df['tokens'].apply(lambda tokens: np.vstack([w2v_model.wv[token] for token in tokens]))
-    
+        df['tensor'] = df['tokens'].apply(lambda tokens: np.vstack([w2v_model.wv[token]
+                                                                    for token in tokens]))
+
     # Add tensors (option 2: spaCy tensors).
     for df in [df1, df2]:
         df['tensor'] = df['doc'].apply(lambda doc: doc.tensor)
-    
+
     # Determine the largest amount of columns.
-    largest = max(df1['tensor'].apply(lambda x: x.shape[0]).max(), 
+    largest = max(df1['tensor'].apply(lambda x: x.shape[0]).max(),
                   df2['tensor'].apply(lambda x: x.shape[0]).max())
-    
+
     # Pad our tensors to that amount.
     for df in [df1, df2]:
-        df['tensor'] = df['tensor'].apply(lambda x: np.pad(x, ((0, largest - x.shape[0]), (0,0))))
-    
+        df['tensor'] = df['tensor'].apply(lambda x: np.pad(x, ((0, largest - x.shape[0]), (0, 0))))
+
     return df1, df2
+
 
 # Confusion matrix code
 
@@ -322,7 +334,7 @@ display(df_train, df_test)
 display(df_train['Class Index'].value_counts(), df_test['Class Index'].value_counts())
 
 
-# To make the data more understandable, we will make the classes more understandable by adding a `class` column from the original `Class Index` column, containing the category of the news article. To process both the title and news text together, we will combine the `Title` and `Description` columns into one `text` column. We will just deal with the train data until the point where we need the test data again.
+# To make the data more understandable, we will make the classes more understandable by adding a `class` column from the original `Class Index` column, containing the category of the news article. To process both the title and news text together, we will combine the `Title` and `Description` columns into one `text` column. We will deal with just the train data until the point where we need the test data again.
 
 # In[5]:
 
@@ -332,12 +344,12 @@ def reformat_data(df):
     Reformat the Class Index column to a Class column and combine
     the Title and Description columns into a Text column.
     Select only the class_idx, class and text columns afterwards.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The original dataframe.
-         
+   
     Returns
     -------
     pandas.DataFrame
@@ -347,13 +359,14 @@ def reformat_data(df):
     df = df.rename(columns={"Class Index": "class_idx"})
     classes = {1: 'World', 2: 'Sports', 3: 'Business', 4: 'Sci/Tech'}
     df['class'] = df['class_idx'].apply(classes.get)
-    
+
     # Use string concatonation for the Text column and unesacpe html characters.
     df['text'] = (df['Title'] + ' ' + df['Description']).apply(su.unescape)
-    
-    # Select only the Class and Text columns.
+
+    # Select only the class_idx, class, and text column.
     df = df[['class_idx', 'class', 'text']]
     return df
+
 
 df_train = reformat_data(df_train)
 display(df_train)
@@ -387,7 +400,7 @@ print("Tokenized text:", tokens)
 
 # ### Part-of-speech tagging
 
-# Part-of-speech (POS) tagging is the process of assigning each word in a text corpus with a specific part-of-speech tag based on its context and definition. The tags typically include nouns, verbs, adjectives, adverbs, pronouns, preposition, conjunction, interjection, and more. POS tagging can help other NLP tasks disambiguate a token in some way due to the added context.
+# Part-of-speech (POS) tagging is the process of assigning each word in a text corpus with a specific part-of-speech tag based on its context and definition. The tags typically include nouns, verbs, adjectives, adverbs, pronouns, prepositions, conjunctions, interjections, and more. POS tagging can help other NLP tasks disambiguate a token somewhat due to the added context.
 
 # In[7]:
 
@@ -398,7 +411,7 @@ print(pos_tags)
 
 # <a name="t3-3"></a>
 
-# ### Stemming / lemmatization
+# ### Stemming / Lemmatization
 
 # Stemming and lemmatization are two common techniques used in NLP to preprocess and normalize text data. Both techniques involve transforming words into their root form, but they differ in their approach and the level of normalization they provide.
 # 
@@ -413,6 +426,7 @@ print(pos_tags)
 stemmer = SnowballStemmer('english')
 lemmatizer = WordNetLemmatizer()
 
+
 def wordnet_pos(nltk_pos):
     """
     Function to map POS tags to wordnet tags for lemmatizer.
@@ -425,9 +439,11 @@ def wordnet_pos(nltk_pos):
         return wordnet.ADV
     return wordnet.NOUN
 
+
 # Perform stemming and lemmatization seperately on the tokens.
 stemmed_tokens = [stemmer.stem(token) for token in tokens]
-lemmatized_tokens = [lemmatizer.lemmatize(token, wordnet_pos(tag)) for token, tag in nltk.pos_tag(tokens)]
+lemmatized_tokens = [lemmatizer.lemmatize(token, wordnet_pos(tag))
+                     for token, tag in nltk.pos_tag(tokens)]
 
 # Print the results.
 print("Stemmed text:", stemmed_tokens)
@@ -505,12 +521,12 @@ display(answer_most_used_words(answer_df))
 def tokenize_and_lemmatize(df):
     """
     Tokenize and lemmatize the text in the dataset.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the text column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -525,12 +541,12 @@ def tokenize_and_lemmatize(df):
 def most_used_words(df, token_col='tokens'):
     """
     Generate a dataframe with the 5 most used words per class, and their count.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the class and tokens columns.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -542,15 +558,16 @@ def most_used_words(df, token_col='tokens'):
     return None
     ###################################
 
+
 def remove_stopwords(df):
     """
     Remove stopwords from the tokens.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the tokens column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -561,6 +578,7 @@ def remove_stopwords(df):
     return None
     ###################################
     
+
 df_train = df_train  # Edit this.
 
 
@@ -599,7 +617,7 @@ nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
 doc = nlp(text)
 
 # This becomes a spaCy Doc object, which prints nicely as the original string.
-print(type(doc) , doc)
+print(type(doc), doc)
 
 # We can iterate over the tokens in the Doc, since it has already been tokenized underneath.
 print(type(doc[0]))
@@ -623,12 +641,12 @@ print(doc[0].lemma_, type(doc[0].lemma_), doc[0].is_stop, type(doc[0].is_stop))
 def add_spacy(df):
     """
     Add a column with the spaCy Doc objects.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the text column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -636,14 +654,15 @@ def add_spacy(df):
     """
     # Copy the dataframe to avoid editing the original one.
     df = df.copy(deep=True)
-    
+
     # Get the number of CPUs in the machine.
     n_process = max(1, os.cpu_count()-2)
-    
+
     # Use multiple CPUs to speed up computing.
     df['doc'] = [doc for doc in tqdm(nlp.pipe(df['text'], n_process=n_process), total=df.shape[0])]
-    
+
     return df
+
 
 df_train = add_spacy(answer_df)
 display(df_train)
@@ -654,7 +673,8 @@ display(df_train)
 # ### Assignment for Task 4
 
 # **Your task (which is your assignment) is to write a function to do the following:**
-# - Add a `spacy_tokens` column containing the to the `df_train` dataframe containing a list of lemmatized tokens (strings).
+# - Add a `spacy_tokens` column to the `df_train` dataframe containing a list of lemmatized tokens as strings. 
+#     - Hint: use a `pandas.Series.apply` operation on the `doc` column to accomplish this.
 #     
 #     Our goal is to have a dataframe that looks like the following:
 
@@ -671,12 +691,12 @@ display(answer_df)
 def spacy_tokens(df):
     """
     Add a column with a list of lemmatized tokens, without stopwords.
-    
+
     Parameters
     ----------
     df : pandas.DataFrame
         The dataframe containing at least the doc column.
-         
+
     Returns
     -------
     pandas.DataFrame
@@ -686,6 +706,7 @@ def spacy_tokens(df):
     # Fill in your answer here
     return None
     ###################################
+
 
 df_train = df_train  # Edit this.
 
@@ -710,7 +731,7 @@ display(answer_most_used_words(answer_df, 'spacy_tokens'))
 
 # ## Task 5: Unsupervised Learning - Topic Modelling
 
-# Topic modeling is a technique used in NLP that aims to identify the underlying topics or themes in a collection of texts. One way to perform topic modelling is using the probabilistic model Latent Dirichlet Allocation (LDA).
+# Topic modelling is a technique used in NLP that aims to identify the underlying topics or themes in a collection of texts. One way to perform topic modelling is using the probabilistic model Latent Dirichlet Allocation (LDA).
 # 
 # LDA assumes that each document in a collection is a mixture of different topics, and each topic is a probability distribution over a set of words. The model then infers the underlying topic distribution for each document in the collection and the word distribution for each topic. LDA is trained using an iterative algorithm that maximizes the likelihood of observing the given documents.
 # 
@@ -725,7 +746,8 @@ num_topics = 4
 # Convert preprocessed text to bag-of-words representation using CountVectorizer.
 vectorizer = CountVectorizer(max_features=50000)
 
-# fit_transform requires either a string as input or multiple extra arguments and functions, so turn tokens into string.
+# fit_transform requires either a string as input or multiple extra arguments
+# and functions, so we simply turn the tokens into string.
 X = vectorizer.fit_transform(answer_df['spacy_tokens'].apply(lambda x: ' '.join(x)).values)
 
 # Fit LDA to the feature matrix. Verbose so we know what iteration we're on.
@@ -736,19 +758,20 @@ lda.fit(X)
 doc_topic_proportions = lda.transform(X)
 
 
-# Using this function, we can look at the most important words per topic. Do you see any similarities with the most occuring words per class after stopword removal?
+# Using this function, we can look at the most important words per topic. Do you see some similarities with the most occuring words per class after stopword removal?
 
 # In[23]:
 
 
 def n_top_wordlist(model, features, ntopwords=5):
     """
-    Add a column with a list of lemmatized tokens, without stopwords.
+    Get the 5 most important words per LDA topic.
     """
     output = {}
     for topic_idx, topic in enumerate(model.components_):
         output[topic_idx] = [features[i] for i in topic.argsort()[:-ntopwords - 1:-1]]
     return output
+
 
 # Get the words from the CountVectorizer.
 tf_feature_names = vectorizer.get_feature_names_out()
@@ -771,7 +794,7 @@ display(n_top_wordlist(lda, tf_feature_names))
 # ### Assignment for Task 5
 
 # **Your task (which is your assignment) is to write a function to do the following:**
-# - The `doc_topic_proportions` contains the proportions of how much that document belongs to every topic. For every document, get the topic in which it has the largest proportion. Afterwards, look at the AMI and ARI scores. Can you improve the scores by modeling more topics, using a different set of tokens, or using more epochs?
+# - The `doc_topic_proportions` contains the proportions of how much that document belongs to every topic. For every document, get the topic in which it has the largest proportion. Afterwards, look at the AMI and ARI scores. Can you improve the scores by modelling more topics, using a different set of tokens, or using more epochs?
 #     - Hint: use the `numpy.argmax` function.
 #     
 #     Our goal is to get an array that looks like the following:
@@ -789,14 +812,14 @@ print(answer_topic_most, answer_topic_most.shape)
 def largest_proportion(arr):
     """
     For every row, get the column number where it has the largest value.
-    
+
     Parameters
     ----------
     arr : numpy.array
         The array with the amount of topics as the amount of columns
         and the amount of documents as the number of rows.
         Every row should sum up to 1.
-         
+
     Returns
     -------
     numpy.array
@@ -923,14 +946,14 @@ def add_padded_tensors(df1, df2):
     """
     First, sample 10% of both datasets and only use that.
     Then, add a tensor column to the dataframes, with every tensor having the same dimensions.
-    
+
     Parameters
     ----------
     df_train : pandas.DataFrame
         The first dataframe containing at least the tokens or doc columns.
     df_test : pandas.DataFrame
         The second dataframe containing at least the tokens or doc columns.
-         
+
     Returns
     -------
     tuple[pandas.DataFrame]
@@ -941,6 +964,7 @@ def add_padded_tensors(df1, df2):
     return None
     ###################################
 
+
 df_train, df_test = df_train, df_test
 
 
@@ -950,15 +974,16 @@ df_train, df_test = df_train, df_test
 
 
 try:
-    assert df_train['tensor'].apply(lambda x: x.shape).unique() == df_test['tensor'].apply(lambda x: x.shape).unique()
+    assert (df_train['tensor'].apply(lambda x: x.shape).unique() ==
+            df_test['tensor'].apply(lambda x: x.shape).unique())
     print("Test case 1 passed.")
-except:
+except Exception:
     print("Test case 1 failed. Not all tensor sizes are equal.")
-    
+
 try:
     assert df_test.shape[0] == 760
     print("Test case 1 passed.")
-except:
+except Exception:
     print("Test case 2 failed. The test dataframe does not have the correct size.")
 
 
@@ -1005,25 +1030,25 @@ class TopicClassifier(nn.Module):
         self.input_width = input_width
         self.input_length = input_length
         self.output_size = output_size
-        
+
         self.fc1 = nn.Linear(input_width * input_length, 128)
         self.fc2 = nn.Linear(128, 64)
         self.fc3 = nn.Linear(64, output_size)
-        
+
         self.relu = nn.ReLU()
         self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x):
         # Flatten the input tensor.
         x = x.view(-1, self.input_width * self.input_length)
-        
-        # Pass through the fully connected layers with ReLU activation
+
+        # Pass through the fully connected layers with ReLU activation.
         x = self.fc1(x)
         x = self.relu(x)
         x = self.fc2(x)
         x = self.relu(x)
         x = self.fc3(x)
-        
+
         # Apply softmax activation to the output.
         x = self.softmax(x)
         return x
@@ -1077,13 +1102,13 @@ model.eval()
 # Sample from the model.
 with torch.no_grad():
     test_outputs = model(input_test)
-    # Re-use our previous function to get the label with biggest probability.
+    # Reuse our previous function to get the label with biggest probability.
     test_pred = answer_largest_proportion(test_outputs.detach())
 
 # Set model back to training mode.
 model.train()
 
-labels = ['World', 'Sports', 'Business','Sci/Tech']
+labels = ['World', 'Sports', 'Business', 'Sci/Tech']
 
 ###################################
 # Fill in your answer here
