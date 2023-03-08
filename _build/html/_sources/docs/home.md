@@ -45,12 +45,12 @@ If you come to the class without doing the preparation part, you may not be able
 - Week 5
   - [Lecture 7 (Mar 7)](lectures/lec7): `Tutorial` for the text data processing module (using Jupyter Notebook)
   - [Assignment 4](modules/text-data-module/assignment-text-data): Text data processing module
-  - [Lecture 8 (Mar 9)](lectures/lec8): Explain details and more examples in the pipeline of processing text data (e.g., topic modeling)
+  - [Lecture 8 (Mar 9)](lectures/lec8): Explain details in the pipeline of processing text data
 - Week 6
   
   - Lecture 9 (Mar 14): `Tutorial` for the image data processing module (using Jupyter Notebook)
   - Assignment 5: Image data processing module
-  - Lecture 10 (Mar 16): Explain details and more examples in the pipeline of processing image data (e.g., object recognition and detection)
+  - Lecture 10 (Mar 16): Explain details in the pipeline of processing image data
 - Week 7
   - Lecture 11 (Mar 21): Introduce the human-centered approach in data science (e.g., human-centered metrics to evaluate models, human-in-the-loop machine learning, citizen participation in data analysis, research ethics, privacy issues, data biases, social impact of data science, algorithmic fairness, explainability, reproducibility, open science)
   - No assignment this week. Use the work session to prepare for the final exam (e.g., review and practice the course materials).
