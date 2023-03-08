@@ -11,7 +11,7 @@ Watch the following videos to understand some math concepts that will be used in
 
 ## Materials
 
-- [Slides for Lecture 7: Text Data Processing](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec8-1.pdf)
+- [Slides for Lecture 8: Text Data Processing](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec8-1.pdf)
 
 ## Additional Resources
 
