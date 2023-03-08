@@ -31,7 +31,7 @@
 
 # ## Scenario
 
-# The [AG's News Topic Classification Dataset](https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv) is a collection of over 1 million news articles from more than 2000 news sources. The dataset was created by selecting the 4 largest classes from the original corpus, resulting in 120,000 training samples and 7,600 testing samples. The dataset is provided by the academic community for research purposes in data mining, information retrieval, and other non-commercial activities. We will use it to demonstrate various NLP techniques on real data, and in the end, make 2 models with this data. The files train.csv and test.csv contain all the training and testing samples as comma-separated values with 3 columns: class index, title, and description. Download train.csv and test.csv for the following tasks. 
+# The [AG's News Topic Classification Dataset](https://www.kaggle.com/datasets/amananandrai/ag-news-classification-dataset) is a collection of over 1 million news articles from more than 2000 news sources. The dataset was created by selecting the 4 largest classes from the original corpus, resulting in 120,000 training samples and 7,600 testing samples. The dataset is provided by the academic community for research purposes in data mining, information retrieval, and other non-commercial activities. We will use it to demonstrate various NLP techniques on real data, and in the end, make 2 models with this data. The files train.csv and test.csv contain all the training and testing samples as comma-separated values with 3 columns: class index, title, and description. Download train.csv and test.csv for the following tasks. 
 
 # ## Import Packages
 
@@ -196,7 +196,8 @@ def answer_remove_stopwords(df):
     Parameters
     ----------
     df : pandas.DataFrame
-        The dataframe containing at least the tokens column.
+        The dataframe containing at least the tokens column,
+        where the value in each row is a list of tokens.
 
     Returns
     -------
@@ -266,9 +267,9 @@ def answer_add_padded_tensors(df1, df2):
     Parameters
     ----------
     df_train : pandas.DataFrame
-        The first dataframe containing at least the tokens or doc columns.
+        The first dataframe containing at least the tokens or doc column.
     df_test : pandas.DataFrame
-        The second dataframe containing at least the tokens or doc columns.
+        The second dataframe containing at least the tokens or doc column.
 
     Returns
     -------
@@ -279,10 +280,11 @@ def answer_add_padded_tensors(df1, df2):
     df1 = df1.copy(deep=True)
     df2 = df2.copy(deep=True)
 
+    # Sample 10% from both datasets.
     df1 = df1.sample(frac=0.1, random_state=42)
     df2 = df2.sample(frac=0.1, random_state=42)
 
-    # Add tensors (option 1: our own model)
+    # Add tensors (option 1: our own model).
     for df in [df1, df2]:
         df['tensor'] = df['tokens'].apply(lambda tokens: np.vstack([w2v_model.wv[token]
                                                                     for token in tokens]))
@@ -356,11 +358,11 @@ def reformat_data(df):
         The reformatted dataframe.
     """
     # Make the class column using a dictionary.
-    df = df.rename(columns={"Class Index": "class_idx"})
+    df = df.rename(columns={'Class Index': 'class_idx'})
     classes = {1: 'World', 2: 'Sports', 3: 'Business', 4: 'Sci/Tech'}
     df['class'] = df['class_idx'].apply(classes.get)
 
-    # Use string concatonation for the Text column and unesacpe html characters.
+    # Use string concatonation for the Text column and unescape html characters.
     df['text'] = (df['Title'] + ' ' + df['Description']).apply(su.unescape)
 
     # Select only the class_idx, class, and text column.
@@ -503,7 +505,7 @@ display(answer_df)
 display(answer_most_used_words(answer_df))
 
 
-# - Remove the stopwords from the `tokens` column in the `df_train` dataframe. Do the most used tokens say something about the class now?
+# - Remove the stopwords from the `tokens` column in the `df_train` dataframe. Then, check with the `most_used_words` function: do the most used words say something about the class now?
 #     - Hint: once again, you can use the `pandas.Series.apply` function. 
 #     
 #     The top 5 words per class should look like this after removing stopwords:
@@ -566,7 +568,8 @@ def remove_stopwords(df):
     Parameters
     ----------
     df : pandas.DataFrame
-        The dataframe containing at least the tokens column.
+        The dataframe containing at least the tokens column,
+        where the value in each row is a list of tokens.
 
     Returns
     -------
@@ -602,7 +605,7 @@ check_answer_df(most_used_words(df_train), answer_most_used_words(answer_df))
 # - [`Doc`](https://spacy.io/api/doc): A container for accessing linguistic annotations like tokens, part-of-speech tags, named entities, and dependency parse information. It is created by the `nlp` function and represents a processed document.
 # - [`Token`](https://spacy.io/api/token): An object representing a single token in a `Doc` object. It contains information like the token text, part-of-speech tag, lemma, embedding, and much more.
 # 
-# When a text is processed by spaCy, it is first passed to the nlp function, which uses the loaded model to tokenize the text and applies various linguistic annotations like part-of-speech tagging, named entity recognition, and dependency parsing in the background. The resulting annotations are stored in a Doc object, which can be accessed and manipulated using various methods and attributes. For example, the Doc object can be iterated over to access each Token object in the document.
+# When a text is processed by spaCy, it is first passed to the `nlp` function, which uses the loaded model to tokenize the text and applies various linguistic annotations like part-of-speech tagging, named entity recognition, and dependency parsing in the background. The resulting annotations are stored in a `Doc` object, which can be accessed and manipulated using various methods and attributes. For example, the `Doc` object can be iterated over to access each `Token` object in the document.
 
 # In[15]:
 
@@ -904,10 +907,10 @@ w2v_model = Word2Vec(tokens_both.values, vector_size=96, min_count=1)
 # In[31]:
 
 
-print(np.vstack([w2v_model.wv[word] for word in ["rain", "cat", "dog"]]))
+print(np.vstack([w2v_model.wv[word] for word in ['rain', 'cat', 'dog']]))
 
 
-# The spaCy model we used has a `Tok2Vec` algorithm in its pipeline, so we can directly access the 2D matrix of all word vectors on a document with the `Doc.tensor` attribute.
+# The spaCy model we used has a `Tok2Vec` algorithm in its pipeline, so we can directly access the 2D matrix of all word vectors on a document with the `Doc.tensor` attribute. Keep in mind this still contains the embeddings of the stopwords.
 
 # In[32]:
 
@@ -950,9 +953,9 @@ def add_padded_tensors(df1, df2):
     Parameters
     ----------
     df_train : pandas.DataFrame
-        The first dataframe containing at least the tokens or doc columns.
+        The first dataframe containing at least the tokens or doc column.
     df_test : pandas.DataFrame
-        The second dataframe containing at least the tokens or doc columns.
+        The second dataframe containing at least the tokens or doc column.
 
     Returns
     -------
@@ -965,7 +968,7 @@ def add_padded_tensors(df1, df2):
     ###################################
 
 
-df_train, df_test = df_train, df_test
+df_train, df_test = df_train, df_test  # Edit this.
 
 
 # The code below tests if the function matches the expected output.
@@ -993,7 +996,7 @@ except Exception:
 
 # Topic classification is a task in NLP that involves automatically assigning a given text document to one or more predefined categories or topics. This task is essential for various applications, such as document organization, search engines, sentiment analysis, and more.
 # 
-# In recent years, deep learning models have shown remarkable performance in various NLP tasks, including topic classification. We will explore a neural network-based approach for topic classification using the PyTorch framework. The PyTorch library provides an efficient way to build and train neural networks with a high degree of flexibility and ease of use.
+# In recent years, deep learning models have shown remarkable performance in various NLP tasks, including topic classification. We will explore a neural network-based approach for topic classification using the PyTorch framework. PyTorch provides an efficient way to build and train neural networks with a high degree of flexibility and ease of use.
 # 
 # Our neural network will take the embedding representation of the document as input and predict the corresponding topic using a softmax output layer. We will evaluate the performance of our model using various metrics such as accuracy, precision, recall, and F1-score.
 # 
@@ -1079,7 +1082,7 @@ for epoch in range(num_epochs):
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-    print('Epoch [%d/%d], Loss: %.4f' % (epoch+1, num_epochs, loss.item()))
+    print(f"Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}")
 
 
 # <a name="a7"></a>
@@ -1096,7 +1099,7 @@ for epoch in range(num_epochs):
 # In[39]:
 
 
-# Evaluate the neural net on the test set
+# Evaluate the neural net on the test set.
 model.eval()
 
 # Sample from the model.
