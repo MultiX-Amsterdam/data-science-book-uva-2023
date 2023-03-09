@@ -122,4 +122,6 @@ Below is a list of other resources for self-learning.
 - [Data Science Learning Resources](https://medium.com/data-science-at-microsoft/data-science-learning-resources-193ccf6fafb)
 - [Andrej Karpathy blog](http://karpathy.github.io/)
 - [Christopher Olah blog](http://colah.github.io/)
+- [Lilian Weng blog](https://lilianweng.github.io)
 - [Hugging Face Documentations and Courses](https://huggingface.co/docs)
+- [AI Summer: Learn Deep Learning and Artificial Intelligence](https://theaisummer.com/)
