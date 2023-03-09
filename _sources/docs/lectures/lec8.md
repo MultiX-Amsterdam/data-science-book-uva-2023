@@ -24,4 +24,5 @@ The following paper explains how to train word embeddings using Word2Vec:
 The following paper explains how to use the attention mechanism for document classification:
 - [Yang, Z., Yang, D., Dyer, C., He, X., Smola, A., & Hovy, E. (2016, June). Hierarchical attention networks for document classification. In Proceedings of the 2016 conference of the North American chapter of the association for computational linguistics: human language technologies (pp. 1480-1489).](https://aclanthology.org/N16-1174/)
 
-
+The Hugging Face website below documents a list of state-of-the-art Transformer-based models:
+- [Transformers: State-of-the-art Machine Learning for Pytorch, TensorFlow, and JAX](https://huggingface.co/transformers/v4.7.0/)
