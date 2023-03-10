@@ -26,7 +26,7 @@
 # *   [Task 6: Word Embeddings](#t6)
 #     *   [Assignment for Task 6](#a6)
 # *   [Task 7: Supervised Learning - Topic Classification](#t7)
-#     *   [Assignment for Task 7](#a7)
+#     *   [Assignment for Task 7 (Optional)](#a7)
 # *   [Optional Assignment / Takeaways](#a8)
 
 # ## Scenario
@@ -1087,7 +1087,7 @@ for epoch in range(num_epochs):
 
 # <a name="a7"></a>
 
-# ### Assignment for Task 7
+# ### Assignment for Task 7 (Optional)
 
 # **Your task (which is your assignment) is to do the following:**
 # 

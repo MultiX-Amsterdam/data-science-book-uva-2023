@@ -99,6 +99,10 @@ We will provide a mock-up exam for you to practice.
 You have to do the exams on-site. It is not allowed to do exams at home.
 :::
 
+:::{warning}
+The final exam will be more difficult than the mid-term exam, since you have more time to study the materials.
+:::
+
 #### Multiple-Choice Questions
 
 The formal exam will be conducted using the [ANS sytem](https://ans.app/).
@@ -121,6 +125,7 @@ Your score for each coding question is based on the number of passed hidden test
 
 :::{warning}
 We do not give scores to failed test cases or syntax errors.
+Also, if you forgot to upload the code for the exam, the grade will be zero for the coding part (we do not accept answers by email or in other ways, and we also cannot upload your script for you).
 :::
 
 Before submitting the coding exam, you need to check if there are errors and fix them by running the entire provided Jupyter notebook from scratch (i.e., click on the “Restart All Kernels and Run All Cells” in the “Kernel” menu on the JupyterLab interface).
