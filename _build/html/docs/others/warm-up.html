@@ -167,6 +167,26 @@ const thebe_selector_output = ".output, .cell_output"
    L8: Text Data II
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/lec9.html">
+   L9: Image Data I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/lec10.html">
+   L10: Image Data II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/lec11.html">
+   L11: Human-Centered Method I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/lec12.html">
+   L12: Human-Centered Method II
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -218,6 +238,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../modules/image-data-module/overview-image-data.html">
+   Image Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/image-data-module/preparation-image-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../modules/image-data-module/tutorial-image-data.html">
+     Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -243,6 +285,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../modules/text-data-module/assignment-text-data.html">
    A4: Text Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modules/image-data-module/assignment-image-data.html">
+   A5: Image Data
   </a>
  </li>
 </ul>
@@ -666,7 +713,7 @@ title="Print to PDF"
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_answer_df</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">df_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function checks if two output dataframes are the same.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -683,7 +730,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_resample_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer for task 1.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Copy to avoid modifying the original dataframe.</span>
@@ -699,7 +746,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_merge_df</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer for task 2.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Copy to avoid modifying the original dataframe.</span>
@@ -719,7 +766,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_aggregate_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer for task 3.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Copy to avoid modifying the original dataframe.</span>
@@ -751,7 +798,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_transform_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer for task 4.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Copy to avoid modifying the original dataframe.</span>
@@ -776,7 +823,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_transform_text_df</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function is the answer for task 5.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Copy to avoid modifying the original dataframe.</span>

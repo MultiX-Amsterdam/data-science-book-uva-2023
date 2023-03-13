@@ -761,7 +761,7 @@ lda.fit(X)
 doc_topic_proportions = lda.transform(X)
 
 
-# Using this function, we can look at the most important words per topic. Do you see some similarities with the most occuring words per class after stopword removal?
+# Using this function, we can take a look at the most important words per topic. Do you see some similarities with the most occurring words per class after stopword removal?
 
 # In[23]:
 
@@ -1094,7 +1094,7 @@ for epoch in range(num_epochs):
 # - Use the code below to evaluate the neural network. 
 # - Generate a confusion matrix with `sklearn.metrics.confusion_matrix` (it's already imported so you can call `confusion_matrix`). 
 # - Plot the confusion matrix using `seaborn.heatmap` (`seaborn` is usually imported as `sns`). Set the `annot` argument to `True` and the `xticklabels` and `yticklabels` to the `labels` list.
-# - Also, take the time to evaluate the train set. Is there a notable difference in accuracy, recall, and the F1 score between the train and test sets?
+# - Also, take the time to evaluate the train set. Is there a notable difference in accuracy, precision, recall, and the F1 score between the train and test sets?
 
 # In[39]:
 

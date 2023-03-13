@@ -26,14 +26,14 @@ parts:
     title: "L7: Text Data I"
   - file: docs/lectures/lec8
     title: "L8: Text Data II"
-      #- file: docs/lectures/lec9
-      #title: "L9: Image Data I"
-      #- file: docs/lectures/lec10
-      #title: "L10: Image Data II"
-      #- file: docs/lectures/lec11
-      #title: "L11: Human-Centered Approach"
-      #- file: docs/lectures/lec12
-      #title: "L12: TBA"
+  - file: docs/lectures/lec9
+    title: "L9: Image Data I"
+  - file: docs/lectures/lec10
+    title: "L10: Image Data II"
+  - file: docs/lectures/lec11
+    title: "L11: Human-Centered Method I"
+  - file: docs/lectures/lec12
+    title: "L12: Human-Centered Method II"
 - caption: Modules
   chapters:
   - file: docs/modules/structured-data-module/overview-structured-data
@@ -50,13 +50,13 @@ parts:
       title: "Preparation"
     - file: docs/modules/text-data-module/tutorial-text-data
       title: "Tutorial"
-        #- file: docs/modules/image-data-module/overview-image-data
-        #sections:
-        #title: "Image Data"
-        #- file: docs/modules/image-data-module/preparation-image-data
-        #title: "Preparation"
-        #- file: docs/modules/image-data-module/tutorial-image-data
-        #title: "Tutorial"
+  - file: docs/modules/image-data-module/overview-image-data
+    title: "Image Data"
+    sections:
+    - file: docs/modules/image-data-module/preparation-image-data
+      title: "Preparation"
+    - file: docs/modules/image-data-module/tutorial-image-data
+      title: "Tutorial"
 - caption: Assignments
   chapters:
   - file: docs/assignments/hw1
@@ -67,4 +67,6 @@ parts:
     title: "A3: Mock Exam"
   - file: docs/modules/text-data-module/assignment-text-data
     title: "A4: Text Data"
+  - file: docs/modules/image-data-module/assignment-image-data
+    title: "A5: Image Data"
 
