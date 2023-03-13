@@ -1,4 +1,4 @@
-# Lecture 11: Human-Centered Data Science I
+# Lecture 11: Image Data Processing (Part II)
 
 (Last updated: Feb 10, 2023)
 

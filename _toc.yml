@@ -27,13 +27,13 @@ parts:
   - file: docs/lectures/lec8
     title: "L8: Text Data II"
   - file: docs/lectures/lec9
-    title: "L9: Image Data I"
+    title: "L9: PyTorch Basics"
   - file: docs/lectures/lec10
-    title: "L10: Image Data II"
+    title: "L10: Image Data I"
   - file: docs/lectures/lec11
-    title: "L11: Human-Centered Method I"
+    title: "L11: Image Data II"
   - file: docs/lectures/lec12
-    title: "L12: Human-Centered Method II"
+    title: "L12: Human-Centered Method"
 - caption: Modules
   chapters:
   - file: docs/modules/structured-data-module/overview-structured-data
@@ -67,6 +67,8 @@ parts:
     title: "A3: Mock Exam"
   - file: docs/modules/text-data-module/assignment-text-data
     title: "A4: Text Data"
+  - file: docs/assignments/hw5
+    title: "A5: PyTorch Basics"
   - file: docs/modules/image-data-module/assignment-image-data
-    title: "A5: Image Data"
+    title: "A6: Image Data"
 

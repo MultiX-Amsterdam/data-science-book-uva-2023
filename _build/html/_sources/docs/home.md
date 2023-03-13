@@ -32,7 +32,7 @@ If you come to the class without doing the preparation part, you may not be able
   - [Assignment 1](assignments/hw1) (work session and self-study): Python programming warm-up (e.g., pandas, numpy, scipy)
   - [Lecture 2 (Feb 9)](lectures/lec2): Recap fundamentals of data science techniques (e.g., basic statistics, basic machine learning concepts, metrics to evaluate model performance)
 - Week 2
-  - [Lecture 3 (Feb 14)](lectures/lec3): `Tutorial` for the structured data processing module (using Jupyter Notebook)
+  - [Lecture 3 (Feb 14)](lectures/lec3): Tutorial for the structured data processing module (using Jupyter Notebook)
   - [Assignment 2](modules/structured-data-module/assignment-structured-data) (work session and self-study): Structured data processing module
   - [Lecture 4 (Feb 16)](lectures/lec4): Introduce the idea of using Decision Tree and Random Forest for structured data processing
 - Week 3
@@ -43,17 +43,17 @@ If you come to the class without doing the preparation part, you may not be able
   - Mid-term Exam (Feb 28)
   - A lecture to discuss the mid-term exam
 - Week 5
-  - [Lecture 7 (Mar 7)](lectures/lec7): `Tutorial` for the text data processing module (using Jupyter Notebook)
+  - [Lecture 7 (Mar 7)](lectures/lec7): Tutorial for the text data processing module (using Jupyter Notebook)
   - [Assignment 4](modules/text-data-module/assignment-text-data): Text data processing module
   - [Lecture 8 (Mar 9)](lectures/lec8): Explain details in the pipeline of processing text data
 - Week 6
   
-  - [Lecture 9 (Mar 14)](lectures/lec9): `Tutorial` for the image data processing module (using Jupyter Notebook)
-  - Assignment 5: Image data processing module
+  - [Lecture 9 (Mar 14)](lectures/lec9): Self-study the PyTorch deep learning framework (using Jupyter Notebook)
+  - [Assignment 5](assignments/hw5): Use PyTorch to implement a pipeline for structured data processing
   - [Lecture 10 (Mar 16)](lectures/lec10): Explain details in the pipeline of processing image data
 - Week 7
-  - [Lecture 11 (Mar 21)](lectures/lec11): Introduce the human-centered approach in data science (e.g., human-centered metrics to evaluate models, human-in-the-loop machine learning, citizen participation in data analysis, research ethics, privacy issues, data biases, social impact of data science, algorithmic fairness, explainability, reproducibility, open science)
-  - No assignment this week. Use the work session to prepare for the final exam (e.g., review and practice the course materials).
+  - [Lecture 11 (Mar 21)](lectures/lec11): Tutorial for the image data processing module (using Jupyter Notebook)
+  - [Assignment 6](modules/image-data-module/assignment-image-data): Image data processing module
   - [Lecture 12 (Mar 23)](lectures/lec12): Guest lecture by [Dr. Jie Yang](https://yangjiera.github.io) (an assistant professor from TU Delft EWI) to give examples and talk about state-of-the-art research in Human-Centered AI. This lecture may be given physically or remotely.
 - Week 8
   - Final Exam (Mar 28)

@@ -1,4 +1,4 @@
-# Lecture 10: Image Data Processing (Part II)
+# Lecture 10: Image Data Processing (Part I)
 
 (Last updated: Feb 10, 2023)
 
