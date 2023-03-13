@@ -1,4 +1,4 @@
-# Lecture 12: TBA
+# Lecture 12: Human-Centered Data Science
 
 (Last updated: Feb 10, 2023)
 
