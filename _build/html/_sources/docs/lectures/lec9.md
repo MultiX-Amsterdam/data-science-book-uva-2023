@@ -15,7 +15,7 @@ Go through [this NumPy Tutorial](https://numpy.org/devdocs/user/quickstart.html)
 
 Follow the steps below to self-study PyTorch:
 - Step 1: Spend 10 minutes to skim through [this PyTorch tutorial notebook](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html)
-- Step 2: Set up the notebook in Google Colab by clicking on the "Open filled In Collab" icon at the begining of the notebook
+- Step 2: Set up the notebook in Google Colab by clicking on the "Open in Colab" icon at the begining of the notebook
 - Step 3: Watch the following two videos while working on the notebook mentioned in the previous step at the same time
   - [Introduction to PyTorch (Part 1)](https://www.youtube.com/watch?v=wnKZZgFQY-E)
   - [Introduction to PyTorch (Part 2)](https://www.youtube.com/watch?v=schbjeU5X2g)
