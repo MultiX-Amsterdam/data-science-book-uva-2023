@@ -53,7 +53,7 @@ If you come to the class without doing the preparation part, you may not be able
   - [Lecture 10 (Mar 16)](lectures/lec10): Explain details in the pipeline of processing image data
 - Week 7
   - [Lecture 11 (Mar 21)](lectures/lec11): Tutorial for the image data processing module (using Jupyter Notebook)
-  - [Assignment 6](modules/image-data-module/assignment-image-data): Image data processing module
+  - [Assignment 6](modules/image-data-module/assignment-image-data.md): Image data processing module
   - [Lecture 12 (Mar 23)](lectures/lec12): Guest lecture by [Dr. Jie Yang](https://yangjiera.github.io) (an assistant professor from TU Delft EWI) to give examples and talk about state-of-the-art research in Human-Centered AI. This lecture may be given physically or remotely.
 - Week 8
   - Final Exam (Mar 28)
