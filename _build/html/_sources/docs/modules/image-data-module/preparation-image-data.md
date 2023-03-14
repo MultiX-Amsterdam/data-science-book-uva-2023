@@ -1,6 +1,6 @@
 # Preparation (Image Data Processing)
 
-(Last updated: Mar 14, 2023)
+(Last updated: Mar 14, 2023)[^credit]
 
 This part will prepare you with the background knowledge that we will use for this module.
 You will explore Google Teachable Machine and also prepare PyTorch basics.
@@ -37,3 +37,5 @@ If not, you should go through [this PyTorch tutorial notebook](https://uvadlc-no
 
 If you want to learn more about PyTorch, consider following another tutorial below:
 - [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+
+[^credit]: Credit: this teaching material is created by Bryan Fleming under the supervision of [Yen-Chia Hsu](https://github.com/yenchiah).

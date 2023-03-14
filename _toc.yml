@@ -55,7 +55,7 @@ parts:
     sections:
     - file: docs/modules/image-data-module/preparation-image-data
       title: "Preparation"
-    - file: docs/modules/image-data-module/tutorial-image-data
+    - file: docs/modules/image-data-module/tutorial-image-data-notebook
       title: "Tutorial"
 - caption: Assignments
   chapters:

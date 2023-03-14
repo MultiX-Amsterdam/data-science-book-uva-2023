@@ -1,4 +1,4 @@
-# Assignment (text Data Processing)
+# Assignment (Text Data Processing)
 
 (Last updated: Mar 6, 2023)
 
