@@ -450,12 +450,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potential-error">
+   Potential Error
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -467,6 +491,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#potential-error">
+   Potential Error
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -479,6 +516,24 @@ title="Print to PDF"
 <p>This repository hosts the teaching materials for processing image data.</p>
 <p>All the course content in this repository is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 <p>Credit: this teaching material is created by Bryan Fleming under the supervision of <a class="reference external" href="https://github.com/yenchiah">Yen-Chia Hsu</a>.</p>
+<section id="potential-error">
+<h2>Potential Error<a class="headerlink" href="#potential-error" title="Permalink to this headline">#</a></h2>
+<p>Notice that the notebooks in this repository are created on Google Colab.
+When copying the notebook created by Colab, we have to clear widget state to prevent the following error when building the JupyterBook.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Exception occurred:
+  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/jupyter_sphinx/execute.py&quot;</span>, line <span class="m">300</span>, <span class="k">in</span> contains_widgets
+    <span class="k">return</span> widgets and widgets<span class="o">[</span><span class="s2">&quot;state&quot;</span><span class="o">]</span>
+KeyError: <span class="s1">&#39;state&#39;</span>
+</pre></div>
+</div>
+<p>To fix this problem, use the solution in <a class="reference external" href="https://github.com/jupyter-widgets/ipywidgets/issues/2867#issuecomment-625418996">this link</a>.
+Open the downloaded notebook on JupyterLab and follow the steps below:</p>
+<ul class="simple">
+<li><p>Make sure “Save Widget State Automatically” is checked under “Settings” in the menu bar</p></li>
+<li><p>Restart the kernel (no need to clean output)</p></li>
+<li><p>Save the notebook</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
