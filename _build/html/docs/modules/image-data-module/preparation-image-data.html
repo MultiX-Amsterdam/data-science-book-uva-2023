@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Tutorial (Image Data Processing)" href="tutorial-image-data.html" />
@@ -454,12 +452,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-google-teachable-machine">
+   Task 1: Google Teachable Machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-pytorch-basics">
+   Task 2: PyTorch Basics
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -471,6 +498,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-google-teachable-machine">
+   Task 1: Google Teachable Machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-pytorch-basics">
+   Task 2: PyTorch Basics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -480,8 +525,42 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="preparation-image-data-processing">
 <h1>Preparation (Image Data Processing)<a class="headerlink" href="#preparation-image-data-processing" title="Permalink to this headline">#</a></h1>
-<p>(Last updated: Mar 13, 2023)</p>
-<p>TBA</p>
+<p>(Last updated: Mar 14, 2023)</p>
+<p>This part will prepare you with the background knowledge that we will use for this module.
+You will explore Google Teachable Machine and also prepare PyTorch basics.</p>
+<section id="task-1-google-teachable-machine">
+<h2>Task 1: Google Teachable Machine<a class="headerlink" href="#task-1-google-teachable-machine" title="Permalink to this headline">#</a></h2>
+<p>In order to understand the inner workings of Computer Vision, it is important to first have a general overview of what it is.
+We will use a much less robust dataset to show what image classification is.
+First, download the <a class="reference external" href="https://www.kaggle.com/datasets/alxmamaev/flowers-recognition">flowers recognition dataset</a>.
+You will need to make an account on Kaggle.</p>
+<p>Next, go to the <a class="reference external" href="https://teachablemachine.withgoogle.com/">Google Teachable Machine website</a>.
+Click get started to start creating an image project.
+Upload each of the folders that classify the flower type as a class, and train your model.
+If you do not know how Google Teachable Machine works, watch the videos in <a class="reference external" href="https://www.youtube.com/playlist?list=PLJfHZtseuscuTQfodmFnbZ3rBgCWsRT9t">this YouTube playlist</a>.</p>
+<p>Train your model by picking the button.
+Congratulations, you have trained your first Computer Vision Algorithm!
+You can now export code based on a model you trained on data.
+It will classify flowers as best as it can if they are from these species.
+It will also try to classify flowers, not in these species, based on their appearance and shared features!</p>
+<p>We will not use this model in the tutorial, as its output is a library (across many languages now) called TensorFlow, which is not what we will use in the assignment.
+But this is a fun resource to play around with.
+We encourage you to try and create other models.</p>
+</section>
+<section id="task-2-pytorch-basics">
+<h2>Task 2: PyTorch Basics<a class="headerlink" href="#task-2-pytorch-basics" title="Permalink to this headline">#</a></h2>
+<p>In the tutorial, we will use the <a class="reference external" href="https://pytorch.org/">PyTorch deep learning framework</a>.
+You should already study the PyTorch basics from one of the lectures before.
+If not, you should go through <a class="reference external" href="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html">this PyTorch tutorial notebook</a> while at the same time watching the following two videos:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=wnKZZgFQY-E">Introduction to PyTorch (Part 1)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=schbjeU5X2g">Introduction to PyTorch (Part 2)</a></p></li>
+</ul>
+<p>If you want to learn more about PyTorch, consider following another tutorial below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">Deep Learning with PyTorch: A 60 Minute Blitz</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
