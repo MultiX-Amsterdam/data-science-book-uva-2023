@@ -86,7 +86,7 @@ Below is a list of course notes and materials for deep learning.
 - [DS-GA 1008: Deep Learning, NYU Center for Data Science](https://atcold.github.io/pytorch-Deep-Learning/)
 - [6.S191: Introduction to Deep Learning, Massachusetts Institute of Technology](http://introtodeeplearning.com/2022/index.html)
 - [Intro to Deep Learning, Kaggle](https://www.kaggle.com/learn/intro-to-deep-learning)
-- [CPSC 532S: Multimodal Learning with Vision, Language and Sound](https://www.cs.ubc.ca/~lsigal/teaching22_Term1.html)
+- [CPSC 532S: Multimodal Learning with Vision, Language and Sound, University of British Columbia](https://www.cs.ubc.ca/~lsigal/teaching22_Term1.html)
 
 ## Computer Vision Courses
 
