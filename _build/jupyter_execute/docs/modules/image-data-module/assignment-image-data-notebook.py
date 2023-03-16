@@ -3,7 +3,7 @@
 
 # # Garbage Classification - A task from the Gemeente
 # 
-# (Last updated: Mar 14, 2023)[^credit]
+# (Last updated: Mar 16, 2023)[^credit]
 # 
 # [^credit]: Credit: this teaching material is created by Bryan Fleming under the supervision of [Yen-Chia Hsu](https://github.com/yenchiah).
 # 
@@ -149,7 +149,7 @@ show_sample(img, label)
 # In[ ]:
 
 
-#Setting a seed for the random split of data:
+# Setting a seed for the random split of data:
 
 random_seed = 23
 torch.manual_seed(random_seed)
@@ -168,7 +168,7 @@ len(train_ds), len(val_ds), len(test_ds)
 
 # ### Build a Dataloader
 # 
-# Finally, we can load our dataset into PyTorch data loaders, which will allow us to efficiently feed the data into our machine learning model. In the code snippet below, we define data loaders for our training and validation sets, with a batch size of 32 for the training data and a batch size of 64 for the validation data. We also set the shuffle, num_workers, and pin_memory parameters to optimize the data loading process.
+# Finally, we can load our dataset into PyTorch data loaders, which will allow us to efficiently feed the data into our machine learning model. In the code snippet below, we define data loaders for our training and validation sets, with a batch size of 32 for the training data and a batch size of 64 for the validation data. We also set the `shuffle`, `num_workers`, and `pin_memory` parameters to optimize the data loading process.
 # 
 # Keep in mind that the batch size is a hyperparameter that you can tune. However, setting the batch size to a large number may not be a good idea if your GPU and computer only have a small computer memory. Using a larger batch size consumes more computer and GPU memory.
 
@@ -187,9 +187,9 @@ val_dl = DataLoader(val_ds, batch_size*2, num_workers = 4, pin_memory = True)
 
 # As we mentioned earlier, visualizing our data is an important step in the machine learning process. By looking at sample images from our dataset, we can gain insights into the structure of the data and identify any issues with preprocessing or data loading.
 # 
-# To make the visualization process easier, we can define a function called show_batch that takes in a PyTorch data loader and displays a grid of images from the batch along with their corresponding labels. This can help us identify patterns and features in the images, and ensure that our data is being loaded and preprocessed correctly.
+# To make the visualization process easier, we can define a function called `show_batch` that takes in a PyTorch data loader and displays a grid of images from the batch along with their corresponding labels. This can help us identify patterns and features in the images, and ensure that our data is being loaded and preprocessed correctly.
 # 
-# In the code snippet below, we define the show_batch function. This function takes in a data loader object and displays a grid of images from the batch along with their corresponding labels. We use the make_grid function to create a grid of images from the batch, with 16 images per row. The permute function is used to change the order of the dimensions of the tensor to match the expected input format for imshow.
+# In the code snippet below, we define the `show_batch` function. This function takes in a data loader object and displays a grid of images from the batch along with their corresponding labels. We use the `make_grid` function to create a grid of images from the batch, with 16 images per row. The permute function is used to change the order of the dimensions of the tensor to match the expected input format for imshow.
 # 
 # 
 
@@ -323,7 +323,7 @@ def fit(epochs, lr, model, train_loader, val_loader, opt_func=torch.optim.SGD):
 
 # After completing the initial data wrangling and evaluation, we're now ready to move onto the exciting part of our machine learning implementation: tweaking and evaluating our neural networks.
 # 
-# We have several different neural networks that we'll be working with, all based on the ResNet50 architecture, but with key differences. Each network has been created and initialized with specific goals and objectives in mind. While some of the methods used may be exaggerated for the purposes of demonstrating key concepts, it's important to keep in mind that each of these methods plays a critical role in the overall performance of our network.
+# We have several different neural networks that we'll be working with, all based on the ResNet architecture, but with key differences. Each network has been created and initialized with specific goals and objectives in mind. While some of the methods used may be exaggerated for the purposes of demonstrating key concepts, it's important to keep in mind that each of these methods plays a critical role in the overall performance of our network.
 # 
 # During our evaluation process, we'll be focusing primarily on accuracy as our key metric for assessing the performance of our neural networks. By analyzing the accuracy of our networks, we can determine how well they are able to classify images and identify areas where they may be struggling. While there are other metrics, such as F1 score and confusion matrices, that can also provide valuable insights into the performance of our networks, we'll be primarily focusing on accuracy to streamline our evaluation process.
 # 
@@ -331,14 +331,14 @@ def fit(epochs, lr, model, train_loader, val_loader, opt_func=torch.optim.SGD):
 # 
 # As you work through our implementation, you may (hopefully) notice that some of the features of our neural networks are exaggerated or skewed for specific goals. For example, we may use extreme weight initialization techniques to emphasize the importance of proper weight initialization, or to allow the network to display certain traits. While these features may not always be representative of real-world scenarios, they can be helpful in highlighting key concepts and techniques that are critical for success in machine learning. By understanding the reasoning behind these exaggerated features, you'll be better equipped to apply these techniques in real-world situations and achieve better performance from your neural networks.
 # 
-# Below you'll see the Network Architecture for ResNet50 - It's interesting to see the complex detail behind recognizing features, and determining their importance for a classification problem, we will be using tweaked versions of this CNN for our CNN's. The ResNet architecture is explained in the following paper:
+# Below you'll see the Network Architecture for ResNet - It's interesting to see the complex detail behind recognizing features, and determining their importance for a classification problem, we will be using tweaked versions of this CNN for our CNN's. The ResNet architecture is explained in the following paper:
 # - [He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).](https://arxiv.org/pdf/1512.03385.pdf)
-# 
-# Notice that in this tutorial, to save computational time, we are going to use the ResNet18 structure, which is a smaller version of the ResNet.
 
 # ![](https://github.com/MultiX-Amsterdam/image-data-module/blob/main/images/resnet50.png?raw=true)
 # 
 # Image source -- https://doi.org/10.3390/s20020447
+
+# Notice that in this tutorial, to save computational time, we are going to use the ResNet18 structure, which is a smaller version of the ResNet.
 
 # ### Task 3: Optimizer
 # 
@@ -543,7 +543,7 @@ history = fit(num_epochs, lr, model, train_dl, val_dl, opt_func) # train the mod
 # 
 # YOUR ANSWER HERE
 
-# ### Task 6: Experiments
+# ### Task 6: Experiments (Optional)
 # 
 # Now, given all of this, it is up to you to analyse these algorithms, the outcomes, and determine the variables which contribute more; the Gemeente is relying on you for the future, so do your best to understand and advise based on this.
 
@@ -575,7 +575,7 @@ history = fit(num_epochs, lr, model, train_dl, val_dl, opt_func) # train the mod
 
 # #### Assignment 7.4: Network Complexity
 # 
-# You might think that a Deep Neural Network is always better. But as you saw in the tutorial, sometimes adding more layers to increase the complexity of neural networks can completely miss the point and result in worse performance. There is a famous name for this phenomenon. Find out what it is called and briefly describe why it happens and how to fix it if the architecture is to remain mostly the same.
+# You might think that a Deep Neural Network is always better. But as you saw in the tutorial, sometimes adding more layers to increase the complexity of neural networks may not really help. There is a name for the phenomenon of adding too much complexity, which may (or may not) make the performance worse. Find out what it is called and briefly describe why it happens and how to fix it if the architecture is to remain mostly the same.
 
 # YOUR ANSWER HERE
 
@@ -587,6 +587,6 @@ history = fit(num_epochs, lr, model, train_dl, val_dl, opt_func) # train the mod
 
 # #### Assignment 7.6: Vanishing Gradient
 # 
-# Although we did not show you here, neural networks can suffer from Vanishing Gradient. Mathematically it is because their derivative is non-linear, so in the back-propagation stage, the gradient of the loss function compared to the weights is too small. They cannot update the weights enough to make meaningful changes. There are many ways to fix these issues. Try to list as many of them as possible, and using the above information and your own further research, try to convey why these fix the issue.
+# Although we did not show you here, neural networks can suffer from Vanishing Gradient. An example of vanishing gradient can be found in [this notebook](https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial3/Activation_Functions.html#Visualizing-the-gradient-flow-after-initialization). Mathematically it is because in the back-propagation stage, the gradient of the loss function compared to the weights is too small ([here is more explaination](https://web.stanford.edu/class/cs224n/slides/cs224n-2023-lecture05-rnnlm.pdf)). They cannot update the weights enough to make meaningful changes. There are many ways to fix these issues. Try to list as many of them as possible, and using the above information and your own further research, try to convey why these fix the issue.
 
 # YOUR ANSWER HERE

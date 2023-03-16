@@ -3,7 +3,7 @@
 
 # # An Ancient Text
 # 
-# (Last updated: Mar 14, 2023)[^credit]
+# (Last updated: Mar 16, 2023)[^credit]
 # 
 # [^credit]: Credit: this teaching material is created by Bryan Fleming under the supervision of [Yen-Chia Hsu](https://github.com/yenchiah).
 # 
@@ -72,6 +72,31 @@ device
 
 # Make sure that the ouput from the above cell is `device(type='cuda')`. If you see `device(type='cpu')`, it means that you did not enable GPU usage on Google Colab. Go to [this page](https://web.eecs.umich.edu/~justincj/teaching/eecs442/WI2021/colab.html) and check the "Use GPU as an accelerator" part for details. Please be patient for this tutorial and the assignment, as training neural networks for Computer Vision tasks typically takes a lot of time.
 
+# In[ ]:
+
+
+def to_device(data, device):
+    """Move tensor(s) to chosen device"""
+    if isinstance(data, (list,tuple)):
+        return [to_device(x, device) for x in data]
+    return data.to(device, non_blocking=True)
+
+class DeviceDataLoader():
+    """Wrap a dataloader to move data to a device"""
+    def __init__(self, dl, device):
+        self.dl = dl
+        self.device = device
+        
+    def __iter__(self):
+        """Yield a batch of data after moving it to device"""
+        for b in self.dl:
+            yield to_device(b, self.device)
+
+    def __len__(self):
+        """Number of batches"""
+        return len(self.dl)
+
+
 # ## Scenario
 
 # ![](https://github.com/MultiX-Amsterdam/image-data-module/blob/main/images/tablet.jpg?raw=true)
@@ -90,7 +115,7 @@ device
 
 # ## A Simple Linear Algorithm
 
-# This notebook will help you understand and create an algorithm which will learn how to recognise ancient symbols, and convert them to the modern decimal system, your colleagues will then have the task of converting the rest of the symbols to other modern mathematical operators, with the end goal of discovering the secrets of this Ancient Civilization.
+# This notebook will help you understand and create an algorithm which will learn how to recognize ancient symbols, and convert them to the modern decimal system, your colleagues will then have the task of converting the rest of the symbols to other modern mathematical operators, with the end goal of discovering the secrets of this Ancient Civilization.
 
 # Below we will lay out the code for a simple, 1-layer linear network, whose goal is to classify the ancient digits, using our modern decimal system:
 
@@ -122,6 +147,8 @@ testset = datasets.MNIST(root='./data', train=False, download=True, transform=tr
 
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
 testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False)
+trainloader = DeviceDataLoader(trainloader, device) # move the training data loader to the device
+testloader = DeviceDataLoader(testloader, device) # move the validation data loader to the device
 
 
 # In[ ]:
@@ -178,13 +205,17 @@ class VerySimpleNet(nn.Module):
         output = nn.functional.log_softmax(x, dim=1)
         return output
 
-# Here you see how the model evolves, flattening the tensor, putting our data through the linear function, and outputting a classification via log_softmax.
+# Here you see how the model evolves
+# - flattening the tensor
+# - putting our data through the linear function
+# - outputting a classification via log_softmax
 
 
 # In[ ]:
 
 
-# Now we will do what we call 'initializing' the network and optimizer, we effectively tell it how to 'learn', to correct itself by changing the weights of nodes in the network with what we call a loss function.
+# Now we will do what we call 'initializing' the network and optimizer.
+# We effectively tell it how to 'learn', to correct itself by changing the weights of nodes in the network with what we call a loss function.
 
 net = VerySimpleNet()
 criterion = nn.NLLLoss()
@@ -211,7 +242,8 @@ Image(filename='net_graph1.png')
 
 # Now we actually train the network, so we can test it's effectiveness.
 
-for epoch in range(10):
+net = to_device(net, device) # move the model to the device (CPU or GPU)
+for epoch in range(7):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data
@@ -278,7 +310,7 @@ class SimpleNet(nn.Module):
         return output
 
 
-# Some new functions have been introduced here, a convolution (makes sense in a convolution network no....). A convolution here is what we will call a 'matrix sliding operation' we input the image and a small matrix of numbers called a kernel (matrix much smaller than the image).
+# Some new functions have been introduced here, convolution. A convolution here is what we will call a 'matrix sliding operation' we input the image and a small matrix of numbers called a kernel (matrix much smaller than the image).
 # 
 # To perform a convolution operation, we slide the kernel over the image, starting at the top left corner, and perform a series of element-wise multiplications and summations. At each location, we multiply the values in the kernel by the corresponding values in the image, and sum up the results. We then store the result in the output image at the corresponding location, it is a smaller matrix than the image, as we have 'contracted' values into a smaller space, essentially, that is the idea of a convolution.
 # 
@@ -341,7 +373,8 @@ Image(filename='net_graph2.png')
 
 # Training
 
-for epoch in range(10):
+net = to_device(net, device) # move the model to the device (CPU or GPU)
+for epoch in range(7):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data
@@ -417,7 +450,7 @@ class Net(nn.Module):
 # Initializing the network
 
 net = Net()
-criterion = nn.CrossEntropyLoss() #Note the change here
+criterion = nn.CrossEntropyLoss() # Note the change here
 optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
 
 x = torch.randn(1, 1, 28, 28)
@@ -439,7 +472,8 @@ Image(filename='net_graph3.png')
 
 # Training
 
-for epoch in range(10):
+net = to_device(net, device) # move the model to the device (CPU or GPU)
+for epoch in range(7):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data
@@ -487,21 +521,33 @@ print('Accuracy on the test set: %d %%' % (100 * correct / total))
 class complexNet(nn.Module):
     def __init__(self):
         super(complexNet, self).__init__()
-        self.conv1 = nn.Conv2d(1, 32, kernel_size=3)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3)
-        self.fc1 = nn.Linear(64 * 5 * 5, 512)
-        self.fc2 = nn.Linear(512, 10)
+        self.conv1 = nn.Conv2d(1, 512, 3, 1)
+        self.conv2 = nn.Conv2d(512, 512, 3, 1)
+        self.fc1 = nn.Linear(512*5*5, 4096)
+        self.fc2 = nn.Linear(4096, 1024)
+        self.fc3 = nn.Linear(1024, 512)
+        self.fc4 = nn.Linear(512, 512)
+        self.fc5 = nn.Linear(512, 10)
 
     def forward(self, x):
-        x = nn.functional.relu(self.conv1(x))
-        x = nn.functional.max_pool2d(x, kernel_size=2)
-        x = nn.functional.relu(self.conv2(x))
-        x = nn.functional.max_pool2d(x, kernel_size=2)
-        x = x.view(-1, 64 * 5 * 5)
-        x = nn.functional.relu(self.fc1(x))
-        x = nn.functional.dropout(x, p=0.5, training=self.training)
+        x = self.conv1(x)
+        x = nn.functional.relu(x)
+        x = nn.functional.max_pool2d(x, 2)
+        x = self.conv2(x)
+        x = nn.functional.relu(x)
+        x = nn.functional.max_pool2d(x, 2)
+        x = torch.flatten(x, 1)
+        x = self.fc1(x)
+        x = nn.functional.relu(x)
         x = self.fc2(x)
-        return x
+        x = nn.functional.relu(x)
+        x = self.fc3(x)
+        x = nn.functional.relu(x)
+        x = self.fc4(x)
+        x = nn.functional.relu(x)
+        x = self.fc5(x)
+        output = nn.functional.log_softmax(x, dim=1)
+        return output
 
 
 # In[ ]:
@@ -509,14 +555,14 @@ class complexNet(nn.Module):
 
 # Initiatializing the Network
 
-model = complexNet()
+net = complexNet()
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(net.parameters(), lr=0.0001)
 
 x = torch.randn(1, 1, 28, 28)
 x = Variable(x)
 # Pass the input tensor through the network and calculate the output
-y = model(x)
+y = net(x)
 
 # Create a visualization of the computation graph
 dot = make_dot(y.mean(), params=dict(net.named_parameters()))
@@ -532,12 +578,13 @@ Image(filename='net_graph4.png')
 
 # Training
 
-for epoch in range(10):
+net = to_device(net, device) # move the model to the device (CPU or GPU)
+for epoch in range(15):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data
         optimizer.zero_grad()
-        outputs = model(inputs)
+        outputs = net(inputs)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -568,7 +615,9 @@ with torch.no_grad():
 print('Accuracy on the test set: %d %%' % (100 * correct / total))
 
 
-# What was the accuracy of the model? Why do you think this is the case?
+# What do you think about this model?
+
+# 
 
 # ![](https://github.com/MultiX-Amsterdam/image-data-module/blob/main/images/icarus.jpg?raw=true)
 # 
