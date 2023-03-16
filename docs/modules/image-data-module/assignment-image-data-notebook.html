@@ -580,8 +580,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#task-6-experiments">
-     Task 6: Experiments
+    <a class="reference internal nav-link" href="#task-6-experiments-optional">
+     Task 6: Experiments (Optional)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -728,8 +728,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#task-6-experiments">
-     Task 6: Experiments
+    <a class="reference internal nav-link" href="#task-6-experiments-optional">
+     Task 6: Experiments (Optional)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -790,7 +790,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="garbage-classification-a-task-from-the-gemeente">
 <h1>Garbage Classification - A task from the Gemeente<a class="headerlink" href="#garbage-classification-a-task-from-the-gemeente" title="Permalink to this headline">#</a></h1>
-<p>(Last updated: Mar 14, 2023)<a class="footnote-reference brackets" href="#credit" id="id1">1</a></p>
+<p>(Last updated: Mar 16, 2023)<a class="footnote-reference brackets" href="#credit" id="id1">1</a></p>
 <p>Here is an online version of <a class="reference external" href="https://colab.research.google.com/drive/10kYsTaWb7DA-qvroa73PaLdbSpAfeckD?usp=sharing">this notebook in Google Colab</a>. This online version is just for browsing. To work on this notebook, you need to copy a new one to your own Google Colab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -938,7 +938,7 @@ title="Print to PDF"
 <p>In order to train our machine learning model, we need to split our data into training, validation, and test sets. We need to set a seed for the random number generator. This ensures that our data is split in a consistent way each time we run our code, which is important for reproducibility. In the code snippet below, we set the random seed to 23 and the manual seed to ensure that the split is consistent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Setting a seed for the random split of data:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting a seed for the random split of data:</span>
 
 <span class="n">random_seed</span> <span class="o">=</span> <span class="mi">23</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
@@ -970,7 +970,7 @@ title="Print to PDF"
 </section>
 <section id="build-a-dataloader">
 <h3>Build a Dataloader<a class="headerlink" href="#build-a-dataloader" title="Permalink to this headline">#</a></h3>
-<p>Finally, we can load our dataset into PyTorch data loaders, which will allow us to efficiently feed the data into our machine learning model. In the code snippet below, we define data loaders for our training and validation sets, with a batch size of 32 for the training data and a batch size of 64 for the validation data. We also set the shuffle, num_workers, and pin_memory parameters to optimize the data loading process.</p>
+<p>Finally, we can load our dataset into PyTorch data loaders, which will allow us to efficiently feed the data into our machine learning model. In the code snippet below, we define data loaders for our training and validation sets, with a batch size of 32 for the training data and a batch size of 64 for the validation data. We also set the <code class="docutils literal notranslate"><span class="pre">shuffle</span></code>, <code class="docutils literal notranslate"><span class="pre">num_workers</span></code>, and <code class="docutils literal notranslate"><span class="pre">pin_memory</span></code> parameters to optimize the data loading process.</p>
 <p>Keep in mind that the batch size is a hyperparameter that you can tune. However, setting the batch size to a large number may not be a good idea if your GPU and computer only have a small computer memory. Using a larger batch size consumes more computer and GPU memory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -994,8 +994,8 @@ title="Print to PDF"
 <section id="check-the-dataloader">
 <h3>Check the Dataloader<a class="headerlink" href="#check-the-dataloader" title="Permalink to this headline">#</a></h3>
 <p>As we mentioned earlier, visualizing our data is an important step in the machine learning process. By looking at sample images from our dataset, we can gain insights into the structure of the data and identify any issues with preprocessing or data loading.</p>
-<p>To make the visualization process easier, we can define a function called show_batch that takes in a PyTorch data loader and displays a grid of images from the batch along with their corresponding labels. This can help us identify patterns and features in the images, and ensure that our data is being loaded and preprocessed correctly.</p>
-<p>In the code snippet below, we define the show_batch function. This function takes in a data loader object and displays a grid of images from the batch along with their corresponding labels. We use the make_grid function to create a grid of images from the batch, with 16 images per row. The permute function is used to change the order of the dimensions of the tensor to match the expected input format for imshow.</p>
+<p>To make the visualization process easier, we can define a function called <code class="docutils literal notranslate"><span class="pre">show_batch</span></code> that takes in a PyTorch data loader and displays a grid of images from the batch along with their corresponding labels. This can help us identify patterns and features in the images, and ensure that our data is being loaded and preprocessed correctly.</p>
+<p>In the code snippet below, we define the <code class="docutils literal notranslate"><span class="pre">show_batch</span></code> function. This function takes in a data loader object and displays a grid of images from the batch along with their corresponding labels. We use the <code class="docutils literal notranslate"><span class="pre">make_grid</span></code> function to create a grid of images from the batch, with 16 images per row. The permute function is used to change the order of the dimensions of the tensor to match the expected input format for imshow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As before, we have a simple tool for visualization</span>
@@ -1127,17 +1127,17 @@ title="Print to PDF"
 </div>
 </div>
 <p>After completing the initial data wrangling and evaluation, we’re now ready to move onto the exciting part of our machine learning implementation: tweaking and evaluating our neural networks.</p>
-<p>We have several different neural networks that we’ll be working with, all based on the ResNet50 architecture, but with key differences. Each network has been created and initialized with specific goals and objectives in mind. While some of the methods used may be exaggerated for the purposes of demonstrating key concepts, it’s important to keep in mind that each of these methods plays a critical role in the overall performance of our network.</p>
+<p>We have several different neural networks that we’ll be working with, all based on the ResNet architecture, but with key differences. Each network has been created and initialized with specific goals and objectives in mind. While some of the methods used may be exaggerated for the purposes of demonstrating key concepts, it’s important to keep in mind that each of these methods plays a critical role in the overall performance of our network.</p>
 <p>During our evaluation process, we’ll be focusing primarily on accuracy as our key metric for assessing the performance of our neural networks. By analyzing the accuracy of our networks, we can determine how well they are able to classify images and identify areas where they may be struggling. While there are other metrics, such as F1 score and confusion matrices, that can also provide valuable insights into the performance of our networks, we’ll be primarily focusing on accuracy to streamline our evaluation process.</p>
 <p>Throughout this process, you’ll be asked a series of questions about our neural networks and their performance. By fully engaging with this process, you’ll gain a deeper understanding of the key concepts and techniques involved in building and evaluating machine learning models. So let’s dive in and start building our networks!</p>
 <p>As you work through our implementation, you may (hopefully) notice that some of the features of our neural networks are exaggerated or skewed for specific goals. For example, we may use extreme weight initialization techniques to emphasize the importance of proper weight initialization, or to allow the network to display certain traits. While these features may not always be representative of real-world scenarios, they can be helpful in highlighting key concepts and techniques that are critical for success in machine learning. By understanding the reasoning behind these exaggerated features, you’ll be better equipped to apply these techniques in real-world situations and achieve better performance from your neural networks.</p>
-<p>Below you’ll see the Network Architecture for ResNet50 - It’s interesting to see the complex detail behind recognizing features, and determining their importance for a classification problem, we will be using tweaked versions of this CNN for our CNN’s. The ResNet architecture is explained in the following paper:</p>
+<p>Below you’ll see the Network Architecture for ResNet - It’s interesting to see the complex detail behind recognizing features, and determining their importance for a classification problem, we will be using tweaked versions of this CNN for our CNN’s. The ResNet architecture is explained in the following paper:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://arxiv.org/pdf/1512.03385.pdf">He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).</a></p></li>
 </ul>
-<p>Notice that in this tutorial, to save computational time, we are going to use the ResNet18 structure, which is a smaller version of the ResNet.</p>
 <p><img alt="" src="https://github.com/MultiX-Amsterdam/image-data-module/blob/main/images/resnet50.png?raw=true" /></p>
 <p>Image source – <a class="reference external" href="https://doi.org/10.3390/s20020447">https://doi.org/10.3390/s20020447</a></p>
+<p>Notice that in this tutorial, to save computational time, we are going to use the ResNet18 structure, which is a smaller version of the ResNet.</p>
 <section id="task-3-optimizer">
 <h3>Task 3: Optimizer<a class="headerlink" href="#task-3-optimizer" title="Permalink to this headline">#</a></h3>
 <p>Now let us create a basic ResNet for this task.</p>
@@ -1425,8 +1425,8 @@ Epoch 10: train_loss: 1.4816, val_loss: 1.4112, val_acc: 0.4757
 <p>YOUR ANSWER HERE</p>
 </section>
 </section>
-<section id="task-6-experiments">
-<h3>Task 6: Experiments<a class="headerlink" href="#task-6-experiments" title="Permalink to this headline">#</a></h3>
+<section id="task-6-experiments-optional">
+<h3>Task 6: Experiments (Optional)<a class="headerlink" href="#task-6-experiments-optional" title="Permalink to this headline">#</a></h3>
 <p>Now, given all of this, it is up to you to analyse these algorithms, the outcomes, and determine the variables which contribute more; the Gemeente is relying on you for the future, so do your best to understand and advise based on this.</p>
 <section id="assignment-6">
 <h4>Assignment 6<a class="headerlink" href="#assignment-6" title="Permalink to this headline">#</a></h4>
@@ -1453,7 +1453,7 @@ Epoch 10: train_loss: 1.4816, val_loss: 1.4112, val_acc: 0.4757
 </section>
 <section id="assignment-7-4-network-complexity">
 <h4>Assignment 7.4: Network Complexity<a class="headerlink" href="#assignment-7-4-network-complexity" title="Permalink to this headline">#</a></h4>
-<p>You might think that a Deep Neural Network is always better. But as you saw in the tutorial, sometimes adding more layers to increase the complexity of neural networks can completely miss the point and result in worse performance. There is a famous name for this phenomenon. Find out what it is called and briefly describe why it happens and how to fix it if the architecture is to remain mostly the same.</p>
+<p>You might think that a Deep Neural Network is always better. But as you saw in the tutorial, sometimes adding more layers to increase the complexity of neural networks may not really help. There is a name for the phenomenon of adding too much complexity, which may (or may not) make the performance worse. Find out what it is called and briefly describe why it happens and how to fix it if the architecture is to remain mostly the same.</p>
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="assignment-7-5-learning-rate">
@@ -1463,7 +1463,7 @@ Epoch 10: train_loss: 1.4816, val_loss: 1.4112, val_acc: 0.4757
 </section>
 <section id="assignment-7-6-vanishing-gradient">
 <h4>Assignment 7.6: Vanishing Gradient<a class="headerlink" href="#assignment-7-6-vanishing-gradient" title="Permalink to this headline">#</a></h4>
-<p>Although we did not show you here, neural networks can suffer from Vanishing Gradient. Mathematically it is because their derivative is non-linear, so in the back-propagation stage, the gradient of the loss function compared to the weights is too small. They cannot update the weights enough to make meaningful changes. There are many ways to fix these issues. Try to list as many of them as possible, and using the above information and your own further research, try to convey why these fix the issue.</p>
+<p>Although we did not show you here, neural networks can suffer from Vanishing Gradient. An example of vanishing gradient can be found in <a class="reference external" href="https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial3/Activation_Functions.html#Visualizing-the-gradient-flow-after-initialization">this notebook</a>. Mathematically it is because in the back-propagation stage, the gradient of the loss function compared to the weights is too small (<a class="reference external" href="https://web.stanford.edu/class/cs224n/slides/cs224n-2023-lecture05-rnnlm.pdf">here is more explaination</a>). They cannot update the weights enough to make meaningful changes. There are many ways to fix these issues. Try to list as many of them as possible, and using the above information and your own further research, try to convey why these fix the issue.</p>
 <p>YOUR ANSWER HERE</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
