@@ -28,3 +28,13 @@ Once it is done, you can view the book in the [html content](_build/html) folder
 $ ghp-import -n -p -f _build/html
 ```
 The above steps will update the gh-pages branch, which hosts the website. Finally, follow the normal git flow to commit the changes and push the code to the main branch in this repository.
+
+## Error Handling
+
+You many encounter an error that looks like the following when building the notebook:
+```
+```
+In this case, just run the following command, and the problem should disappear:
+```sh
+pip install jupyter-cache
+```
