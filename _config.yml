@@ -11,6 +11,7 @@ execute:
   exclude_patterns:
     - "docs/modules/image-data-module/*"
     - "docs/modules/text-data-module/*"
+    - "docs/modules/structured-data-module/pytorch-structured-data*"
   execute_notebooks: cache
   timeout: 600
 

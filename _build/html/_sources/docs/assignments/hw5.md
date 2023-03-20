@@ -1,6 +1,6 @@
 # Assignment 5: PyTorch Basics
 
-(Last updated: Mar 13, 2023)
+(Last updated: Mar 20, 2023)
 
 Your task in this assignment is to implement a deep neural network for the Smell Pittsburgh dataset in predicting the presence of bad odors using air quality data.
 
@@ -19,6 +19,10 @@ Do not worry too much about the model performance, as it is hard to reach a good
 But we encourage you to tune the model to have as high performance as possible.
 When in doubt about the basic concepts of deep learning, check the [deep learning overview lecture](../lectures/lec5).
 You can work in groups and discuss the assignment with others.
+
+## Answer
+
+- [Pytorch Implementation of Smell Prediction Notebook](../modules/structured-data-module/pytorch-structured-data)
 
 ## Additional Recourses
 

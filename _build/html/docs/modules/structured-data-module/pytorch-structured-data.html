@@ -1,0 +1,1903 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pytorch Implementation of Smell Prediction &#8212; Data Science UvA</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science UvA</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../home.html">
+                    Course Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Course Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../resources.html">
+   Course Resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec1.html">
+   L1: Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec2.html">
+   L2: Data Science Fundamentals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec3.html">
+   L3: Structured Data I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec4.html">
+   L4: Structured Data II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec5.html">
+   L5: Deep Learning Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec6.html">
+   L6: Crowdsourcing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec7.html">
+   L7: Text Data I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec8.html">
+   L8: Text Data II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec9.html">
+   L9: PyTorch Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec10.html">
+   L10: Image Data I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec11.html">
+   L11: Image Data II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/lec12.html">
+   L12: Human-Centered Method
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="overview-structured-data.html">
+   Structured Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="preparation-structured-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial-structured-data.html">
+     Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../text-data-module/overview-text-data.html">
+   Text Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../text-data-module/preparation-text-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../text-data-module/tutorial-text-data.html">
+     Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../image-data-module/overview-image-data.html">
+   Image Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../image-data-module/preparation-image-data.html">
+     Preparation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../image-data-module/tutorial-image-data-notebook.html">
+     Tutorial
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Assignments
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/hw1.html">
+   A1: Python Coding Warm-Up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment-structured-data.html">
+   A2: Structured Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/hw3.html">
+   A3: Mock Exam
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../text-data-module/assignment-text-data.html">
+   A4: Text Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../assignments/hw5.html">
+   A5: PyTorch Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../image-data-module/assignment-image-data.html">
+   A6: Image Data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/MultiX-Amsterdam/data-science-book-uva/blob/main/docs/modules/structured-data-module/pytorch-structured-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MultiX-Amsterdam/data-science-book-uva"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MultiX-Amsterdam/data-science-book-uva/issues/new?title=Issue%20on%20page%20%2Fdocs/modules/structured-data-module/pytorch-structured-data.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/docs/modules/structured-data-module/pytorch-structured-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pytorch Implementation of Smell Prediction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="pytorch-implementation-of-smell-prediction">
+<h1>Pytorch Implementation of Smell Prediction<a class="headerlink" href="#pytorch-implementation-of-smell-prediction" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we hide a bunch of functions for preprocessing the data.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">answer_preprocess_sensor</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 5.</span>
+<span class="sd">    Preprocess sensor data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_list : list of pandas.DataFrame</span>
+<span class="sd">        A list of data frames that contain sensor data from multiple stations.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Resample all the data frames.</span>
+    <span class="n">df_resample_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">df_list</span><span class="p">:</span>
+        <span class="c1"># Convert the timestamp to datetime.</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Resample the timestamps by hour and average all the previous values.</span>
+        <span class="c1"># Because we want data from the past, so label need to be &quot;right&quot;.</span>
+        <span class="n">df_resample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    
+    <span class="c1"># Merge all data frames.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df_resample_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">index_name</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_resample_list</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># We need to use outer merging since we want to preserve data from both data frames.</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_resample_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="c1"># Move the datetime column to index</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">index_name</span><span class="p">)</span>
+
+    <span class="c1"># Fill in the missing data with value -1.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_preprocess_smell</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 4.</span>
+<span class="sd">    Preprocess smell data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The raw smell reports data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy the dataframe to avoid editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Drop the columns that we do not need.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;feelings_symptoms&quot;</span><span class="p">,</span> <span class="s2">&quot;smell_description&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">])</span>
+    
+    <span class="c1"># Select only the reports within the range of 3 and 5.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;smell_value&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
+    
+    <span class="c1"># Convert the timestamp to datetime.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Resample the timestamps by hour and sum up all the future values.</span>
+    <span class="c1"># Because we want data from the future, so label need to be &quot;left&quot;.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;60Min&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="c1"># Fill in the missing data with value 0.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function is the answer of task 6.</span>
+<span class="sd">    Sum up data in the current and future hours.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    n_hr : int</span>
+<span class="sd">         Number of hours that we want to sum up the future smell data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed smell data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Fast return if n_hr is 0</span>
+    <span class="k">if</span> <span class="n">n_hr</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="n">df</span>
+    
+    <span class="c1"># Sum up all smell_values in future hours.</span>
+    <span class="c1"># The rolling function only works for summing up previous values.</span>
+    <span class="c1"># So we need to shift back to get the value in the future.</span>
+    <span class="c1"># Be careful that we need to add 1 to the rolling window size.</span>
+    <span class="c1"># Becasue window size 1 means only using the current data.</span>
+    <span class="c1"># Parameter &quot;closed&quot; need to be &quot;right&quot; because we want the current data.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">n_hr</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">n_hr</span><span class="p">)</span>
+    
+    <span class="c1"># Delete the last n_hr rows.</span>
+    <span class="c1"># These n_hr rows have wrong data due to data shifting.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">n_hr</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">insert_previous_data_to_cols</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n_hr</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Insert columns to indicate the data from the previous hours.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    n_hr : int</span>
+<span class="sd">        Number of hours that we want to insert the previous sensor data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed sensor data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Add the data from the previous hours.</span>
+    <span class="n">df_all</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># Shift the data frame to get previous data.</span>
+        <span class="n">df_pre</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="c1"># Edit the name to indicate it is previous data.</span>
+        <span class="c1"># The orginal data frame already has data from the previous 1 hour.</span>
+        <span class="c1"># (as indicated in the preprocessing phase of sensor data)</span>
+        <span class="c1"># So we need to add 1 here.</span>
+        <span class="n">df_pre</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_pre_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;h&quot;</span>
+        <span class="c1"># Add the data to an array for merging.</span>
+        <span class="n">df_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_pre</span><span class="p">)</span>
+
+    <span class="c1"># Rename the columns in the original data frame.</span>
+    <span class="c1"># The orginal data frame already has data from the previous 1 hour.</span>
+    <span class="c1"># (as indicated in the preprocessing phase of sensor data)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_pre_1h&quot;</span>
+
+    <span class="c1"># Merge all data.</span>
+    <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_all</span><span class="p">:</span>
+        <span class="c1"># The join function merges dataframes by index.</span>
+        <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        
+    <span class="c1"># Delete the first n_hr rows.</span>
+    <span class="c1"># These n_hr rows have no data due to data shifting.</span>
+    <span class="n">df_merge</span> <span class="o">=</span> <span class="n">df_merge</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n_hr</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">df_merge</span>
+
+
+<span class="k">def</span> <span class="nf">convert_wind_direction</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert wind directions to sine and cosine components.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        The data frame that contains the wind direction data.</span>
+<span class="sd">         </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        The transformed data frame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frame to prevent editing the original one.</span>
+    <span class="n">df_cp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Convert columns with wind directions.</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;SONICWD_DEG&quot;</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">df_c</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+            <span class="n">df_c_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">df_c</span><span class="p">))</span>
+            <span class="n">df_c_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">df_c</span><span class="p">))</span>
+            <span class="n">df_c_cos</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_cosine&quot;</span>
+            <span class="n">df_c_sin</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;_sine&quot;</span>
+            <span class="n">df_cp</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="n">c</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">df_cp</span><span class="p">[</span><span class="n">df_c_cos</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_c_cos</span>
+            <span class="n">df_cp</span><span class="p">[</span><span class="n">df_c_sin</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_c_sin</span>
+    <span class="k">return</span> <span class="n">df_cp</span>
+
+
+<span class="k">def</span> <span class="nf">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute features and labels from the smell and sensor data.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_smell : pandas.DataFrame</span>
+<span class="sd">        The preprocessed smell data.</span>
+<span class="sd">    df_sensor : pandas.DataFrame</span>
+<span class="sd">        The preprocessed sensor data.</span>
+<span class="sd">    b_hr_sensor : int</span>
+<span class="sd">        Number of hours that we want to insert the previous sensor data.</span>
+<span class="sd">    f_hr_smell : int</span>
+<span class="sd">        Number of hours that we want to sum up the future smell data.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_x : pandas.DataFrame</span>
+<span class="sd">        The features that we want to use for modeling.</span>
+<span class="sd">    df_y : pandas.DataFrame</span>
+<span class="sd">        The labels that we want to use for modeling.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Copy data frames to prevent editing the original ones.</span>
+    <span class="n">df_smell</span> <span class="o">=</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Replace -1 values in sensor data to NaN</span>
+    <span class="n">df_sensor</span><span class="p">[</span><span class="n">df_sensor</span><span class="o">==-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+    <span class="c1"># Convert all wind directions.</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">convert_wind_direction</span><span class="p">(</span><span class="n">df_sensor</span><span class="p">)</span>
+    
+    <span class="c1"># Scale sensor data and fill in missing values</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_sensor</span> <span class="o">-</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">df_sensor</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Insert previous sensor data as features.</span>
+    <span class="c1"># Noice that the df_sensor is already using the previous data.</span>
+    <span class="c1"># So b_hr_sensor=0 means using data from the previous 1 hour.</span>
+    <span class="c1"># And b_hr_sensor=n means using data from the previous n+1 hours.</span>
+    <span class="n">df_sensor</span> <span class="o">=</span> <span class="n">insert_previous_data_to_cols</span><span class="p">(</span><span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="p">)</span>
+    
+    <span class="c1"># Sum up current and future smell values as label.</span>
+    <span class="c1"># Notice that the df_smell is already the data from the future 1 hour.</span>
+    <span class="c1"># (as indicated in the preprocessing phase of smell data)</span>
+    <span class="c1"># So f_hr_smell=0 means using data from the future 1 hour.</span>
+    <span class="c1"># And f_hr_smell=n means using data from the future n+1 hours.</span>
+    <span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_sum_current_and_future_data</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="p">)</span>
+    
+    <span class="c1"># Add suffix to the column name of the smell data to prevent confusion.</span>
+    <span class="c1"># See the description above for the reason of adding 1 to the f_hr_smell.</span>
+    <span class="n">df_smell</span><span class="o">.</span><span class="n">columns</span> <span class="o">+=</span> <span class="s2">&quot;_future_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">f_hr_smell</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;h&quot;</span>
+    
+    <span class="c1"># We need to first merge these two timestamps based on the available data.</span>
+    <span class="c1"># In this way, we synchronize the time stamps in the sensor and smell data.</span>
+    <span class="c1"># This also means that the sensor and smell data have the same number of data points.</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">df_sensor</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">df_smell</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">on</span><span class="o">=</span><span class="n">df_smell</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    
+    <span class="c1"># Sanity check: there should be no missing data.</span>
+    <span class="k">assert</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Error! There is missing data.&quot;</span>
+    
+    <span class="c1"># Separate features (x) and labels (y).</span>
+    <span class="n">df_x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_sensor</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">df_y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df_smell</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    
+    <span class="c1"># Add the hour of day and the day of week.</span>
+    <span class="n">dow_radian</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">6.0</span>
+    <span class="n">tod_radian</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">23.0</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;day_of_week_sine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">dow_radian</span><span class="p">)</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;day_of_week_cosine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">dow_radian</span><span class="p">)</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;hour_of_day_sine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">tod_radian</span><span class="p">)</span>
+    <span class="n">df_x</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s2">&quot;hour_of_day_cosine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tod_radian</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load and preprocess sensor data</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;smellpgh-v1/esdr_raw&quot;</span>
+<span class="n">list_of_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f</span><span class="p">))]</span>
+<span class="n">sensor_raw_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">list_of_files</span><span class="p">:</span>
+    <span class="n">sensor_raw_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">))</span>
+<span class="n">df_sensor</span> <span class="o">=</span> <span class="n">answer_preprocess_sensor</span><span class="p">(</span><span class="n">sensor_raw_list</span><span class="p">)</span>
+
+<span class="c1"># Load and preprocess smell data</span>
+<span class="n">smell_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;smellpgh-v1/smell_raw.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;EpochTime&quot;</span><span class="p">)</span>
+<span class="n">df_smell</span> <span class="o">=</span> <span class="n">answer_preprocess_smell</span><span class="p">(</span><span class="n">smell_raw</span><span class="p">)</span>
+
+<span class="c1"># Compute features and labels</span>
+<span class="n">df_x</span><span class="p">,</span> <span class="n">df_y</span> <span class="o">=</span> <span class="n">compute_feature_label</span><span class="p">(</span><span class="n">df_smell</span><span class="p">,</span> <span class="n">df_sensor</span><span class="p">,</span> <span class="n">b_hr_sensor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">f_hr_smell</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xr/ddxdh8x16q53_r8yf2zj9m600000gn/T/ipykernel_13620/4187725043.py:261: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_x.loc[:,&quot;day_of_week_sine&quot;] = np.sin(dow_radian)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>3.feed_1.SO2_PPM_pre_1h</th>
+      <th>3.feed_1.H2S_PPM_pre_1h</th>
+      <th>3.feed_1.SIGTHETA_DEG_pre_1h</th>
+      <th>3.feed_1.SONICWS_MPH_pre_1h</th>
+      <th>3.feed_23.CO_PPM_pre_1h</th>
+      <th>3.feed_23.PM10_UG_M3_pre_1h</th>
+      <th>3.feed_29.PM10_UG_M3_pre_1h</th>
+      <th>3.feed_29.PM25_UG_M3_pre_1h</th>
+      <th>3.feed_11067.CO_PPB..3.feed_43.CO_PPB_pre_1h</th>
+      <th>3.feed_11067.NO2_PPB..3.feed_43.NO2_PPB_pre_1h</th>
+      <th>...</th>
+      <th>3.feed_28.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_28.SONICWD_DEG_sine_pre_3h</th>
+      <th>3.feed_26.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_26.SONICWD_DEG_sine_pre_3h</th>
+      <th>3.feed_3.SONICWD_DEG_cosine_pre_3h</th>
+      <th>3.feed_3.SONICWD_DEG_sine_pre_3h</th>
+      <th>day_of_week_sine</th>
+      <th>day_of_week_cosine</th>
+      <th>hour_of_day_sine</th>
+      <th>hour_of_day_cosine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>-1.520058</td>
+      <td>-0.599075</td>
+      <td>-0.388936</td>
+      <td>-0.777225</td>
+      <td>-0.406466</td>
+      <td>-0.395826</td>
+      <td>-0.716551</td>
+      <td>-0.585693</td>
+      <td>...</td>
+      <td>0.279097</td>
+      <td>1.746934</td>
+      <td>-0.383942</td>
+      <td>1.929446</td>
+      <td>-0.542867</td>
+      <td>1.331119</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>-2.449294e-16</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>-1.433654</td>
+      <td>-0.684709</td>
+      <td>-0.388936</td>
+      <td>-0.690974</td>
+      <td>0.007500</td>
+      <td>-0.305936</td>
+      <td>-0.426597</td>
+      <td>0.488014</td>
+      <td>...</td>
+      <td>1.089779</td>
+      <td>1.481480</td>
+      <td>0.945548</td>
+      <td>1.350182</td>
+      <td>0.512949</td>
+      <td>1.355712</td>
+      <td>0.866025</td>
+      <td>0.5</td>
+      <td>0.000000e+00</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>1.142731</td>
+      <td>-0.941610</td>
+      <td>0.147335</td>
+      <td>-0.173473</td>
+      <td>-0.147737</td>
+      <td>-0.216045</td>
+      <td>-0.444787</td>
+      <td>0.829648</td>
+      <td>...</td>
+      <td>0.799733</td>
+      <td>1.640186</td>
+      <td>0.726159</td>
+      <td>1.603583</td>
+      <td>0.537757</td>
+      <td>1.347897</td>
+      <td>0.866025</td>
+      <td>0.5</td>
+      <td>2.697968e-01</td>
+      <td>0.962917</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>-0.082623</td>
+      <td>-0.941610</td>
+      <td>0.147335</td>
+      <td>-0.432224</td>
+      <td>-0.302974</td>
+      <td>-0.216045</td>
+      <td>-0.796641</td>
+      <td>0.081306</td>
+      <td>...</td>
+      <td>0.960380</td>
+      <td>1.562966</td>
+      <td>1.185067</td>
+      <td>0.816616</td>
+      <td>0.512949</td>
+      <td>1.355712</td>
+      <td>0.866025</td>
+      <td>0.5</td>
+      <td>5.195840e-01</td>
+      <td>0.854419</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>1.527618</td>
+      <td>-0.984426</td>
+      <td>0.147335</td>
+      <td>-0.259723</td>
+      <td>-0.458211</td>
+      <td>-0.485717</td>
+      <td>-0.762976</td>
+      <td>-0.504352</td>
+      <td>...</td>
+      <td>1.623480</td>
+      <td>0.780539</td>
+      <td>1.225168</td>
+      <td>0.602477</td>
+      <td>0.659294</td>
+      <td>1.303117</td>
+      <td>0.866025</td>
+      <td>0.5</td>
+      <td>7.308360e-01</td>
+      <td>0.682553</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16746</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>0.011635</td>
+      <td>-0.128090</td>
+      <td>-0.925207</td>
+      <td>-0.604724</td>
+      <td>-0.561703</td>
+      <td>-0.575607</td>
+      <td>0.529598</td>
+      <td>-0.748376</td>
+      <td>...</td>
+      <td>1.707841</td>
+      <td>0.380565</td>
+      <td>1.119099</td>
+      <td>-0.254164</td>
+      <td>1.210281</td>
+      <td>-0.738344</td>
+      <td>-0.866025</td>
+      <td>0.5</td>
+      <td>-9.976688e-01</td>
+      <td>-0.068242</td>
+    </tr>
+    <tr>
+      <th>16747</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>0.443651</td>
+      <td>0.000361</td>
+      <td>-0.925207</td>
+      <td>-0.690974</td>
+      <td>-0.406466</td>
+      <td>-0.665498</td>
+      <td>0.662087</td>
+      <td>-0.292864</td>
+      <td>...</td>
+      <td>1.693445</td>
+      <td>0.048275</td>
+      <td>1.098706</td>
+      <td>-0.303805</td>
+      <td>1.327922</td>
+      <td>-0.583204</td>
+      <td>-0.866025</td>
+      <td>0.5</td>
+      <td>-9.790841e-01</td>
+      <td>0.203456</td>
+    </tr>
+    <tr>
+      <th>16748</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>0.443651</td>
+      <td>-0.256540</td>
+      <td>-0.925207</td>
+      <td>-0.604724</td>
+      <td>-0.458211</td>
+      <td>-0.575607</td>
+      <td>0.181817</td>
+      <td>-0.862254</td>
+      <td>...</td>
+      <td>1.489886</td>
+      <td>-0.500401</td>
+      <td>0.609087</td>
+      <td>-0.931955</td>
+      <td>0.798657</td>
+      <td>-1.062282</td>
+      <td>-0.866025</td>
+      <td>0.5</td>
+      <td>-8.878852e-01</td>
+      <td>0.460065</td>
+    </tr>
+    <tr>
+      <th>16749</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>0.270844</td>
+      <td>-0.085273</td>
+      <td>-0.925207</td>
+      <td>-0.518474</td>
+      <td>-0.302974</td>
+      <td>-0.575607</td>
+      <td>0.856204</td>
+      <td>-0.439279</td>
+      <td>...</td>
+      <td>1.402368</td>
+      <td>-0.626362</td>
+      <td>0.237194</td>
+      <td>-1.124325</td>
+      <td>0.706601</td>
+      <td>-1.107672</td>
+      <td>-0.866025</td>
+      <td>0.5</td>
+      <td>-7.308360e-01</td>
+      <td>0.682553</td>
+    </tr>
+    <tr>
+      <th>16750</th>
+      <td>-0.273112</td>
+      <td>-0.403688</td>
+      <td>-0.341833</td>
+      <td>0.085995</td>
+      <td>-0.925207</td>
+      <td>-0.432224</td>
+      <td>-0.406466</td>
+      <td>-0.395826</td>
+      <td>0.798647</td>
+      <td>-0.309133</td>
+      <td>...</td>
+      <td>0.581575</td>
+      <td>-1.153330</td>
+      <td>-0.684058</td>
+      <td>-1.060369</td>
+      <td>-0.161757</td>
+      <td>-1.243870</td>
+      <td>-0.866025</td>
+      <td>0.5</td>
+      <td>-5.195840e-01</td>
+      <td>0.854419</td>
+    </tr>
+  </tbody>
+</table>
+<p>16751 rows × 148 columns</p>
+</div></div></div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>smell_value_future_8h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16746</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16747</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16748</th>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>16749</th>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>16750</th>
+      <td>11.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16751 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set random seed for reproducibility</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Load data</span>
+<span class="n">feature</span> <span class="o">=</span> <span class="n">df_x</span><span class="p">[</span><span class="n">df_x</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">label</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_y</span><span class="o">&gt;=</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[</span><span class="s1">&#39;smell_value_future_8h&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="c1"># Create the dataset object</span>
+<span class="k">class</span> <span class="nc">SmellPittsburghDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature</span> <span class="o">=</span> <span class="n">feature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">y</span><span class="p">]))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scorer</span><span class="p">(</span><span class="n">y_predict</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A customized scoring function to evaluate a PyTorch classifier.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    y_predict : torch.Tensor</span>
+<span class="sd">        The predicted labels.</span>
+<span class="sd">    y : torch.Tensor</span>
+<span class="sd">        The true labels.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict of int or float</span>
+<span class="sd">        A dictionary of evaluation metrics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;tn&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;fp&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;fn&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;tp&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">dataloader_train</span><span class="p">,</span> <span class="n">dataloader_test</span><span class="p">,</span> <span class="n">num_epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Train the model.&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">run_one_epoch</span><span class="p">(</span><span class="n">dataloader</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">phase</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span> <span class="c1"># training mode</span>
+        <span class="k">else</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span> <span class="c1"># evaluation mode</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># just a counter</span>
+        <span class="n">accu_loss</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># accumulated loss</span>
+        <span class="n">accu_score</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># accumulated scores</span>
+        <span class="c1"># Loop the data</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
+            <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># increase the counter</span>
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">phase</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">:</span>
+                <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="c1"># Store statistics for the training set</span>
+            <span class="n">accu_loss</span> <span class="o">+=</span> <span class="n">loss</span> <span class="c1"># add up the loss</span>
+            <span class="n">y_label</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">scorer</span><span class="p">(</span><span class="n">y_label</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">accu_score</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">accu_score</span> <span class="o">=</span> <span class="n">score</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">score</span><span class="p">:</span>
+                    <span class="n">accu_score</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+=</span> <span class="n">score</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="c1"># Return statistics</span>
+        <span class="k">return</span> <span class="n">accu_loss</span><span class="o">/</span><span class="n">c</span><span class="p">,</span> <span class="n">accu_score</span>
+    
+    <span class="k">def</span> <span class="nf">compute_statistics</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+        <span class="n">tp_fp</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;tp&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;fp&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">tp_fp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">precision</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">precision</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;tp&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">tp_fp</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">tp_fn</span> <span class="o">=</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;tp&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">score</span><span class="p">[</span><span class="s2">&quot;fn&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">tp_fn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">recall</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">recall</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;tp&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">tp_fn</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">tp_tp_fp_fn</span> <span class="o">=</span> <span class="n">tp_fp</span> <span class="o">+</span> <span class="n">tp_fn</span>
+        <span class="k">if</span> <span class="n">tp_tp_fp_fn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">score</span><span class="p">[</span><span class="s2">&quot;tp&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">tp_tp_fp_fn</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span>
+    
+    <span class="c1"># Run one epoch</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+        <span class="c1"># Run through the entire training set</span>
+        <span class="n">loss_train</span><span class="p">,</span> <span class="n">score_train</span> <span class="o">=</span> <span class="n">run_one_epoch</span><span class="p">(</span><span class="n">dataloader_train</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+        <span class="n">loss_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loss_train</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">p_train</span><span class="p">,</span> <span class="n">r_train</span><span class="p">,</span> <span class="n">f1_train</span> <span class="o">=</span> <span class="n">compute_statistics</span><span class="p">(</span><span class="n">score_train</span><span class="p">)</span>
+        <span class="c1"># Run through the entire testing set</span>
+        <span class="n">loss_test</span><span class="p">,</span> <span class="n">score_test</span> <span class="o">=</span> <span class="n">run_one_epoch</span><span class="p">(</span><span class="n">dataloader_test</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+        <span class="n">loss_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loss_test</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">p_test</span><span class="p">,</span> <span class="n">r_test</span><span class="p">,</span> <span class="n">f1_test</span> <span class="o">=</span> <span class="n">compute_statistics</span><span class="p">(</span><span class="n">score_test</span><span class="p">)</span>
+        <span class="c1"># Print loss and scores</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="k">30</span> == 0):
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training loss: </span><span class="si">{</span><span class="n">loss_train</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, prevision: </span><span class="si">{</span><span class="n">p_train</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, recall: </span><span class="si">{</span><span class="n">r_train</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f1: </span><span class="si">{</span><span class="n">f1_train</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training evaluation: </span><span class="si">{</span><span class="n">score_train</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Testing loss: </span><span class="si">{</span><span class="n">loss_test</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, prevision: </span><span class="si">{</span><span class="n">p_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, recall: </span><span class="si">{</span><span class="n">r_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f1: </span><span class="si">{</span><span class="n">f1_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Testing evaluation: </span><span class="si">{</span><span class="n">score_test</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Return statistics</span>
+    <span class="k">return</span> <span class="n">p_test</span><span class="p">,</span> <span class="n">r_test</span><span class="p">,</span> <span class="n">f1_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define neural network model</span>
+<span class="k">class</span> <span class="nc">DeepLogisticRegression</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">output_size</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DeepLogisticRegression</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create time series splits for cross-validation.</span>
+<span class="n">splits</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">dataset_size</span> <span class="o">=</span> <span class="n">df_x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="mi">8000</span>
+<span class="n">test_size</span> <span class="o">=</span> <span class="mi">168</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="n">feature</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">train_size</span><span class="p">,</span> <span class="n">dataset_size</span><span class="p">,</span> <span class="n">test_size</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">train_size</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">test_size</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">&gt;=</span> <span class="n">dataset_size</span><span class="p">):</span> <span class="k">break</span>
+    <span class="n">train_index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">test_index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+    <span class="n">splits</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">list</span><span class="p">(</span><span class="n">train_index</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">test_index</span><span class="p">)))</span>
+    
+<span class="c1"># Cross-validate the model for every split</span>
+<span class="n">precision_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">recall_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f1_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Split: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">dataset_train</span> <span class="o">=</span> <span class="n">SmellPittsburghDataset</span><span class="p">(</span><span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">[</span><span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">dataset_test</span> <span class="o">=</span> <span class="n">SmellPittsburghDataset</span><span class="p">(</span><span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">[</span><span class="n">splits</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">dataloader_train</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dataloader_test</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset_test</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DeepLogisticRegression</span><span class="p">(</span><span class="n">input_size</span><span class="p">)</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">p_test</span><span class="p">,</span> <span class="n">r_test</span><span class="p">,</span> <span class="n">f1_test</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">dataloader_train</span><span class="p">,</span> <span class="n">dataloader_test</span><span class="p">)</span>
+    <span class="n">precision_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_test</span><span class="p">)</span>
+    <span class="n">recall_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_test</span><span class="p">)</span>
+    <span class="n">f1_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_test</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Split: 0
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.98, recall: 0.97, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7363, &#39;fp&#39;: 11, &#39;fn&#39;: 21, &#39;tp&#39;: 605}
+Testing loss: 0.1800, prevision: 0.83, recall: 0.71, f1: 0.77
+Testing evaluation: {&#39;tn&#39;: 144, &#39;fp&#39;: 3, &#39;fn&#39;: 6, &#39;tp&#39;: 15}
+==============================
+Split: 1
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.99, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7385, &#39;fp&#39;: 2, &#39;fn&#39;: 7, &#39;tp&#39;: 606}
+Testing loss: 0.2900, prevision: 1.00, recall: 0.30, f1: 0.46
+Testing evaluation: {&#39;tn&#39;: 158, &#39;fp&#39;: 0, &#39;fn&#39;: 7, &#39;tp&#39;: 3}
+==============================
+Split: 2
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7400, &#39;fp&#39;: 7, &#39;fn&#39;: 15, &#39;tp&#39;: 578}
+Testing loss: 1.0500, prevision: 0.78, recall: 0.57, f1: 0.66
+Testing evaluation: {&#39;tn&#39;: 95, &#39;fp&#39;: 10, &#39;fn&#39;: 27, &#39;tp&#39;: 36}
+==============================
+Split: 3
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.99, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7391, &#39;fp&#39;: 1, &#39;fn&#39;: 8, &#39;tp&#39;: 600}
+Testing loss: 0.4800, prevision: 0.70, recall: 0.52, f1: 0.60
+Testing evaluation: {&#39;tn&#39;: 135, &#39;fp&#39;: 6, &#39;fn&#39;: 13, &#39;tp&#39;: 14}
+==============================
+Split: 4
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7382, &#39;fp&#39;: 3, &#39;fn&#39;: 12, &#39;tp&#39;: 603}
+Testing loss: 0.0600, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 165, &#39;fp&#39;: 3, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+Split: 5
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7391, &#39;fp&#39;: 2, &#39;fn&#39;: 19, &#39;tp&#39;: 588}
+Testing loss: 0.2700, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 165, &#39;fp&#39;: 0, &#39;fn&#39;: 3, &#39;tp&#39;: 0}
+==============================
+Split: 6
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7388, &#39;fp&#39;: 2, &#39;fn&#39;: 13, &#39;tp&#39;: 597}
+Testing loss: 0.0300, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 166, &#39;fp&#39;: 2, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+Split: 7
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7399, &#39;fp&#39;: 2, &#39;fn&#39;: 11, &#39;tp&#39;: 588}
+Testing loss: 0.6800, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 142, &#39;fp&#39;: 17, &#39;fn&#39;: 9, &#39;tp&#39;: 0}
+==============================
+Split: 8
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7402, &#39;fp&#39;: 0, &#39;fn&#39;: 13, &#39;tp&#39;: 585}
+Testing loss: 0.4400, prevision: 0.93, recall: 0.48, f1: 0.64
+Testing evaluation: {&#39;tn&#39;: 138, &#39;fp&#39;: 1, &#39;fn&#39;: 15, &#39;tp&#39;: 14}
+==============================
+Split: 9
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.99, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7373, &#39;fp&#39;: 0, &#39;fn&#39;: 8, &#39;tp&#39;: 619}
+Testing loss: 1.5300, prevision: 0.83, recall: 0.16, f1: 0.27
+Testing evaluation: {&#39;tn&#39;: 136, &#39;fp&#39;: 1, &#39;fn&#39;: 26, &#39;tp&#39;: 5}
+==============================
+Split: 10
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7338, &#39;fp&#39;: 4, &#39;fn&#39;: 14, &#39;tp&#39;: 644}
+Testing loss: 0.5000, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 159, &#39;fp&#39;: 1, &#39;fn&#39;: 8, &#39;tp&#39;: 0}
+==============================
+Split: 11
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.99, f1: 1.00
+Training evaluation: {&#39;tn&#39;: 7333, &#39;fp&#39;: 1, &#39;fn&#39;: 4, &#39;tp&#39;: 662}
+Testing loss: 0.1800, prevision: 0.53, recall: 0.82, f1: 0.64
+Testing evaluation: {&#39;tn&#39;: 149, &#39;fp&#39;: 8, &#39;fn&#39;: 2, &#39;tp&#39;: 9}
+==============================
+Split: 12
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7335, &#39;fp&#39;: 7, &#39;fn&#39;: 22, &#39;tp&#39;: 636}
+Testing loss: 0.0100, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 168, &#39;fp&#39;: 0, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+Split: 13
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7341, &#39;fp&#39;: 1, &#39;fn&#39;: 11, &#39;tp&#39;: 647}
+Testing loss: 0.1400, prevision: 0.83, recall: 0.62, f1: 0.71
+Testing evaluation: {&#39;tn&#39;: 159, &#39;fp&#39;: 1, &#39;fn&#39;: 3, &#39;tp&#39;: 5}
+==============================
+Split: 14
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7332, &#39;fp&#39;: 6, &#39;fn&#39;: 14, &#39;tp&#39;: 648}
+Testing loss: 0.8200, prevision: 0.64, recall: 0.32, f1: 0.42
+Testing evaluation: {&#39;tn&#39;: 142, &#39;fp&#39;: 4, &#39;fn&#39;: 15, &#39;tp&#39;: 7}
+==============================
+Split: 15
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.97, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7329, &#39;fp&#39;: 0, &#39;fn&#39;: 19, &#39;tp&#39;: 652}
+Testing loss: 0.3200, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 160, &#39;fp&#39;: 1, &#39;fn&#39;: 7, &#39;tp&#39;: 0}
+==============================
+Split: 16
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.97, recall: 0.95, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7339, &#39;fp&#39;: 18, &#39;fn&#39;: 34, &#39;tp&#39;: 609}
+Testing loss: 0.6100, prevision: 0.57, recall: 0.42, f1: 0.48
+Testing evaluation: {&#39;tn&#39;: 127, &#39;fp&#39;: 10, &#39;fn&#39;: 18, &#39;tp&#39;: 13}
+==============================
+Split: 17
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7347, &#39;fp&#39;: 1, &#39;fn&#39;: 16, &#39;tp&#39;: 636}
+Testing loss: 0.4400, prevision: 0.20, recall: 0.12, f1: 0.15
+Testing evaluation: {&#39;tn&#39;: 156, &#39;fp&#39;: 4, &#39;fn&#39;: 7, &#39;tp&#39;: 1}
+==============================
+Split: 18
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.98, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7347, &#39;fp&#39;: 10, &#39;fn&#39;: 26, &#39;tp&#39;: 617}
+Testing loss: 0.4500, prevision: 0.11, recall: 0.06, f1: 0.08
+Testing evaluation: {&#39;tn&#39;: 144, &#39;fp&#39;: 8, &#39;fn&#39;: 15, &#39;tp&#39;: 1}
+==============================
+Split: 19
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.96, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7338, &#39;fp&#39;: 3, &#39;fn&#39;: 29, &#39;tp&#39;: 630}
+Testing loss: 0.1100, prevision: 0.58, recall: 0.78, f1: 0.67
+Testing evaluation: {&#39;tn&#39;: 154, &#39;fp&#39;: 5, &#39;fn&#39;: 2, &#39;tp&#39;: 7}
+==============================
+Split: 20
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7342, &#39;fp&#39;: 0, &#39;fn&#39;: 12, &#39;tp&#39;: 646}
+Testing loss: 0.6500, prevision: 0.14, recall: 0.04, f1: 0.06
+Testing evaluation: {&#39;tn&#39;: 138, &#39;fp&#39;: 6, &#39;fn&#39;: 23, &#39;tp&#39;: 1}
+==============================
+Split: 21
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.94, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7307, &#39;fp&#39;: 11, &#39;fn&#39;: 44, &#39;tp&#39;: 638}
+Testing loss: 1.2400, prevision: 1.00, recall: 0.37, f1: 0.54
+Testing evaluation: {&#39;tn&#39;: 130, &#39;fp&#39;: 0, &#39;fn&#39;: 24, &#39;tp&#39;: 14}
+==============================
+Split: 22
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.95, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7266, &#39;fp&#39;: 14, &#39;fn&#39;: 35, &#39;tp&#39;: 685}
+Testing loss: 0.0100, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 167, &#39;fp&#39;: 1, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+Split: 23
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7283, &#39;fp&#39;: 8, &#39;fn&#39;: 29, &#39;tp&#39;: 680}
+Testing loss: 0.1300, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 166, &#39;fp&#39;: 0, &#39;fn&#39;: 2, &#39;tp&#39;: 0}
+==============================
+Split: 24
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.93, f1: 0.95
+Training evaluation: {&#39;tn&#39;: 7298, &#39;fp&#39;: 13, &#39;fn&#39;: 48, &#39;tp&#39;: 641}
+Testing loss: 0.2200, prevision: 0.20, recall: 0.20, f1: 0.20
+Testing evaluation: {&#39;tn&#39;: 150, &#39;fp&#39;: 8, &#39;fn&#39;: 8, &#39;tp&#39;: 2}
+==============================
+Split: 25
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7289, &#39;fp&#39;: 12, &#39;fn&#39;: 31, &#39;tp&#39;: 668}
+Testing loss: 0.1500, prevision: 0.50, recall: 0.12, f1: 0.20
+Testing evaluation: {&#39;tn&#39;: 159, &#39;fp&#39;: 1, &#39;fn&#39;: 7, &#39;tp&#39;: 1}
+==============================
+Split: 26
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.95, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7292, &#39;fp&#39;: 16, &#39;fn&#39;: 36, &#39;tp&#39;: 656}
+Testing loss: 0.1300, prevision: 0.90, recall: 0.60, f1: 0.72
+Testing evaluation: {&#39;tn&#39;: 152, &#39;fp&#39;: 1, &#39;fn&#39;: 6, &#39;tp&#39;: 9}
+==============================
+Split: 27
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.93, f1: 0.95
+Training evaluation: {&#39;tn&#39;: 7280, &#39;fp&#39;: 13, &#39;fn&#39;: 52, &#39;tp&#39;: 655}
+Testing loss: 0.6600, prevision: 0.86, recall: 0.26, f1: 0.40
+Testing evaluation: {&#39;tn&#39;: 144, &#39;fp&#39;: 1, &#39;fn&#39;: 17, &#39;tp&#39;: 6}
+==============================
+Split: 28
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.95, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7264, &#39;fp&#39;: 13, &#39;fn&#39;: 37, &#39;tp&#39;: 686}
+Testing loss: 0.0100, prevision: 1.00, recall: 1.00, f1: 1.00
+Testing evaluation: {&#39;tn&#39;: 162, &#39;fp&#39;: 0, &#39;fn&#39;: 0, &#39;tp&#39;: 6}
+==============================
+Split: 29
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 1.00, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7289, &#39;fp&#39;: 0, &#39;fn&#39;: 15, &#39;tp&#39;: 696}
+Testing loss: 0.3000, prevision: 0.38, recall: 0.27, f1: 0.32
+Testing evaluation: {&#39;tn&#39;: 152, &#39;fp&#39;: 5, &#39;fn&#39;: 8, &#39;tp&#39;: 3}
+==============================
+Split: 30
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7271, &#39;fp&#39;: 7, &#39;fn&#39;: 25, &#39;tp&#39;: 697}
+Testing loss: 1.0500, prevision: 0.95, recall: 0.39, f1: 0.55
+Testing evaluation: {&#39;tn&#39;: 121, &#39;fp&#39;: 1, &#39;fn&#39;: 28, &#39;tp&#39;: 18}
+==============================
+Split: 31
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7228, &#39;fp&#39;: 10, &#39;fn&#39;: 21, &#39;tp&#39;: 741}
+Testing loss: 1.1600, prevision: 0.88, recall: 0.25, f1: 0.39
+Testing evaluation: {&#39;tn&#39;: 139, &#39;fp&#39;: 1, &#39;fn&#39;: 21, &#39;tp&#39;: 7}
+==============================
+Split: 32
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7212, &#39;fp&#39;: 6, &#39;fn&#39;: 27, &#39;tp&#39;: 755}
+Testing loss: 0.6200, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 162, &#39;fp&#39;: 1, &#39;fn&#39;: 5, &#39;tp&#39;: 0}
+==============================
+Split: 33
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7227, &#39;fp&#39;: 8, &#39;fn&#39;: 18, &#39;tp&#39;: 747}
+Testing loss: 0.2100, prevision: 0.47, recall: 0.78, f1: 0.58
+Testing evaluation: {&#39;tn&#39;: 151, &#39;fp&#39;: 8, &#39;fn&#39;: 2, &#39;tp&#39;: 7}
+==============================
+Split: 34
+----------
+Epoch [30/30]
+Training loss: 0.0400, prevision: 0.97, recall: 0.93, f1: 0.95
+Training evaluation: {&#39;tn&#39;: 7202, &#39;fp&#39;: 24, &#39;fn&#39;: 53, &#39;tp&#39;: 721}
+Testing loss: 0.8100, prevision: 0.25, recall: 0.29, f1: 0.27
+Testing evaluation: {&#39;tn&#39;: 136, &#39;fp&#39;: 15, &#39;fn&#39;: 12, &#39;tp&#39;: 5}
+==============================
+Split: 35
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7211, &#39;fp&#39;: 10, &#39;fn&#39;: 25, &#39;tp&#39;: 754}
+Testing loss: 0.2900, prevision: 0.54, recall: 0.65, f1: 0.59
+Testing evaluation: {&#39;tn&#39;: 137, &#39;fp&#39;: 11, &#39;fn&#39;: 7, &#39;tp&#39;: 13}
+==============================
+Split: 36
+----------
+Epoch [30/30]
+Training loss: 0.0100, prevision: 1.00, recall: 0.99, f1: 1.00
+Training evaluation: {&#39;tn&#39;: 7234, &#39;fp&#39;: 1, &#39;fn&#39;: 6, &#39;tp&#39;: 759}
+Testing loss: 0.5700, prevision: 0.67, recall: 0.20, f1: 0.31
+Testing evaluation: {&#39;tn&#39;: 157, &#39;fp&#39;: 1, &#39;fn&#39;: 8, &#39;tp&#39;: 2}
+==============================
+Split: 37
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.99, recall: 0.93, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7225, &#39;fp&#39;: 10, &#39;fn&#39;: 54, &#39;tp&#39;: 711}
+Testing loss: 0.3100, prevision: 0.42, recall: 0.50, f1: 0.46
+Testing evaluation: {&#39;tn&#39;: 141, &#39;fp&#39;: 11, &#39;fn&#39;: 8, &#39;tp&#39;: 8}
+==============================
+Split: 38
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7224, &#39;fp&#39;: 10, &#39;fn&#39;: 18, &#39;tp&#39;: 748}
+Testing loss: 0.0700, prevision: 0.90, recall: 0.75, f1: 0.82
+Testing evaluation: {&#39;tn&#39;: 155, &#39;fp&#39;: 1, &#39;fn&#39;: 3, &#39;tp&#39;: 9}
+==============================
+Split: 39
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7217, &#39;fp&#39;: 16, &#39;fn&#39;: 28, &#39;tp&#39;: 739}
+Testing loss: 0.3900, prevision: 0.26, recall: 0.75, f1: 0.39
+Testing evaluation: {&#39;tn&#39;: 143, &#39;fp&#39;: 17, &#39;fn&#39;: 2, &#39;tp&#39;: 6}
+==============================
+Split: 40
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7235, &#39;fp&#39;: 12, &#39;fn&#39;: 24, &#39;tp&#39;: 729}
+Testing loss: 0.8100, prevision: 0.91, recall: 0.31, f1: 0.47
+Testing evaluation: {&#39;tn&#39;: 135, &#39;fp&#39;: 1, &#39;fn&#39;: 22, &#39;tp&#39;: 10}
+==============================
+Split: 41
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7238, &#39;fp&#39;: 9, &#39;fn&#39;: 13, &#39;tp&#39;: 740}
+Testing loss: 0.9700, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 132, &#39;fp&#39;: 32, &#39;fn&#39;: 4, &#39;tp&#39;: 0}
+==============================
+Split: 42
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.98, f1: 0.99
+Training evaluation: {&#39;tn&#39;: 7270, &#39;fp&#39;: 4, &#39;fn&#39;: 15, &#39;tp&#39;: 711}
+Testing loss: 0.6800, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 148, &#39;fp&#39;: 6, &#39;fn&#39;: 14, &#39;tp&#39;: 0}
+==============================
+Split: 43
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.97, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7266, &#39;fp&#39;: 6, &#39;fn&#39;: 19, &#39;tp&#39;: 709}
+Testing loss: 1.3900, prevision: 0.67, recall: 0.19, f1: 0.30
+Testing evaluation: {&#39;tn&#39;: 122, &#39;fp&#39;: 4, &#39;fn&#39;: 34, &#39;tp&#39;: 8}
+==============================
+Split: 44
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.94, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7231, &#39;fp&#39;: 14, &#39;fn&#39;: 49, &#39;tp&#39;: 706}
+Testing loss: 0.9600, prevision: 0.08, recall: 0.04, f1: 0.05
+Testing evaluation: {&#39;tn&#39;: 132, &#39;fp&#39;: 11, &#39;fn&#39;: 24, &#39;tp&#39;: 1}
+==============================
+Split: 45
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.99, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7216, &#39;fp&#39;: 11, &#39;fn&#39;: 28, &#39;tp&#39;: 745}
+Testing loss: 0.5800, prevision: 0.30, recall: 0.60, f1: 0.40
+Testing evaluation: {&#39;tn&#39;: 132, &#39;fp&#39;: 21, &#39;fn&#39;: 6, &#39;tp&#39;: 9}
+==============================
+Split: 46
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.96, recall: 0.94, f1: 0.95
+Training evaluation: {&#39;tn&#39;: 7199, &#39;fp&#39;: 27, &#39;fn&#39;: 45, &#39;tp&#39;: 729}
+Testing loss: 0.1700, prevision: 0.89, recall: 0.57, f1: 0.70
+Testing evaluation: {&#39;tn&#39;: 153, &#39;fp&#39;: 1, &#39;fn&#39;: 6, &#39;tp&#39;: 8}
+==============================
+Split: 47
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.96, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7207, &#39;fp&#39;: 15, &#39;fn&#39;: 32, &#39;tp&#39;: 746}
+Testing loss: 0.1200, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 161, &#39;fp&#39;: 5, &#39;fn&#39;: 2, &#39;tp&#39;: 0}
+==============================
+Split: 48
+----------
+Epoch [30/30]
+Training loss: 0.0200, prevision: 0.99, recall: 0.96, f1: 0.98
+Training evaluation: {&#39;tn&#39;: 7223, &#39;fp&#39;: 8, &#39;fn&#39;: 27, &#39;tp&#39;: 742}
+Testing loss: 0.2100, prevision: 0.82, recall: 0.89, f1: 0.85
+Testing evaluation: {&#39;tn&#39;: 126, &#39;fp&#39;: 7, &#39;fn&#39;: 4, &#39;tp&#39;: 31}
+==============================
+Split: 49
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.99, recall: 0.95, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7222, &#39;fp&#39;: 4, &#39;fn&#39;: 40, &#39;tp&#39;: 734}
+Testing loss: 0.0200, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 167, &#39;fp&#39;: 1, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+Split: 50
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.98, recall: 0.95, f1: 0.97
+Training evaluation: {&#39;tn&#39;: 7231, &#39;fp&#39;: 15, &#39;fn&#39;: 34, &#39;tp&#39;: 720}
+Testing loss: 0.2400, prevision: 0.40, recall: 0.89, f1: 0.55
+Testing evaluation: {&#39;tn&#39;: 147, &#39;fp&#39;: 12, &#39;fn&#39;: 1, &#39;tp&#39;: 8}
+==============================
+Split: 51
+----------
+Epoch [30/30]
+Training loss: 0.0300, prevision: 0.99, recall: 0.93, f1: 0.96
+Training evaluation: {&#39;tn&#39;: 7292, &#39;fp&#39;: 7, &#39;fn&#39;: 47, &#39;tp&#39;: 654}
+Testing loss: 0.0600, prevision: 0.00, recall: 0.00, f1: 0.00
+Testing evaluation: {&#39;tn&#39;: 162, &#39;fp&#39;: 6, &#39;fn&#39;: 0, &#39;tp&#39;: 0}
+==============================
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the overall performance</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average precision:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">precision_list</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average recall:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">recall_list</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average f1-score:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">f1_list</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average precision: 0.44
+average recall: 0.32
+average f1-score: 0.34
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/modules/structured-data-module"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yen-Chia Hsu<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
