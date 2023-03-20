@@ -433,7 +433,8 @@ def train(model, criterion, optimizer, dataloader_train, dataloader_test, num_ep
         loss_train = torch.round(loss_train, decimals=2)
         p_train, r_train, f1_train = compute_statistics(score_train)
         # Run through the entire testing set
-        loss_test, score_test = run_one_epoch(dataloader_test, phase="test")
+        with torch.no_grad():
+            loss_test, score_test = run_one_epoch(dataloader_test, phase="test")
         loss_test = torch.round(loss_test, decimals=2)
         p_test, r_test, f1_test = compute_statistics(score_test)
         # Print loss and scores
