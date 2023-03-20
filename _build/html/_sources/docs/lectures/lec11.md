@@ -1,6 +1,6 @@
 # Lecture 11: Image Data Processing (Part II)
 
-(Last updated: Mar 15, 2023)
+(Last updated: Mar 20, 2023)
 
 ## Preparation
 
@@ -15,7 +15,9 @@ Interact with the following website to check a live training demo using the MNIS
 
 ## Materials
 
-TBA
+- [Slides for Lecture 10-1: Image Data Processing (Image Filtering)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec10-1.pdf)
+- [Slides for Lecture 10-2: Image Data Processing (Convolutional Neural Network)](https://github.com/MultiX-Amsterdam/data-science-book-uva/raw/main/assets/slides/lec10-2.pdf)
+
 
 ## Additional Resources
 
