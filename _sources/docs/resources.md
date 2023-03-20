@@ -1,6 +1,6 @@
 # Course Resources
 
-(Last updated: Mar 8, 2023)
+(Last updated: Mar 20, 2023)
 
 This page curates a list of resources that are used or referenced in this course. These resources also inspired the development of this course.
 
