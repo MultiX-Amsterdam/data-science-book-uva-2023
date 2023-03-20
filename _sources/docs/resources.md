@@ -36,6 +36,8 @@ Below is a list of web books (in HTML form).
 - [Machine Learning and Deep Learning Fundamentals](https://kenndanielso.github.io/mlrefined/index.html)
 - [Dive into Deep Learning](https://d2l.ai/)
 - [Introduction to Cultural Analytics & Python](https://melaniewalsh.github.io/Intro-Cultural-Analytics/)
+- [The Turing Way handbook](https://the-turing-way.netlify.app/index.html)
+- [Pro Git](https://git-scm.com/doc)
 
 ## Machine Learning Courses
 
@@ -71,7 +73,6 @@ Below is a list of course notes and materials for data science.
 
 - [Data 8: The Foundations of Data Science, UC Berkeley](https://data-8.github.io/) and [its course note](https://inferentialthinking.com/)
 - [DSC 10: Principles of Data Science, UC San Diego](https://dsc10.com/) and [its course note](https://notes.dsc10.com/)
-- [Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
 - [I310D: Introduction to Human-Centered Data Science, University of Texas at Austin](https://www.ischool.utexas.edu/ischool-course-offerings?courseID=443)
 - [Human-Centered Data Science, FU Berlin](https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/Past-Terms/winter_term_2020_21/course_human_centered_data_science.html) and their [course materials](https://github.com/FUB-HCC/hcds-winter-2020)
 - [Introduction to Research Data Science, The Alan Turing Institute](https://alan-turing-institute.github.io/rds-course/)
@@ -127,3 +128,4 @@ Below is a list of other resources for self-learning.
 - [Lilian Weng blog](https://lilianweng.github.io)
 - [Hugging Face Documentations and Courses](https://huggingface.co/docs)
 - [AI Summer: Learn Deep Learning and Artificial Intelligence](https://theaisummer.com/)
+- [Version Control with Git](https://swcarpentry.github.io/git-novice/)
