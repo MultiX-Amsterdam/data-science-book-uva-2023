@@ -817,7 +817,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xr/ddxdh8x16q53_r8yf2zj9m600000gn/T/ipykernel_13620/4187725043.py:261: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/xr/ddxdh8x16q53_r8yf2zj9m600000gn/T/ipykernel_13861/4187725043.py:261: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1332,7 +1332,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         <span class="n">loss_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loss_train</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">p_train</span><span class="p">,</span> <span class="n">r_train</span><span class="p">,</span> <span class="n">f1_train</span> <span class="o">=</span> <span class="n">compute_statistics</span><span class="p">(</span><span class="n">score_train</span><span class="p">)</span>
         <span class="c1"># Run through the entire testing set</span>
-        <span class="n">loss_test</span><span class="p">,</span> <span class="n">score_test</span> <span class="o">=</span> <span class="n">run_one_epoch</span><span class="p">(</span><span class="n">dataloader_test</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">loss_test</span><span class="p">,</span> <span class="n">score_test</span> <span class="o">=</span> <span class="n">run_one_epoch</span><span class="p">(</span><span class="n">dataloader_test</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
         <span class="n">loss_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">loss_test</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">p_test</span><span class="p">,</span> <span class="n">r_test</span><span class="p">,</span> <span class="n">f1_test</span> <span class="o">=</span> <span class="n">compute_statistics</span><span class="p">(</span><span class="n">score_test</span><span class="p">)</span>
         <span class="c1"># Print loss and scores</span>
