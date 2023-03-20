@@ -450,12 +450,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#error-handling">
+   Error Handling
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -467,6 +491,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#error-handling">
+   Error Handling
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -502,6 +539,26 @@ $ jupyter-book build .
 </pre></div>
 </div>
 <p>The above steps will update the gh-pages branch, which hosts the website. Finally, follow the normal git flow to commit the changes and push the code to the main branch in this repository.</p>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h2>
+<p>You many encounter an error that looks like the following when building the notebook:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Extension error <span class="o">(</span>sphinx_external_toc.events<span class="o">)</span>:
+Handler &lt;<span class="k">function</span> add_changed_toctrees at 0x10a031750&gt; <span class="k">for</span> event <span class="s1">&#39;env-get-outdated&#39;</span> threw an exception <span class="o">(</span>exception: <span class="s1">&#39;Document&#39;</span> object has no attribute <span class="s1">&#39;docname&#39;</span><span class="o">)</span>
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx/events.py&quot;</span>, line <span class="m">94</span>, <span class="k">in</span> emit
+    results.append<span class="o">(</span>listener.handler<span class="o">(</span>self.app, *args<span class="o">))</span>
+  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/events.py&quot;</span>, line <span class="m">138</span>, <span class="k">in</span> add_changed_toctrees
+    <span class="nv">filenames</span> <span class="o">=</span> site_map.get_changed<span class="o">(</span>previous_map<span class="o">)</span>
+  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/api.py&quot;</span>, line <span class="m">220</span>, <span class="k">in</span> get_changed
+    <span class="k">if</span> self.root.docname !<span class="o">=</span> previous.root.docname:
+AttributeError: <span class="s1">&#39;Document&#39;</span> object has no attribute <span class="s1">&#39;docname&#39;</span>
+</pre></div>
+</div>
+<p>In this case, just run the following command, and the problem should disappear:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyter-cache
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

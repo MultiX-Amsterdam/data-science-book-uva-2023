@@ -11,7 +11,7 @@ Read the following article and interact with the visualization to understand Con
 - [CNN Explainer: Learning Convolutional Neural Networks with Interactive Visualization](https://poloclub.github.io/cnn-explainer/)
 
 Interact with the following website to check a live training demo using the MNIST dataset:
--[ConvNetJS MNIST demo](https://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html)
+- [ConvNetJS MNIST demo](https://cs.stanford.edu/people/karpathy/convnetjs/demo/mnist.html)
 
 ## Materials
 
