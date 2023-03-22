@@ -516,46 +516,46 @@ title="Print to PDF"
 <p>This repository hosts the website for the data science course (Bachelor level) at the Informatics Institute, University of Amsterdam. The webite is built using <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">Jupyter Book</a>.</p>
 <p>All the course content in this repository is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 <p>Below are the steps to update and build this book. First, clone this repository to your local machine. Assume that you already have <a class="reference external" href="https://docs.conda.io/en/main/miniconda.html">miniconda</a> installed. Next, install the jupyter-book package:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ conda create -n jupyterbook
-$ conda activate jupyterbook
-$ conda install python
-$ pip install -U jupyter-book
-$ pip install ghp-import
-$ jupyter-book --help
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>jupyterbook
+$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>jupyterbook
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>python
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>jupyter-book
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ghp-import
+$<span class="w"> </span>jupyter-book<span class="w"> </span>--help
 </pre></div>
 </div>
 <p>Then, clone this repository and build the book:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/MultiX-Amsterdam/data-science-book-uva
-$ <span class="nb">cd</span> data-science-book-uva
-$ jupyter-book build .
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MultiX-Amsterdam/data-science-book-uva
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>data-science-book-uva
+$<span class="w"> </span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.
 </pre></div>
 </div>
 <p>To rebuild the entire book, use the following:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ jupyter-book build --all .
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jupyter-book<span class="w"> </span>build<span class="w"> </span>--all<span class="w"> </span>.
 </pre></div>
 </div>
 <p>Once it is done, you can view the book in the <span class="xref myst">html content</span> folder using a web browser. To update the book online in this GitHub repository (in the gh-pages branch), run the following:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ghp-import -n -p -f _build/html
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
 </pre></div>
 </div>
 <p>The above steps will update the gh-pages branch, which hosts the website. Finally, follow the normal git flow to commit the changes and push the code to the main branch in this repository.</p>
 <section id="error-handling">
 <h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h2>
 <p>You many encounter an error that looks like the following when building the notebook:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Extension error <span class="o">(</span>sphinx_external_toc.events<span class="o">)</span>:
-Handler &lt;<span class="k">function</span> add_changed_toctrees at 0x10a031750&gt; <span class="k">for</span> event <span class="s1">&#39;env-get-outdated&#39;</span> threw an exception <span class="o">(</span>exception: <span class="s1">&#39;Document&#39;</span> object has no attribute <span class="s1">&#39;docname&#39;</span><span class="o">)</span>
-Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx/events.py&quot;</span>, line <span class="m">94</span>, <span class="k">in</span> emit
-    results.append<span class="o">(</span>listener.handler<span class="o">(</span>self.app, *args<span class="o">))</span>
-  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/events.py&quot;</span>, line <span class="m">138</span>, <span class="k">in</span> add_changed_toctrees
-    <span class="nv">filenames</span> <span class="o">=</span> site_map.get_changed<span class="o">(</span>previous_map<span class="o">)</span>
-  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/api.py&quot;</span>, line <span class="m">220</span>, <span class="k">in</span> get_changed
-    <span class="k">if</span> self.root.docname !<span class="o">=</span> previous.root.docname:
-AttributeError: <span class="s1">&#39;Document&#39;</span> object has no attribute <span class="s1">&#39;docname&#39;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Extension<span class="w"> </span>error<span class="w"> </span><span class="o">(</span>sphinx_external_toc.events<span class="o">)</span>:
+Handler<span class="w"> </span>&lt;<span class="k">function</span><span class="w"> </span>add_changed_toctrees<span class="w"> </span>at<span class="w"> </span>0x10a031750&gt;<span class="w"> </span><span class="k">for</span><span class="w"> </span>event<span class="w"> </span><span class="s1">&#39;env-get-outdated&#39;</span><span class="w"> </span>threw<span class="w"> </span>an<span class="w"> </span>exception<span class="w"> </span><span class="o">(</span>exception:<span class="w"> </span><span class="s1">&#39;Document&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;docname&#39;</span><span class="o">)</span>
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx/events.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">94</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>emit
+<span class="w">    </span>results.append<span class="o">(</span>listener.handler<span class="o">(</span>self.app,<span class="w"> </span>*args<span class="o">))</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/events.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">138</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>add_changed_toctrees
+<span class="w">    </span><span class="nv">filenames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>site_map.get_changed<span class="o">(</span>previous_map<span class="o">)</span>
+<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/sphinx_external_toc/api.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">220</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>get_changed
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>self.root.docname<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>previous.root.docname:
+AttributeError:<span class="w"> </span><span class="s1">&#39;Document&#39;</span><span class="w"> </span>object<span class="w"> </span>has<span class="w"> </span>no<span class="w"> </span>attribute<span class="w"> </span><span class="s1">&#39;docname&#39;</span>
 </pre></div>
 </div>
 <p>In this case, just run the following command, and the problem should disappear:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install jupyter-cache
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-cache
 </pre></div>
 </div>
 </section>
