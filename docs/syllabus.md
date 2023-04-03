@@ -88,19 +88,23 @@ Exam instructions and materials will all be in English.
 We tried to write questions in Dutch, but we found that the Dutch version of the questions are ambiguous, as the course materials are in English.
 Providing materials in English allows us to match the exam questions clearly with course materials.
 
+Exam is onsite.
+It is not allowed to do exams at home.
+
 The exam may have multiple-choice, passive-coding, and active-coding questions.
 The multiple-choice questions will be used to test your general knowledge of data science.
 The passive-coding questions are in the form of multiple-choice questions to test your coding knowledge.
 For example, we may put some code in the question description and ask you to select the option that best explains what the code is doing (or the expected output of the code).
 The active coding question is similar to the coding assignments.
-We will provide a mock-up exam for you to practice.
+We will provide only one mock-up exam before the mid-term exam for you to practice.
 
 :::{warning}
-You have to do the exams on-site. It is not allowed to do exams at home.
+The final exam and the resit will be more difficult than the mid-term exam, since you have more time to study the materials.
+The resit will be at least as difficult as the final exam.
 :::
 
 :::{warning}
-The final exam will be more difficult than the mid-term exam, since you have more time to study the materials.
+The University of Amsterdam owns the materials in this exam (e.g., the question sets), which means the materials are copyright-protected. You must keep the exam content confidential and are not allowed to copy or distribute the content in any form.
 :::
 
 #### Multiple-Choice Questions
@@ -136,6 +140,7 @@ You will have no internet access during the exams.
 However, you can use the question mark "?" syntax to [access the IPython help](https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html#accessing-help) to check the documentation of functions.
 :::
 
+<a name="cheat-sheet"></a>
 #### Cheat Sheet
 
 During the exam, you may bring an A4-size cheat sheet with you.
@@ -143,6 +148,10 @@ You can choose to handwrite or print the content on both sides of the cheat shee
 Please keep in mind that you are not allowed to bring other materials, such as books.
 You are also not allowed to bring or use any other digital devices (besides the computer for the exam).
 After the exam, you can take the cheat sheet back with you.
+
+The cheatsheet is designed to reduce your workload in memorizing details (e.g., math equations) and also help you prepare for exams.
+For example, maybe there are parts that confuse you when you study course materials, and you may put them in the cheatsheet.
+Another example is that you may put bullet points that can help you recall information (e.g., some important concepts).
 
 #### Important Notice During the Exam Day
 
@@ -168,6 +177,7 @@ Please follow [the advice from RIVM](https://www.rivm.nl/en/coronavirus-covid-19
 If you have symptoms associated with COVID-19, please stay home.
 You can use the online lecture live stream, the lecture recordings, and TicketVise on Canvas to participate in the course, as documented in the [virtual/physical settings](#virtual-physical-settings) and [communication principles](#communication-principles).
 
+<a name="register"></a>
 ## Course Registration
 
 For general course registration, please refer to the [UvA document](https://student.uva.nl/en/topics/course-registration).
@@ -175,6 +185,7 @@ The Faculty of Science handles registration procedures.
 I do not handle course registration matters.
 If you want to register for the course but you are late, or if you have problems signing up for the course, please get in touch with the following email: vakaanmelding-fnwi@uva.nl
 
+<a name="change-group"></a>
 ## Change Groups
 
 The course groups are automatically assigned.
@@ -233,6 +244,28 @@ If you have a disability and require accommodations, please take a look at [this
 ## Resources
 
 We curated a [list of resources](resources) that inspired the development of this course. The course instructor greatly appreciates them.
+
+## Q&A
+
+Below is a list of commonly asked questions and their answers.
+
+**Q1: Can I take exams remotely?**
+- You have to do the exams on-site (in the physical exam room). It is not allowed to do exams remotely (e.g., at home).
+
+**Q2: What should I do if I have missed (or need to miss) an exam, such as due to medical issues or personal reasons?**
+- The best option is to take the resit, which is designed for these situations. The resit schedule is on [datanose](https://datanose.nl).
+ 
+**Q3: I want to change the study group. What should I do?**
+- Read details in the [Change Group section](#change-group) in this syllabus.
+
+**Q4: I need help in course registration (e.g., I register the course late). What should I do?**
+- Read details in the [Course Registration section](#register) in this syllabus.
+
+**Q5: What is the cheatsheet for the exam and how should I prepare for that?**
+- Read details in the [Cheatsheet section](#cheatsheet) in this syllabus.
+
+**Q6: What to do if I have conflicts with my exam schedule (e.g., two exams are at the same time)?**
+- Contact the program coordinator or [study adviser](https://student.uva.nl/en/topics/study-adviser) for solutions.
 
 ## Acknowledgements
 
