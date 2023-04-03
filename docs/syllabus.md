@@ -25,10 +25,9 @@ Notice that the course instructor writes the syllabus from the first-person pers
 ## Learning Goals
 
 By the end of the course, we expect you to be able to:
-- Know every component in the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization).
+- Explain and execute the entire data science pipeline (including data pre-processing, wrangling, analysis, modeling, evaluation, and visualization).
 - Perform data science tasks with images (e.g., object recognition), text (e.g., topic modeling), and structured data (e.g., those from sensor networks) using the Python programming language.
 - Critically reflect on the model performance using various metrics and obtain meaningful insights from data analysis.
-- Understand issues around data science tasks, such as algorithm bias, research ethics, reproducibility, and data annotation.
 
 ## Prerequisites
 
