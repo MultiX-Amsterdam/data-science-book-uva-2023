@@ -829,7 +829,7 @@ title="Print to PDF"
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_answer_df</span><span class="p">(</span><span class="n">df_result</span><span class="p">,</span> <span class="n">df_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function checks if two output dataframes are the same.</span>
 
 <span class="sd">    Parameters</span>
@@ -853,7 +853,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">check_answer_np</span><span class="p">(</span><span class="n">arr_result</span><span class="p">,</span> <span class="n">arr_answer</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function checks if two output dataframes are the same.</span>
 
 <span class="sd">    Parameters</span>
@@ -877,7 +877,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_tokenize_and_lemmatize</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tokenize and lemmatize the text in the dataset.</span>
 
 <span class="sd">    Parameters</span>
@@ -903,7 +903,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_most_used_words</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">token_col</span><span class="o">=</span><span class="s1">&#39;tokens&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a dataframe with the 5 most used words per class, and their count.</span>
 
 <span class="sd">    Parameters</span>
@@ -941,7 +941,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_remove_stopwords</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Remove stopwords from the tokens.</span>
 
 <span class="sd">    Parameters</span>
@@ -969,7 +969,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_spacy_tokens</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add a column with a list of lemmatized tokens, without stopwords.</span>
 
 <span class="sd">    Parameters</span>
@@ -992,7 +992,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_largest_proportion</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For every row, get the column number where it has the largest value.</span>
 
 <span class="sd">    Parameters</span>
@@ -1012,7 +1012,7 @@ title="Print to PDF"
 
 
 <span class="k">def</span> <span class="nf">answer_add_padded_tensors</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add a tensor column to the dataframes, with every tensor having the same dimensions.</span>
 
 <span class="sd">    Parameters</span>
@@ -1297,7 +1297,7 @@ Name: Class Index, dtype: int64
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reformat_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Reformat the Class Index column to a Class column and combine</span>
 <span class="sd">    the Title and Description columns into a Text column.</span>
 <span class="sd">    Select only the class_idx, class and text columns afterwards.</span>
@@ -1486,7 +1486,7 @@ Tokenized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;,
 
 
 <span class="k">def</span> <span class="nf">wordnet_pos</span><span class="p">(</span><span class="n">nltk_pos</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function to map POS tags to wordnet tags for lemmatizer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">nltk_pos</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">):</span>
@@ -2006,7 +2006,7 @@ Lemmatized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize_and_lemmatize</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Tokenize and lemmatize the text in the dataset.</span>
 
 <span class="sd">    Parameters</span>
@@ -2026,7 +2026,7 @@ Lemmatized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;
 
 
 <span class="k">def</span> <span class="nf">most_used_words</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">token_col</span><span class="o">=</span><span class="s1">&#39;tokens&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate a dataframe with the 5 most used words per class, and their count.</span>
 
 <span class="sd">    Parameters</span>
@@ -2047,7 +2047,7 @@ Lemmatized text: [&#39;The&#39;, &#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;
 
 
 <span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Remove stopwords from the tokens.</span>
 
 <span class="sd">    Parameters</span>
@@ -2316,7 +2316,7 @@ day
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_spacy</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add a column with the spaCy Doc objects.</span>
 
 <span class="sd">    Parameters</span>
@@ -2622,7 +2622,7 @@ day
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spacy_tokens</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add a column with a list of lemmatized tokens, without stopwords.</span>
 
 <span class="sd">    Parameters</span>
@@ -3113,7 +3113,7 @@ iteration: 10 of max_iter: 10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">n_top_wordlist</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">ntopwords</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get the 5 most important words per LDA topic.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">output</span> <span class="o">=</span> <span class="p">{}</span>
@@ -3173,7 +3173,7 @@ iteration: 10 of max_iter: 10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">largest_proportion</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    For every row, get the column number where it has the largest value.</span>
 
 <span class="sd">    Parameters</span>
@@ -3708,7 +3708,7 @@ Adjusted rand score: 0.54
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_padded_tensors</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    First, sample 10% of both datasets and only use that.</span>
 <span class="sd">    Then, add a tensor column to the dataframes, with every tensor having the same dimensions.</span>
 
@@ -3848,7 +3848,7 @@ If you want to run the code faster, you can also put this notebook on Google Col
         <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s2">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s2">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

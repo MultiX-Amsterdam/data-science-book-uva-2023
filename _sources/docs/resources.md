@@ -129,3 +129,8 @@ Below is a list of other resources for self-learning.
 - [Hugging Face Documentations and Courses](https://huggingface.co/docs)
 - [AI Summer: Learn Deep Learning and Artificial Intelligence](https://theaisummer.com/)
 - [Version Control with Git](https://swcarpentry.github.io/git-novice/)
+
+Below is a list of resources that describe how to build a Jupyter Book.
+
+- [Create Your First Book by Jupyter Book](https://jupyterbook.org/en/stable/start/your-first-book.html)
+- [Data Science Study by Raphael Kim](https://datascientistforai.github.io/DataScienceStudy/start/build.html)
