@@ -47,7 +47,7 @@ Week 8 only has the final exam (no lectures nor work sessions).
 Refer to the [overview page](home#schedule-outline) for the course schedule.
 
 Lectures will be given in English, as well as all the teaching materials and assessment materials.
-Work sessions will given in either Dutch or English, depending on the TA's choice.
+Work sessions will be given in either Dutch or English, depending on the TA's choice.
 
 Course materials contain slide decks, Jupyter notebooks, and three modules.
 Each module contains preparation, turorials, and assignments for learning how to perform different data science tasks.
