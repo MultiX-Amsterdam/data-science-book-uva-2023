@@ -46,7 +46,7 @@ Week 4 has only one lecture for discussing the mid-term exam (no work sessions).
 Week 8 only has the final exam (no lectures nor work sessions).
 Refer to the [overview page](home#schedule-outline) for the course schedule.
 
-Lectures will be given in English, as well as all the teaching materials.
+Lectures will be given in English, as well as all the teaching materials and assessment materials.
 Work sessions will given in either Dutch or English, depending on the TA's choice.
 
 Course materials contain slide decks, Jupyter notebooks, and three modules.
