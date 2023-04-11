@@ -115,6 +115,7 @@ Below is a list of course notes and materials for natural language processing.
 Below is a list of course notes and materials for reinforcement learning.
 
 - [COMP90054: Introduction to Reinforcement Learning, University of Melbourne](https://gibberblot.github.io/rl-notes/intro.html)
+- [CS 285: Deep Reinforcement Learning, University of California, Berkeley](https://rail.eecs.berkeley.edu/deeprlcourse/) and [their videos](https://www.youtube.com/playlist?list=PL_iWQOsE6TfX7MaC6C3HcdOf1g337dlC9)
 - [10-703: Deep Reinforcement Learning, Carnegie Mellon University](https://cmudeeprl.github.io/703website_f22/)
 - [COMPM050: Reinforcement Learning, University College London](https://www.davidsilver.uk/teaching/)
 
