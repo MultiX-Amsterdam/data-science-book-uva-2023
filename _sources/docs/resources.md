@@ -21,6 +21,7 @@ Below is a list of books (in PDF form).
 - [Reinforcement Learning: An Introduction](http://www.incompleteideas.net/book/the-book.html) and the [PDF file](http://www.incompleteideas.net/book/RLbook2020.pdf)
 - [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) and the [PDF file](https://web.stanford.edu/~jurafsky/slp3/ed3book_jan72023.pdf)
 - [Computer Vision: Algorithms and Applications](https://szeliski.org/Book/) and the [PDF file downloading link](https://szeliski.org/Book/download.php)
+- [Deep Reinforcement Learning](https://deep-reinforcement-learning.net/) and the [PDF file downloading link](https://link.springer.com/book/10.1007/978-981-19-0638-1)
 
 ## Web Books
 
@@ -108,6 +109,14 @@ Below is a list of course notes and materials for natural language processing.
 
 - [CS224N: Natural Language Processing with Deep Learning, Stanford University](https://web.stanford.edu/class/cs224n/index.html)
 - [CSE 447/517: Natural Language Processing, University of Washington](https://nasmith.github.io/NLP-winter22/)
+
+## Reinforcement Learning Courses
+
+Below is a list of course notes and materials for reinforcement learning.
+
+- [COMP90054: Introduction to Reinforcement Learning, University of Melbourne](https://gibberblot.github.io/rl-notes/intro.html)
+- [10-703: Deep Reinforcement Learning, Carnegie Mellon University](https://cmudeeprl.github.io/703website_f22/)
+- [COMPM050: Reinforcement Learning, University College London](https://www.davidsilver.uk/teaching/)
 
 ## Videos
 
