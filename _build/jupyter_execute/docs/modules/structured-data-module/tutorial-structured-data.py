@@ -29,7 +29,6 @@
 #   - [Use the Random Forest Model](#random-forest)
 #   - [Compute Feature Importance](#feature-importance)
 #   - [Assignment for Task 7](#a7)
-# - [Optional Assignment](#opa)
 
 # ## Scenario
 
@@ -1288,28 +1287,6 @@ experiment(df_x, df_y_40)
 
 answer_experiment(df_x, df_y_40)
 
-
-# <a name="opa"></a>
-
-# ## Optional Assignment
-
-# The assignment above provided a table for a predefined experiment. In this optional assignment, you need to design your own experiment to answer the following question raised by the local Pittsburgh community:
-# - What are the possible pollution sources that are related to the bad odor in the Pittsburgh region?
-# 
-# To answer this question, you need to not only select proper variables but also fit the data to the model reasonably well. Consider the following aspects when designing the experiment:
-# 
-# - What are the models that you want to use?
-#   - Hint: Use the knowledge that you learned in this module to choose a set of models that you want to investigate. Notice that this is a classification task, and a list of available models can be found at the link below:
-#   - Link to models: [https://scikit-learn.org/stable/supervised_learning.html](https://scikit-learn.org/stable/supervised_learning.html)
-# - What are the features that you are interested in exploring?
-#   - Hint: Use the knowledge that you learned in this module to select different feature sets and check how these sets affect model performance. A list of available variables is mentioned in the tutorial and also can be found from [the dataset description](https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data).
-#   - Hint: Use the knowledge that you learned in this module to compute feature importance and inspect which are the important features.
-# - How much data does the model need to predict bad odor reasonably well?
-#   - Hint: Change the `train_size` parameter to increase or decrease the amount of data records for training the machine learning model.
-# - How often do you need to retrain the model using updated data?
-#   - Hint: Change the `test_size` parameter to indicate how often you want to retrain the model with updated data.
-# 
-# When designing the experiment, please consider the computation time carefully. Keep in mind that if you have a very large set of features, training the machine learning model can take a very long time, and explaining the result can also be hard. Instead of including all the available features in the experiment, it may be better to separate the features into several groups, and then train the machine learning model on different groups with different sets of features.
 
 # In[ ]:
 

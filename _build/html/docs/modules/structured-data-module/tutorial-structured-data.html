@@ -588,11 +588,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optional-assignment">
-   Optional Assignment
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -695,11 +690,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optional-assignment">
-   Optional Assignment
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -744,7 +734,6 @@ You can use the following link to jump to the tasks and assignments:</p>
 <li><p><a class="reference external" href="#a7">Assignment for Task 7</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#opa">Optional Assignment</a></p></li>
 </ul>
 <section id="scenario">
 <h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">#</a></h2>
@@ -3230,47 +3219,13 @@ Computer feature importance using RandomForestClassifier()
 </div>
 </div>
 </div>
-<p><a name="opa"></a></p>
-</section>
-</section>
-<section id="optional-assignment">
-<h2>Optional Assignment<a class="headerlink" href="#optional-assignment" title="Permalink to this headline">#</a></h2>
-<p>The assignment above provided a table for a predefined experiment. In this optional assignment, you need to design your own experiment to answer the following question raised by the local Pittsburgh community:</p>
-<ul class="simple">
-<li><p>What are the possible pollution sources that are related to the bad odor in the Pittsburgh region?</p></li>
-</ul>
-<p>To answer this question, you need to not only select proper variables but also fit the data to the model reasonably well. Consider the following aspects when designing the experiment:</p>
-<ul class="simple">
-<li><p>What are the models that you want to use?</p>
-<ul>
-<li><p>Hint: Use the knowledge that you learned in this module to choose a set of models that you want to investigate. Notice that this is a classification task, and a list of available models can be found at the link below:</p></li>
-<li><p>Link to models: <a class="reference external" href="https://scikit-learn.org/stable/supervised_learning.html">https://scikit-learn.org/stable/supervised_learning.html</a></p></li>
-</ul>
-</li>
-<li><p>What are the features that you are interested in exploring?</p>
-<ul>
-<li><p>Hint: Use the knowledge that you learned in this module to select different feature sets and check how these sets affect model performance. A list of available variables is mentioned in the tutorial and also can be found from <a class="reference external" href="https://github.com/CMU-CREATE-Lab/smell-pittsburgh-prediction/tree/master/dataset/v2.1#description-of-the-air-quality-sensor-data">the dataset description</a>.</p></li>
-<li><p>Hint: Use the knowledge that you learned in this module to compute feature importance and inspect which are the important features.</p></li>
-</ul>
-</li>
-<li><p>How much data does the model need to predict bad odor reasonably well?</p>
-<ul>
-<li><p>Hint: Change the <code class="docutils literal notranslate"><span class="pre">train_size</span></code> parameter to increase or decrease the amount of data records for training the machine learning model.</p></li>
-</ul>
-</li>
-<li><p>How often do you need to retrain the model using updated data?</p>
-<ul>
-<li><p>Hint: Change the <code class="docutils literal notranslate"><span class="pre">test_size</span></code> parameter to indicate how often you want to retrain the model with updated data.</p></li>
-</ul>
-</li>
-</ul>
-<p>When designing the experiment, please consider the computation time carefully. Keep in mind that if you have a very large set of features, training the machine learning model can take a very long time, and explaining the result can also be hard. Instead of including all the available features in the experiment, it may be better to separate the features into several groups, and then train the machine learning model on different groups with different sets of features.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="credit"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Credit: this teaching material is created by <a class="reference external" href="https://github.com/yenchiah">Yen-Chia Hsu</a>.</p>
 </dd>
 </dl>
+</section>
 </section>
 </section>
 
