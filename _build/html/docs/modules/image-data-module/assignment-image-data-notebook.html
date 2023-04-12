@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Garbage Classification - A task from the Gemeente &#8212; Data Science UvA</title>
+    <title>Garbage Classification - A task from the Gemeente &#8212; Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -89,9 +89,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Data Science UvA</h1>
+      <img src="../../../_static/uvalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -863,7 +868,7 @@ title="Print to PDF"
   <span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
   <span class="c1"># This means that we are not on a local machine, so we need to clone the dataset</span>
-  <span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MultiX-Amsterdam/image-data-module
+  <span class="o">!</span>git clone https://github.com/MultiX-Amsterdam/image-data-module
   <span class="c1"># Below is the path of the data on the Google Colab disk</span>
   <span class="n">data_dir</span>  <span class="o">=</span> <span class="s1">&#39;/content/image-data-module/garbage-classification-dataset/garbage-classification-images&#39;</span>
   <span class="n">classes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
@@ -1068,31 +1073,31 @@ title="Print to PDF"
             <span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;train_loss&#39;</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;val_acc&#39;</span><span class="p">]))</span>
 
 <span class="k">def</span> <span class="nf">get_default_device</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pick GPU if available, else CPU&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Pick GPU if available, else CPU&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">to_device</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Move tensor(s) to chosen device&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Move tensor(s) to chosen device&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span><span class="nb">tuple</span><span class="p">)):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">to_device</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">non_blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">DeviceDataLoader</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Wrap a dataloader to move data to a device&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Wrap a dataloader to move data to a device&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dl</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dl</span> <span class="o">=</span> <span class="n">dl</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
         
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Yield a batch of data after moving it to device&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Yield a batch of data after moving it to device&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dl</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">to_device</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of batches&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Number of batches&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dl</span><span class="p">)</span>
 
 <span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>image-data-module &#8212; Data Science UvA</title>
+    <title>image-data-module &#8212; Data Science</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -89,9 +89,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Data Science UvA</h1>
+      <img src="../../../_static/uvalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data Science</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -520,10 +525,10 @@ title="Print to PDF"
 <h2>Potential Error<a class="headerlink" href="#potential-error" title="Permalink to this headline">#</a></h2>
 <p>Notice that the notebooks in this repository are created on Google Colab.
 When copying the notebook created by Colab, we have to clear widget state to prevent the following error when building the JupyterBook.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Exception<span class="w"> </span>occurred:
-<span class="w">  </span>File<span class="w"> </span><span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/jupyter_sphinx/execute.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">300</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>contains_widgets
-<span class="w">    </span><span class="k">return</span><span class="w"> </span>widgets<span class="w"> </span>and<span class="w"> </span>widgets<span class="o">[</span><span class="s2">&quot;state&quot;</span><span class="o">]</span>
-KeyError:<span class="w"> </span><span class="s1">&#39;state&#39;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Exception occurred:
+  File <span class="s2">&quot;/opt/homebrew/Caskroom/miniconda/base/envs/jupyterbook/lib/python3.10/site-packages/jupyter_sphinx/execute.py&quot;</span>, line <span class="m">300</span>, <span class="k">in</span> contains_widgets
+    <span class="k">return</span> widgets and widgets<span class="o">[</span><span class="s2">&quot;state&quot;</span><span class="o">]</span>
+KeyError: <span class="s1">&#39;state&#39;</span>
 </pre></div>
 </div>
 <p>To fix this problem, use the solution in <a class="reference external" href="https://github.com/jupyter-widgets/ipywidgets/issues/2867#issuecomment-625418996">this link</a>.
