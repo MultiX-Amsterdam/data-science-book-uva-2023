@@ -66,7 +66,7 @@ Instead of including all the available features in the experiment, it may be bet
 ### Deliverable for the Optional Assignment
 
 Your deliverable is **a Jupyter Notebook** that will be displayed online and sent to the Pittsburgh local community to help them understand air pollution patterns and advocate for policy changes.
-Always keep the design brief mentioned above in mind when writing the deliverable.
+Always keep the [design scenario](tutorial-structured-data#scenario) mentioned at the begining of the tutorial in mind when writing the deliverable.
 In the deliverable, you need to explain how you completed the above-listed tasks and what the results are.
 
 The deliverable also needs to contain all the code that you wrote, and **the code in your deliverable needs to be excecuted without errors**.
