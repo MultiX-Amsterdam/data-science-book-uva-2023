@@ -78,7 +78,7 @@ This means that if you take the resit, your resit score will override the weight
 
 The base grade for the exam is 1, and there is no minimum grade requirement for each exam.
 However, according to the [OER rule](https://student.uva.nl/onderwerpen/onderwijs-en-examenregelingen-oer), you need to get at least 5.5 in the final score (i.e., the weighted sum of the scores of two exams) to pass the course.
-After each exam, the teaching team will grade the exam and release the grades within 20 working days.
+After each exam, the teaching team will grade the exam and release the grades as soon as possible.
 After the grade is released, we will announce on Canvas how students can inspect their exam results.
 
 ### Exams
