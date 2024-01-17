@@ -1,6 +1,6 @@
-# data-science-book-uva
+# data-science-book-uva-2023
 
-This repository hosts the website for the data science course (Bachelor level) at the Informatics Institute, University of Amsterdam. The webite is built using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html).
+This repository hosts the website for the data science course 2023 edition (Bachelor level) at the Informatics Institute, University of Amsterdam. The webite is built using [Jupyter Book](https://jupyterbook.org/en/stable/intro.html).
 
 All the course content in this repository is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
